@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: your own global custom styles below */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+}
+.bg-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
