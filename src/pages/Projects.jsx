@@ -159,6 +159,41 @@ export default function Projects() {
           <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
+              {/* Comparison Charts */}
+               <ProjectCard
+              title="Interactive Product Comparison Tool"
+              description="For this project, I developed a dynamic comparison web application using modern front-end technologies. Built with React and Tailwind CSS, the solution provides an interactive interface where users can compare & filter what they're looking for across various specifications and features. The application implements robust filtering capabilities allowing users to narrow down products. In this example it is by brand, price range, and operating system, while a responsive search function enables quick product discovery. The data structure accommodates comprehensive specifications for whatever list of products you may be selling. Using React's state management, the tool delivers seamless pagination and dynamic content rendering for optimized performance. The interface was designed with accessibility and user experience in mind, featuring well-organized tables, intuitive filtering mechanisms, and mobile-responsive layouts. This project demonstrates my proficiency in component-based architecture, JavaScript ES6+, and UI/UX design principles while showcasing how modern web technologies can enhance e-commerce product discovery and comparison experiences."
+              image={invDash}
+              tags={["React", "TailWind CSS", "JSON"]}
+              link="https://esdguys.com/pages/product-comparison-example"
+              bullets={[
+                'Built with React & Tailwind',
+                'Embeds Directly into the Shopify Page',
+                'Filtering & Search Without Page Load',
+                'Product Data Saved in Separate JSON File so Employees Dont Have to Worry About Editing Products Around App Logic'
+              ]}
+              explanation="This snippet shows the basic JSON data structure that the table pulls from. Updating is easy and straightforward"
+              codeSnippet={` {
+                              "id": 59,
+                              "brand": "Motorola",
+                              "model": "Razr 40",
+                              "processor": "Snapdragon 7 Gen 1",
+                              "ram": "8GB",
+                              "storage": "256GB",
+                              "display": "6.9-inch foldable AMOLED + 1.5-inch cover display",
+                              "camera": "64MP main + 13MP ultrawide",
+                              "battery": "4200 mAh",
+                              "price": 699,
+                              "releaseDate": "2023-06-01",
+                              "rating": 4.0,
+                              "inStock": true,
+                              "colors": ["Sage Green", "Vanilla Cream", "Summer Lilac"],
+                              "os": "Android 13",
+                              "url": "/products/example-product",
+                              "image": "motorola-razr-40.jpg"
+                            },`
+              }
+            />
             {/* Dashboard */}
             <ProjectCard
               title="Smart Stock: An Ecommerce Dashboard with AI-Style Summaries"
