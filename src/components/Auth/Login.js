@@ -86,9 +86,7 @@ const Login = () => {
           </button>
         </form>
         
-        <div className="mt-6 text-center text-sm text-slate-400">
-          <p>Use username: admin, password: mushrooms123</p>
-        </div>
+      
 
         <div className="mt-8 pt-6 border-t border-slate-700 text-center text-xs text-slate-500">
           <p>© 2025 ForgeWise. All rights reserved.</p>
