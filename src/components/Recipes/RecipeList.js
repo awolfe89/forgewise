@@ -42,15 +42,17 @@ const RecipeList = () => {
       console.error("Error deleting recipe:", error);
     }
   };
-  
-  const handleSort = (field) => {
-    if (sortField === field) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortField(field);
-      setSortDirection('asc');
-    }
-  };
+ 
+  //WASNT BEING USED CURRENTLY 
+
+ // const handleSort = (field) => {
+  //  if (sortField === field) {
+   //   setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    //} else {
+     // setSortField(field);
+     // setSortDirection('asc');
+   // }
+  //};
   
   const filteredRecipes = recipes.filter(recipe => 
     recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

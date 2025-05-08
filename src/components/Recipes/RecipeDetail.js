@@ -48,7 +48,7 @@ const RecipeDetail = () => {
   // Function to format instructions with line breaks and numbering
   const formatInstructions = (instructions) => {
     // Split by newlines or numbered patterns like "1. " or "1) "
-    const steps = instructions.split(/\n|(?:\d+[\.\)]\s*)/g).filter(Boolean);
+    const steps = instructions.split(/\n|(?:\d+[.)\s*])/g).filter(Boolean);
     
     return (
       <ol className="list-decimal list-outside ml-5 space-y-3">
