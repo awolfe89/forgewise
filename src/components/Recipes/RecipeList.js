@@ -7,8 +7,8 @@ const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortField, setSortField] = useState('createdAt');
-  const [sortDirection, setSortDirection] = useState('desc');
+  //const [sortField, setSortField] = useState('createdAt');
+  //const [sortDirection, setSortDirection] = useState('desc');
   const [confirmDelete, setConfirmDelete] = useState(null);
   
   useEffect(() => {
