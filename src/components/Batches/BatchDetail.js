@@ -35,14 +35,14 @@ const BatchDetail = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-xl text-gray-500">Loading batch details...</div>
+        <div className="text-xl text-slate-300">Loading batch details...</div>
       </div>
     );
   }
   
   if (error) {
     return (
-      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+      <div className="bg-red-900/30 border border-red-800 text-red-300 px-4 py-3 rounded mb-4">
         {error}
       </div>
     );
@@ -53,21 +53,21 @@ const BatchDetail = () => {
     const isActive = activeSection === id;
     
     return (
-      <div className="bg-white rounded-lg shadow mb-4 overflow-hidden">
+      <div className="bg-slate-700 rounded-lg shadow-lg mb-4 overflow-hidden border border-slate-600">
         <button 
-          className="w-full border-b px-4 py-3 flex items-center justify-between focus:outline-none"
+          className="w-full border-b border-slate-600 px-4 py-3 flex items-center justify-between focus:outline-none hover:bg-slate-600/50 transition-colors"
           onClick={() => setActiveSection(isActive ? null : id)}
         >
-          <h2 className="text-lg font-semibold text-gray-800 flex items-center">
+          <h2 className="text-lg font-semibold text-teal-300 flex items-center">
             <span className="mr-2">{emoji}</span> {title}
           </h2>
-          <span className="text-gray-500">
+          <span className="text-teal-400 text-lg">
             {isActive ? '−' : '+'}
           </span>
         </button>
         
         {isActive && (
-          <div className="p-4">
+          <div className="p-4 text-slate-200">
             {children}
           </div>
         )}
@@ -78,8 +78,8 @@ const BatchDetail = () => {
   // Field component for consistent rendering of label/value pairs
   const Field = ({ label, value }) => (
     <div className="mb-4">
-      <h3 className="text-sm font-medium text-gray-500">{label}</h3>
-      <p className="mt-1">{value || "—"}</p>
+      <h3 className="text-sm font-medium text-slate-400">{label}</h3>
+      <p className="mt-1 text-slate-200">{value || "—"}</p>
     </div>
   );
 
@@ -87,20 +87,20 @@ const BatchDetail = () => {
   const DataTable = ({ headers, data, renderRow }) => (
     <div className="overflow-x-auto -mx-4 sm:mx-0">
       <div className="inline-block min-w-full align-middle px-4 sm:px-0">
-        <table className="min-w-full divide-y divide-gray-200">
+        <table className="min-w-full divide-y divide-slate-600">
           <thead>
             <tr>
               {headers.map((header, index) => (
                 <th 
                   key={index}
-                  className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  className="px-3 py-2 text-left text-xs font-medium text-slate-400 uppercase tracking-wider"
                 >
                   {header}
                 </th>
               ))}
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="divide-y divide-slate-600">
             {data.map((item, index) => renderRow(item, index))}
           </tbody>
         </table>
@@ -109,21 +109,21 @@ const BatchDetail = () => {
   );
   
   return (
-    <div className="pb-12">
+    <div className="pb-12 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl font-semibold text-teal-300">
           Batch Details: {batch.batchId}
         </h1>
         <div className="flex flex-wrap gap-2">
           <Link 
             to={`/batches/edit/${batch._id}`}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm sm:text-base text-center"
+            className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md transition-colors text-sm sm:text-base text-center"
           >
             Edit Batch
           </Link>
           <Link 
             to="/batches"
-            className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 text-sm sm:text-base text-center"
+            className="bg-slate-700 hover:bg-slate-600 text-teal-300 px-4 py-2 rounded-md transition-colors text-sm sm:text-base text-center"
           >
             Back to List
           </Link>
@@ -159,13 +159,13 @@ const BatchDetail = () => {
       {batch.environmentalLogs && batch.environmentalLogs.length > 0 && (
         <Section title="Environmental Logs" emoji="📊" id="logs">
           {!batch.environmentalLogs || batch.environmentalLogs.length === 0 ? (
-            <p className="text-gray-500">No environmental logs recorded yet.</p>
+            <p className="text-slate-400">No environmental logs recorded yet.</p>
           ) : (
             <DataTable 
               headers={["Date", "Time", "Humidity", "Temp", "Notes"]}
               data={batch.environmentalLogs}
               renderRow={(log, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                <tr key={index} className={index % 2 === 0 ? "bg-slate-800" : "bg-slate-700"}>
                   <td className="px-3 py-2 whitespace-nowrap text-sm">
                     {log.date ? new Date(log.date).toLocaleDateString() : ""}
                   </td>
@@ -207,13 +207,13 @@ const BatchDetail = () => {
       {/* Fruiting Phase Tracking */}
       <Section title="Fruiting Phase Tracking" emoji="📈" id="fruiting">
         {!batch.fruitingPhases || batch.fruitingPhases.length === 0 ? (
-          <p className="text-gray-500">No fruiting phases recorded yet.</p>
+          <p className="text-slate-400">No fruiting phases recorded yet.</p>
         ) : (
           <DataTable 
             headers={["Date", "Action", "Notes"]}
             data={batch.fruitingPhases}
             renderRow={(phase, index) => (
-              <tr key={index}>
+              <tr key={index} className={index % 2 === 0 ? "bg-slate-800" : "bg-slate-700"}>
                 <td className="px-3 py-2 whitespace-nowrap text-sm">
                   {phase.date ? new Date(phase.date).toLocaleDateString() : ""}
                 </td>
@@ -232,7 +232,7 @@ const BatchDetail = () => {
       {/* Harvest Details */}
       <Section title="Harvest Details" emoji="📦" id="harvest">
         {!batch.harvestDetails || !batch.harvestDetails.totalWeight ? (
-          <p className="text-gray-500">No harvest data recorded yet.</p>
+          <p className="text-slate-400">No harvest data recorded yet.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Total Weight Harvested" value={batch.harvestDetails.totalWeight} />
@@ -249,7 +249,7 @@ const BatchDetail = () => {
       {/* Final Summary */}
       <Section title="Final Summary" emoji="📊" id="summary">
         {!batch.totalCycleTime ? (
-          <p className="text-gray-500">No final summary data recorded yet.</p>
+          <p className="text-slate-400">No final summary data recorded yet.</p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Field label="Total Cycle Time" value={batch.totalCycleTime} />
@@ -264,7 +264,7 @@ const BatchDetail = () => {
       {/* Lessons Learned */}
       <Section title="Lessons Learned / Adjustments for Next Time" emoji="📋" id="lessons">
         {!batch.lessonsLearned ? (
-          <p className="text-gray-500">No lessons or adjustments recorded yet.</p>
+          <p className="text-slate-400">No lessons or adjustments recorded yet.</p>
         ) : (
           <p className="text-sm">{batch.lessonsLearned}</p>
         )}

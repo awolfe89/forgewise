@@ -1,4 +1,4 @@
-
+// components/UI/Navbar.js
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
@@ -18,21 +18,26 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="bg-indigo-600 text-white shadow-md">
+    <nav className="bg-slate-900 text-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-3">
-          {/* Logo */}
-          <Link to="/" className="text-xl font-bold">
-            Mushroom Tracker
+          {/* Logo and Brand */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/images/forgewise_logo.jpg" 
+              alt="ForgeWise Logo" 
+              className="h-10 w-10 rounded-full mr-3"
+            />
+            <span className="text-xl font-bold text-teal-300">ForgeWise</span>
           </Link>
           
           {/* Mobile menu button */}
           <button 
-            className="md:hidden bg-indigo-700 p-2 rounded"
+            className="md:hidden bg-slate-800 p-2 rounded-md"
             onClick={toggleMenu}
           >
             <svg 
-              className="w-6 h-6" 
+              className="w-6 h-6 text-teal-300" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24" 
@@ -48,16 +53,16 @@ const Navbar = () => {
           
           {/* Desktop navigation */}
           <div className="hidden md:flex md:items-center md:ml-10 md:space-x-6">
-            <Link to="/" className="hover:text-indigo-200">
+            <Link to="/" className="text-teal-100 hover:text-teal-300 transition-colors">
               Dashboard
             </Link>
-            <Link to="/batches" className="hover:text-indigo-200">
+            <Link to="/batches" className="text-teal-100 hover:text-teal-300 transition-colors">
               Batches
             </Link>
-            <Link to="/batches/new" className="hover:text-indigo-200">
+            <Link to="/batches/new" className="text-teal-100 hover:text-teal-300 transition-colors">
               New Batch
             </Link>
-            <Link to="/recipes" className="hover:text-indigo-200">
+            <Link to="/recipes" className="text-teal-100 hover:text-teal-300 transition-colors">
               Recipes
             </Link>
           </div>
@@ -65,11 +70,11 @@ const Navbar = () => {
           {/* Desktop logout */}
           <div className="hidden md:flex md:items-center">
             {user && (
-              <span className="mr-4">Welcome, {user.username}</span>
+              <span className="mr-4 text-slate-300">Welcome, {user.username}</span>
             )}
             <button
               onClick={handleLogout}
-              className="bg-indigo-700 hover:bg-indigo-800 px-3 py-1 rounded"
+              className="bg-slate-800 hover:bg-slate-700 text-teal-300 px-3 py-1 rounded-md transition-colors"
             >
               Logout
             </button>
@@ -78,42 +83,42 @@ const Navbar = () => {
         
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden pb-3 border-t border-indigo-500 mt-2">
+          <div className="md:hidden pb-3 border-t border-slate-700 mt-2">
             <Link 
               to="/" 
-              className="block py-2 hover:bg-indigo-700 rounded px-2"
+              className="block py-2 text-teal-100 hover:bg-slate-800 rounded px-2"
               onClick={() => setMenuOpen(false)}
             >
               Dashboard
             </Link>
             <Link 
               to="/batches" 
-              className="block py-2 hover:bg-indigo-700 rounded px-2"
+              className="block py-2 text-teal-100 hover:bg-slate-800 rounded px-2"
               onClick={() => setMenuOpen(false)}
             >
               Batches
             </Link>
             <Link 
               to="/batches/new" 
-              className="block py-2 hover:bg-indigo-700 rounded px-2"
+              className="block py-2 text-teal-100 hover:bg-slate-800 rounded px-2"
               onClick={() => setMenuOpen(false)}
             >
               New Batch
             </Link>
             <Link 
               to="/recipes" 
-              className="block py-2 hover:bg-indigo-700 rounded px-2"
+              className="block py-2 text-teal-100 hover:bg-slate-800 rounded px-2"
               onClick={() => setMenuOpen(false)}
             >
               Recipes
             </Link>
-            <div className="pt-2 mt-2 border-t border-indigo-500 flex justify-between items-center">
+            <div className="pt-2 mt-2 border-t border-slate-700 flex justify-between items-center">
               {user && (
-                <span>Welcome, {user.username}</span>
+                <span className="text-slate-300">Welcome, {user.username}</span>
               )}
               <button
                 onClick={handleLogout}
-                className="bg-indigo-700 hover:bg-indigo-800 px-3 py-1 rounded"
+                className="bg-slate-800 hover:bg-slate-700 text-teal-300 px-3 py-1 rounded-md"
               >
                 Logout
               </button>

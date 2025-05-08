@@ -1,4 +1,4 @@
-
+/* index.css */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
@@ -10,9 +10,59 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0f172a; /* slate-900 */
+  color: #e2e8f0; /* slate-200 */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Custom ForgeWise theme styles */
+.btn-primary {
+  @apply bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-slate-700 hover:bg-slate-600 text-teal-300 px-4 py-2 rounded-md transition-colors;
+}
+
+.card {
+  @apply bg-slate-700 rounded-lg shadow-lg border border-slate-600 p-4;
+}
+
+.card-title {
+  @apply text-teal-300 font-semibold text-lg mb-2;
+}
+
+.card-content {
+  @apply text-slate-300;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 bg-slate-700 border border-slate-600 rounded focus:outline-none focus:border-teal-400 text-white;
+}
+
+.form-label {
+  @apply block text-teal-100 mb-1 font-medium;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
 }

@@ -1,5 +1,5 @@
 {
-  "name": "mushroom-cultivation-tracker",
+  "name": "forgewise",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -21,9 +21,18 @@
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.31",
+    "sharp": "^0.33.0",
+    "tailwindcss": "^3.3.5",
+    "to-ico": "^1.1.5"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run generate-favicons && react-scripts build",
+    "generate-favicons": "node scripts/generate-favicons.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server.js",
@@ -46,12 +55,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "concurrently": "^8.2.2",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
   },
   "proxy": "http://localhost:5000"
 }
