@@ -9,6 +9,7 @@ const RecipeList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortField, setSortField] = useState('createdAt');
   const [sortDirection, setSortDirection] = useState('desc');
+  const [confirmDelete, setConfirmDelete] = useState(null);
   
   useEffect(() => {
     const loadRecipes = async () => {
@@ -26,13 +27,19 @@ const RecipeList = () => {
   }, []);
   
   const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this recipe?')) {
-      try {
-        await deleteRecipe(id);
-        setRecipes(recipes.filter(recipe => recipe._id !== id));
-      } catch (error) {
-        console.error("Error deleting recipe:", error);
-      }
+    // First click sets the recipe ID for confirmation
+    if (confirmDelete !== id) {
+      setConfirmDelete(id);
+      return;
+    }
+    
+    // Second click confirms deletion
+    try {
+      await deleteRecipe(id);
+      setRecipes(recipes.filter(recipe => recipe._id !== id));
+      setConfirmDelete(null);
+    } catch (error) {
+      console.error("Error deleting recipe:", error);
     }
   };
   
@@ -72,11 +79,11 @@ const RecipeList = () => {
   
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
         <h1 className="text-2xl font-semibold">Mushroom Recipes</h1>
         <Link 
           to="/recipes/new"
-          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 text-center"
         >
           Add New Recipe
         </Link>
@@ -107,14 +114,14 @@ const RecipeList = () => {
           <p className="text-gray-500">No recipes match your search criteria.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {sortedRecipes.map((recipe) => (
             <div key={recipe._id} className="bg-white rounded-lg shadow overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2 text-indigo-700">
+              <div className="p-4 sm:p-6">
+                <h2 className="text-lg sm:text-xl font-semibold mb-2 text-indigo-700">
                   {recipe.title}
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4 text-sm sm:text-base line-clamp-2">
                   {recipe.description}
                 </p>
                 <div className="flex justify-between mt-4">
@@ -124,18 +131,18 @@ const RecipeList = () => {
                   >
                     View Recipe
                   </Link>
-                  <div>
+                  <div className="flex gap-2">
                     <Link 
                       to={`/recipes/edit/${recipe._id}`}
-                      className="text-blue-600 hover:text-blue-900 mr-3"
+                      className="text-blue-600 hover:text-blue-900"
                     >
                       Edit
                     </Link>
                     <button
                       onClick={() => handleDelete(recipe._id)}
-                      className="text-red-600 hover:text-red-900"
+                      className={`${confirmDelete === recipe._id ? 'text-red-800 font-bold' : 'text-red-600 hover:text-red-900'}`}
                     >
-                      Delete
+                      {confirmDelete === recipe._id ? 'Confirm?' : 'Delete'}
                     </button>
                   </div>
                 </div>

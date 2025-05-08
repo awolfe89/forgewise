@@ -1,4 +1,3 @@
-// components/Batches/BatchList.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchBatches, deleteBatch } from '../../services/batchService';
@@ -9,6 +8,7 @@ const BatchList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortField, setSortField] = useState('startDate');
   const [sortDirection, setSortDirection] = useState('desc');
+  const [confirmDelete, setConfirmDelete] = useState(null);
   
   useEffect(() => {
     const loadBatches = async () => {
@@ -26,13 +26,19 @@ const BatchList = () => {
   }, []);
   
   const handleDelete = async (id) => {
-    if (window.confirm('Are you sure you want to delete this batch?')) {
-      try {
-        await deleteBatch(id);
-        setBatches(batches.filter(batch => batch._id !== id));
-      } catch (error) {
-        console.error("Error deleting batch:", error);
-      }
+    // First click sets the batch ID for confirmation
+    if (confirmDelete !== id) {
+      setConfirmDelete(id);
+      return;
+    }
+    
+    // Second click confirms deletion
+    try {
+      await deleteBatch(id);
+      setBatches(batches.filter(batch => batch._id !== id));
+      setConfirmDelete(null);
+    } catch (error) {
+      console.error("Error deleting batch:", error);
     }
   };
   
@@ -85,11 +91,11 @@ const BatchList = () => {
   
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 gap-4">
         <h1 className="text-2xl font-semibold">Manage Cultivation Batches</h1>
         <Link 
           to="/batches/new"
-          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 text-center"
         >
           New Batch
         </Link>
@@ -110,7 +116,7 @@ const BatchList = () => {
         </div>
       </div>
       
-      {/* Batches Table */}
+      {/* Batches Table/Cards */}
       <div className="bg-white rounded-lg shadow overflow-hidden">
         {batches.length === 0 ? (
           <div className="p-6 text-center text-gray-500">
@@ -121,71 +127,129 @@ const BatchList = () => {
             No batches match your search criteria.
           </div>
         ) : (
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th 
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                    onClick={() => handleSort('batchId')}
-                  >
-                    Batch ID
-                    {sortField === 'batchId' && (
-                      <span className="ml-1">
-                        {sortDirection === 'asc' ? '↑' : '↓'}
-                      </span>
-                    )}
-                  </th>
-                  <th 
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                    onClick={() => handleSort('speciesStrain')}
-                  >
-                    Species/Strain
-                    {sortField === 'speciesStrain' && (
-                      <span className="ml-1">
-                        {sortDirection === 'asc' ? '↑' : '↓'}
-                      </span>
-                    )}
-                  </th>
-                  <th 
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-                    onClick={() => handleSort('startDate')}
-                  >
-                    Start Date
-                    {sortField === 'startDate' && (
-                      <span className="ml-1">
-                        {sortDirection === 'asc' ? '↑' : '↓'}
-                      </span>
-                    )}
-                  </th>
-                  <th 
-                    className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                  >
-                    Status
-                  </th>
-                  <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {sortedBatches.map((batch) => (
-                  <tr key={batch._id} className="hover:bg-gray-50">
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      <Link 
-                        to={`/batches/${batch._id}`}
-                        className="text-indigo-600 hover:text-indigo-900"
-                      >
-                        {batch.batchId}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
-                      {batch.speciesStrain}
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
+          <div>
+            {/* Desktop View: Table */}
+            <div className="hidden md:block">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th 
+                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                      onClick={() => handleSort('batchId')}
+                    >
+                      Batch ID
+                      {sortField === 'batchId' && (
+                        <span className="ml-1">
+                          {sortDirection === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </th>
+                    <th 
+                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                      onClick={() => handleSort('speciesStrain')}
+                    >
+                      Species/Strain
+                      {sortField === 'speciesStrain' && (
+                        <span className="ml-1">
+                          {sortDirection === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </th>
+                    <th 
+                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
+                      onClick={() => handleSort('startDate')}
+                    >
+                      Start Date
+                      {sortField === 'startDate' && (
+                        <span className="ml-1">
+                          {sortDirection === 'asc' ? '↑' : '↓'}
+                        </span>
+                      )}
+                    </th>
+                    <th 
+                      className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                    >
+                      Status
+                    </th>
+                    <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {sortedBatches.map((batch) => (
+                    <tr key={batch._id} className="hover:bg-gray-50">
+                      <td className="px-4 py-4 whitespace-nowrap">
+                        <Link 
+                          to={`/batches/${batch._id}`}
+                          className="text-indigo-600 hover:text-indigo-900"
+                        >
+                          {batch.batchId}
+                        </Link>
+                      </td>
+                      <td className="px-4 py-4 whitespace-nowrap">
+                        {batch.speciesStrain}
+                      </td>
+                      <td className="px-4 py-4 whitespace-nowrap">
+                        {new Date(batch.startDate).toLocaleDateString()}
+                      </td>
+                      <td className="px-4 py-4 whitespace-nowrap">
+                        {batch.harvestDetails?.totalWeight ? (
+                          <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
+                            Completed
+                          </span>
+                        ) : (
+                          <span className="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">
+                            Active
+                          </span>
+                        )}
+                      </td>
+                      <td className="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <Link 
+                          to={`/batches/${batch._id}`}
+                          className="text-indigo-600 hover:text-indigo-900 mr-3"
+                        >
+                          View
+                        </Link>
+                        <Link 
+                          to={`/batches/edit/${batch._id}`}
+                          className="text-blue-600 hover:text-blue-900 mr-3"
+                        >
+                          Edit
+                        </Link>
+                        <button
+                          onClick={() => handleDelete(batch._id)}
+                          className={`${confirmDelete === batch._id ? 'text-red-800 font-bold' : 'text-red-600 hover:text-red-900'}`}
+                        >
+                          {confirmDelete === batch._id ? 'Confirm?' : 'Delete'}
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            {/* Mobile View: Cards */}
+            <div className="md:hidden divide-y divide-gray-200">
+              {sortedBatches.map((batch) => (
+                <div key={batch._id} className="px-4 py-3 hover:bg-gray-50">
+                  <div className="flex justify-between">
+                    <Link 
+                      to={`/batches/${batch._id}`}
+                      className="text-indigo-600 hover:text-indigo-900 font-medium"
+                    >
+                      {batch.batchId}
+                    </Link>
+                    <span className="text-gray-500 text-sm">
                       {new Date(batch.startDate).toLocaleDateString()}
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap">
+                    </span>
+                  </div>
+                  <div className="text-sm mt-1 text-gray-700 truncate">
+                    {batch.speciesStrain}
+                  </div>
+                  <div className="flex justify-between items-center mt-2">
+                    <div>
                       {batch.harvestDetails?.totalWeight ? (
                         <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
                           Completed
@@ -195,31 +259,25 @@ const BatchList = () => {
                           Active
                         </span>
                       )}
-                    </td>
-                    <td className="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <Link 
-                        to={`/batches/${batch._id}`}
-                        className="text-indigo-600 hover:text-indigo-900 mr-3"
-                      >
-                        View
-                      </Link>
+                    </div>
+                    <div className="flex gap-2 text-sm">
                       <Link 
                         to={`/batches/edit/${batch._id}`}
-                        className="text-blue-600 hover:text-blue-900 mr-3"
+                        className="text-blue-600 hover:text-blue-900"
                       >
                         Edit
                       </Link>
                       <button
                         onClick={() => handleDelete(batch._id)}
-                        className="text-red-600 hover:text-red-900"
+                        className={`${confirmDelete === batch._id ? 'text-red-800 font-bold' : 'text-red-600 hover:text-red-900'}`}
                       >
-                        Delete
+                        {confirmDelete === batch._id ? 'Confirm?' : 'Delete'}
                       </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
