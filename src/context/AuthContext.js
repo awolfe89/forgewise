@@ -1,5 +1,6 @@
 // src/context/AuthContext.js
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import { login as apiLogin } from '../services/authService'; 
 
 const AuthContext = createContext();
 
@@ -23,24 +24,27 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  // Login function - in a real app, this would call an API
-  const login = (username, password) => {
-    // For demo purposes, hardcoded credentials
-    if (username === 'admin' && password === 'mushrooms123') {
-      const user = { username: 'admin', role: 'admin' };
-      const fakeToken = 'fake-jwt-token';
-      
-      // Store in localStorage
-      localStorage.setItem('token', fakeToken);
-      localStorage.setItem('user', JSON.stringify(user));
-      
-      setIsAuthenticated(true);
-      setUser(user);
-      
-      return true;
-    }
+  // Login function - let's use apiLogin from authService
+  const login = async (username, password) => {
+    console.log(`Attempting to log in with username: ${username}`);
     
-    return false;
+    try {
+      // Use the imported apiLogin function
+      const result = await apiLogin(username, password);
+      
+      if (result.success) {
+        console.log('Login successful:', result.data);
+        setIsAuthenticated(true);
+        setUser(result.data);
+        return true;
+      } else {
+        console.error('Login failed:', result.message);
+        return false;
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
+    }
   };
 
   // Logout function

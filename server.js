@@ -12,9 +12,19 @@ dotenv.config();
 // Initialize Express
 const app = express();
 
-// Middleware
-app.use(cors());
+// Configure CORS properly
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+
+// Set a consistent JWT secret
+const JWT_SECRET = process.env.JWT_SECRET || 'forgewise-secret-key-for-jwt-tokens';
+console.log('Node.js version:', process.version);
+console.log('Using JWT secret (first 3 chars):', JWT_SECRET.substring(0, 3) + '***');
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mushroom-tracker')
@@ -31,49 +41,75 @@ const authRoutes = require('./routes/auth');
 const batchRoutes = require('./routes/batches');
 const recipeRoutes = require('./routes/recipes');
 
-// Authentication middleware
+// Authentication middleware with detailed debugging
 const authenticateToken = (req, res, next) => {
+  console.log('Authenticating request to:', req.originalUrl);
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+  console.log('Auth header present:', !!authHeader);
   
-  if (token == null) return res.status(401).json({ message: 'Unauthorized' });
+  if (!authHeader) {
+    console.log('No auth header');
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
   
-  jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
-    if (err) return res.status(403).json({ message: 'Forbidden' });
+  // Check for Bearer prefix
+  if (!authHeader.startsWith('Bearer ')) {
+    console.log('Auth header missing Bearer prefix');
+    return res.status(401).json({ message: 'Unauthorized - Malformed authorization header' });
+  }
+  
+  const token = authHeader.split(' ')[1];
+  console.log('Token extracted:', token ? token.substring(0, 10) + '...' : 'none');
+  
+  if (!token) {
+    console.log('No token extracted');
+    return res.status(401).json({ message: 'Unauthorized' });
+  }
+  
+  try {
+    const user = jwt.verify(token, JWT_SECRET);
+    console.log('Token verified successfully for user:', user.username);
     req.user = user;
     next();
-  });
+  } catch (err) {
+    console.error('Token verification error:', err);
+    return res.status(403).json({ message: 'Forbidden' });
+  }
 };
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/batches', authenticateToken, batchRoutes);
-app.use('/api/recipes', authenticateToken, recipeRoutes);
+// Health check route
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ 
+    status: 'OK', 
+    message: 'Server is running',
+    nodeVersion: process.version,
+    jwtVersion: require('jsonwebtoken/package.json').version
+  });
+});
 
-// Auth route for hardcoded credentials (for demo purposes)
+// Direct login route (place BEFORE routes registration)
 app.post('/api/auth/login', async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log('Login attempt:', { username, passwordLength: password?.length });
     
     // For demo purposes, hardcoded credentials
     if (username === 'admin' && password === 'mushrooms123') {
+      console.log('Credentials match, generating JWT token');
+      
       // Generate JWT token
-      const token = jwt.sign(
-        { id: 'admin-id', username: 'admin', role: 'admin' },
-        process.env.JWT_SECRET || 'your-secret-key',
-        { expiresIn: '1d' }
-      );
+      const payload = { id: 'admin-id', username: 'admin', role: 'admin' };
+      const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1d' });
+      
+      console.log('Token generated successfully:', token.substring(0, 10) + '...');
       
       return res.json({
         token,
-        user: {
-          id: 'admin-id',
-          username: 'admin',
-          role: 'admin'
-        }
+        user: payload
       });
     }
     
+    console.log('Invalid credentials');
     res.status(400).json({ message: 'Invalid credentials' });
   } catch (error) {
     console.error('Login error:', error);
@@ -81,10 +117,10 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-// Health check route
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Server is running' });
-});
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/batches', authenticateToken, batchRoutes);
+app.use('/api/recipes', authenticateToken, recipeRoutes);
 
 // Serve static files in production
 if (process.env.NODE_ENV === 'production') {
@@ -96,5 +132,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

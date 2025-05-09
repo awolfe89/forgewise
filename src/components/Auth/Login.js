@@ -15,20 +15,25 @@ const Login = () => {
     return <Navigate to="/" />;
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!username || !password) {
       setError('Please enter both username and password');
       return;
     }
-    
-    const success = login(username, password);
-    
-    if (success) {
-      navigate('/');
-    } else {
-      setError('Invalid credentials. Try admin/mushrooms123');
+
+    try {
+      const success = await login(username, password);
+
+      if (success) {
+        navigate('/');
+      } else {
+        setError('Invalid credentials. Try admin/mushrooms123');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Login failed. Please try again.');
     }
   };
 

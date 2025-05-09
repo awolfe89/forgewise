@@ -97,7 +97,10 @@ const BatchSchema = new mongoose.Schema({
   },
   
   // Environmental logs - NEW
-  environmentalLogs: [EnvironmentalLogSchema],
+  environmentalLogs: {
+    type: [EnvironmentalLogSchema],
+    default: undefined  // This makes it truly optional
+  },
   
   // Inoculation details
   inoculationDate: {
@@ -114,7 +117,10 @@ const BatchSchema = new mongoose.Schema({
   },
   
   // Fruiting phase tracking
-  fruitingPhases: [FruitingPhaseSchema],
+  fruitingPhases: {
+    type: [FruitingPhaseSchema],
+    default: undefined  // This makes it truly optional
+  },
   
   // Harvest details
   harvestDetails: {

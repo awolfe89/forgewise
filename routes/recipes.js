@@ -2,9 +2,11 @@
 const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/Recipe');
+console.log('Recipe routes loaded');
 
 // Get all recipes for current user
 router.get('/', async (req, res) => {
+  console.log('GET /api/recipes request received');
   try {
     const recipes = await Recipe.find({ userId: req.user.id })
       .sort({ createdAt: -1 });
@@ -14,6 +16,10 @@ router.get('/', async (req, res) => {
     console.error('Get recipes error:', error);
     res.status(500).json({ message: 'Server error' });
   }
+});
+
+router.get('/health', (req, res) => {
+  res.status(200).json({ status: 'OK', message: 'Recipe routes are working' });
 });
 
 // Get a specific recipe

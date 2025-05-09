@@ -19,6 +19,28 @@ code {
     monospace;
 }
 
+.batch-tab {
+  background-color: #2D3748; /* Dark background matching your theme */
+  color: #A0AEC0; /* Light gray text for non-selected tabs */
+}
+
+.batch-tab.active, 
+.batch-tab.selected {
+  background-color: #1F2937; /* Slightly darker background for active tab */
+  color: #4FD1C5; /* Turquoise/teal text color matching your theme */
+}
+
+/* Hover state */
+.batch-tab:hover:not(.active):not(.selected) {
+  background-color: #2A3749;
+  color: #4FD1C5; /* Show teal on hover for better interaction */
+}
+
+/* Icon styling to match text */
+.batch-tab .icon {
+  color: inherit; /* Make icons match the text color */
+}
+
 /* Custom ForgeWise theme styles */
 .btn-primary {
   @apply bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-md transition-colors;

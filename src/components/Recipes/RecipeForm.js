@@ -141,7 +141,7 @@ const RecipeForm = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <div className="text-xl text-gray-500">Loading recipe data...</div>
+        <div className="text-xl text-teal-400">Loading recipe data...</div>
       </div>
     );
   }
@@ -149,45 +149,45 @@ const RecipeForm = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl font-semibold text-teal-400">
           {isEditMode ? `Edit Recipe: ${formData.title}` : 'Create New Recipe'}
         </h1>
         <Link 
           to="/recipes"
-          className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+          className="bg-gray-700 text-teal-400 px-4 py-2 rounded hover:bg-gray-600"
         >
           Cancel
         </Link>
       </div>
       
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <div className="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded mb-4">
           {error}
         </div>
       )}
       
       <form onSubmit={handleSubmit}>
-        <div className="bg-white rounded-lg shadow overflow-hidden mb-6">
+        <div className="bg-gray-800 rounded-lg shadow overflow-hidden mb-6 border border-gray-700">
           {/* Tab Navigation */}
-          <div className="bg-gray-50 p-4 border-b">
+          <div className="bg-gray-900 p-4 border-b border-gray-700">
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeTab === 'basic' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeTab === 'basic' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveTab('basic')}
               >
                 Basic Info
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeTab === 'ingredients' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeTab === 'ingredients' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveTab('ingredients')}
               >
                 Ingredients
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeTab === 'instructions' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeTab === 'instructions' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveTab('instructions')}
               >
                 Instructions
@@ -199,7 +199,7 @@ const RecipeForm = () => {
             {/* Basic Info Tab */}
             <div className={activeTab === 'basic' ? 'block' : 'hidden'}>
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Recipe Title*
                 </label>
                 <input
@@ -207,14 +207,14 @@ const RecipeForm = () => {
                   name="title"
                   value={formData.title}
                   onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="e.g., Garlic Butter Oyster Mushrooms"
                   required
                 />
               </div>
               
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Short Description*
                 </label>
                 <input
@@ -222,7 +222,7 @@ const RecipeForm = () => {
                   name="description"
                   value={formData.description}
                   onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="Brief description of the recipe"
                   required
                 />
@@ -233,25 +233,25 @@ const RecipeForm = () => {
             <div className={activeTab === 'ingredients' ? 'block' : 'hidden'}>
               <div className="mb-4">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-lg font-medium">Recipe Ingredients</h3>
+                  <h3 className="text-lg font-medium text-teal-400">Recipe Ingredients</h3>
                   <button
                     type="button"
                     onClick={addIngredient}
-                    className="bg-indigo-50 text-indigo-600 px-3 py-1 rounded hover:bg-indigo-100"
+                    className="bg-teal-900 text-teal-200 px-3 py-1 rounded hover:bg-teal-800"
                   >
                     + Add Ingredient
                   </button>
                 </div>
                 
                 {formData.ingredients.map((ingredient, index) => (
-                  <div key={index} className="mb-4 p-4 border border-gray-200 rounded bg-gray-50">
+                  <div key={index} className="mb-4 p-4 border border-gray-600 rounded bg-gray-700">
                     <div className="flex justify-between items-center mb-2">
-                      <h4 className="font-medium">Ingredient #{index + 1}</h4>
+                      <h4 className="font-medium text-teal-300">Ingredient #{index + 1}</h4>
                       {formData.ingredients.length > 1 && (
                         <button
                           type="button"
                           onClick={() => removeIngredient(index)}
-                          className="text-red-500 hover:text-red-700"
+                          className="text-red-400 hover:text-red-300"
                         >
                           Remove
                         </button>
@@ -260,53 +260,53 @@ const RecipeForm = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-teal-400 mb-1">
                           Quantity*
                         </label>
                         <input
                           type="text"
                           value={ingredient.quantity}
                           onChange={(e) => handleIngredientChange(index, 'quantity', e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded"
+                          className="w-full p-2 bg-gray-600 border border-gray-500 rounded text-gray-200"
                           placeholder="e.g., 2, 1/2"
                         />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-teal-400 mb-1">
                           Unit
                         </label>
                         <input
                           type="text"
                           value={ingredient.unit}
                           onChange={(e) => handleIngredientChange(index, 'unit', e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded"
+                          className="w-full p-2 bg-gray-600 border border-gray-500 rounded text-gray-200"
                           placeholder="e.g., cups, tbsp, lbs"
                         />
                       </div>
                       
                       <div className="md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-teal-400 mb-1">
                           Ingredient Name*
                         </label>
                         <input
                           type="text"
                           value={ingredient.name}
                           onChange={(e) => handleIngredientChange(index, 'name', e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded"
+                          className="w-full p-2 bg-gray-600 border border-gray-500 rounded text-gray-200"
                           placeholder="e.g., fresh oyster mushrooms"
                         />
                       </div>
                       
                       <div className="md:col-span-4">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-sm font-medium text-teal-400 mb-1">
                           Notes (optional)
                         </label>
                         <input
                           type="text"
                           value={ingredient.notes}
                           onChange={(e) => handleIngredientChange(index, 'notes', e.target.value)}
-                          className="w-full p-2 border border-gray-300 rounded"
+                          className="w-full p-2 bg-gray-600 border border-gray-500 rounded text-gray-200"
                           placeholder="e.g., sliced, cleaned, or substitute with..."
                         />
                       </div>
@@ -319,14 +319,14 @@ const RecipeForm = () => {
             {/* Instructions Tab */}
             <div className={activeTab === 'instructions' ? 'block' : 'hidden'}>
               <div className="mb-4">
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Instructions/Steps*
                 </label>
                 <textarea
                   name="instructions"
                   value={formData.instructions}
                   onChange={handleChange}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="Enter step-by-step instructions (one step per line). For example:
 1. Clean and tear mushrooms into strips
 2. Heat oil in a pan over medium heat
@@ -334,17 +334,17 @@ const RecipeForm = () => {
                   rows="12"
                   required
                 ></textarea>
-                <p className="mt-1 text-sm text-gray-500">
+                <p className="mt-1 text-sm text-gray-400">
                   Enter each step on a new line, preferably numbered. Be specific with techniques.
                 </p>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-50 px-6 py-3 flex justify-end">
+          <div className="bg-gray-900 px-6 py-3 flex justify-end border-t border-gray-700">
             <button
               type="submit"
-              className="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700"
+              className="bg-teal-600 text-gray-200 px-6 py-2 rounded hover:bg-teal-700"
             >
               {isEditMode ? 'Update Recipe' : 'Create Recipe'}
             </button>

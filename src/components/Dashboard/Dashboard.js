@@ -1,7 +1,7 @@
 // components/Dashboard/Dashboard.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchBatches } from '../../services/batchService';
+import { fetchBatches } from '../../services/batchService.js';
 import { fetchRecipes } from '../../services/recipeService';
 
 const Dashboard = () => {

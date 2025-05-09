@@ -3,19 +3,17 @@ import api from './api';
 // Get all batches
 export const fetchBatches = async () => {
   try {
-    // Try localStorage first (for demo purposes)
-    if (localStorage.getItem('batches')) {
-      return JSON.parse(localStorage.getItem('batches'));
-    }
+    console.log('Fetching batches from server...');
     
-    // If no localStorage data, try the API
-    const response = await api.get('/batches');
+    // Add a cache-busting parameter
+    const response = await api.get(`/batches?t=${Date.now()}`);
+    
+    console.log('Batches fetched successfully:', response.data.length);
     return response.data;
   } catch (error) {
-    console.error("API Error:", error);
-    // Fallback to localStorage mock data for demo
-    initializeData();
-    return JSON.parse(localStorage.getItem('batches') || '[]');
+    console.error("API Error in fetchBatches:", error.response?.data || error.message);
+    // Initialize with empty array if there's an error
+    return [];
   }
 };
 

@@ -211,33 +211,52 @@ const BatchForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Clone the form data
+    const batchToSubmit = { ...formData };
+    
+    // Filter out empty environmental logs
+    if (batchToSubmit.environmentalLogs) {
+      batchToSubmit.environmentalLogs = batchToSubmit.environmentalLogs.filter(
+        log => log.date && log.date.trim() !== ''
+      );
+      
+      // If all are empty, remove the field
+      if (batchToSubmit.environmentalLogs.length === 0) {
+        delete batchToSubmit.environmentalLogs;
+      }
+    }
+    
+    // Filter out empty fruiting phases
+    if (batchToSubmit.fruitingPhases) {
+      batchToSubmit.fruitingPhases = batchToSubmit.fruitingPhases.filter(
+        phase => phase.date && phase.date.trim() !== '' && phase.action && phase.action.trim() !== ''
+      );
+      
+      // If all are empty, remove the field
+      if (batchToSubmit.fruitingPhases.length === 0) {
+        delete batchToSubmit.fruitingPhases;
+      }
+    }
+    
     try {
       if (isEditMode) {
-        await updateBatch(id, formData);
+        await updateBatch(id, batchToSubmit);
       } else {
-        await createBatch(formData);
+        await createBatch(batchToSubmit);
       }
       
       navigate('/batches');
     } catch (error) {
       console.error("Error saving batch:", error);
-      setError('Failed to save batch data');
+      setError('Failed to save batch data: ' + error.message);
     }
   };
-  
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="text-xl text-gray-500">Loading batch data...</div>
-      </div>
-    );
-  }
   
   const renderBasicInfoSection = () => (
     <div className={`${activeSection === 'basic' ? 'block' : 'hidden'}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Batch ID*
           </label>
           <input
@@ -245,14 +264,14 @@ const BatchForm = () => {
             name="batchId"
             value={formData.batchId}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., Oyster-01"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Start Date*
           </label>
           <input
@@ -260,13 +279,13 @@ const BatchForm = () => {
             name="startDate"
             value={formData.startDate}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Species/Strain*
           </label>
           <input
@@ -274,14 +293,14 @@ const BatchForm = () => {
             name="speciesStrain"
             value={formData.speciesStrain}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., Pleurotus ostreatus — Blue Oyster"
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Spawn Source
           </label>
           <input
@@ -289,13 +308,13 @@ const BatchForm = () => {
             name="spawnSource"
             value={formData.spawnSource}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Supplier + Lot # if available"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Substrate Type
           </label>
           <input
@@ -303,13 +322,13 @@ const BatchForm = () => {
             name="substrateType"
             value={formData.substrateType}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., straw, sawdust, supplemented hardwood"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Substrate Prep Method
           </label>
           <input
@@ -317,13 +336,13 @@ const BatchForm = () => {
             name="substratePrep"
             value={formData.substratePrep}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Pasteurized, sterilized, hydrated with supplements, etc."
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Container Type
           </label>
           <input
@@ -331,7 +350,7 @@ const BatchForm = () => {
             name="containerType"
             value={formData.containerType}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Bag, Bucket, Tray"
           />
         </div>
@@ -343,7 +362,7 @@ const BatchForm = () => {
     <div className={`${activeSection === 'environmental' ? 'block' : 'hidden'}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Growing Environment
           </label>
           <input
@@ -351,13 +370,13 @@ const BatchForm = () => {
             name="growingEnvironment"
             value={formData.growingEnvironment}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Indoor tent, grow room, outdoor shadehouse"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Temperature Range
           </label>
           <input
@@ -365,13 +384,13 @@ const BatchForm = () => {
             name="temperatureRange"
             value={formData.temperatureRange}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Day/Night °F/°C"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Humidity Range
           </label>
           <input
@@ -379,13 +398,13 @@ const BatchForm = () => {
             name="humidityRange"
             value={formData.humidityRange}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="%"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Light Schedule
           </label>
           <input
@@ -393,13 +412,13 @@ const BatchForm = () => {
             name="lightSchedule"
             value={formData.lightSchedule}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Hours/day"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             CO₂ Management
           </label>
           <input
@@ -407,20 +426,20 @@ const BatchForm = () => {
             name="co2Management"
             value={formData.co2Management}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Open room, passive airflow, active exhaust"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Notes
           </label>
           <textarea
             name="environmentalNotes"
             value={formData.environmentalNotes}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., sudden temp spikes, mold outbreak nearby"
             rows="3"
           ></textarea>
@@ -433,7 +452,7 @@ const BatchForm = () => {
     <div className={`${activeSection === 'inoculation' ? 'block' : 'hidden'}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Date Inoculated
           </label>
           <input
@@ -441,12 +460,12 @@ const BatchForm = () => {
             name="inoculationDate"
             value={formData.inoculationDate}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Inoculation Rate
           </label>
           <input
@@ -454,27 +473,27 @@ const BatchForm = () => {
             name="inoculationRate"
             value={formData.inoculationRate}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Spawn % — e.g., 10%, 15% by weight"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Spawn Run Observations
           </label>
           <textarea
             name="spawnRunObservations"
             value={formData.spawnRunObservations}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Mycelium growth speed, appearance"
             rows="3"
           ></textarea>
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Contamination Observed During Colonization
           </label>
           <input
@@ -482,7 +501,7 @@ const BatchForm = () => {
             name="contaminationDuringColonization"
             value={formData.contaminationDuringColonization}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Type if any — e.g., green mold, cobweb"
           />
         </div>
@@ -495,25 +514,25 @@ const BatchForm = () => {
     <div className={`${activeSection === 'logs' ? 'block' : 'hidden'}`}>
       <div className="mb-4">
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-medium">Environmental Measurement Logs</h3>
+          <h3 className="text-lg font-medium text-teal-400">Environmental Measurement Logs</h3>
           <button
             type="button"
             onClick={addEnvironmentalLog}
-            className="bg-indigo-50 text-indigo-600 px-3 py-1 rounded hover:bg-indigo-100"
+            className="bg-teal-900 text-teal-200 px-3 py-1 rounded hover:bg-teal-800"
           >
             + Add New Log
           </button>
         </div>
         
         {formData.environmentalLogs.map((log, index) => (
-          <div key={index} className="mb-4 p-4 border border-gray-200 rounded bg-gray-50">
+          <div key={index} className="mb-4 p-4 border border-gray-600 rounded bg-gray-800">
             <div className="flex justify-between items-center mb-2">
-              <h4 className="font-medium">Log Entry #{index + 1}</h4>
+              <h4 className="font-medium text-teal-300">Log Entry #{index + 1}</h4>
               {formData.environmentalLogs.length > 1 && (
                 <button
                   type="button"
                   onClick={() => removeEnvironmentalLog(index)}
-                  className="text-red-500 hover:text-red-700"
+                  className="text-red-400 hover:text-red-300"
                 >
                   Remove
                 </button>
@@ -522,31 +541,31 @@ const BatchForm = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-2">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Date
                 </label>
                 <input
                   type="date"
                   value={log.date}
                   onChange={(e) => handleEnvironmentalLogChange(index, 'date', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Time
                 </label>
                 <input
                   type="time"
                   value={log.time}
                   onChange={(e) => handleEnvironmentalLogChange(index, 'time', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Humidity (%)
                 </label>
                 <input
@@ -555,33 +574,33 @@ const BatchForm = () => {
                   max="100"
                   value={log.humidity}
                   onChange={(e) => handleEnvironmentalLogChange(index, 'humidity', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="e.g., 85"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Temperature (°F)
                 </label>
                 <input
                   type="number"
                   value={log.temperature}
                   onChange={(e) => handleEnvironmentalLogChange(index, 'temperature', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="e.g., 72"
                 />
               </div>
             </div>
             
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-teal-400 mb-1">
                 Notes
               </label>
               <textarea
                 value={log.notes}
                 onChange={(e) => handleEnvironmentalLogChange(index, 'notes', e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                 placeholder="Any observations, changes made, etc."
                 rows="2"
               ></textarea>
@@ -599,21 +618,21 @@ const BatchForm = () => {
           <button
             type="button"
             onClick={addFruitingPhase}
-            className="text-indigo-600 hover:text-indigo-900"
+            className="text-teal-400 hover:text-teal-300"
           >
             + Add Fruiting Phase
           </button>
         </div>
         
         {formData.fruitingPhases.map((phase, index) => (
-          <div key={index} className="mb-4 p-4 border border-gray-200 rounded">
+          <div key={index} className="mb-4 p-4 border border-gray-600 rounded bg-gray-800">
             <div className="flex justify-between items-center mb-2">
-              <h3 className="text-md font-medium">Fruiting Phase {index + 1}</h3>
+              <h3 className="text-md font-medium text-teal-300">Fruiting Phase {index + 1}</h3>
               {formData.fruitingPhases.length > 1 && (
                 <button
                   type="button"
                   onClick={() => removeFruitingPhase(index)}
-                  className="text-red-500 hover:text-red-700"
+                  className="text-red-400 hover:text-red-300"
                 >
                   Remove
                 </button>
@@ -622,25 +641,25 @@ const BatchForm = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Date
                 </label>
                 <input
                   type="date"
                   value={phase.date}
                   onChange={(e) => handleFruitingPhaseChange(index, 'date', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Action
                 </label>
                 <select
                   value={phase.action}
                   onChange={(e) => handleFruitingPhaseChange(index, 'action', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                 >
                   <option value="">Select an action</option>
                   <option value="First signs of pinning">First signs of pinning</option>
@@ -653,14 +672,14 @@ const BatchForm = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label className="block text-sm font-medium text-teal-400 mb-1">
                   Notes
                 </label>
                 <input
                   type="text"
                   value={phase.notes}
                   onChange={(e) => handleFruitingPhaseChange(index, 'notes', e.target.value)}
-                  className="w-full p-2 border border-gray-300 rounded"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
                   placeholder="Pinning, Misting, Contamination, Conditions"
                 />
               </div>
@@ -675,7 +694,7 @@ const BatchForm = () => {
     <div className={`${activeSection === 'harvest' ? 'block' : 'hidden'}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Total Weight Harvested
           </label>
           <input
@@ -683,13 +702,13 @@ const BatchForm = () => {
             name="harvestDetails.totalWeight"
             value={formData.harvestDetails.totalWeight}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., 500g First Flush, 400g Second Flush"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Number of Marketable Units
           </label>
           <input
@@ -697,27 +716,27 @@ const BatchForm = () => {
             name="harvestDetails.marketableUnits"
             value={formData.harvestDetails.marketableUnits}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="e.g., clamshells packed, pounds sold"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Quality Notes
           </label>
           <textarea
             name="harvestDetails.qualityNotes"
             value={formData.harvestDetails.qualityNotes}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Cap size, color, texture, off-types"
             rows="3"
           ></textarea>
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Contamination During Fruiting
           </label>
           <input
@@ -725,7 +744,7 @@ const BatchForm = () => {
             name="harvestDetails.contaminationDuringFruiting"
             value={formData.harvestDetails.contaminationDuringFruiting}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Describe if found"
           />
         </div>
@@ -738,7 +757,7 @@ const BatchForm = () => {
     <div className={`${activeSection === 'summary' ? 'block' : 'hidden'}`}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Total Cycle Time
           </label>
           <input
@@ -746,13 +765,13 @@ const BatchForm = () => {
             name="totalCycleTime"
             value={formData.totalCycleTime}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Days"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Yield per lb of substrate
           </label>
           <input
@@ -760,13 +779,13 @@ const BatchForm = () => {
             name="yieldPerPound"
             value={formData.yieldPerPound}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Efficiency metric"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Cost of Materials
           </label>
           <input
@@ -774,13 +793,13 @@ const BatchForm = () => {
             name="materialCost"
             value={formData.materialCost}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Spawn + Substrate + Utilities"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Sales/Revenue
           </label>
           <input
@@ -788,13 +807,13 @@ const BatchForm = () => {
             name="salesRevenue"
             value={formData.salesRevenue}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="If applicable"
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-teal-400 mb-1">
             Profitability Estimate
           </label>
           <input
@@ -802,21 +821,21 @@ const BatchForm = () => {
             name="profitability"
             value={formData.profitability}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
             placeholder="Optional — good for scaling later"
           />
         </div>
       </div>
       
       <div>
-        <label className="block text-lg font-medium text-gray-700 mb-2">
+        <label className="block text-lg font-medium text-teal-400 mb-2">
           Lessons Learned / Adjustments for Next Time
         </label>
         <textarea
           name="lessonsLearned"
           value={formData.lessonsLearned}
           onChange={handleChange}
-          className="w-full p-2 border border-gray-300 rounded"
+          className="w-full p-2 bg-gray-700 border border-gray-600 rounded text-gray-200"
           placeholder="What would you do differently next time?"
           rows="5"
         ></textarea>
@@ -827,73 +846,73 @@ const BatchForm = () => {
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">
+        <h1 className="text-2xl font-semibold text-teal-400">
           {isEditMode ? `Edit Batch: ${formData.batchId}` : 'Create New Batch'}
         </h1>
         <Link 
           to="/batches"
-          className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700"
+          className="bg-gray-700 text-teal-400 px-4 py-2 rounded hover:bg-gray-600"
         >
           Cancel
         </Link>
       </div>
       
       {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <div className="bg-red-900 border border-red-700 text-red-200 px-4 py-3 rounded mb-4">
           {error}
         </div>
       )}
       
       <form onSubmit={handleSubmit}>
-        <div className="bg-white rounded-lg shadow overflow-hidden mb-6">
+        <div className="bg-gray-800 rounded-lg shadow overflow-hidden mb-6 border border-gray-700">
           {/* Form Sections Navigation */}
-          <div className="bg-gray-50 p-4 border-b overflow-x-auto">
+          <div className="bg-gray-900 p-4 border-b border-gray-700 overflow-x-auto">
             <div className="flex flex-wrap gap-2">
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'basic' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'basic' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('basic')}
               >
                 🗓️ Basic Info
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'environmental' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'environmental' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('environmental')}
               >
                 🌡️ Environment
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'logs' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'logs' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('logs')}
               >
                 📊 Env Logs
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'inoculation' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'inoculation' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('inoculation')}
               >
                 🧫 Inoculation
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'fruiting' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'fruiting' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('fruiting')}
               >
                 📈 Fruiting
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'harvest' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'harvest' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('harvest')}
               >
                 📦 Harvest
               </button>
               <button
                 type="button"
-                className={`px-3 py-2 rounded ${activeSection === 'summary' ? 'bg-indigo-600 text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-2 rounded ${activeSection === 'summary' ? 'bg-teal-600 text-gray-200' : 'bg-gray-700 text-teal-400'}`}
                 onClick={() => setActiveSection('summary')}
               >
                 📋 Summary & Lessons
@@ -916,7 +935,7 @@ const BatchForm = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700"
+            className="bg-teal-600 text-gray-200 px-6 py-2 rounded hover:bg-teal-700"
           >
             {isEditMode ? 'Update Batch' : 'Create Batch'}
           </button>

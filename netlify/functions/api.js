@@ -24,21 +24,32 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mushroom-
 // Import models
 const User = require('../../models/User');
 const Batch = require('../../models/Batch');
-const Recipe = require('../../models/Recipe');  // Add Recipe model
+const Recipe = require('../../models/Recipe');
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
   const token = authHeader && authHeader.split(' ')[1];
-  
+
   if (token == null) return res.status(401).json({ message: 'Unauthorized' });
-  
+
+  // For development - accept hardcoded token
+  if (token === 'dev-jwt-token') {
+    console.log('Using development token');
+    req.user = { id: 'admin-id', username: 'admin', role: 'admin' };
+    return next();
+  }
+
   jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key', (err, user) => {
     if (err) return res.status(403).json({ message: 'Forbidden' });
     req.user = user;
     next();
   });
 };
+
+// Import and use routes
+const recipeRoutes = require('../../routes/recipes');
+app.use('/api/recipes', authenticateToken, recipeRoutes);
 
 // Auth routes
 app.post('/api/auth/login', async (req, res) => {
@@ -71,7 +82,7 @@ app.post('/api/auth/login', async (req, res) => {
   }
 });
 
-// Recipe routes - Add these new routes
+// Recipe routes 
 app.get('/api/recipes', authenticateToken, async (req, res) => {
   try {
     const recipes = await Recipe.find({ userId: req.user.id })
