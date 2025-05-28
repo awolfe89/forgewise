@@ -4,7 +4,7 @@ import AAH_logo from '../assets/AAH_logo.jpg';
 import Grubs from '../assets/grubs.png';
 import PPV from '../assets/ppv_logo.jpg';
 import TriLogo from '../assets/triLogo.png';
-import WnLogo from '../assets/wnLogo.png';
+import WnLogo from '../assets/wnlogo.png';
 import Voltech from '../assets/voltech.png';
 import Technimark from '../assets/technimark.png';
 import ESD from '../assets/esdguys.png';
