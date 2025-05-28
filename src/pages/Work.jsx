@@ -87,17 +87,18 @@ export default function Work() {
       <h2 className="text-4xl font-bold mb-6 text-center text-gray-800">Portfolio Showcase 🌅</h2>
       <blockquote className="bg-gray-100 p-6 rounded-md max-w-3xl mx-auto mb-8 text-center text-gray-700 text-lg">
         <p>
-          Throughout my career in eCommerce, I've been fortunate to work with terrific companies that I'm proud to have been a part of. Below are a few highlights of websites I've helped build, optimize, and grow. I've excluded any references to actual dollar figures for the privacy of the companies
+          From places I've worked, to projects, demos & companies I've helped along the way 
         </p>
         <br />
-        <p>Some of these companies I have worked with directly as a W2 Employee, others have been contracted or consultations</p>
+        
       </blockquote>
       <p className="text-sm text-gray-500 italic text-center mb-12">
         Click on any card to expand and see more details about each company.
       </p>
       
       <div className="space-y-8">
-        <WorkCard
+       {/*
+          <WorkCard
           title="Armor Animal Health"
           subtitle="B2B/B2C Agricultural, Pharmaceutical Distributor | Magento 2 Enterprise"
           subtitle2="Led the complete Magento redesign of this agrigultural pharmacy & retailer, focusing on creating a more cohesive shopping experience that showcases their huge selection in a way customers can navigate."
@@ -111,40 +112,7 @@ export default function Work() {
             "Optimized site speed resulting in 25% reduction in bounce rate"
           ]}
           mainDescription={"When I took over management of this ecommerce site, sales were flat and the website was in disarray, with a sprawling 6,000–8,000 product catalog and no meaningful structure. I led a full-scale reorganization, creating a 100+ category taxonomy and assigning hundreds of product attributes to enable advanced filtering and a vastly improved shopping experience. I used SEO tools to monitor keyword rankings and benchmark competitors, while also collaborating on marketing materials and optimizing our social presence. To stretch our budget, I hired and managed offshore talent to scale content and operations efficiently. These combined efforts led to a 231% YoY increase in sales and 192% user growth from 2023 to 2024 — all without paid ads. In 2025, I developed and launched intelligent, six-figure ad campaigns designed to further accelerate traffic and capture market share."}
-        />
-        
-        <WorkCard
-          title="GrubsBootsUSA"
-          subtitle="Outdoor Footwear Retailer | Shopify"
-          subtitle2="Led a site redesign & marketing campaign that increased web traffic by a whopping 4,000% and increased YoY sales 551% for the last full month at the time of this writing"
-          image={Grubs}
-          link="https://grubsbootsusa.com"
-          highlights={[
-            "New Theme, layout, imagery, categories",
-            "SEO Roadmao strategized & implemented",
-            "Used A.I to create automated marketing & social media posts",
-            "Implemented a robust PPC campaign",
-            
-          ]}
-          mainDescription={"I led a complete site redesign and coordinated a focused marketing campaign that resulted in a staggering 4,000% increase in web traffic and a 551% year-over-year sales increase during the most recent full month reported. This transformation was driven by strategic UX improvements, refined category architecture, and coordinated campaign execution across organic and paid channels — all built to scale and convert. The outcome not only revitalized the customer experience but positioned the business for sustained, high-growth performance."}
-        />
-        
-        <WorkCard
-          title="PrimePet&Vet"
-          subtitle="Pet & Veterinary Retailer | Shopify"
-          subtitle2="Ensured / maintained site functionality, optimizing user experience, and ensuring product data accuracy across thousands of products"
-          image={PPV}
-          link="https://primepetandvetsupply.com/"
-          highlights={[
-            "Managed day-to-day operations and performance",
-            "Maintained product catalog integrity, ensuring accurate data, consistent taxonomy, and SEO-friendly formatting across hundreds of SKUs",
-            "Implemented a member portal allowing customers to easily manage their subscriptions",
-            "Implemened UX and merchandising improvements to enhance navigation, category structure, and customer experience",
-            "Set up long-term scalability through ongoing platform optimization, foundational SEO efforts, and technical maintenance"
-          ]}
-          mainDescription={"This eCommerce store serves the veterinary and pet care markets. My role included maintaining site functionality, optimizing user experience, and ensuring product data accuracy across a broad catalog. While the business is still evolving, I’ve contributed to improving navigation, category structure, and merchandising consistency to support long-term scalability. My ongoing focus is on performance tuning, SEO foundations, and ensuring the platform is positioned to grow traffic, improve conversions, and serve both B2B and DTC customers in a highly specialized vertical."}
-        />
-
+        /> */}
         <WorkCard
           title="Technimark-Inc"
           subtitle="B2B/B2C Industrial/Electronics Equipment Distributor | Magento"
@@ -160,7 +128,6 @@ export default function Work() {
           ]}
           mainDescription={"I spearheaded a full-scale digital transformation initiative that drove a 35% increase in online revenue and a 28% lift in conversion rates through strategic platform and UX optimization. Partnering closely with executive leadership, I developed a data-driven ecommerce roadmap aligned with business goals and led cross-functional collaboration across product marketing, sales, and content teams to create high-impact digital assets. I also managed a development team to implement UX/UI improvements that reduced cart abandonment by 22% and boosted average order value by 18%. In parallel, I launched a comprehensive SEO strategy that improved organic visibility by 45%, resulting in a 65% increase in non-paid traffic and first-page rankings for over 80 industry-specific keywords. I designed and deployed a robust digital media strategy with intelligent budget allocation, A/B testing, and bidding optimization, while also building a custom in-house tool using a locally trained LLM to extract insights from large datasets. These combined efforts generated over $600K in incremental annual revenue and positioned the brand for scalable, sustainable growth."}
         />
-
         <WorkCard
           title="HVACNet"
           subtitle="B2B/B2C Industrial Equipment Distributor | Magento 1 & Magento 2"
@@ -175,9 +142,40 @@ export default function Work() {
           ]}
           mainDescription={"During my time with the company (now under new ownership), I led the successful migration from Magento 1.x to Magento 2.0 — a technically complex project that was executed with minimal disruption and delivered major performance and usability gains. I coordinated cross-functional marketing efforts across SEO, PPC, email, social media, and creative teams to deliver a consistent and optimized customer experience. I introduced a structured A/B testing program that uncovered key conversion improvements, including a 25% lift in checkout completions. Additionally, I partnered with product and content teams to enhance product presentation and technical content, and led SEO-focused maintenance initiatives that increased organic traffic by 30%. I also delivered detailed performance reporting to stakeholders, identifying KPIs and opportunities that drove continued growth. While the company has since changed hands and my original colleagues have moved on, the systems and strategies I implemented helped lay the foundation for scalable ecommerce success."}
         />
+        <WorkCard
+          title="GrubsBootsUSA"
+          subtitle="Outdoor Footwear Retailer | Shopify"
+          subtitle2="Helped with a redesign & consulted with marketing that increased web traffic by a whopping 4,000% and increased YoY sales 551% for the last full month at the time of this writing"
+          image={Grubs}
+          link="https://grubsbootsusa.com"
+          highlights={[
+            "New Theme, layout, imagery, categories",
+            "SEO Roadmao strategized & implemented",
+            "Used A.I to create automated marketing & social media posts",
+            "Implemented a robust PPC campaign",
+            
+          ]}
+          mainDescription={"I re-designed this website and consulted with marketing to start a campaign that resulted in a 4,000% increase in web traffic and a 551% year-over-year sales increase during the most recent full month reported. This transformation was driven by strategic UX improvements, refined category architecture, and coordinated campaign execution across organic and paid channels — all built to scale and convert. The outcome not only revitalized the customer experience but positioned the business for sustained, high-growth performance."}
+        />
         
+        <WorkCard
+          title="PrimePet&Vet"
+          subtitle="Pet & Veterinary Retailer | Shopify"
+          subtitle2="Ensured / maintained site functionality, optimizing user experience, and ensuring product data accuracy across thousands of products"
+          image={PPV}
+          link="https://primepetandvetsupply.com/"
+          highlights={[
+            
+          ]}
+          mainDescription={"This eCommerce store serves the veterinary and pet care markets. My role included maintaining site functionality, optimizing user experience, and ensuring product data accuracy across a broad catalog. While the business is still evolving, I’ve contributed to improving navigation, category structure, and merchandising consistency to support long-term scalability. My ongoing focus is on performance tuning, SEO foundations, and ensuring the platform is positioned to grow traffic, improve conversions, and serve both B2B and DTC customers in a highly specialized vertical."}
+        />
 
-<WorkCard
+{/* "Managed day-to-day operations and performance",
+            "Maintained product catalog integrity, ensuring accurate data, consistent taxonomy, and SEO-friendly formatting across hundreds of SKUs",
+            "Implemented a member portal allowing customers to easily manage their subscriptions",
+            "Implemened UX and merchandising improvements to enhance navigation, category structure, and customer experience",
+            "Set up long-term scalability through ongoing platform optimization, foundational SEO efforts, and technical maintenance" */}
+        <WorkCard
           title="ESDGuys"
           subtitle="B2C Electronics Manufacturing Supply | Shopify"
           description="At the request of the business owner, I helped launch a brand-new ecommerce website to complement the company’s existing online presence"
@@ -193,13 +191,15 @@ export default function Work() {
           mainDescription={"At the request of the business owner, I helped launch a brand-new ecommerce website to complement the company’s existing online presence. While still in its early stages, this second site was designed to offer a refined, conversion-friendly user experience and serve as a scalable platform for future growth. I handled site structure, design execution, and content integration — delivering a clean, professional storefront that aligns with the brand’s identity and is built to evolve as the business scales."}
         />
       </div>
+
       <div className="space-y-8">
-      <h2 className="text-4xl font-bold mb-6 mt-9 text-center text-gray-800"> Beyond eCommerce 🛫</h2>
+     {/* <h2 className="text-4xl font-bold mb-6 mt-9 text-center text-gray-800"> Beyond eCommerce 🛫</h2>
       <blockquote className="bg-gray-100 p-6 rounded-md max-w-3xl mx-auto mb-8 text-center text-gray-700 text-lg">
         <p>
          When not working on eCommerce, I also like to help small & local businesses with their online presence. Here is a sampling of websites I have created for businesses. 
         </p>
-      </blockquote>
+      </blockquote> */}
+
       <div className="space-y-8"> 
       <WorkCard
           title="Wet Noses Grooming Inc"
@@ -232,7 +232,7 @@ export default function Work() {
           ]}
         />
 
-<WorkCard
+        <WorkCard
           title="Voltech Electric"
           subtitle="Electrician | Wordpress"
           description="This company needed help troubleshooting various hurdles with their site implementation. I went on to fix those, as well as redesign their website"
@@ -249,7 +249,7 @@ export default function Work() {
           subtitle="Digital Agency | Wordpress"
           description="This company needed help troubleshooting various hurdles with their site implementation. I went on to fix those, as well as redesign their website"
           image={Neptune}
-          link="https://neptuneseo.com"
+          link=""
           highlights={[
             "Designed Website",
             "Created initial marketing materials",
