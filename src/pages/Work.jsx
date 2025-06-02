@@ -1,5 +1,6 @@
 // pages/Work.jsx
 import { useState } from 'react';
+import LazyImage from '../components/LazyImage';
 import AAH_logo from '../assets/AAH_logo.jpg';
 import Grubs from '../assets/grubs.png';
 import PPV from '../assets/ppv_logo.jpg';
@@ -25,7 +26,7 @@ function WorkCard({ title, subtitle, subtitle2, description, highlights, mainDes
       <div className="flex flex-col md:flex-row gap-6">
         {image && (
           <div className="md:w-1/3">
-            <img
+            <LazyImage
               src={image}
               alt={`${title} Screenshot`}
               className="rounded mb-4 border max-h-48 object-contain mx-auto cursor-zoom-in"
@@ -33,6 +34,7 @@ function WorkCard({ title, subtitle, subtitle2, description, highlights, mainDes
                 e.stopPropagation();
                 setShowImage(true);
               }}
+              placeholder="blur"
             />
             {showImage && (
               <div

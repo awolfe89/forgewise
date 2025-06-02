@@ -9,27 +9,32 @@ import Insights, { InsightDetail } from './pages/Insights';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-slate-50 text-gray-800">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/leadership" element={<Leadership />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/insights/:insightId" element={<InsightDetail />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <Router>
+        <ScrollToTop />
+        <div className="min-h-screen flex flex-col bg-slate-50 text-gray-800">
+          <Navbar />
+          <main className="flex-grow">
+            <ErrorBoundary>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/work" element={<Work />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/leadership" element={<Leadership />} />
+                <Route path="/insights" element={<Insights />} />
+                <Route path="/insights/:insightId" element={<InsightDetail />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </ErrorBoundary>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

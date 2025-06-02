@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            margin: 0;
+            width: 1200px;
+            height: 630px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            padding: 40px;
+        }
+        .title {
+            font-size: 72px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            font-size: 36px;
+            color: #93c5fd;
+            margin-bottom: 40px;
+        }
+        .description {
+            font-size: 24px;
+            color: #dbeafe;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+        .pattern {
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 80%;
+            height: 200%;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);
+            transform: rotate(45deg);
+        }
+        .logo {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="pattern"></div>
+    <div class="container">
+        <h1 class="title">Allan</h1>
+        <p class="subtitle">eCommerce Director & Full-Stack Developer</p>
+        <p class="description">Building smart, scalable tools and user-first experiences through data-driven strategy and AI automation</p>
+    </div>
+    <div class="logo">Allan.Resume</div>
+</body>
+</html>

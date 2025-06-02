@@ -23,7 +23,7 @@ export default function Navbar() {
         <Link to="/" className="font-bold text-2xl text-blue-700">Allan<span className="text-gray-800">.Resume</span></Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex items-center space-x-6">
           <Link 
             to="/" 
             className={`${isActive('/') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
@@ -94,10 +94,10 @@ export default function Navbar() {
             </Link>
             <Link 
               to="/work" 
-              className={`${isActive('work') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              className={`${isActive('/work') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Projects
+              Work
             </Link>
             <Link 
               to="/projects" 

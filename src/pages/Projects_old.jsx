@@ -217,7 +217,7 @@ export default function Projects() {
     {
       id: 'comparison-tool',
       title: "Interactive Product Comparison Tool",
-      description: "For this project, I developed a dynamic comparison web application using modern front-end technologies. Built with React and Tailwind CSS, the solution provides an interactive interface where users can compare & filter what they're looking for across various specifications and features.",
+      description: "For this project, I developed a dynamic comparison web application using modern front-end technologies. Built with React and Tailwind CSS, the solution provides an interactive interface where users can compare & filter what they're looking for across various specifications and features. The application implements robust filtering capabilities allowing users to narrow down products. In this example it is by brand, price range, and operating system, while a responsive search function enables quick product discovery. The data structure accommodates comprehensive specifications for whatever list of products you may be selling. Using React's state management, the tool delivers seamless pagination and dynamic content rendering for optimized performance. The interface was designed with accessibility and user experience in mind, featuring well-organized tables, intuitive filtering mechanisms, and mobile-responsive layouts. This project demonstrates my proficiency in component-based architecture, JavaScript ES6+, and UI/UX design principles while showcasing how modern web technologies can enhance e-commerce product discovery and comparison experiences.",
       image: comparisonChart,
       tags: ["React", "Tailwind CSS", "JSON"],
       type: "Web Application",
@@ -252,7 +252,7 @@ export default function Projects() {
     {
       id: 'inventory-dashboard',
       title: "Smart Stock: An Ecommerce Dashboard with AI-Style Summaries",
-      description: "This interactive ecommerce dashboard helps operations and merchandising teams identify risks and opportunities across product inventory using AI-style insights.",
+      description: "This interactive ecommerce dashboard helps operations and merchandising teams identify risks and opportunities across product inventory using AI-style insights. Built in Streamlit with a mock dataset of 200 products, the app visualizes key metrics like Days of Inventory (DOI), overstock value, and SKU performance by buyer, category, and warehouse.",
       image: invDash,
       tags: ["Python", "ChatGPT", "Altair", "File Processing"],
       type: "Data Dashboard",
@@ -277,7 +277,14 @@ export default function Projects() {
                             status.append("🟡 Normal")
                     return status
 
-                df['DOI_Status'] = get_doi_status(df['DOI'])`
+                df['DOI_Status'] = get_doi_status(df['DOI'])
+
+                if view_mode == "📊 Overview":
+                    # --- Rule-Based Filters for Insights ---
+                    low_doi_df = df[df['DOI'] < 10]
+                    overstock_df = df[df['OverstockInventoryValue'] > 0]
+                    expiring_df = df[df['ExpiryDate'] < pd.Timestamp.today() + pd.Timedelta(days=30)]
+                    high_cost_low_sales_df = df[(df['TotalInventoryCost'] > 5000) & (df['Last12MoQtySold'] < 50)]`
     },
     {
       id: 'email-search',
@@ -408,15 +415,27 @@ async function fetchProducts() {
 const axios = require('axios');
 require('dotenv').config();
 
+/**
+ * Posts a transformed article to Shopify's Blog API
+ * @param {Object} articleData - The processed and formatted article
+ * @param {string} articleData.title - The article title
+ * @param {string} articleData.body_html - The formatted HTML content
+ * @param {string} articleData.excerpt - Brief excerpt for SEO and previews
+ * @param {Array} articleData.tags - Array of tags for categorization
+ * @returns {Promise} - Response from Shopify API
+ */
 async function postToShopify(articleData) {
+  // Configure Shopify API credentials from environment variables
   const shopName = process.env.SHOPIFY_SHOP_NAME;
   const accessToken = process.env.SHOPIFY_ACCESS_TOKEN;
   const apiVersion = '2023-07';
   const blogId = process.env.SHOPIFY_BLOG_ID;
   
+  // API endpoint for blog articles
   const endpoint = \`https://\${shopName}.myshopify.com/admin/api/\${apiVersion}/blogs/\${blogId}/articles.json\`;
   
   try {
+    // Prepare the request payload
     const payload = {
       article: {
         title: articleData.title,
@@ -430,6 +449,7 @@ async function postToShopify(articleData) {
     
     console.log(\`Publishing article: "\${articleData.title}" to Shopify...\`);
     
+    // Send request to Shopify API
     const response = await axios.post(endpoint, payload, {
       headers: {
         'Content-Type': 'application/json',
@@ -443,6 +463,28 @@ async function postToShopify(articleData) {
   } catch (error) {
     console.error('Error publishing to Shopify:', error.response?.data || error.message);
     throw error;
+  }
+}
+
+// Example usage in the pipeline
+async function processPdfToShopify(pdfPath) {
+  try {
+    // Earlier pipeline steps would extract and transform content
+    const extractedText = await extractTextFromPdf(pdfPath);
+    const transformedContent = await transformWithOpenAI(extractedText);
+    const formattedArticle = formatForShopify(transformedContent);
+    
+    // Post the final article to Shopify
+    const publishedArticle = await postToShopify(formattedArticle);
+    
+    return {
+      success: true,
+      articleId: publishedArticle.article.id,
+      publishedUrl: publishedArticle.article.url
+    };
+  } catch (error) {
+    console.error('Pipeline failure:', error);
+    return { success: false, error: error.message };
   }
 }`
     }
@@ -556,6 +598,347 @@ async function postToShopify(articleData) {
         </div>
       </section>
 
+              description="A modern browser extension framework that allows developers to extend Chrome's functionality with custom features accessible through the browser toolbar. Once it has been approved from the Chrome app store, I will include a link to it here."
+              image={qrCode}
+              tags={["Chrome Extensions API", "HTML", "CSS"]}
+              link=""
+              bullets={[
+                'Automatic Tab QR Code Generation',
+                'Custom Text / URL Input',
+                'Export Options',
+                'Advanced Customization'
+              ]}
+              explanation="This snippet is initializing the QR code on a new Chrome tab"
+              codeSnippet={`if (chrome && chrome.tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (chrome.runtime.lastError) {
+        console.error('Chrome API error:', chrome.runtime.lastError);
+        return;
+      }
+      
+      if (tabs && tabs[0] && tabs[0].url) {
+        state.currentUrl = tabs[0].url;
+        const displayText = tabs[0].title || tabs[0].url;
+        elements.urlPreview.textContent = QR code generated for: {displayText.substring(0, 40)}{displayText.length > 40 ? '...' : ''};
+        generateQR(state.currentUrl);`}
+            />
+
+             {/* Content Cannon */}
+             <ProjectCard
+              title="Content Cannon Shopify Plugin"
+              description="Our marketing department needed this application and instead of running it on a server from the command line, I became a Shopify Partner and developed a plugin so users could interact with the technology directly within Shopify with no technical expertise required. The app essentially bridges the gap between static PDF documents and dynamic e-commerce content, with special focus on technical and safety documentation."
+              image={contentCannon}
+              tags={["React", "Polaris", "GraphQL", "Prisma", "Fly.io", "Docker", "PostgreSQL"]}
+              link=""
+              bullets={[
+                'Convert PDFs Directly into Shopify Pages or Blog Posts',
+                'AI Powered Content Enhancement',
+                'Smart Image Extraction & Management'
+          
+              ]}
+              explanation="This snippet is from a portion of the AISEOGenerator file"
+              codeSnippet={`{
+        useEffect(() => {
+          if (fetcher.data?.type === 'seo-ai' && fetcher.data.success) {
+            try {
+              const seoData = JSON.parse(fetcher.data.seoData);
+              onSEOGenerated(seoData);
+              setIsGenerating(false);
+            } catch (e) {
+              console.error('Failed to parse AI SEO data:', e);
+              setIsGenerating(false);
+            }
+          } else if (fetcher.data?.errors?.length > 0 && fetcher.data.type === 'seo-ai') {
+            alert(Error: {fetcher.data.errors[0].message});
+            setIsGenerating(false);
+          }
+        }, [fetcher.data, onSEOGenerated]);
+
+        const generateWithAI = () => {
+          if (!title || !content) {
+            alert('Please add title and content first');
+            return;
+          }
+
+          setIsGenerating(true);
+                                  },`
+              }
+            />
+              {/* Comparison Charts */}
+               <ProjectCard
+              title="Interactive Product Comparison Tool"
+              description="For this project, I developed a dynamic comparison web application using modern front-end technologies. Built with React and Tailwind CSS, the solution provides an interactive interface where users can compare & filter what they're looking for across various specifications and features. The application implements robust filtering capabilities allowing users to narrow down products. In this example it is by brand, price range, and operating system, while a responsive search function enables quick product discovery. The data structure accommodates comprehensive specifications for whatever list of products you may be selling. Using React's state management, the tool delivers seamless pagination and dynamic content rendering for optimized performance. The interface was designed with accessibility and user experience in mind, featuring well-organized tables, intuitive filtering mechanisms, and mobile-responsive layouts. This project demonstrates my proficiency in component-based architecture, JavaScript ES6+, and UI/UX design principles while showcasing how modern web technologies can enhance e-commerce product discovery and comparison experiences."
+              image={comparisonChart}
+              tags={["React", "TailWind CSS", "JSON"]}
+              link="https://esdguys.com/pages/product-comparison-example"
+              bullets={[
+                'Built with React & Tailwind',
+                'Embeds Directly into the Shopify Page',
+                'Filtering & Search Without Page Load',
+                'Product Data Saved in Separate JSON File so Employees Dont Have to Worry About Editing Products Around App Logic'
+              ]}
+              explanation="This snippet shows the basic JSON data structure that the table pulls from. Updating is easy and straightforward"
+              codeSnippet={` {
+                              "id": 59,
+                              "brand": "Motorola",
+                              "model": "Razr 40",
+                              "processor": "Snapdragon 7 Gen 1",
+                              "ram": "8GB",
+                              "storage": "256GB",
+                              "display": "6.9-inch foldable AMOLED + 1.5-inch cover display",
+                              "camera": "64MP main + 13MP ultrawide",
+                              "battery": "4200 mAh",
+                              "price": 699,
+                              "releaseDate": "2023-06-01",
+                              "rating": 4.0,
+                              "inStock": true,
+                              "colors": ["Sage Green", "Vanilla Cream", "Summer Lilac"],
+                              "os": "Android 13",
+                              "url": "/products/example-product",
+                              "image": "motorola-razr-40.jpg"
+                            },`
+              }
+            />
+            {/* Dashboard */}
+            <ProjectCard
+              title="Smart Stock: An Ecommerce Dashboard with AI-Style Summaries"
+              description="This interactive ecommerce dashboard helps operations and merchandising teams identify risks and opportunities across product inventory using AI-style insights. Built in Streamlit with a mock dataset of 200 products, the app visualizes key metrics like Days of Inventory (DOI), overstock value, and SKU performance by buyer, category, and warehouse."
+              image={invDash}
+              tags={["Python", "ChatGPT", "Altair", "File Processing"]}
+              link="https://inventory-dashboard.streamlit.app/"
+              bullets={[
+                'Built with Streamlit, Pandas, Altair',
+                'Uses rule-based NLP logic to simulate GPT insights',
+                'Future-ready for OpenAI or Ollama integration',
+                'Clean deploy on Streamlit Cloud with custom design & branding'
+              ]}
+              explanation="This snippet shows the configuration and logging setup that enables robust error handling and user-customizable settings."
+              codeSnippet={`# Helper function 
+                to categorize DOI
+                def get_doi_status(dois):
+                    status = []
+                    for doi in dois:
+                        if doi < 10:
+                            status.append("🔴 Low")
+                        elif doi > 180:
+                            status.append("🟢 Overstock")
+                        else:
+                            status.append("🟡 Normal")
+                    return status
+
+                df['DOI_Status'] = get_doi_status(df['DOI'])
+
+                if view_mode == "📊 Overview":
+                    # --- Rule-Based Filters for Insights ---
+                    low_doi_df = df[df['DOI'] < 10]
+                    overstock_df = df[df['OverstockInventoryValue'] > 0]
+                    expiring_df = df[df['ExpiryDate'] < pd.Timestamp.today() + pd.Timedelta(days=30)]
+                    high_cost_low_sales_df = df[(df['TotalInventoryCost'] > 5000) & (df['Last12MoQtySold'] < 50)]`
+              }
+            />
+
+
+
+            <ProjectCard
+              title="AI-Powered Email Search Engine"
+              description="An intelligent tool that lets users search through archived emails using natural language queries, powered by a local LLM for complete privacy."
+              image={emailAppScreenshot}
+              tags={["Python", "Ollama", "Vector Search", "XML Processing"]}
+              bullets={[
+                'Processes XML exports from Microsoft Outlook with robust error handling',
+                'Uses local LLMs via Ollama and nomic-embed-text for complete privacy',
+                'Smart contextual filtering and metadata-aware search capabilities',
+                'Interactive HTML viewer with highlighted search results',
+                'Completely offline functionality with no data sent to external services'
+              ]}
+              explanation="This snippet shows the configuration and logging setup that enables robust error handling and user-customizable settings."
+              codeSnippet={`# Set up logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='email_processing.log'
+)
+
+def load_config():
+    """Load configuration from config.ini or create with defaults."""
+    config = configparser.ConfigParser()
+    if os.path.exists('config.ini'):
+        config.read('config.ini')
+    else:
+        # Default config
+        config['DEFAULT'] = {
+            'input_folder': 'xml_files',
+            'output_base': 'parsed_output',
+            'skip_duplicates': 'yes',
+            'clean_signatures': 'yes',
+            'parallel_workers': '4'
+        }
+        with open('config.ini', 'w') as f:
+            config.write(f)
+    return config`}
+            />
+
+            <ProjectCard
+              title="Shopify AI Product Chatbot"
+              description="A context-aware chatbot that integrates with product pages to answer customer questions in real-time, improving conversion rates and reducing support tickets."
+              image={chatbotScreenshot}
+              tags={["JavaScript", "OpenAI API", "Shopify Liquid", "LLM Integration"]}
+              bullets={[
+                'Seamlessly integrates with Shopify product pages for a native experience',
+                'Processes product details, specifications, and reviews to provide accurate answers',
+                'Built-in rate limiting and moderation to prevent abuse and control API costs',
+                'Analytics dashboard to track common questions and conversation outcomes',
+                'Improved conversion rates by 18% on products with complex specifications'
+              ]}
+              explanation="This Liquid/JavaScript snippet demonstrates the clean integration with Shopify's product pages and the implementation of a responsive chat interface."
+              codeSnippet={`{% comment %}
+  Streamlined Shopify Helper Bot with Loading Animation - Fixed Version
+  For use in a Custom Liquid block on product pages, under the Add to Cart button
+{% endcomment %}
+
+{% if product %}
+  <div id="product-helper-bot-{{ product.id }}" class="product-helper-section">
+    <div class="helper-bot-title">
+      <h4>Have questions about this product?</h4>
+    </div>
+    
+    <div id="helper-bot-messages-{{ product.id }}" class="helper-bot-messages">
+      <div class="bot-message">
+        Hello! I can answer detailed questions about {{ product.title }}. What would you like to know?
+      </div>
+    </div>
+    
+    <div class="helper-bot-input-area">
+      <input type="text" id="helper-bot-question-{{ product.id }}" placeholder="Ask me a question about this product!" onclick="event.stopPropagation();">`}
+            />
+    
+            <ProjectCard
+              title="Social Media Content Automation"
+              description="An intelligent bot that selects Shopify products and creates engaging social media posts with unique content generated through AI."
+              image={socialMediaScreenshot}
+              tags={["Python", "OpenAI", "Social Media APIs", "Content Generation"]}
+              bullets={[
+                'Intelligent scheduling system that optimizes posting times based on engagement data',
+                'Integrates with Shopify API to dynamically select products based on inventory and sales metrics',
+                'Generates diverse, SEO-optimized social content using OpenAI GPT models',
+                'Automated posting to multiple platforms including Facebook, Instagram, and Twitter',
+                'Reduced content creation time by 85% while improving engagement metrics'
+              ]}
+              explanation="This code snippet shows how the system connects to Shopify's API to fetch product data that will be used for content generation."
+              codeSnippet={`const axios = require('axios');
+
+const shopifyUrl = 'https://your-store.myshopify.com/admin/api/2023-04/products.json';
+const accessToken = 'YOUR_SHOPIFY_API_TOKEN';
+
+async function fetchProducts() {
+  try {
+    const response = await axios.get(shopifyUrl, {
+      headers: {
+        'X-Shopify-Access-Token': accessToken,
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response.data.products);
+  } catch (error) {
+    console.error('Failed to fetch products:', error);
+  }
+}`}
+            />
+
+<ProjectCard
+  title="Re-Write Engine"
+  description="An automated content transformation pipeline that converts promotional PDFs into uniquely styled blog posts, published directly to Shopify using AI."
+  image={rewriteEngine}
+  tags={["Python", "OpenAI API", "Shopify API", "Content Automation"]}
+  bullets={[
+    "Processes folders of promotional PDFs through a streamlined pipeline",
+    "Leverages OpenAI's ChatGPT API to rewrite content in customizable brand voices",
+    "Applies consistent styling and formatting to ensure brand compliance",
+    "Automatically publishes to Shopify blogs with appropriate tags and excerpts",
+    "Reduces content creation time by 85% while maintaining quality and uniqueness"
+  ]}
+  explanation="This code snippet demonstrates the final stage of the pipeline, where the transformed content is posted to Shopify's API with proper authentication and formatting."
+  codeSnippet={`// Shopify Blog Post Creation Function
+const axios = require('axios');
+require('dotenv').config();
+
+/**
+ * Posts a transformed article to Shopify's Blog API
+ * @param {Object} articleData - The processed and formatted article
+ * @param {string} articleData.title - The article title
+ * @param {string} articleData.body_html - The formatted HTML content
+ * @param {string} articleData.excerpt - Brief excerpt for SEO and previews
+ * @param {Array} articleData.tags - Array of tags for categorization
+ * @returns {Promise} - Response from Shopify API
+ */
+async function postToShopify(articleData) {
+  // Configure Shopify API credentials from environment variables
+  const shopName = process.env.SHOPIFY_SHOP_NAME;
+  const accessToken = process.env.SHOPIFY_ACCESS_TOKEN;
+  const apiVersion = '2023-07';
+  const blogId = process.env.SHOPIFY_BLOG_ID;
+  
+  // API endpoint for blog articles
+  const endpoint = \`https://\${shopName}.myshopify.com/admin/api/\${apiVersion}/blogs/\${blogId}/articles.json\`;
+  
+  try {
+    // Prepare the request payload
+    const payload = {
+      article: {
+        title: articleData.title,
+        author: articleData.author || 'ReWrite Engine',
+        body_html: articleData.body_html,
+        published: true,
+        tags: articleData.tags.join(', '),
+        summary_html: articleData.excerpt
+      }
+    };
+    
+    console.log(\`Publishing article: "\${articleData.title}" to Shopify...\`);
+    
+    // Send request to Shopify API
+    const response = await axios.post(endpoint, payload, {
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Access-Token': accessToken
+      }
+    });
+    
+    console.log(\`✓ Successfully published article ID: \${response.data.article.id}\`);
+    return response.data;
+    
+  } catch (error) {
+    console.error('Error publishing to Shopify:', error.response?.data || error.message);
+    throw error;
+  }
+}
+
+// Example usage in the pipeline
+async function processPdfToShopify(pdfPath) {
+  try {
+    // Earlier pipeline steps would extract and transform content
+    const extractedText = await extractTextFromPdf(pdfPath);
+    const transformedContent = await transformWithOpenAI(extractedText);
+    const formattedArticle = formatForShopify(transformedContent);
+    
+    // Post the final article to Shopify
+    const publishedArticle = await postToShopify(formattedArticle);
+    
+    return {
+      success: true,
+      articleId: publishedArticle.article.id,
+      publishedUrl: publishedArticle.article.url
+    };
+  } catch (error) {
+    console.error('Pipeline failure:', error);
+    return { success: false, error: error.message };
+  }
+}`}
+/>
+          </div>
+        </div>
+      </section>
+
       {/* Skills & Technologies */}
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6 text-center">
@@ -618,5 +1001,4 @@ async function postToShopify(articleData) {
         </div>
       </section>
     </div>
-  );
-}
+  );}
