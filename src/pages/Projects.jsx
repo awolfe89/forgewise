@@ -11,6 +11,8 @@ import invDash from '../assets/invDash.png';
 import comparisonChart from '../assets/comparison-chart.png';
 import contentCannon from '../assets/content-cannon.png';
 import qrCode from '../assets/qr-code.png';
+import adIntelligence from '../assets/ad-intelligence.png';
+import vsiSwine from '../assets/vsi-swine.png';
 
 function ProjectCard({ title, description, bullets, image, tags, codeSnippet, explanation, link }) {
   const [expanded, setExpanded] = useState(false);
@@ -146,6 +148,49 @@ export default function Projects() {
 
   // Define all projects in an array for easier filtering
   const allProjects = [
+    {
+      id: 'vsi-swine',
+      title: "A Landing Page for the Swine Division of VSI",
+      description: "A simple landing page that is super mobile responsive, clean and user-friendly. Auto-deployed from the CLI using Netlify",
+      image: vsiSwine,
+      tags: ["HTML", "JavaScript", "TailWindCSS"],
+      type: "Landing Page",
+      link: "vsiswine.netlify.app",
+      bullets: [
+        'Deployed from CLI',
+        'lightweight & Fast!',
+        'Beautiful UI',
+        'Seemlessly Responsive'
+      ],
+      explanation: " ",
+      codeSnippet: ` 
+                    `
+    },
+    {
+      id: 'ad-intelligence',
+      title: "Ad Intelligence Spy | A Chrome Extension for Ad Tracking",
+      description: "Allows our marketing department to see what ad text, who is advertising and for what as they journey throughout the web. Excellent way to see what competitors are advertising for that is relevant to your work day",
+      image: adIntelligence,
+      tags: ["Chrome Extensions API", "JavaScript", "TailWindCSS"],
+      type: "Browser Extension",
+      link: "",
+      bullets: [
+        'Locally Stored Data',
+        'In-Browser Dashboard Included',
+        'Runs Silently in the Background',
+        'Complete with Graphs'
+      ],
+      explanation: "This snippet is initializing the dashboard ",
+      codeSnippet: `  function Dashboard() {
+                        const [ads, setAds] = useState([]);
+                        const [competitors, setCompetitors] = useState([]);
+                        const [activeView, setActiveView] = useState('overview');
+                        const [filters, setFilters] = useState({
+                          platform: 'all',
+                          dateRange: '7d'
+                        });",
+                    `
+    },
     {
       id: 'qr-generator',
       title: "QR Code Generator Chrome Extension",
