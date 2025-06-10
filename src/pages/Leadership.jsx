@@ -1,326 +1,326 @@
-// pages/Leadership.jsx
-import { useState, useEffect } from 'react';
+// pages/Leadership.jsx (now About)
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
+import { BookingLink } from '../components/ProtectedContact';
 
-function ExperienceCard({ title, description, items }) {
-  const [isVisible, setIsVisible] = useState(false);
-  
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsVisible(true);
-    }, 100);
-    
-    return () => clearTimeout(timeout);
-  }, []);
-
+function ValueCard({ title, description, icon }) {
   return (
-    <div className={`bg-white rounded-xl shadow-md border border-slate-100 overflow-hidden transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-4 text-gray-800">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
-        
-        <div className="flex flex-wrap gap-2">
-          {items.map((item, index) => (
-            <span key={index} className="text-sm font-medium px-3 py-1 rounded-full bg-slate-100 text-slate-700">
-              {item}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      className="bg-indigo-50 p-6 rounded-lg border-2 border-indigo-200"
+    >
+      <div className="text-3xl mb-3">{icon}</div>
+      <h3 className="font-bold text-indigo-700 mb-2">{title}</h3>
+      <p className="text-gray-700 text-sm">{description}</p>
+    </motion.div>
   );
 }
 
-function StatCard({ value, label, icon }) {
+function ApproachCard({ title, description, icon }) {
   return (
-    <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100 text-center">
-      <div className="text-blue-700 text-4xl font-bold mb-2">{value}</div>
-      <div className="flex items-center justify-center mb-2">
-        <span className="text-3xl mr-2">{icon}</span>
-        <h3 className="text-lg font-semibold text-gray-800">{label}</h3>
-      </div>
-    </div>
+    <motion.div
+      whileHover={{ y: -5 }}
+      className="bg-white p-6 rounded-lg shadow-md border border-gray-100"
+    >
+      <div className="text-3xl mb-3">{icon}</div>
+      <h3 className="font-bold text-gray-900 mb-2">{title}</h3>
+      <p className="text-gray-600 text-sm">{description}</p>
+    </motion.div>
   );
 }
 
-function ConsultingProcess({ number, title, description }) {
-  return (
-    <div className="relative">
-      <div className="absolute top-0 left-0 w-12 h-12 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold text-xl">
-        {number}
-      </div>
-      <div className="pl-16">
-        <h4 className="text-xl font-bold mb-2 text-gray-800">{title}</h4>
-        <p className="text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-}
+export default function About() {
+  const [showPhilosophy, setShowPhilosophy] = useState(false);
 
-export default function Leadership() {
   return (
     <div className="pt-20">
-      {/* Header Section */}
-      <section className="bg-gradient-to-br from-blue-700 to-blue-800 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">eCommerce Leadership & Marketing</h1>
-          <p className="text-xl max-w-3xl mx-auto mb-4 text-blue-100">
-            Strategic vision combined with hands-on expertise to drive growth, 
-            optimize performance, and deliver exceptional digital experiences.
-          </p>
-        </div>
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+        <StaggerContainer className="max-w-6xl mx-auto px-6">
+          <StaggerItem>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+              Strategic Technology Partners Who Deliver
+            </h1>
+            <p className="text-xl text-gray-300 text-center max-w-3xl mx-5">
+              We're not your typical consultants. We're hands-on technology strategists who 
+              deliver practical solutions that transform businesses.
+            </p>
+          </StaggerItem>
+        </StaggerContainer>
       </section>
 
-      {/* Leadership Philosophy */}
+      {/* Our Philosophy */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold mb-6 text-center">Leadership Philosophy</h2>
-            <p className="text-xl text-gray-600 mb-6">
-              As a Director of eCommerce, I believe that the most effective leadership combines 
-              strategic vision with a deep understanding of the technical foundations. This approach 
-              allows me to bridge the gap between business goals and technical implementation, 
-              ensuring alignment across all departments.
-            </p>
-            <p className="text-xl text-gray-600">
-              My leadership style emphasizes data-driven decision making, transparent communication, 
-              and empowering team members to take ownership of their areas of expertise. By fostering 
-              a culture of continuous learning and innovation, I help organizations adapt quickly to 
-              the ever-changing digital landscape.
-            </p>
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center ">
+            <h2 className="text-3xl font-bold mb-4">Our Philosophy</h2>
+            <button
+              onClick={() => setShowPhilosophy(!showPhilosophy)}
+              className="text-indigo-600 hover:text-indigo-800 font-medium"
+            >
+              {showPhilosophy ? 'Hide' : 'Read'} our approach →
+            </button>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <StatCard icon="📈" label="Assembling/Managing A Team" />
-            <StatCard  icon="💻" label="Conversion Rate Improvement" />
-            <StatCard  icon="📱" label="Mobile Optimization" />
-            <StatCard  icon="🖱️" label="Pay Per Click" />
-          </div>
-        </div>
-      </section>
-
-      {/* Platform Expertise */}
-      <section className="py-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">Platform Expertise</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <ExperienceCard 
-              title="eCommerce Platforms"
-              description="Comprehensive experience implementing, managing, and optimizing major eCommerce platforms to drive sales and enhance customer experience."
-              items={[
-                "Magento 1", 
-                "Magento 2 (Community & Enterprise)", 
-                "Shopify",
-                "BigCommerce"
-              ]}
-            />
-            
-            <ExperienceCard 
-              title="Marketing & SEO Tools"
-              description="Proficient in utilizing industry-leading tools to develop and execute comprehensive digital marketing strategies that drive qualified traffic and conversions."
-              items={[
-                "SEMRush", 
-                "Google Analytics", 
-                "Google Search Console", 
-                "Google Ads",
-                "MailChimp",
-                "Constant Contact"
-              ]}
-            />
-            
-            <ExperienceCard 
-              title="Pay-Per-Click Advertising"
-              description="Strategic management of PPC campaigns across multiple platforms, optimizing for ROAS while managing substantial advertising budgets."
-              items={[
-                "Budget Management ($50K-$200K/year)",
-                "A/B Testing",
-                "Landing Page Optimization",
-                "Conversion Tracking",
-                "Remarketing Campaigns"
-              ]}
-            />
-            
-            <ExperienceCard 
-              title="Professional Tools"
-              description="Proficient with industry-standard creative and productivity software to develop compelling content and maintain efficient operations."
-              items={[
-                "Adobe Creative Suite",
-                "Microsoft Office Suite",
-                "Project Management Tools",
-                "Data Analysis & Visualization"
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Consulting Services */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6">Consulting</h2>
-            <p className="text-xl text-gray-600">
-              In addition to my role as Director of eCommerce, over the years I've been able to provide specialized consulting services 
-              to help businesses optimize their digital presence and drive growth.
-            </p>
-          </div>
-
-          <div className="bg-blue-50 rounded-xl p-8 mb-12">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-bold mb-4 text-blue-800">My Approach</h3>
-                <p className="text-gray-700 mb-6">
-                  As a consultant, I bring the same data-driven, results-oriented approach that has defined my 
-                  career as an eCommerce Director. I work closely with clients to understand their unique 
-                  challenges and opportunities, developing tailored strategies that align with their business goals.
-                </p>
-                <p className="text-gray-700">
-                  My consulting process is collaborative and transparent, ensuring that clients not only see 
-                  results but also gain the knowledge and tools needed for long-term success.
-                </p>
-              </div>
+          {showPhilosophy && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              className="bg-gray-50 p-8 rounded-xl space-y-4 text-gray-700"
+            >
+              <p className="font-semibold text-lg">We believe in practical solutions over theoretical frameworks.</p>
               
-              <div className="space-y-8">
-                <ConsultingProcess 
-                  number="1"
-                  title="Comprehensive Audit"
-                  description="In-depth analysis of your current eCommerce operations, identifying strengths, weaknesses, and opportunities for growth."
-                />
-                
-                <ConsultingProcess 
-                  number="2"
-                  title="Strategic Planning"
-                  description="Development of actionable strategies tailored to your specific business goals and market position."
-                />
-                
-                <ConsultingProcess 
-                  number="3"
-                  title="Implementation Support"
-                  description="Hands-on guidance and support throughout the implementation process, ensuring strategies are executed effectively."
-                />
-                
-                <ConsultingProcess 
-                  number="4"
-                  title="Measurement & Optimization"
-                  description="Ongoing analysis and refinement of strategies based on performance data and emerging market trends."
-                />
-              </div>
-            </div>
-          </div>
+              <p>
+                Too many consultants deliver PowerPoints and roadmaps. We deliver working solutions 
+                that solve real problems and generate measurable results.
+              </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md border-t-4 border-blue-700">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">eCommerce Strategy</h3>
-              <p className="text-gray-600">
-                Comprehensive strategy development to optimize your online store, improve conversion rates, and increase customer lifetime value.
+              <p>
+                Our approach is simple: understand your business, identify the highest-impact 
+                opportunities, and implement solutions that work with your existing team and technology.
               </p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md border-t-4 border-blue-700">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Digital Marketing</h3>
-              <p className="text-gray-600">
-                Targeted digital marketing strategies that drive qualified traffic, build brand awareness, and generate measurable ROI.
+
+              <p>
+                We don't believe in one-size-fits-all. Every business is unique, and every solution 
+                should be tailored to your specific challenges, resources, and goals.
               </p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-md border-t-4 border-blue-700">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">Platform Migration</h3>
-              <p className="text-gray-600">
-                Expert guidance for seamless platform transitions, ensuring data integrity, SEO preservation, and minimal business disruption.
+
+              <p className="font-semibold">
+                Our promise: We focus on outcomes, not outputs. If it doesn't improve your business 
+                metrics, we don't consider it a success.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          )}
         </div>
       </section>
 
-      {/* Case Studies Teaser */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Proven Results</h2>
-          <p className="text-xl max-w-3xl mx-auto mb-8">
-            My leadership and strategic approach have driven significant results for eCommerce businesses across various industries.
+      {/* Core Values */}
+      <section className="py-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Our Core Values
+          </h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            These principles guide every engagement and solution we deliver.
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <div className="text-4xl font-bold text-blue-400 mb-2">127%</div>
-              <p className="text-gray-300">Increase in organic traffic for a specialty retailer through comprehensive SEO strategy</p>
-            </div>
-            
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <div className="text-4xl font-bold text-blue-400 mb-2">43%</div>
-              <p className="text-gray-300">Improvement in conversion rate following UX optimization and checkout redesign</p>
-            </div>
-            
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <div className="text-4xl font-bold text-blue-400 mb-2">$1.2M</div>
-              <p className="text-gray-300">Revenue increase for B2B/B2C Website after SEO & platform overhaul</p>
-            </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <ValueCard
+              icon="🎯"
+              title="Results-Driven"
+              description="Every recommendation must tie directly to measurable business outcomes and ROI."
+            />
+            <ValueCard
+              icon="⚡"
+              title="Speed & Efficiency"
+              description="We deliver solutions in weeks, not months. Time is money, and we respect both."
+            />
+            <ValueCard
+              icon="🔧"
+              title="Practical Implementation"
+              description="We don't just advise—we help implement. Real solutions that work in the real world."
+            />
+            <ValueCard
+              icon="📊"
+              title="Data-Informed"
+              description="Decisions based on data, not opinions. We measure everything that matters."
+            />
+            <ValueCard
+              icon="🤝"
+              title="True Partnership"
+              description="We work with your team, not above them. Knowledge transfer is part of every engagement."
+            />
+            <ValueCard
+              icon="💡"
+              title="Continuous Innovation"
+              description="We stay ahead of technology trends to bring you cutting-edge, proven solutions."
+            />
           </div>
         </div>
       </section>
 
-      {/* Personal Section */}
+      {/* Our Expertise */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Leadership Beyond Business</h2>
-            <p className="text-xl text-gray-600">
-              My approach to leadership is shaped by my diverse experiences—both professional and personal.
-            </p>
-          </div>
-          
-          <div className="bg-slate-50 rounded-xl p-8 shadow-sm">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
-                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🚜</span>
-                </div>
-                <h4 className="font-semibold text-center text-lg mb-3">Small-Time Farmer</h4>
-                <p className="text-gray-600 text-center">
-                  Running a small farm with chickens, turkeys, and pigs has taught me valuable lessons about resource management, patience, and sustainable practices. My family, including three dogs and two cats, learns responsibility and the value of hard work through our daily farm activities.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
-                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🔧</span>
-                </div>
-                <h4 className="font-semibold text-center text-lg mb-3">Mechanic</h4>
-                <p className="text-gray-600 text-center">
-                  Rebuilding old diesel trucks—from engine overhauls to complete restorations—has honed my problem-solving abilities and attention to detail. This hobby reinforces my belief that understanding the fundamentals of how things work is essential to leading technical teams effectively.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 hover:shadow-md transition">
-                <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🪚</span>
-                </div>
-                <h4 className="font-semibold text-center text-lg mb-3">Woodworker</h4>
-                <p className="text-gray-600 text-center">
-                  Crafting furniture from 100-year-old barnwood reclaimed from my property combines my appreciation for history with a passion for creating lasting value. These projects remind me that the best leadership involves transforming existing resources into something new and meaningful.
-                </p>
-              </div>
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Areas of Expertise
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-indigo-700">E-commerce Optimization</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Performance optimization</li>
+                <li>• Conversion rate improvement</li>
+                <li>• Platform migrations</li>
+                <li>• Multi-channel integration</li>
+              </ul>
             </div>
-            
-            <div className="mt-8 text-center text-gray-700 italic">
-              <p>I believe these pursuits contribute directly to my professional approach—balancing vision with execution, respecting both tradition and innovation, and always building with purpose and quality in mind.</p>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-teal-700">Process Automation</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Workflow optimization</li>
+                <li>• System integration</li>
+                <li>• Custom automation tools</li>
+                <li>• Efficiency analysis</li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">Digital Marketing</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• PPC optimization</li>
+                <li>• SEO strategy</li>
+                <li>• Marketing automation</li>
+                <li>• Analytics & attribution</li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-indigo-700">Data & Analytics</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Business intelligence</li>
+                <li>• Predictive analytics</li>
+                <li>• Dashboard development</li>
+                <li>• Data-driven decisions</li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-teal-700">Technology Strategy</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Digital transformation</li>
+                <li>• System architecture</li>
+                <li>• Vendor selection</li>
+                <li>• Roadmap development</li>
+              </ul>
+            </div>
+
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-bold text-xl mb-3 text-orange-600">Operations Excellence</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Supply chain optimization</li>
+                <li>• Inventory management</li>
+                <li>• Cost reduction</li>
+                <li>• Quality improvement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How We Work */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            How We Deliver Results
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <ApproachCard
+              icon="🔍"
+              title="Deep Analysis"
+              description="We start by understanding your business inside and out. No surface-level assessments."
+            />
+            <ApproachCard
+              icon="💰"
+              title="ROI-First Approach"
+              description="Every solution is evaluated based on its potential return. We prioritize high-impact wins."
+            />
+            <ApproachCard
+              icon="🛠️"
+              title="Hands-On Implementation"
+              description="We don't just tell you what to do—we help you do it. Real support, real results."
+            />
+            <ApproachCard
+              icon="📈"
+              title="Measurable Outcomes"
+              description="Clear KPIs from day one. If we can't measure it, we don't promise it."
+            />
+            <ApproachCard
+              icon="⏱️"
+              title="Rapid Deployment"
+              description="Quick wins in weeks, major transformations in months. We move fast."
+            />
+            <ApproachCard
+              icon="🤝"
+              title="Knowledge Transfer"
+              description="We ensure your team can maintain and build upon the solutions we implement."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Client Types */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Who We Work With
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-green-50 p-6 rounded-lg border-2 border-green-300">
+              <h3 className="font-bold text-green-700 mb-3">✅ Ideal Clients:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Growth-focused businesses ready to invest in transformation</li>
+                <li>• Companies that value data-driven decision making</li>
+                <li>• Teams open to change and new approaches</li>
+                <li>• Organizations that measure success by results</li>
+                <li>• Businesses ready to move fast and capture opportunities</li>
+                <li>• Leaders who appreciate honest, direct communication</li>
+              </ul>
+            </div>
+
+            <div className="bg-red-50 p-6 rounded-lg border-2 border-red-300">
+              <h3 className="font-bold text-red-700 mb-3">❌ Not a Good Fit:</h3>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Companies looking for theoretical frameworks</li>
+                <li>• Organizations resistant to change</li>
+                <li>• Businesses wanting reports without implementation</li>
+                <li>• Teams that prefer meetings over action</li>
+                <li>• Companies not ready to invest in growth</li>
+                <li>• Organizations that don't value measurable outcomes</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-700 text-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Take Your eCommerce to the Next Level?</h2>
-          <p className="text-xl mb-8">
-            Whether you're looking for leadership expertise, strategic guidance, or specialized consulting, 
-            I'm here to help you achieve your digital commerce goals.
+      <section className="py-20 bg-gradient-to-r from-indigo-700 to-teal-700 text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Let's discuss your challenges and explore how we can drive meaningful results.
           </p>
-          <a href="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
-            Start a Conversation
-          </a>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <BookingLink
+              type="consultation"
+              className="inline-flex items-center px-8 py-4 bg-white text-indigo-700 font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
+            >
+              Schedule Strategic Discussion
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </BookingLink>
+            
+            <Link 
+              to="/results"
+              className="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 transition-all"
+            >
+              See Our Track Record
+            </Link>
+          </div>
+          
+          <p className="mt-6 text-sm opacity-75">
+            No obligations. Just strategic insights about your business potential.
+          </p>
         </div>
       </section>
     </div>

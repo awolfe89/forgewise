@@ -42,7 +42,7 @@ export default function AttributeFilteringCaseStudy() {
             <div className="bg-blue-50 border-l-4 border-blue-700 p-6 mb-8 rounded-r-lg">
               <h2 className="text-gray-800 text-xl font-semibold mt-0">"You have 10,000+ SKUs, how do you help customers sift through them?"</h2>
               <p className="mb-0 text-gray-600">
-                This was the question an electronics supply distributor asked us. Having too many categories can 
+                This was the question an electronics supply distributor asked me. Having too many categories can 
                 annoy customers, but leaving them to search through 500 screwdrivers was equally untenable.
               </p>
             </div>
@@ -53,7 +53,7 @@ export default function AttributeFilteringCaseStudy() {
             </h2>
 
             <p>
-              I'll use hand tools as our example throughout this case study to illustrate the principles that we applied.
+              I'll use hand tools as my example throughout this case study to illustrate the principles that I applied.
             </p>
 
             <p>
@@ -203,7 +203,7 @@ export default function AttributeFilteringCaseStudy() {
             </div>
 
             <p>
-              Returning to our tools example, imagine a customer navigates to the screwdrivers category. 
+              Returning to my tools example, imagine a customer navigates to the screwdrivers category. 
               Instead of facing hundreds of different screwdrivers with no way to narrow their selection, 
               I developed and deployed these filtering attributes:
             </p>
@@ -261,7 +261,7 @@ export default function AttributeFilteringCaseStudy() {
             </p>
 
             <p>
-              For example, if you sell clothing, you don't want to have to scroll past dropdown options for collar type or sleeve length while trying to input data for sneakers. So we group attributes into logical sets.
+              For example, if you sell clothing, you don't want to have to scroll past dropdown options for collar type or sleeve length while trying to input data for sneakers. So I group attributes into logical sets.
             </p>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 my-8">
@@ -340,7 +340,8 @@ export default function AttributeFilteringCaseStudy() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
               <p className="text-gray-600">
-                eCommerce Director with 10+ years of experience optimizing digital shopping experiences.
+              Founder of ForgeWise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
+
               </p>
             </div>
           </div>

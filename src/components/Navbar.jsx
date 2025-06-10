@@ -1,6 +1,7 @@
 // components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ForgeWiseTextLogo } from '../config/branding';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,49 +19,69 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
+    }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl text-blue-700">Allan<span className="text-gray-800">.Resume</span></Link>
+        <Link to="/" className="flex items-center">
+          <ForgeWiseTextLogo />
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link 
             to="/" 
-            className={`${isActive('/') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+            className={`${
+              isActive('/') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
           >
             Home
           </Link>
           <Link 
-            to="/work" 
-            className={`${isActive('/work') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+            to="/quick-fixes" 
+            className={`${
+              isActive('/quick-fixes') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
           >
-            Work
+            Quick Wins
           </Link>
           <Link 
-            to="/projects" 
-            className={`${isActive('/projects') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+            to="/solutions" 
+            className={`${
+              isActive('/solutions') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
           >
-            Projects
+            Solutions
           </Link>
           <Link 
-            to="/leadership" 
-            className={`${isActive('/leadership') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+            to="/results" 
+            className={`${
+              isActive('/results') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
           >
-            Leadership
+            Results
+          </Link>
+          <Link 
+            to="/about" 
+            className={`${
+              isActive('/about') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
+          >
+            About
           </Link>
           <Link 
             to="/insights" 
             className={`${
-              location.pathname.includes('/insights') ? 'text-blue-700 font-medium' : 'text-gray-700'
-            } hover:text-blue-600 transition-colors`}
+              isActive('/insights') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+            } hover:text-indigo-600 transition-colors`}
           >
             Insights
           </Link>
           <Link 
             to="/contact" 
-            className={`${isActive('/contact') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
           >
-            Contact
+            Get Started
           </Link>
         </div>
 
@@ -87,48 +108,64 @@ export default function Navbar() {
           <div className="flex flex-col space-y-4 px-6">
             <Link 
               to="/" 
-              className={`${isActive('/') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              className={`${
+                isActive('/') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link 
-              to="/work" 
-              className={`${isActive('/work') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              to="/quick-fixes" 
+              className={`${
+                isActive('/quick-fixes') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Work
+              Quick Wins
             </Link>
             <Link 
-              to="/projects" 
-              className={`${isActive('/projects') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              to="/solutions" 
+              className={`${
+                isActive('/solutions') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Projects
+              Solutions
             </Link>
-
             <Link 
-              to="/leadership" 
-              className={`${isActive('/leadership') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              to="/results" 
+              className={`${
+                isActive('/results') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Leadership
+              Results
+            </Link>
+            <Link 
+              to="/about" 
+              className={`${
+                isActive('/about') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              About
             </Link>
             <Link 
               to="/insights" 
               className={`${
-                location.pathname.includes('/insights') ? 'text-blue-700 font-medium' : 'text-gray-700'
-              } hover:text-blue-600 transition-colors`}
+                isActive('/insights') ? 'text-indigo-600 font-medium' : 'text-gray-700'
+              } hover:text-indigo-600 transition-colors`}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Insights
             </Link>
             <Link 
               to="/contact" 
-              className={`${isActive('/contact') ? 'text-blue-700 font-medium' : 'text-gray-700'} hover:text-blue-600 transition-colors`}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact
+              Get Started
             </Link>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function AiInEcommerce() {
               <span className="mx-2">•</span>
               <span>5 min read</span>
               <span className="mx-2">•</span>
-              <span>AI Strategy</span>
+              <span>AI Tools</span>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function AiInEcommerce() {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 mb-4">
-                  For a technical B2B retailer with complex products, we implemented a product-aware chatbot that could:
+                  For a technical B2B retailer with complex products, I implemented a product-aware chatbot that could:
                 </p>
                 <ul className="mb-4">
                   <li className="mb-2">Access the product catalog in real-time</li>
@@ -305,7 +305,7 @@ export default function AiInEcommerce() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
               <p className="text-gray-600">
-                eCommerce Director with expertise in implementing solutions that deliver measurable results.
+                Senior-Level eCommerce Director & Founder of ForgeWise.io
               </p>
             </div>
           </div>

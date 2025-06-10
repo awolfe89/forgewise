@@ -28,7 +28,7 @@ export default function SeoUxCaseStudy() {
               <span className="mx-2">•</span>
               <span>7 min read</span>
               <span className="mx-2">•</span>
-              <span>SEO Strategy</span>
+              <span>SEO Fix</span>
             </div>
           </div>
         </div>
@@ -66,14 +66,14 @@ export default function SeoUxCaseStudy() {
                 <h3 className="text-xl font-bold text-gray-800 mb-4">My Philosophy</h3>
                 <p className="text-gray-700 italic mb-0">
                   "I always begin with a sturdy foundation before building the SEO house. Managing the entire website 
-                  from top to bottom allows us to create a cohesive strategy that addresses both technical SEO and user experience simultaneously."
+                  from top to bottom allows me to create a cohesive strategy that addresses both technical SEO and user experience simultaneously."
                 </p>
               </div>
             </div>
 
             <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6 flex items-center">
               <span className="flex items-center justify-center bg-blue-100 text-blue-700 rounded-full w-8 h-8 text-sm font-bold mr-3">1</span>
-              My Strategic Approach
+              My Fix-Everything Approach
             </h2>
 
             <p>
@@ -277,7 +277,7 @@ export default function SeoUxCaseStudy() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
               <p className="text-gray-600">
-                eCommerce Director with expertise in SEO strategy and user experience optimization.
+              Founder of ForgeWise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
               </p>
             </div>
           </div>

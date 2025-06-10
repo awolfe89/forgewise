@@ -28,7 +28,7 @@ export default function PpcCostOptimization() {
               <span className="mx-2">•</span>
               <span>6 min read</span>
               <span className="mx-2">•</span>
-              <span>PPC Strategy</span>
+              <span>PPC Fix</span>
             </div>
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function PpcCostOptimization() {
             </p>
 
             <div className="bg-slate-50 p-6 rounded-lg my-8 border border-slate-200">
-              <h3 className="font-bold text-gray-800 mb-4">Keyword Strategy Example</h3>
+              <h3 className="font-bold text-gray-800 mb-4">Smart Keyword Targeting Example</h3>
               
               <div className="overflow-x-auto">
                 <table className="min-w-full divide-y divide-slate-200">
@@ -196,7 +196,7 @@ export default function PpcCostOptimization() {
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Keyword</th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Monthly Searches</th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Est. CPC</th>
-                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Strategy</th>
+                      <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">Action</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-slate-200">
@@ -217,7 +217,7 @@ export default function PpcCostOptimization() {
               </div>
               
               <p className="mt-4 text-gray-600 text-sm mb-0">
-                This example demonstrates the power of strategic bidding. By targeting more specific, localized terms, 
+                This example shows how smart bidding works. By targeting more specific, localized terms, 
                 you can reach more qualified leads at a significantly lower cost.
               </p>
             </div>
@@ -235,9 +235,9 @@ export default function PpcCostOptimization() {
 
             <ul className="mb-8">
               <li className="mb-2">In-depth keyword research and analysis</li>
-              <li className="mb-2">Strategic budget allocation</li>
+              <li className="mb-2">Smart budget allocation based on what actually converts</li>
               <li className="mb-2">Ongoing optimization and negative keyword management</li>
-              <li className="mb-2">Regular performance analysis and reporting</li>
+              <li className="mb-2">Regular performance tracking to see what's working</li>
               <li className="mb-2">A/B testing of ad copy and landing pages</li>
             </ul>
 

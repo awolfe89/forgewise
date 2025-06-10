@@ -1,244 +1,409 @@
 // pages/Home.jsx
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
+import { BookingLink } from '../components/ProtectedContact';
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-  
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const [checkedProblems, setCheckedProblems] = useState({});
+  const [monthlyRevenue, setMonthlyRevenue] = useState('');
+  const [conversionRate, setConversionRate] = useState('');
+  const [calculatorResult, setCalculatorResult] = useState(null);
+  const [showResults, setShowResults] = useState(false);
+
+  const problems = [
+    { id: 'traffic', label: 'Traffic isn\'t converting to sales', impact: 15 },
+    { id: 'cart', label: 'Shopping cart abandonment over 70%', impact: 25 },
+    { id: 'ppc', label: 'PPC campaigns burning cash with low ROI', impact: 20 },
+    { id: 'seo', label: 'Invisible on Google (page 2 or worse)', impact: 30 },
+    { id: 'mobile', label: 'Mobile experience is frustrating customers', impact: 18 },
+    { id: 'analytics', label: 'No idea which marketing channels actually work', impact: 22 },
+    { id: 'email', label: 'Email campaigns get ignored or marked as spam', impact: 12 },
+    { id: 'tech', label: 'Website takes forever to load', impact: 28 }
+  ];
+
+  const handleProblemChange = (problemId) => {
+    setCheckedProblems(prev => {
+      const newState = { ...prev };
+      newState[problemId] = !prev[problemId];
+      return newState;
+    });
+  };
+
+  const calculateLoss = () => {
+    if (!monthlyRevenue || !conversionRate) {
+      alert('Please enter both monthly revenue and conversion rate');
+      return;
+    }
+    
+    const revenue = parseFloat(monthlyRevenue.replace(/[,$]/g, ''));
+    const currentRate = parseFloat(conversionRate);
+    
+    if (isNaN(revenue) || isNaN(currentRate) || revenue <= 0 || currentRate <= 0) {
+      alert('Please enter valid positive numbers');
+      return;
+    }
+    
+    const checkedCount = Object.values(checkedProblems).filter(Boolean).length;
+    
+    if (checkedCount === 0) {
+      alert('Please select at least one challenge to calculate opportunity cost');
+      return;
+    }
+    
+    // Industry average conversion rate is 2.5-3%
+    const targetRate = 3;
+    const improvementPotential = currentRate < targetRate 
+      ? Math.min((targetRate - currentRate) * 0.8, 1.5)
+      : 0.5; // Even well-performing sites can improve
+    
+    const baselineLoss = revenue * (improvementPotential / 100);
+    
+    // Each problem compounds the opportunity
+    const compoundFactor = 1 + (checkedCount * 0.15);
+    const totalLoss = Math.max(Math.round(baselineLoss * compoundFactor), revenue * 0.05); // Minimum 5% improvement potential
+    
+    setCalculatorResult({
+      monthlyLoss: totalLoss,
+      yearlyLoss: totalLoss * 12,
+      checkedCount: checkedCount
+    });
+    setShowResults(true);
+  };
+
+  // Track checked problems for UI feedback
+  const checkedCount = Object.values(checkedProblems).filter(Boolean).length;
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-slate-100 py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-slate-200 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6))]"></div>
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
-              <span className="text-blue-700">Hi, I'm Allan.</span> <br className="hidden md:block" />
-              eCommerce Director &<br className="hidden md:block" /> 
-              <span className="relative">
-                <span className="relative z-10">Curious Fellow</span>
-                <span className="absolute bottom-2 left-0 w-full h-3 bg-blue-200 opacity-70 z-0"></span>
-              </span>
+      <section className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-teal-700 py-16 md:py-24">
+        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6))] pointer-events-none"></div>
+        
+        <StaggerContainer className="max-w-6xl mx-auto px-4">
+          <StaggerItem>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
+              Transform Your <span className="text-teal-300">Business Operations</span>
             </h1>
-            <p className="text-xl text-gray-700 max-w-2xl mb-8">
-              I combine strategic leadership with hands-on technical expertise to drive eCommerce growth through innovative solutions and data-driven decisions.
+            <p className="text-xl md:text-2xl text-indigo-100 text-center mb-12 max-w-3xl mx-auto">
+              Strategic technology consulting that solves real problems and delivers measurable results.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/projects" className="px-8 py-3 bg-blue-700 text-white font-medium rounded-lg hover:bg-blue-800 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                View My Projects
-              </Link>
-              <Link to="/leadership" className="px-8 py-3 bg-white text-blue-700 font-medium rounded-lg border-2 border-blue-700 hover:bg-blue-50 transition shadow hover:shadow-md">
-                Leadership Experience
-              </Link>
+          </StaggerItem>
+        </StaggerContainer>
+
+        {/* Problem Assessment Tool - Outside ALL animation containers */}
+        <div className="max-w-4xl mx-auto px-4 pb-8">
+          <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 transform transition-all duration-300 hover:shadow-2xl">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              🎯 Identify Your Challenges
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Select the challenges your business is facing to calculate the potential impact of strategic improvements.
+            </p>
+            
+            {/* Problem checkboxes */}
+            <div className="grid md:grid-cols-2 gap-4 mb-8">
+              {problems.map((problem) => (
+                <div 
+                  key={problem.id} 
+                  className="flex items-center p-4 border-2 border-gray-200 rounded-lg hover:border-indigo-300 hover:bg-indigo-50 transition-all cursor-pointer"
+                  onClick={() => handleProblemChange(problem.id)}
+                >
+                  <input
+                    type="checkbox"
+                    id={`cb-${problem.id}`}
+                    checked={checkedProblems[problem.id] || false}
+                    onChange={() => handleProblemChange(problem.id)}
+                    className="w-5 h-5 text-indigo-600 border-2 border-gray-300 rounded focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                  <label 
+                    htmlFor={`cb-${problem.id}`} 
+                    className="ml-3 cursor-pointer select-none text-gray-700 flex-1"
+                  >
+                    {problem.label}
+                  </label>
+                </div>
+              ))}
             </div>
+
+            {checkedCount >= 3 && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6"
+              >
+                <p className="text-amber-800 font-semibold">
+                  ⚠️ You've identified {checkedCount} challenges. 
+                  Each one impacts your bottom line. Let's quantify the opportunity cost.
+                </p>
+              </motion.div>
+            )}
+
+            {/* Revenue Calculator */}
+            <div className="bg-gray-50 rounded-lg p-6">
+              <h3 className="text-xl font-bold mb-2 text-gray-900">
+                💡 Calculate Your Opportunity Cost
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Based on the {checkedCount} challenge{checkedCount !== 1 ? 's' : ''} you've identified, 
+                let's calculate the potential revenue improvement.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Monthly Revenue ($)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="50000"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    value={monthlyRevenue}
+                    onChange={(e) => setMonthlyRevenue(e.target.value)}
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Your current monthly online revenue</p>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Current Conversion Rate (%)
+                  </label>
+                  <input
+                    type="number"
+                    step="0.1"
+                    placeholder="1.5"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                    value={conversionRate}
+                    onChange={(e) => setConversionRate(e.target.value)}
+                  />
+                  <p className="text-xs text-gray-500 mt-1">Percentage of visitors who buy</p>
+                </div>
+              </div>
+
+              <button
+                onClick={calculateLoss}
+                disabled={checkedCount === 0}
+                className={`w-full md:w-auto px-6 py-3 font-bold rounded-lg transition-colors ${
+                  checkedCount > 0 
+                    ? 'bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer' 
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+              >
+                {checkedCount === 0 
+                  ? 'Select Challenges Above First' 
+                  : 'Calculate Opportunity Cost'}
+              </button>
+
+              {showResults && calculatorResult && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="mt-6 bg-white rounded-lg p-6 border-2 border-indigo-300"
+                >
+                  <p className="text-3xl font-bold text-indigo-600 mb-2">
+                    Potential Monthly Gain: ${calculatorResult.monthlyLoss.toLocaleString()}
+                  </p>
+                  <p className="text-gray-700 mb-4">
+                    That's <span className="font-bold">${calculatorResult.yearlyLoss.toLocaleString()}/year</span> in potential revenue improvement.
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    * Based on industry benchmarks and the {calculatorResult.checkedCount} challenges you've identified
+                  </p>
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Primary CTA */}
+        <div className="max-w-6xl mx-auto px-4 pb-12">
+          <div className="text-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 bg-orange-500 text-white text-lg font-bold rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl"
+            >
+              Start Your Transformation
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-indigo-100">
+              Free consultation. No obligations. Just strategic insights.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-16 text-center">
-            Where <span className="text-blue-700">Leadership</span> Meets <span className="text-blue-700">Technical Expertise</span>
+      {/* Success Metrics Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            Proven Track Record
           </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition border border-slate-100 transform hover:-translate-y-1">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-3xl">🔍</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Data-Driven Strategy</h3>
-              <p className="text-gray-600">
-                Transforming customer insights and metrics into action plans that drive measurable growth.
-              </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="text-4xl font-bold text-indigo-600 mb-2">287%</div>
+              <p className="text-gray-700 font-medium">Average ROI Improvement</p>
+              <p className="text-sm text-gray-600 mt-2">Through strategic optimization</p>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition border border-slate-100 transform hover:-translate-y-1">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-3xl">⚙️</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Full-Stack Development</h3>
-              <p className="text-gray-600">
-                Building effective MVPs and prototypes that solve real business problems—no waiting required.
-              </p>
+            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="text-4xl font-bold text-teal-600 mb-2">62%</div>
+              <p className="text-gray-700 font-medium">Cost Reduction</p>
+              <p className="text-sm text-gray-600 mt-2">In operational expenses</p>
             </div>
             
-            <div className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition border border-slate-100 transform hover:-translate-y-1">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-3xl">🧠</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">AI Integration</h3>
-              <p className="text-gray-600">
-                Implementing practical AI solutions that enhance customer experience and operational efficiency.
-              </p>
-            </div>
-            
-            <div className="bg-slate-50 rounded-xl p-6 shadow-md hover:shadow-lg transition border border-slate-100 transform hover:-translate-y-1">
-              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <span className="text-3xl">🧰</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Team Leadership</h3>
-              <p className="text-gray-600">
-                Guiding cross-functional teams with clear vision, empowerment, and a focus on outcomes.
-              </p>
+            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+              <div className="text-4xl font-bold text-orange-500 mb-2">4-8 weeks</div>
+              <p className="text-gray-700 font-medium">Typical Timeline</p>
+              <p className="text-sm text-gray-600 mt-2">From assessment to implementation</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Me Section */}
-<section className="py-16 bg-slate-50">
-  <div className="max-w-5xl mx-auto px-4">
-    <div className="bg-white rounded-xl shadow-md overflow-hidden">
-      <div className="md:flex">
-        <div className="md:shrink-0 bg-blue-700 md:w-1/3 p-8 text-white flex items-center justify-center">
-          <h2 className="text-3xl font-bold">Beyond the Office</h2>
-        </div>
-        <div className="p-8 md:p-10">
-          <p className="text-gray-600 mb-6">
-            When I'm not optimizing eCommerce strategies or coding new solutions, you'll find me engaged in hands-on projects that keep me grounded and creative:
+      {/* How We Work Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4">
+            Our Strategic Approach
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            We follow a proven methodology that delivers consistent results.
           </p>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <span className="text-2xl mr-3">🚜</span>
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-1">Small-Time Farmer</h3>
-                <p className="text-sm text-gray-600">Raising chickens, turkeys & pigs alongside my family, dogs, and cats—teaching responsibility and sustainable living.</p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                🔍
               </div>
+              <h3 className="text-xl font-bold mb-3">1. Strategic Assessment</h3>
+              <p className="text-gray-600">
+                We analyze your current operations, identify inefficiencies, and prioritize opportunities by ROI impact.
+              </p>
             </div>
-            
-            <div className="flex items-start">
-              <span className="text-2xl mr-3">🔧</span>
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-1">Diesel Mechanic</h3>
-                <p className="text-sm text-gray-600">Breathing new life into high-mileage trucks through complete engine rebuilds and mechanical restoration.</p>
+
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                🛠️
               </div>
+              <h3 className="text-xl font-bold mb-3">2. Solution Design</h3>
+              <p className="text-gray-600">
+                We develop tailored solutions that fit your team, technology stack, and business objectives.
+              </p>
             </div>
-            
-            <div className="flex items-start">
-              <span className="text-2xl mr-3">🪚</span>
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-1">Woodworker</h3>
-                <p className="text-sm text-gray-600">Crafting furniture and décor from 100-year-old barnwood reclaimed from my farm—preserving history through craftsmanship.</p>
+
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
+                📈
               </div>
+              <h3 className="text-xl font-bold mb-3">3. Implementation & Results</h3>
+              <p className="text-gray-600">
+                We execute the strategy, measure outcomes, and ensure sustainable improvements that drive growth.
+              </p>
             </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/solutions"
+              className="inline-block px-8 py-3 bg-white text-indigo-600 font-bold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-all"
+            >
+              Explore Our Solutions
+            </Link>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-      {/* Dual Focus Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">Dual Expertise</h2>
-            <p className="text-xl text-gray-600">
-              My unique value comes from mastering both strategic leadership and technical implementation—bridging the gap between vision and execution.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-xl p-8 shadow-md border border-blue-100">
-              <div className="w-16 h-16 bg-blue-700 rounded-lg flex items-center justify-center mb-6 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">eCommerce Leadership</h3>
-              <p className="text-gray-600 mb-6">
-                Strategic direction, team management, and growth-focused initiatives that drive business success.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Platform strategy and optimization</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Digital marketing and conversion optimization</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Cross-functional team leadership</span>
-                </li>
-              </ul>
-              <Link to="/leadership" className="text-blue-700 font-medium hover:text-blue-800 transition flex items-center">
-                Explore Leadership Experience
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
+      {/* Why ForgeWise Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-indigo-50 rounded-2xl p-8 md:p-12">
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              Why Choose ForgeWise?
+            </h2>
             
-            <div className="bg-white rounded-xl p-8 shadow-md border border-blue-100">
-              <div className="w-16 h-16 bg-blue-700 rounded-lg flex items-center justify-center mb-6 text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                </svg>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start">
+                <span className="text-indigo-600 mr-3 text-xl">✓</span>
+                <div>
+                  <h4 className="font-semibold mb-1">Industry Expertise</h4>
+                  <p className="text-gray-600 text-sm">
+                    Deep understanding of e-commerce, B2B, B2C and operational challenges
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Technical Innovation</h3>
-              <p className="text-gray-600 mb-6">
-                Hands-on development and implementation of solutions that automate processes and enhance customer experiences.
-              </p>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Full-stack development with modern frameworks</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">AI & automation integration</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-5 w-5 text-blue-700 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span className="text-gray-700">Custom tool development for business needs</span>
-                </li>
-              </ul>
-              <Link to="/projects" className="text-blue-700 font-medium hover:text-blue-800 transition flex items-center">
-                Explore Technical Projects
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
+              
+              <div className="flex items-start">
+                <span className="text-indigo-600 mr-3 text-xl">✓</span>
+                <div>
+                  <h4 className="font-semibold mb-1">Proven Methodology</h4>
+                  <p className="text-gray-600 text-sm">
+                    Systematic approach that delivers consistent, measurable results
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <span className="text-indigo-600 mr-3 text-xl">✓</span>
+                <div>
+                  <h4 className="font-semibold mb-1">Practical Solutions</h4>
+                  <p className="text-gray-600 text-sm">
+                    Real-world implementations, not theoretical recommendations
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <span className="text-indigo-600 mr-3 text-xl">✓</span>
+                <div>
+                  <h4 className="font-semibold mb-1">ROI Focused</h4>
+                  <p className="text-gray-600 text-sm">
+                  From 100 products to 20,000 and from $1 in sales or $50 Million
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-700 text-white">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Have eCommerce Needs? I Know A Guy</h2>
-          <p className="text-xl mb-8">
-            Whether you're looking for leadership, technical expertise, or someone who brings both to the table, I'd love to connect.
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-r from-indigo-700 to-teal-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Every day you wait is opportunity lost. Let's discuss your challenges and forge a path forward.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link to="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
-              Start a Conversation
-            </Link>
-            <Link to="/leadership" className="inline-block px-8 py-3 bg-transparent text-white font-medium rounded-lg border-2 border-white hover:bg-blue-600 transition">
-              Learn About My Approach
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <BookingLink
+              type="consultation"
+              className="inline-flex items-center px-8 py-4 bg-white text-indigo-700 font-bold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
+            >
+              Schedule Consultation
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </BookingLink>
+            
+            <span className="text-white/80">or</span>
+            
+            <Link
+              to="/quick-fixes"
+              className="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 transition-all"
+            >
+              Explore Quick Wins
             </Link>
           </div>
+          
+          <p className="mt-6 text-sm opacity-75">
+            No sales pitch. Just strategic discussion about your business goals.
+          </p>
         </div>
       </section>
     </div>

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function LazyImage({ 
   src, 
-  webpSrc, 
   alt, 
   className, 
   fallbackSrc,
@@ -51,7 +50,7 @@ export default function LazyImage({
   };
 
   const shouldShowPlaceholder = !isLoaded && placeholder === 'blur';
-  const imageSrc = isInView ? (webpSrc || src) : undefined;
+  const imageSrc = isInView ? src : undefined;
 
   if (hasError && !fallbackSrc) {
     return (
@@ -73,20 +72,17 @@ export default function LazyImage({
         <div className="absolute inset-0 bg-gray-200 animate-pulse" />
       )}
       
-      {/* WebP with fallback */}
+      {/* Lazy loaded image */}
       {isInView && (
-        <picture>
-          {webpSrc && <source srcSet={webpSrc} type="image/webp" />}
-          <img
-            src={src}
-            alt={alt}
-            className={`${className} ${shouldShowPlaceholder ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-            onLoad={handleLoad}
-            onError={handleError}
-            loading="lazy"
-            {...props}
-          />
-        </picture>
+        <img
+          src={imageSrc}
+          alt={alt}
+          className={`${className} ${shouldShowPlaceholder ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+          onLoad={handleLoad}
+          onError={handleError}
+          loading="lazy"
+          {...props}
+        />
       )}
     </div>
   );
