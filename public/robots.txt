@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://allanecommerce.netlify.app/sitemap.xml
+Sitemap: https://forgewise.io/sitemap.xml

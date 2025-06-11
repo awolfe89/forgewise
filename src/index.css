@@ -1,3 +1,6 @@
+/* Import accessibility fixes - must come before tailwind */
+@import './utils/accessibilityFixes.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

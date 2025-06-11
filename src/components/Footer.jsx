@@ -1,7 +1,7 @@
 // components/Footer.jsx
 import { Link } from 'react-router-dom';
 import { BookingLink, Location } from './ProtectedContact';
-import { ForgeWiseLogo } from '../config/branding';
+import { ForgewiseLogo } from '../config/branding';
 
 export default function Footer() {
   return (
@@ -11,8 +11,8 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="md:col-span-1 text-center md:text-left">
             <div className="flex items-center gap-2 mb-4 justify-center md:justify-start">
-              <ForgeWiseLogo className="h-8 w-8" color="#ffffff" />
-              <h3 className="font-bold text-xl">ForgeWise</h3>
+              <ForgewiseLogo className="h-8 w-8" color="#ffffff" />
+              <h3 className="font-bold text-xl">Forgewise</h3>
             </div>
             <p className="text-gray-400 mb-4">
               Strategic technology consulting that transforms businesses.
@@ -100,7 +100,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/about" className="hover:text-indigo-400 transition">
-                  About ForgeWise
+                  About Forgewise
                 </Link>
               </li>
             </ul>
@@ -142,11 +142,21 @@ export default function Footer() {
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {new Date().getFullYear()} ForgeWise.io. All rights reserved.
+              © {new Date().getFullYear()} Forgewise.io. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm text-center md:text-right">
-              Forge smarter solutions. Build better businesses.
-            </p>
+            <div className="flex items-center gap-4 text-sm">
+              <Link to="/privacy-policy" className="text-gray-400 hover:text-white transition">
+                Privacy Policy
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link to="/terms-of-service" className="text-gray-400 hover:text-white transition">
+                Terms of Service
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link to="/accessibility" className="text-gray-400 hover:text-white transition">
+                Accessibility
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -91,6 +91,12 @@ function InsightCard({ insight }) {
     'LOW': 'bg-green-100 text-green-700 border-green-300'
   };
 
+  const priorityLabels = {
+    'HIGH': 'Must-Read',
+    'MEDIUM': 'Worthwhile',
+    'LOW': 'Explore When You Have Time'
+  };
+
   const categoryIcons = {
     'Performance': '🚀',
     'Automation': '⚙️',
@@ -106,7 +112,7 @@ function InsightCard({ insight }) {
       {/* Priority Banner */}
       <div className={`px-4 py-2 ${priorityColors[insight.priority]} border-b flex items-center justify-between`}>
         <span className="font-semibold text-sm">
-          {insight.priority} PRIORITY
+          {priorityLabels[insight.priority]}
         </span>
         <span className="font-medium text-sm">
           {insight.impact}
@@ -207,7 +213,7 @@ export function InsightDetail() {
 }
 
 export default function Insights() {
-  const [sortBy, setSortBy] = useState('priority');
+  const [sortBy, setSortBy] = useState('newest');
   const [filterCategory, setFilterCategory] = useState('All');
   
   const categories = ['All', 'Performance', 'Automation', 'Cost Optimization', 'Marketing', 'Case Study', 'UX Strategy', 'Innovation'];
@@ -245,6 +251,16 @@ export default function Insights() {
       {/* Insights Grid */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
+          {/* Article Count */}
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">
+              {filteredInsights.length} Insights Available
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Practical strategies to improve your business performance
+            </p>
+          </div>
+
           {/* Filters and Sorting */}
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
             <div className="flex items-center gap-4">
@@ -254,8 +270,8 @@ export default function Insights() {
                 onChange={(e) => setSortBy(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                <option value="priority">Priority</option>
                 <option value="newest">Newest First</option>
+                <option value="priority">By Importance</option>
               </select>
             </div>
             

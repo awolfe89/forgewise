@@ -1,108 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
-    <loc>https://allanecommerce.netlify.app/</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://forgewise.io/</loc>
+    <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>1</priority>
   </url>
-  
-  <!-- Quick Fixes Page -->
   <url>
-    <loc>https://allanecommerce.netlify.app/quick-fixes</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Solutions Page (formerly Projects) -->
-  <url>
-    <loc>https://allanecommerce.netlify.app/solutions</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Results Page (formerly Work) -->
-  <url>
-    <loc>https://allanecommerce.netlify.app/results</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- About Page (formerly Leadership) -->
-  <url>
-    <loc>https://allanecommerce.netlify.app/about</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Contact Page -->
-  <url>
-    <loc>https://allanecommerce.netlify.app/contact</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Insights Main Page -->
-  <url>
-    <loc>https://allanecommerce.netlify.app/insights</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://forgewise.io/quick-fixes</loc>
+    <lastmod>2025-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Individual Insights - High Priority Problems -->
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/shopify-speed-fix</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://forgewise.io/solutions</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/hidden-inventory-costs</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://forgewise.io/results</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/unused-features</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://forgewise.io/about</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/seo-ux-transformation</loc>
-    <lastmod>2025-01-06</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://forgewise.io/insights</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/attribute-filtering</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://forgewise.io/contact</loc>
+    <lastmod>2025-06-10</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/ppc-cost-optimization</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://forgewise.io/privacy-policy</loc>
+    <lastmod>2025-06-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.3</priority>
   </url>
-  
   <url>
-    <loc>https://allanecommerce.netlify.app/insights/ai-in-ecommerce</loc>
-    <lastmod>2025-01-06</lastmod>
+    <loc>https://forgewise.io/terms-of-service</loc>
+    <lastmod>2025-06-11</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/accessibility</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io*</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Individual Insight Pages -->
+  <url>
+    <loc>https://forgewise.io/insights/shopify-speed-fix</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/hidden-inventory-costs</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/unused-features</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/ppc-cost-optimization</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/seo-ux-transformation</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/attribute-filtering</loc>
+    <lastmod>2025-06-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://forgewise.io/insights/ai-in-ecommerce</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

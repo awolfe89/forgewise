@@ -1,7 +1,7 @@
 // config/branding.js
 export const brandConfig = {
-  name: 'ForgeWise',
-  fullName: 'ForgeWise.io',
+  name: 'Forgewise',
+  fullName: 'Forgewise.io',
   tagline: 'Forge Smarter Solutions',
   description: 'Strategic technology consulting that transforms your business operations',
   
@@ -121,7 +121,7 @@ export const brandConfig = {
 };
 
 // SVG Logo Component
-export const ForgeWiseLogo = ({ className = "h-8 w-8", color = "#3f51b5" }) => (
+export const ForgewiseLogo = ({ className = "h-8 w-8", color = "#3f51b5" }) => (
   <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* Anvil base */}
     <path d="M8 32L12 28H36L40 32V36C40 37.1 39.1 38 38 38H10C8.9 38 8 37.1 8 36V32Z" fill={color} />
@@ -141,12 +141,12 @@ export const ForgeWiseLogo = ({ className = "h-8 w-8", color = "#3f51b5" }) => (
 );
 
 // Text logo variant
-export const ForgeWiseTextLogo = ({ className = "" }) => (
+export const ForgewiseTextLogo = ({ className = "" }) => (
   <div className={`flex items-center gap-2 ${className}`}>
-    <ForgeWiseLogo />
+    <ForgewiseLogo />
     <span className="font-bold text-2xl">
       <span className="text-indigo-600">Forge</span>
-      <span className="text-teal-600">Wise</span>
+      <span className="text-teal-600">wise</span>
     </span>
   </div>
 );

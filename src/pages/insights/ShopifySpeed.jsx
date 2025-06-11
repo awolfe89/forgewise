@@ -2,14 +2,41 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { BookingLink } from '../../components/ProtectedContact';
+import SchemaMarkup from '../../components/SchemaMarkup';
+import RelatedContent from '../../components/RelatedContent';
 
 export default function ShopifySpeed() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Schema data for this article
+  const schemaData = {
+    article: {
+      title: "Speed Optimization for E-commerce Success",
+      excerpt: "Learn how to dramatically improve your site's loading speed and conversion rates with proven optimization techniques.",
+      date: "2025-01-06",
+      url: "https://forgewise.io/insights/shopify-speed-fix"
+    },
+    faqs: [
+      {
+        question: "How much does site speed affect conversion rates?",
+        answer: "According to Google, a 1-second delay in page load time can lead to a 7% reduction in conversions. For a $100,000/month store, that's $7,000 in lost revenue."
+      },
+      {
+        question: "What's a good page load time for e-commerce?",
+        answer: "Aim for under 3 seconds on mobile. The best-performing e-commerce sites load in 1-2 seconds."
+      },
+      {
+        question: "Can I fix speed issues without changing platforms?",
+        answer: "Yes! Most speed issues can be fixed with optimization techniques like image compression, code minification, and lazy loading without changing your platform."
+      }
+    ]
+  };
+
   return (
     <div className="pt-20">
+      <SchemaMarkup pageType="insight" data={schemaData} />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-red-600 to-orange-600 text-white py-16">
         <div className="max-w-4xl mx-auto px-6">
@@ -184,6 +211,39 @@ export default function ShopifySpeed() {
           </div>
         </div>
       </section>
+
+      {/* Related Content */}
+      <RelatedContent 
+        title="More Performance Solutions"
+        items={[
+          {
+            id: 'seo-fix',
+            title: 'SEO & Visibility Rescue',
+            description: 'Your site is invisible on Google. We\'ll identify and fix what\'s blocking you.',
+            link: '/quick-fixes',
+            category: 'Quick Fix',
+            cta: 'Fix visibility issues'
+          },
+          {
+            id: 'conversion-opt',
+            title: 'Conversion Rate Optimization',
+            description: 'Turn more visitors into customers with proven UX improvements.',
+            link: '/insights/seo-ux-transformation',
+            category: 'Case Study',
+            cta: 'See 312% growth'
+          },
+          {
+            id: 'tech-audit',
+            title: 'Full Technical Audit',
+            description: 'Comprehensive analysis of your site\'s performance, SEO, and conversion blockers.',
+            link: '/contact',
+            category: 'Service',
+            cta: 'Book audit'
+          }
+        ]}
+        variant="cards"
+        className="bg-gray-50"
+      />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 // components/Navbar.jsx
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ForgeWiseTextLogo } from '../config/branding';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,7 +23,11 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <ForgeWiseTextLogo />
+          <img 
+            src="/forgewise_logo_1.png" 
+            alt="Forgewise" 
+            className="h-14 md:h-16 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}

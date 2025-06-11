@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import LazyImage from '../components/LazyImage';
 import { BookingLink } from '../components/ProtectedContact';
+import SchemaMarkup from '../components/SchemaMarkup';
 import emailAppScreenshot from '../assets/aah_ai_email_screen.png';
 import chatbotScreenshot from '../assets/integratedChatBot.png';
 import socialMediaScreenshot from '../assets/socialBot.png';
@@ -13,7 +14,7 @@ import comparisonChart from '../assets/comparison-chart.png';
 import contentCannon from '../assets/content-cannon.png';
 import adIntelligence from '../assets/ad-intelligence.png';
 
-function SolutionCard({ title, problem, solution, results, metrics, image, category }) {
+function SolutionCard({ title, summary, problem, solution, results, metrics, image, category }) {
   const [showImage, setShowImage] = useState(false);
 
   return (
@@ -67,7 +68,13 @@ function SolutionCard({ title, problem, solution, results, metrics, image, categ
           )}
         </div>
 
-        <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+        <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
+        
+        {summary && (
+          <p className="text-sm font-medium text-indigo-600 mb-3 italic">
+            {summary}
+          </p>
+        )}
         
         <div className="space-y-4">
           <div>
@@ -126,6 +133,7 @@ export default function Solutions() {
     {
       id: 'customer-service',
       title: "Cut Customer Service Time by 70%",
+      summary: "How we freed up 28 hours/week for a growing e-commerce brand's support team.",
       category: "Customer Experience",
       problem: "Support team was drowning in repetitive email queries about order status, shipping, and product details. Response times were 48+ hours.",
       solution: "Built an AI-powered email search system that instantly finds relevant past responses and suggests personalized replies based on context.",
@@ -140,6 +148,7 @@ export default function Solutions() {
     {
       id: 'cart-abandonment',
       title: "Recovered $1.2M in Lost Sales",
+      summary: "How we slashed cart abandonment from 68% to 51% for a B2B retailer.",
       category: "Revenue Optimization",
       problem: "68% cart abandonment rate with customers asking the same product questions repeatedly. Lost revenue estimated at $200K/month.",
       solution: "Deployed an intelligent chatbot on product pages that answers questions instantly using product data, reviews, and specifications.",
@@ -154,6 +163,7 @@ export default function Solutions() {
     {
       id: 'marketing-automation',
       title: "85% Faster Content Creation",
+      summary: "How we gave a marketing team 25 hours back every week through automation.",
       category: "Marketing Efficiency",
       problem: "Marketing team spent 30+ hours/week manually creating social media content. Posts were inconsistent and often delayed.",
       solution: "Created automated content pipeline that generates engaging social posts from product catalog, optimized for each platform.",
@@ -168,6 +178,7 @@ export default function Solutions() {
     {
       id: 'content-conversion',
       title: "Turn PDFs into Revenue",
+      summary: "How we converted 450+ dusty PDFs into $340K of new product sales.",
       category: "Content Operations",
       problem: "Hundreds of vendor PDFs gathering dust. No easy way to convert technical specs and catalogs into shoppable content.",
       solution: "Built automated system that transforms PDFs into SEO-optimized product pages and blog posts with one click.",
@@ -182,6 +193,7 @@ export default function Solutions() {
     {
       id: 'inventory-optimization',
       title: "Prevent $2.3M in Dead Stock",
+      summary: "How we helped a retailer predict and prevent inventory write-offs.",
       category: "Operations",
       problem: "No visibility into slow-moving inventory until it was too late. Averaged $600K in annual write-offs.",
       solution: "Created predictive dashboard that identifies at-risk inventory with AI-style insights and actionable recommendations.",
@@ -196,6 +208,7 @@ export default function Solutions() {
     {
       id: 'product-comparison',
       title: "Boost Complex Sales by 43%",
+      summary: "How we turned confused shoppers into confident buyers with smart comparisons.",
       category: "Customer Experience",
       problem: "Customers couldn't easily compare technical products. Sales team fielded 100+ comparison calls weekly.",
       solution: "Built interactive comparison tool that lets customers filter and compare products instantly on the website.",
@@ -210,6 +223,7 @@ export default function Solutions() {
     {
       id: 'competitor-intelligence',
       title: "Stay Ahead of Competition",
+      summary: "How we captured $450K in margin by outsmarting the competition.",
       category: "Marketing Efficiency",
       problem: "No systematic way to track competitor pricing and promotions. Always reacting instead of leading.",
       solution: "Developed browser extension that automatically captures competitor ads and pricing as team browses naturally.",
@@ -224,6 +238,7 @@ export default function Solutions() {
     {
       id: 'content-distribution',
       title: "10X Content Distribution Speed",
+      summary: "How we reduced product update time from 2 weeks to 2 hours across all channels.",
       category: "Content Operations",
       problem: "Product updates took weeks to propagate across all channels. Inconsistent information frustrated customers.",
       solution: "Built Shopify app that syncs product content across all platforms with smart formatting for each channel.",
@@ -239,12 +254,33 @@ export default function Solutions() {
 
   const categories = ['All', ...new Set(solutions.map(s => s.category))];
   
+  // Calculate counts for each category
+  const categoryCounts = {
+    'All': solutions.length,
+    ...categories.slice(1).reduce((acc, cat) => ({
+      ...acc,
+      [cat]: solutions.filter(s => s.category === cat).length
+    }), {})
+  };
+  
   const filteredSolutions = selectedCategory === 'All' 
     ? solutions 
     : solutions.filter(s => s.category === selectedCategory);
 
+  // Prepare data for schema markup
+  const schemaData = {
+    solutions: filteredSolutions.map(solution => ({
+      title: solution.title,
+      description: solution.problem + ' ' + solution.solution,
+      features: Object.keys(solution.metrics).map(key => 
+        `${solution.metrics[key]} ${key.replace(/([A-Z])/g, ' $1').trim()}`
+      )
+    }))
+  };
+
   return (
     <div className="pt-20">
+      <SchemaMarkup pageType="solutions" data={schemaData} />
       {/* Header Section */}
       <section className="bg-gradient-to-br from-indigo-700 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -297,7 +333,7 @@ export default function Solutions() {
                     : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
                 }`}
               >
-                {category}
+                {category} ({categoryCounts[category]})
               </button>
             ))}
           </div>

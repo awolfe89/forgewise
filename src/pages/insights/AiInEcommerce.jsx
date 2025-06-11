@@ -305,7 +305,7 @@ export default function AiInEcommerce() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
               <p className="text-gray-600">
-                Senior-Level eCommerce Director & Founder of ForgeWise.io
+                Senior-Level eCommerce Director & Founder of Forgewise.io
               </p>
             </div>
           </div>

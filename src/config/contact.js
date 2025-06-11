@@ -1,8 +1,8 @@
 
 const contactConfig = {
   // Business name
-  businessName: 'ForgeWise',
-  fullBusinessName: 'ForgeWise.io',
+  businessName: 'Forgewise',
+  fullBusinessName: 'Forgewise.io',
   
   // Contact methods - to be configured
   phoneDisplay: '(555) 123-4567',

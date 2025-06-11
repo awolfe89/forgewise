@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import contactConfig from '../config/contact';
 import { BookingLink } from '../components/ProtectedContact';
 
 export default function Contact() {
   const [selectedTier, setSelectedTier] = useState(null);
+  const [modalTier, setModalTier] = useState(null);
+  const [hoveredTier, setHoveredTier] = useState(null);
 
   const contactTiers = [
     {
@@ -15,7 +18,19 @@ export default function Contact() {
       response: contactConfig.responseTimes.consultation,
       timeline: '1-2 weeks',
       color: 'indigo',
-      bookingType: 'consultation'
+      bookingType: 'consultation',
+      details: {
+        overview: 'Our Strategic Assessment provides a comprehensive analysis of your current operations, technology stack, and market opportunities.',
+        includes: [
+          'Complete operational audit',
+          'Technology stack evaluation',
+          'Competitive analysis',
+          'ROI opportunity mapping',
+          'Prioritized action plan'
+        ],
+        ideal: 'Perfect for businesses ready to identify and prioritize high-impact improvements.',
+        outcome: 'Detailed roadmap with specific recommendations, projected ROI, and implementation timeline.'
+      }
     },
     {
       id: 'quickwin',
@@ -26,7 +41,19 @@ export default function Contact() {
       response: contactConfig.responseTimes.priority,
       timeline: '2-4 weeks',
       color: 'teal',
-      bookingType: 'discovery'
+      bookingType: 'discovery',
+      details: {
+        overview: 'Quick Win Projects focus on implementing one specific solution that delivers immediate, measurable impact.',
+        includes: [
+          'Focused problem analysis',
+          'Solution design & implementation',
+          'Team training & handoff',
+          'Performance monitoring setup',
+          '30-day support period'
+        ],
+        ideal: 'Best for addressing specific pain points like cart abandonment, site speed, or PPC optimization.',
+        outcome: 'Fully implemented solution with measurable improvements within weeks.'
+      }
     },
     {
       id: 'transformation',
@@ -37,7 +64,19 @@ export default function Contact() {
       response: contactConfig.responseTimes.standard,
       timeline: '2-6 months',
       color: 'orange',
-      bookingType: 'implementation'
+      bookingType: 'implementation',
+      details: {
+        overview: 'Full Transformation engagements redesign your operations from the ground up for maximum efficiency and growth.',
+        includes: [
+          'Complete business analysis',
+          'Multi-system integration',
+          'Process automation',
+          'Team training program',
+          'Ongoing optimization'
+        ],
+        ideal: 'Designed for ambitious businesses ready for significant operational improvements.',
+        outcome: 'Transformed operations with automated processes, integrated systems, and sustainable growth.'
+      }
     }
   ];
 
@@ -87,7 +126,7 @@ export default function Contact() {
       {/* Header Section */}
       <section className="bg-gradient-to-br from-indigo-700 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Transform Your Business</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Let's Forge Your Next Win</h1>
           <p className="text-xl max-w-2xl mx-auto text-indigo-100">
             Choose the engagement model that fits your needs and timeline.
           </p>
@@ -99,7 +138,7 @@ export default function Contact() {
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-4">How Can We Help?</h2>
           <p className="text-xl text-gray-600 text-center mb-12">
-            Select the option that best matches your current needs
+            Choose the right engagement for your goals
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -111,7 +150,9 @@ export default function Contact() {
                 <div
                   key={tier.id}
                   onClick={() => setSelectedTier(tier.id)}
-                  className={`cursor-pointer rounded-xl border-2 p-8 transition-all transform hover:scale-105 ${
+                  onMouseEnter={() => setHoveredTier(tier.id)}
+                  onMouseLeave={() => setHoveredTier(null)}
+                  className={`relative cursor-pointer rounded-xl border-2 p-8 transition-all transform hover:scale-105 ${
                     isSelected 
                       ? `${colors.bg} ${colors.border} scale-105 shadow-lg` 
                       : `bg-white border-gray-200 ${colors.hover}`
@@ -140,6 +181,24 @@ export default function Contact() {
                   <p className="text-center text-gray-700 font-medium mb-6">
                     Response: {tier.response}
                   </p>
+                  
+                  {/* Learn More on Hover */}
+                  <AnimatePresence>
+                    {hoveredTier === tier.id && (
+                      <motion.button
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 10 }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setModalTier(tier);
+                        }}
+                        className={`absolute top-4 right-4 px-3 py-1 ${colors.bg} ${colors.text} text-sm font-medium rounded-lg hover:opacity-80 transition-opacity`}
+                      >
+                        Learn More →
+                      </motion.button>
+                    )}
+                  </AnimatePresence>
                   
                   {/* CTA Button */}
                   <BookingLink
@@ -248,7 +307,7 @@ export default function Contact() {
             Ready to Get Started?
           </h2>
           <p className="text-xl mb-8 text-indigo-100">
-            Let's discuss how ForgeWise can help transform your business operations.
+            Let's discuss how Forgewise can help transform your business operations.
           </p>
           <BookingLink
             type="consultation"
@@ -258,6 +317,86 @@ export default function Contact() {
           </BookingLink>
         </div>
       </section>
+
+      {/* Details Modal */}
+      <AnimatePresence>
+        {modalTier && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setModalTier(null)}
+              className="fixed inset-0 bg-black bg-opacity-50 z-50"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="fixed inset-0 z-50 overflow-y-auto"
+            >
+              <div className="flex min-h-full items-center justify-center p-4">
+                <div className="relative bg-white rounded-2xl shadow-xl max-w-2xl w-full p-8">
+                  <button
+                    onClick={() => setModalTier(null)}
+                    className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  
+                  <div className="text-center mb-6">
+                    <div className="text-5xl mb-4">{modalTier.icon}</div>
+                    <h3 className="text-3xl font-bold mb-2">{modalTier.title}</h3>
+                    <p className="text-lg text-gray-600">{modalTier.subtitle}</p>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Overview</h4>
+                      <p className="text-gray-700">{modalTier.details.overview}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">What's Included</h4>
+                      <ul className="space-y-2">
+                        {modalTier.details.includes.map((item, index) => (
+                          <li key={index} className="flex items-start">
+                            <span className="text-green-500 mr-2">✓</span>
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Ideal For</h4>
+                      <p className="text-gray-700">{modalTier.details.ideal}</p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-bold text-lg mb-2">Expected Outcome</h4>
+                      <p className="text-gray-700">{modalTier.details.outcome}</p>
+                    </div>
+                    
+                    <div className="pt-4">
+                      <BookingLink
+                        type={modalTier.bookingType}
+                        className={`block w-full py-3 px-4 rounded-lg text-center font-medium text-white transition-all ${
+                          getColorClasses(modalTier.color).button
+                        }`}
+                      >
+                        Schedule {modalTier.title}
+                      </BookingLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

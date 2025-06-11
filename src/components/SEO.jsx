@@ -20,10 +20,42 @@ export default function SEO() {
     updateMetaTag('og:title', pageSEO.title, 'property');
     updateMetaTag('og:description', pageSEO.description, 'property');
     updateMetaTag('og:url', `${siteConfig.url}${location.pathname}`, 'property');
+    updateMetaTag('og:type', pageSEO.type || 'website', 'property');
+    
+    // Set og:image - use page-specific image or default
+    const ogImage = pageSEO.ogImage || '/forgewise-og-image.jpg';
+    const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteConfig.url}${ogImage}`;
+    updateMetaTag('og:image', ogImageUrl, 'property');
+    updateMetaTag('og:image:width', '1200', 'property');
+    updateMetaTag('og:image:height', '630', 'property');
+    updateMetaTag('og:image:alt', pageSEO.title, 'property');
     
     // Update Twitter tags
+    updateMetaTag('twitter:card', 'summary_large_image', 'property');
     updateMetaTag('twitter:title', pageSEO.title, 'property');
     updateMetaTag('twitter:description', pageSEO.description, 'property');
+    updateMetaTag('twitter:image', ogImageUrl, 'property');
+    updateMetaTag('twitter:image:alt', pageSEO.title, 'property');
+    
+    // Article-specific meta tags for insights
+    if (location.pathname.includes('/insights/') && pageSEO.type === 'article') {
+      updateMetaTag('article:published_time', pageSEO.publishedTime || new Date().toISOString(), 'property');
+      updateMetaTag('article:author', pageSEO.author || 'Forgewise Team', 'property');
+      updateMetaTag('article:section', pageSEO.section || 'Insights', 'property');
+      
+      // Remove old article tags
+      document.querySelectorAll('meta[property="article:tag"]').forEach(el => el.remove());
+      
+      // Add new article tags
+      if (pageSEO.tags && Array.isArray(pageSEO.tags)) {
+        pageSEO.tags.forEach(tag => {
+          const tagElement = document.createElement('meta');
+          tagElement.setAttribute('property', 'article:tag');
+          tagElement.setAttribute('content', tag);
+          document.head.appendChild(tagElement);
+        });
+      }
+    }
     
     // Update canonical URL
     updateCanonicalURL(`${siteConfig.url}${location.pathname}`);

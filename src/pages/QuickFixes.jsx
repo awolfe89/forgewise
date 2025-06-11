@@ -1,7 +1,8 @@
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import { BaseCard, CardHeader, FeatureList, MetricDisplay } from '../components/cards';
+import SchemaMarkup from '../components/SchemaMarkup';
 
-function QuickFixCard({ title, description, timeframe, category, features, priority }) {
+function QuickFixCard({ title, description, timeframe, category, features, priority, badge }) {
   const priorityColors = {
     high: { bg: 'bg-red-100', text: 'text-red-700', border: 'border-red-300' },
     medium: { bg: 'bg-amber-100', text: 'text-amber-700', border: 'border-amber-300' },
@@ -11,7 +12,13 @@ function QuickFixCard({ title, description, timeframe, category, features, prior
   const colors = priorityColors[priority] || priorityColors.medium;
 
   return (
-    <BaseCard className="p-6">
+    <BaseCard className="p-6 relative">
+      {badge && (
+        <div className="absolute -top-3 -right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+          {badge}
+        </div>
+      )}
+      
       <div className={`inline-flex px-3 py-1 rounded-full text-sm font-medium mb-4 ${colors.bg} ${colors.text} ${colors.border} border`}>
         {category}
       </div>
@@ -44,8 +51,9 @@ export default function QuickFixes() {
       title: "SEO & Visibility Rescue",
       description: "Your site is invisible on Google. We'll identify and fix what's blocking you.",
       timeframe: "2-3 days",
-      category: "SEO",
+      category: "Visibility",
       priority: "high",
+      badge: "Most Popular",
       features: [
         "Technical SEO audit and fixes",
         "Page title and meta optimization",
@@ -57,8 +65,9 @@ export default function QuickFixes() {
       title: "Cart Abandonment Solution",
       description: "70% cart abandonment? Let's cut that in half with proven strategies.",
       timeframe: "3-5 days",
-      category: "Conversion",
+      category: "Revenue",
       priority: "high",
+      badge: "Fastest ROI",
       features: [
         "Checkout flow analysis",
         "Friction point elimination",
@@ -70,7 +79,7 @@ export default function QuickFixes() {
       title: "Ad Spend Optimization",
       description: "Stop wasting money on ineffective ads. Get more results for less spend.",
       timeframe: "1-2 days",
-      category: "Marketing",
+      category: "Efficiency",
       priority: "medium",
       features: [
         "Campaign structure audit",
@@ -83,7 +92,7 @@ export default function QuickFixes() {
       title: "Analytics Implementation",
       description: "Know exactly what's working. Get clarity on your marketing ROI.",
       timeframe: "2-3 days",
-      category: "Analytics",
+      category: "Insights",
       priority: "medium",
       features: [
         "Conversion tracking setup",
@@ -96,7 +105,7 @@ export default function QuickFixes() {
       title: "Email Revenue Boost",
       description: "Transform your email marketing from ignored to profitable.",
       timeframe: "2-3 days",
-      category: "Email",
+      category: "Revenue",
       priority: "low",
       features: [
         "List segmentation strategy",
@@ -109,7 +118,7 @@ export default function QuickFixes() {
       title: "Social Commerce Setup",
       description: "Turn social media followers into paying customers.",
       timeframe: "3-4 days",
-      category: "Social",
+      category: "Growth",
       priority: "low",
       features: [
         "Shopping integration",
@@ -120,8 +129,23 @@ export default function QuickFixes() {
     }
   ];
 
+  // Prepare data for schema markup
+  const schemaData = {
+    quickfixes: quickFixes.map(fix => ({
+      title: fix.title,
+      description: fix.description,
+      timeframe: fix.timeframe,
+      steps: fix.features.map((feature, index) => ({
+        "@type": "HowToStep",
+        "name": `Step ${index + 1}`,
+        "text": feature
+      }))
+    }))
+  };
+
   return (
     <FadeIn>
+      <SchemaMarkup pageType="quickfixes" data={schemaData} />
       <section className="pt-24 pb-20 bg-gradient-to-b from-indigo-50 to-white">
         <StaggerContainer className="max-w-7xl mx-auto px-6">
           <StaggerItem>
@@ -145,6 +169,31 @@ export default function QuickFixes() {
               </StaggerItem>
             ))}
           </div>
+
+          {/* Proof Snippet */}
+          <StaggerItem>
+            <div className="bg-indigo-50 rounded-xl p-6 mb-12 max-w-3xl mx-auto text-center">
+              <div className="flex items-center justify-center space-x-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-indigo-600">3×</div>
+                  <p className="text-sm text-gray-700">Average ROI</p>
+                </div>
+                <div className="w-px h-12 bg-indigo-200"></div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-indigo-600">48hrs</div>
+                  <p className="text-sm text-gray-700">To First Results</p>
+                </div>
+                <div className="w-px h-12 bg-indigo-200"></div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-indigo-600">87%</div>
+                  <p className="text-sm text-gray-700">Client Success Rate</p>
+                </div>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Our quick fixes deliver measurable improvements fast. No lengthy engagements required.
+              </p>
+            </div>
+          </StaggerItem>
 
           <StaggerItem>
             <div className="bg-white rounded-xl  p-8 text-center max-w-2xl mx-auto">

@@ -31,8 +31,30 @@ function ApproachCard({ title, description, icon }) {
   );
 }
 
+function ExpertiseCard({ title, items, color, expanded, onToggle }) {
+  return (
+    <div className="bg-gray-50 p-6 rounded-lg">
+      <div className="flex justify-between items-center mb-3">
+        <h3 className={`font-bold text-xl ${color}`}>{title}</h3>
+        <button
+          onClick={onToggle}
+          className="md:hidden text-gray-500 hover:text-gray-700"
+        >
+          <span className="text-2xl">{expanded ? '−' : '+'}</span>
+        </button>
+      </div>
+      <ul className={`space-y-2 text-gray-600 ${!expanded ? 'hidden md:block' : ''}`}>
+        {items.map((item, index) => (
+          <li key={index}>• {item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function About() {
   const [showPhilosophy, setShowPhilosophy] = useState(false);
+  const [expandedExpertise, setExpandedExpertise] = useState({});
 
   return (
     <div className="pt-20">
@@ -41,11 +63,11 @@ export default function About() {
         <StaggerContainer className="max-w-6xl mx-auto px-6">
           <StaggerItem>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-              Strategic Technology Partners Who Deliver
+              We're Your Team for Getting Things Done
             </h1>
             <p className="text-xl text-gray-300 text-center max-w-3xl mx-5">
-              We're not your typical consultants. We're hands-on technology strategists who 
-              deliver practical solutions that transform businesses.
+              No PowerPoints. No fluff. Just practical solutions that solve real problems 
+              and deliver measurable results for your business.
             </p>
           </StaggerItem>
         </StaggerContainer>
@@ -54,45 +76,48 @@ export default function About() {
       {/* Our Philosophy */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center ">
+          <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-4">Our Philosophy</h2>
-            <button
-              onClick={() => setShowPhilosophy(!showPhilosophy)}
-              className="text-indigo-600 hover:text-indigo-800 font-medium"
-            >
-              {showPhilosophy ? 'Hide' : 'Read'} our approach →
-            </button>
           </div>
 
-          {showPhilosophy && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              className="bg-gray-50 p-8 rounded-xl space-y-4 text-gray-700"
+          <div className="bg-gray-50 p-8 rounded-xl space-y-4 text-gray-700">
+            <p className="font-semibold text-lg">We believe in practical solutions over theoretical frameworks.</p>
+            
+            <p>
+              Too many consultants deliver PowerPoints and roadmaps. We deliver working solutions 
+              that solve real problems and generate measurable results.
+            </p>
+
+            {showPhilosophy && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                className="space-y-4"
+              >
+                <p>
+                  Our approach is simple: understand your business, identify the highest-impact 
+                  opportunities, and implement solutions that work with your existing team and technology.
+                </p>
+
+                <p>
+                  We don't believe in one-size-fits-all. Every business is unique, and every solution 
+                  should be tailored to your specific challenges, resources, and goals.
+                </p>
+
+                <p className="font-semibold">
+                  Our promise: We focus on outcomes, not outputs. If it doesn't improve your business 
+                  metrics, we don't consider it a success.
+                </p>
+              </motion.div>
+            )}
+            
+            <button
+              onClick={() => setShowPhilosophy(!showPhilosophy)}
+              className="text-indigo-600 hover:text-indigo-800 font-medium text-sm"
             >
-              <p className="font-semibold text-lg">We believe in practical solutions over theoretical frameworks.</p>
-              
-              <p>
-                Too many consultants deliver PowerPoints and roadmaps. We deliver working solutions 
-                that solve real problems and generate measurable results.
-              </p>
-
-              <p>
-                Our approach is simple: understand your business, identify the highest-impact 
-                opportunities, and implement solutions that work with your existing team and technology.
-              </p>
-
-              <p>
-                We don't believe in one-size-fits-all. Every business is unique, and every solution 
-                should be tailored to your specific challenges, resources, and goals.
-              </p>
-
-              <p className="font-semibold">
-                Our promise: We focus on outcomes, not outputs. If it doesn't improve your business 
-                metrics, we don't consider it a success.
-              </p>
-            </motion.div>
-          )}
+              {showPhilosophy ? 'Show less' : 'Read more'} →
+            </button>
+          </div>
         </div>
       </section>
 
@@ -106,37 +131,44 @@ export default function About() {
             These principles guide every engagement and solution we deliver.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <ValueCard
-              icon="🎯"
-              title="Results-Driven"
-              description="Every recommendation must tie directly to measurable business outcomes and ROI."
-            />
-            <ValueCard
-              icon="⚡"
-              title="Speed & Efficiency"
-              description="We deliver solutions in weeks, not months. Time is money, and we respect both."
-            />
-            <ValueCard
-              icon="🔧"
-              title="Practical Implementation"
-              description="We don't just advise—we help implement. Real solutions that work in the real world."
-            />
-            <ValueCard
-              icon="📊"
-              title="Data-Informed"
-              description="Decisions based on data, not opinions. We measure everything that matters."
-            />
-            <ValueCard
-              icon="🤝"
-              title="True Partnership"
-              description="We work with your team, not above them. Knowledge transfer is part of every engagement."
-            />
-            <ValueCard
-              icon="💡"
-              title="Continuous Innovation"
-              description="We stay ahead of technology trends to bring you cutting-edge, proven solutions."
-            />
+          <div className="space-y-6">
+            {/* First Row */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <ValueCard
+                icon="🎯"
+                title="Results-Driven"
+                description="Every recommendation must tie directly to measurable business outcomes and ROI."
+              />
+              <ValueCard
+                icon="⚡"
+                title="Speed & Efficiency"
+                description="We deliver solutions in weeks, not months. Time is money, and we respect both."
+              />
+              <ValueCard
+                icon="🔧"
+                title="Practical Implementation"
+                description="We don't just advise—we help implement. Real solutions that work in the real world."
+              />
+            </div>
+            
+            {/* Second Row */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <ValueCard
+                icon="📊"
+                title="Data-Informed"
+                description="Decisions based on data, not opinions. We measure everything that matters."
+              />
+              <ValueCard
+                icon="🤝"
+                title="True Partnership"
+                description="We work with your team, not above them. Knowledge transfer is part of every engagement."
+              />
+              <ValueCard
+                icon="💡"
+                title="Continuous Innovation"
+                description="We stay ahead of technology trends to bring you cutting-edge, proven solutions."
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -149,65 +181,83 @@ export default function About() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-indigo-700">E-commerce Optimization</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Performance optimization</li>
-                <li>• Conversion rate improvement</li>
-                <li>• Platform migrations</li>
-                <li>• Multi-channel integration</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="E-commerce Optimization"
+              color="text-indigo-700"
+              items={[
+                "Performance optimization",
+                "Conversion rate improvement",
+                "Platform migrations",
+                "Multi-channel integration"
+              ]}
+              expanded={expandedExpertise['ecommerce']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, ecommerce: !prev.ecommerce }))}
+            />
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-teal-700">Process Automation</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Workflow optimization</li>
-                <li>• System integration</li>
-                <li>• Custom automation tools</li>
-                <li>• Efficiency analysis</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="Process Automation"
+              color="text-teal-700"
+              items={[
+                "Workflow optimization",
+                "System integration",
+                "Custom automation tools",
+                "Efficiency analysis"
+              ]}
+              expanded={expandedExpertise['automation']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, automation: !prev.automation }))}
+            />
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-orange-600">Digital Marketing</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• PPC optimization</li>
-                <li>• SEO strategy</li>
-                <li>• Marketing automation</li>
-                <li>• Analytics & attribution</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="Digital Marketing"
+              color="text-orange-600"
+              items={[
+                "PPC optimization",
+                "SEO strategy",
+                "Marketing automation",
+                "Analytics & attribution"
+              ]}
+              expanded={expandedExpertise['marketing']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, marketing: !prev.marketing }))}
+            />
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-indigo-700">Data & Analytics</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Business intelligence</li>
-                <li>• Predictive analytics</li>
-                <li>• Dashboard development</li>
-                <li>• Data-driven decisions</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="Data & Analytics"
+              color="text-indigo-700"
+              items={[
+                "Business intelligence",
+                "Predictive analytics",
+                "Dashboard development",
+                "Data-driven decisions"
+              ]}
+              expanded={expandedExpertise['analytics']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, analytics: !prev.analytics }))}
+            />
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-teal-700">Technology Strategy</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Digital transformation</li>
-                <li>• System architecture</li>
-                <li>• Vendor selection</li>
-                <li>• Roadmap development</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="Technology Strategy"
+              color="text-teal-700"
+              items={[
+                "Digital transformation",
+                "System architecture",
+                "Vendor selection",
+                "Roadmap development"
+              ]}
+              expanded={expandedExpertise['strategy']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, strategy: !prev.strategy }))}
+            />
 
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="font-bold text-xl mb-3 text-orange-600">Operations Excellence</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Supply chain optimization</li>
-                <li>• Inventory management</li>
-                <li>• Cost reduction</li>
-                <li>• Quality improvement</li>
-              </ul>
-            </div>
+            <ExpertiseCard
+              title="Operations Excellence"
+              color="text-orange-600"
+              items={[
+                "Supply chain optimization",
+                "Inventory management",
+                "Cost reduction",
+                "Quality improvement"
+              ]}
+              expanded={expandedExpertise['operations']}
+              onToggle={() => setExpandedExpertise(prev => ({ ...prev, operations: !prev.operations }))}
+            />
           </div>
         </div>
       </section>

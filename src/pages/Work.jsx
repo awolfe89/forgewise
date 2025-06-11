@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import LazyImage from '../components/LazyImage';
 import { BookingLink } from '../components/ProtectedContact';
+import { useKeyboardClick } from '../utils/useKeyboardClick';
+import SchemaMarkup from '../components/SchemaMarkup';
 import Grubs from '../assets/grubs.png';
 import TriLogo from '../assets/triLogo.png';
 import WnLogo from '../assets/wnlogo.png';
@@ -15,15 +17,18 @@ function CaseStudyCard({
   title, 
   businessType, 
   businessSize, 
+  keyTakeaway,
   problem, 
   solution, 
   results, 
   metrics, 
   testimonial, 
   image, 
-  link 
+  link,
+  isInitiallyExpanded = false
 }) {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(isInitiallyExpanded);
+  const keyboardProps = useKeyboardClick(() => setExpanded(!expanded));
 
   return (
     <motion.div
@@ -32,7 +37,8 @@ function CaseStudyCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden mb-8 cursor-pointer"
-      onClick={() => setExpanded(!expanded)}
+      {...keyboardProps}
+      aria-expanded={expanded}
     >
       <div className="flex flex-col md:flex-row">
         {image && (
@@ -103,6 +109,13 @@ function CaseStudyCard({
               className="mt-6 pt-6 border-t border-gray-100"
             >
               <div className="space-y-6">
+                {keyTakeaway && (
+                  <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                    <h4 className="font-bold text-yellow-800 mb-1">💡 Key Takeaway</h4>
+                    <p className="text-gray-700 font-medium">{keyTakeaway}</p>
+                  </div>
+                )}
+                
                 <div>
                   <h4 className="font-bold text-red-600 mb-2">THE FULL CHALLENGE</h4>
                   <ul className="space-y-2 text-gray-700">
@@ -160,6 +173,7 @@ export default function Results() {
       title: "Wet Noses Grooming",
       businessType: "Mobile Pet Services",
       businessSize: "Local Small Business",
+      keyTakeaway: "SEO-first rebuild drove $18K/mo within 6 weeks by capturing 'mobile dog grooming' searches.",
       problem: {
         summary: "Zero online presence, losing customers to competitors",
         details: [
@@ -191,7 +205,7 @@ export default function Results() {
         roi: { number: "1,240%", label: "ROI in Year 1" }
       },
       testimonial: {
-        quote: "ForgeWise literally transformed my business. I went from struggling to having to turn customers away.",
+        quote: "Forgewise literally transformed my business. I went from struggling to having to turn customers away.",
         author: "Jessica, Owner"
       },
       image: WnLogo,
@@ -201,6 +215,7 @@ export default function Results() {
       title: "Tri-County Garage Door",
       businessType: "Home Services",
       businessSize: "Family Business (3 employees)",
+      keyTakeaway: "Modern rebrand + mobile-first design increased emergency calls from 2/week to 3-4/day.",
       problem: {
         summary: "Website from 2003, losing revenue to competitors",
         details: [
@@ -242,6 +257,7 @@ export default function Results() {
       title: "GrubsBootsUSA",
       businessType: "Outdoor Retail",
       businessSize: "Small Retailer",
+      keyTakeaway: "From 4 visitors/day to 160+ by fixing categories, descriptions, and implementing cart recovery.",
       problem: {
         summary: "4 visitors per day, zero sales for 3 months straight",
         details: [
@@ -279,6 +295,7 @@ export default function Results() {
       title: "Technimark Inc",
       businessType: "B2B Industrial",
       businessSize: "Mid-size Distributor",
+      keyTakeaway: "Smart product organization + B2B features drove $600K additional annual revenue.",
       problem: {
         summary: "Losing revenue to Amazon & competitors",
         details: [
@@ -310,7 +327,7 @@ export default function Results() {
         support: { number: "-65%", label: "Support Calls" }
       },
       testimonial: {
-        quote: "ForgeWise understood our complex business and delivered results that exceeded our board's expectations.",
+        quote: "Forgewise understood our complex business and delivered results that exceeded our board's expectations.",
         author: "Mike, CEO"
       },
       image: Technimark,
@@ -320,6 +337,7 @@ export default function Results() {
       title: "HVACNet (Younits)",
       businessType: "HVAC Equipment",
       businessSize: "Regional Distributor",
+      keyTakeaway: "Zero-downtime Magento migration + speed optimization increased mobile revenue by 216%.",
       problem: {
         summary: "Magento 1 site dying, facing major revenue loss",
         details: [
@@ -357,6 +375,7 @@ export default function Results() {
       title: "ESDGuys",
       businessType: "Electronics Supplies",
       businessSize: "Small Manufacturer",
+      keyTakeaway: "Separate B2C test site generated $120K/year from previously untapped market segment.",
       problem: {
         summary: "Main site too complex, missing micro-market opportunities",
         details: [
@@ -392,8 +411,17 @@ export default function Results() {
     }
   ];
 
+  // Prepare data for schema markup
+  const schemaData = {
+    casestudies: caseStudies.filter(study => study.testimonial).map(study => ({
+      author: study.testimonial.author,
+      testimonial: study.testimonial.quote
+    }))
+  };
+
   return (
     <div className="pt-20">
+      <SchemaMarkup pageType="results" data={schemaData} />
       {/* Header Section */}
       <section className="bg-gradient-to-br from-green-700 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -440,7 +468,7 @@ export default function Results() {
           
           {caseStudies.map((study, index) => (
             <FadeIn key={index}>
-              <CaseStudyCard {...study} />
+              <CaseStudyCard {...study} isInitiallyExpanded={index === 0} />
             </FadeIn>
           ))}
         </div>

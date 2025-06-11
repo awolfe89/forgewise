@@ -8,9 +8,9 @@ export default function StructuredData() {
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Allan Wolfe",
-    "jobTitle": "Business Problem Solver",
-    "description": "I fix online business problems. Fast, focused solutions that work. Most fixes under $2K.",
+    "name": "Forgewise.io",
+    "jobTitle": "eCommerce Experts",
+    "description": "Scale Your eCommerce to 6-Figures with Targeted Quick Wins",
     "url": siteConfig.url,
     "sameAs": [],
     "address": {
@@ -21,50 +21,53 @@ export default function StructuredData() {
     }
   };
 
-  // Service schema
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "provider": {
-      "@type": "Person",
-      "name": "Allan Wolfe"
-    },
-    "serviceType": "Business Consulting",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Quick Business Fixes",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Website Speed Optimization",
-            "description": "Fix your slow website and stop losing $10K/month"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Cart Abandonment Fix",
-            "description": "Stop losing sales with proven checkout optimization"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Google Ads Optimization",
-            "description": "Cut your ad spend by 40% while increasing conversions"
-          }
+ // Forgewise Service schema
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "Organization",
+    "name": "Forgewise Consulting",
+    "url": "https://forgewise.io",
+    "logo": "https://forgewise.io/assets/logo.png"
+  },
+  "serviceType": "eCommerce & Digital Transformation Consulting",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Forgewise Quick-Win Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Shopify Performance Audit",
+          "description": "Deep-dive audit and rapid optimizations to boost site speed, mobile UX, and Core Web Vitals."
         }
-      ]
-    }
-  };
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Checkout & Cart Conversion",
+          "description": "Proven UX tweaks and payment flow enhancements to slash abandonment and lift average order value."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Paid Ads ROI Booster",
+          "description": "Strategic Google & Meta Ads optimizations to cut ad spend, improve ROAS, and scale profitable campaigns."
+        }
+      }
+    ]
+  }
+};
+
 
   // Website schema
   const websiteSchema = {

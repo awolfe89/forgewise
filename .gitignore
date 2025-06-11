@@ -25,3 +25,10 @@ dist-ssr
 
 # Local Netlify folder
 .netlify
+
+# Generated WebP images (uncomment if you want to generate them during build)
+# *.webp
+# *@mobile.*
+# *@1x.*
+# *@2x.*
+# src/config/image-manifest.json

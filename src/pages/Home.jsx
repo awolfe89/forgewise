@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import { BookingLink } from '../components/ProtectedContact';
+import FloatingCTA from '../components/FloatingCTA';
+import SchemaMarkup from '../components/SchemaMarkup';
 
 export default function Home() {
   const [checkedProblems, setCheckedProblems] = useState({});
@@ -77,6 +79,9 @@ export default function Home() {
 
   return (
     <div className="pt-20">
+      <SchemaMarkup pageType="home" />
+      <FloatingCTA />
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-teal-700 py-16 md:py-24">
         <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6))] pointer-events-none"></div>
@@ -84,10 +89,10 @@ export default function Home() {
         <StaggerContainer className="max-w-6xl mx-auto px-4">
           <StaggerItem>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
-              Transform Your <span className="text-teal-300">Business Operations</span>
+              Scale Your Shopify Store to <span className="text-teal-300">6-Figures in 90 Days</span>
             </h1>
             <p className="text-xl md:text-2xl text-indigo-100 text-center mb-12 max-w-3xl mx-auto">
-              Strategic technology consulting that solves real problems and delivers measurable results.
+              We diagnose your bottlenecks and deliver quick-win fixes that boost sales.
             </p>
           </StaggerItem>
         </StaggerContainer>
@@ -216,26 +221,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Primary CTA */}
-        <div className="max-w-6xl mx-auto px-4 pb-12">
-          <div className="text-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-4 bg-orange-500 text-white text-lg font-bold rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl"
-            >
-              Start Your Transformation
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
-            <p className="mt-3 text-indigo-100">
-              Free consultation. No obligations. Just strategic insights.
-            </p>
-          </div>
-        </div>
       </section>
 
-      {/* Success Metrics Section */}
+      {/* Success Metrics Section - Moved up after calculator */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
@@ -260,6 +248,26 @@ export default function Home() {
               <p className="text-gray-700 font-medium">Typical Timeline</p>
               <p className="text-sm text-gray-600 mt-2">From assessment to implementation</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Primary CTA */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center">
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-8 py-4 bg-orange-500 text-white text-lg font-bold rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl"
+            >
+              Start Your Transformation
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+            <p className="mt-3 text-gray-700">
+              Free consultation. No obligations. Just strategic insights.
+            </p>
           </div>
         </div>
       </section>
@@ -317,12 +325,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why ForgeWise Section */}
+      {/* Why Forgewise Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-indigo-50 rounded-2xl p-8 md:p-12">
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Why Choose ForgeWise?
+              Why Choose Forgewise?
             </h2>
             
             <div className="grid md:grid-cols-2 gap-6">

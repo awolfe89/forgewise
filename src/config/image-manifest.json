@@ -1,0 +1,1366 @@
+{
+  "images": {
+    "AAH_logo": {
+      "original": {
+        "path": "src/assets/AAH_logo.jpg",
+        "size": 694235,
+        "dimensions": {
+          "width": 1595,
+          "height": 596
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/AAH_logo.webp",
+          "size": 31226
+        },
+        "@2x": {
+          "path": "src/assets/AAH_logo@2x.webp",
+          "size": 22184
+        },
+        "@1x": {
+          "path": "src/assets/AAH_logo@1x.webp",
+          "size": 10800
+        },
+        "@mobile": {
+          "path": "src/assets/AAH_logo@mobile.webp",
+          "size": 7628
+        }
+      },
+      "fallback": {}
+    },
+    "AAH_logo@1x": {
+      "original": {
+        "path": "src/assets/AAH_logo@1x.jpg",
+        "size": 10800,
+        "dimensions": {
+          "width": 600,
+          "height": 224
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/AAH_logo@1x.webp",
+          "size": 10800
+        }
+      },
+      "fallback": {}
+    },
+    "AAH_logo@2x": {
+      "original": {
+        "path": "src/assets/AAH_logo@2x.jpg",
+        "size": 22184,
+        "dimensions": {
+          "width": 1200,
+          "height": 448
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/AAH_logo@2x.webp",
+          "size": 22184
+        }
+      },
+      "fallback": {}
+    },
+    "AAH_logo@mobile": {
+      "original": {
+        "path": "src/assets/AAH_logo@mobile.jpg",
+        "size": 7628,
+        "dimensions": {
+          "width": 400,
+          "height": 150
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/AAH_logo@mobile.webp",
+          "size": 7628
+        }
+      },
+      "fallback": {}
+    },
+    "aah_ai_email_screen": {
+      "original": {
+        "path": "src/assets/aah_ai_email_screen.png",
+        "size": 291720,
+        "dimensions": {
+          "width": 1976,
+          "height": 2000
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/aah_ai_email_screen.webp",
+          "size": 100046
+        },
+        "@2x": {
+          "path": "src/assets/aah_ai_email_screen@2x.webp",
+          "size": 56684
+        },
+        "@1x": {
+          "path": "src/assets/aah_ai_email_screen@1x.webp",
+          "size": 23660
+        },
+        "@mobile": {
+          "path": "src/assets/aah_ai_email_screen@mobile.webp",
+          "size": 12916
+        }
+      },
+      "fallback": {}
+    },
+    "aah_ai_email_screen@1x": {
+      "original": {
+        "path": "src/assets/aah_ai_email_screen@1x.png",
+        "size": 23660,
+        "dimensions": {
+          "width": 600,
+          "height": 607
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/aah_ai_email_screen@1x.webp",
+          "size": 23660
+        }
+      },
+      "fallback": {}
+    },
+    "aah_ai_email_screen@2x": {
+      "original": {
+        "path": "src/assets/aah_ai_email_screen@2x.png",
+        "size": 56684,
+        "dimensions": {
+          "width": 1200,
+          "height": 1215
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/aah_ai_email_screen@2x.webp",
+          "size": 56684
+        }
+      },
+      "fallback": {}
+    },
+    "aah_ai_email_screen@mobile": {
+      "original": {
+        "path": "src/assets/aah_ai_email_screen@mobile.png",
+        "size": 12916,
+        "dimensions": {
+          "width": 400,
+          "height": 405
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/aah_ai_email_screen@mobile.webp",
+          "size": 12916
+        }
+      },
+      "fallback": {}
+    },
+    "ad-intelligence": {
+      "original": {
+        "path": "src/assets/ad-intelligence.png",
+        "size": 862565,
+        "dimensions": {
+          "width": 3004,
+          "height": 2194
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ad-intelligence.webp",
+          "size": 116746
+        },
+        "@2x": {
+          "path": "src/assets/ad-intelligence@2x.webp",
+          "size": 37158
+        },
+        "@1x": {
+          "path": "src/assets/ad-intelligence@1x.webp",
+          "size": 13566
+        },
+        "@mobile": {
+          "path": "src/assets/ad-intelligence@mobile.webp",
+          "size": 7950
+        }
+      },
+      "fallback": {}
+    },
+    "ad-intelligence@1x": {
+      "original": {
+        "path": "src/assets/ad-intelligence@1x.png",
+        "size": 13566,
+        "dimensions": {
+          "width": 600,
+          "height": 438
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ad-intelligence@1x.webp",
+          "size": 13566
+        }
+      },
+      "fallback": {}
+    },
+    "ad-intelligence@2x": {
+      "original": {
+        "path": "src/assets/ad-intelligence@2x.png",
+        "size": 37158,
+        "dimensions": {
+          "width": 1200,
+          "height": 876
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ad-intelligence@2x.webp",
+          "size": 37158
+        }
+      },
+      "fallback": {}
+    },
+    "ad-intelligence@mobile": {
+      "original": {
+        "path": "src/assets/ad-intelligence@mobile.png",
+        "size": 7950,
+        "dimensions": {
+          "width": 400,
+          "height": 292
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ad-intelligence@mobile.webp",
+          "size": 7950
+        }
+      },
+      "fallback": {}
+    },
+    "comparison-chart": {
+      "original": {
+        "path": "src/assets/comparison-chart.png",
+        "size": 433687,
+        "dimensions": {
+          "width": 4326,
+          "height": 1430
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/comparison-chart.webp",
+          "size": 108180
+        },
+        "@2x": {
+          "path": "src/assets/comparison-chart@2x.webp",
+          "size": 20284
+        },
+        "@1x": {
+          "path": "src/assets/comparison-chart@1x.webp",
+          "size": 7006
+        },
+        "@mobile": {
+          "path": "src/assets/comparison-chart@mobile.webp",
+          "size": 4356
+        }
+      },
+      "fallback": {}
+    },
+    "comparison-chart@1x": {
+      "original": {
+        "path": "src/assets/comparison-chart@1x.png",
+        "size": 7006,
+        "dimensions": {
+          "width": 600,
+          "height": 198
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/comparison-chart@1x.webp",
+          "size": 7006
+        }
+      },
+      "fallback": {}
+    },
+    "comparison-chart@2x": {
+      "original": {
+        "path": "src/assets/comparison-chart@2x.png",
+        "size": 20284,
+        "dimensions": {
+          "width": 1200,
+          "height": 397
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/comparison-chart@2x.webp",
+          "size": 20284
+        }
+      },
+      "fallback": {}
+    },
+    "comparison-chart@mobile": {
+      "original": {
+        "path": "src/assets/comparison-chart@mobile.png",
+        "size": 4356,
+        "dimensions": {
+          "width": 400,
+          "height": 132
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/comparison-chart@mobile.webp",
+          "size": 4356
+        }
+      },
+      "fallback": {}
+    },
+    "content-cannon": {
+      "original": {
+        "path": "src/assets/content-cannon.png",
+        "size": 455068,
+        "dimensions": {
+          "width": 3644,
+          "height": 1820
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/content-cannon.webp",
+          "size": 119232
+        },
+        "@2x": {
+          "path": "src/assets/content-cannon@2x.webp",
+          "size": 31080
+        },
+        "@1x": {
+          "path": "src/assets/content-cannon@1x.webp",
+          "size": 10530
+        },
+        "@mobile": {
+          "path": "src/assets/content-cannon@mobile.webp",
+          "size": 5522
+        }
+      },
+      "fallback": {}
+    },
+    "content-cannon@1x": {
+      "original": {
+        "path": "src/assets/content-cannon@1x.png",
+        "size": 10530,
+        "dimensions": {
+          "width": 600,
+          "height": 300
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/content-cannon@1x.webp",
+          "size": 10530
+        }
+      },
+      "fallback": {}
+    },
+    "content-cannon@2x": {
+      "original": {
+        "path": "src/assets/content-cannon@2x.png",
+        "size": 31080,
+        "dimensions": {
+          "width": 1200,
+          "height": 599
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/content-cannon@2x.webp",
+          "size": 31080
+        }
+      },
+      "fallback": {}
+    },
+    "content-cannon@mobile": {
+      "original": {
+        "path": "src/assets/content-cannon@mobile.png",
+        "size": 5522,
+        "dimensions": {
+          "width": 400,
+          "height": 200
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/content-cannon@mobile.webp",
+          "size": 5522
+        }
+      },
+      "fallback": {}
+    },
+    "esdguys": {
+      "original": {
+        "path": "src/assets/esdguys.png",
+        "size": 24933,
+        "dimensions": {
+          "width": 512,
+          "height": 512
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/esdguys.webp",
+          "size": 15950
+        },
+        "@mobile": {
+          "path": "src/assets/esdguys@mobile.webp",
+          "size": 42686
+        }
+      },
+      "fallback": {}
+    },
+    "esdguys@mobile": {
+      "original": {
+        "path": "src/assets/esdguys@mobile.png",
+        "size": 42686,
+        "dimensions": {
+          "width": 400,
+          "height": 400
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/esdguys@mobile.webp",
+          "size": 42686
+        }
+      },
+      "fallback": {}
+    },
+    "grubs": {
+      "original": {
+        "path": "src/assets/grubs.png",
+        "size": 725926,
+        "dimensions": {
+          "width": 2497,
+          "height": 1727
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/grubs.webp",
+          "size": 191550
+        },
+        "@2x": {
+          "path": "src/assets/grubs@2x.webp",
+          "size": 70910
+        },
+        "@1x": {
+          "path": "src/assets/grubs@1x.webp",
+          "size": 29012
+        },
+        "@mobile": {
+          "path": "src/assets/grubs@mobile.webp",
+          "size": 17176
+        }
+      },
+      "fallback": {}
+    },
+    "grubs@1x": {
+      "original": {
+        "path": "src/assets/grubs@1x.png",
+        "size": 29012,
+        "dimensions": {
+          "width": 600,
+          "height": 415
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/grubs@1x.webp",
+          "size": 29012
+        }
+      },
+      "fallback": {}
+    },
+    "grubs@2x": {
+      "original": {
+        "path": "src/assets/grubs@2x.png",
+        "size": 70910,
+        "dimensions": {
+          "width": 1200,
+          "height": 830
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/grubs@2x.webp",
+          "size": 70910
+        }
+      },
+      "fallback": {}
+    },
+    "grubs@mobile": {
+      "original": {
+        "path": "src/assets/grubs@mobile.png",
+        "size": 17176,
+        "dimensions": {
+          "width": 400,
+          "height": 277
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/grubs@mobile.webp",
+          "size": 17176
+        }
+      },
+      "fallback": {}
+    },
+    "integratedChatBot": {
+      "original": {
+        "path": "src/assets/integratedChatBot.png",
+        "size": 972872,
+        "dimensions": {
+          "width": 2732,
+          "height": 1494
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/integratedChatBot.webp",
+          "size": 113332
+        },
+        "@2x": {
+          "path": "src/assets/integratedChatBot@2x.webp",
+          "size": 42322
+        },
+        "@1x": {
+          "path": "src/assets/integratedChatBot@1x.webp",
+          "size": 14424
+        },
+        "@mobile": {
+          "path": "src/assets/integratedChatBot@mobile.webp",
+          "size": 7404
+        }
+      },
+      "fallback": {}
+    },
+    "integratedChatBot@1x": {
+      "original": {
+        "path": "src/assets/integratedChatBot@1x.png",
+        "size": 14424,
+        "dimensions": {
+          "width": 600,
+          "height": 328
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/integratedChatBot@1x.webp",
+          "size": 14424
+        }
+      },
+      "fallback": {}
+    },
+    "integratedChatBot@2x": {
+      "original": {
+        "path": "src/assets/integratedChatBot@2x.png",
+        "size": 42322,
+        "dimensions": {
+          "width": 1200,
+          "height": 656
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/integratedChatBot@2x.webp",
+          "size": 42322
+        }
+      },
+      "fallback": {}
+    },
+    "integratedChatBot@mobile": {
+      "original": {
+        "path": "src/assets/integratedChatBot@mobile.png",
+        "size": 7404,
+        "dimensions": {
+          "width": 400,
+          "height": 219
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/integratedChatBot@mobile.webp",
+          "size": 7404
+        }
+      },
+      "fallback": {}
+    },
+    "invDash": {
+      "original": {
+        "path": "src/assets/invDash.png",
+        "size": 1214659,
+        "dimensions": {
+          "width": 1024,
+          "height": 1024
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/invDash.webp",
+          "size": 47770
+        },
+        "@1x": {
+          "path": "src/assets/invDash@1x.webp",
+          "size": 25786
+        },
+        "@mobile": {
+          "path": "src/assets/invDash@mobile.webp",
+          "size": 15992
+        }
+      },
+      "fallback": {}
+    },
+    "invDash@1x": {
+      "original": {
+        "path": "src/assets/invDash@1x.png",
+        "size": 25786,
+        "dimensions": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/invDash@1x.webp",
+          "size": 25786
+        }
+      },
+      "fallback": {}
+    },
+    "invDash@mobile": {
+      "original": {
+        "path": "src/assets/invDash@mobile.png",
+        "size": 15992,
+        "dimensions": {
+          "width": 400,
+          "height": 400
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/invDash@mobile.webp",
+          "size": 15992
+        }
+      },
+      "fallback": {}
+    },
+    "neptune": {
+      "original": {
+        "path": "src/assets/neptune.png",
+        "size": 26977,
+        "dimensions": {
+          "width": 1200,
+          "height": 240
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/neptune.webp",
+          "size": 12402
+        },
+        "@2x": {
+          "path": "src/assets/neptune@2x.webp",
+          "size": 12402
+        },
+        "@1x": {
+          "path": "src/assets/neptune@1x.webp",
+          "size": 14012
+        },
+        "@mobile": {
+          "path": "src/assets/neptune@mobile.webp",
+          "size": 9526
+        }
+      },
+      "fallback": {}
+    },
+    "neptune@1x": {
+      "original": {
+        "path": "src/assets/neptune@1x.png",
+        "size": 14012,
+        "dimensions": {
+          "width": 600,
+          "height": 120
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/neptune@1x.webp",
+          "size": 14012
+        }
+      },
+      "fallback": {}
+    },
+    "neptune@2x": {
+      "original": {
+        "path": "src/assets/neptune@2x.png",
+        "size": 12402,
+        "dimensions": {
+          "width": 1200,
+          "height": 240
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/neptune@2x.webp",
+          "size": 12402
+        }
+      },
+      "fallback": {}
+    },
+    "neptune@mobile": {
+      "original": {
+        "path": "src/assets/neptune@mobile.png",
+        "size": 9526,
+        "dimensions": {
+          "width": 400,
+          "height": 80
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/neptune@mobile.webp",
+          "size": 9526
+        }
+      },
+      "fallback": {}
+    },
+    "portfolio-favicon-128": {
+      "original": {
+        "path": "public/portfolio-favicon-128.png",
+        "size": 7079,
+        "dimensions": {
+          "width": 128,
+          "height": 128
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "public/portfolio-favicon-128.webp",
+          "size": 1964
+        }
+      },
+      "fallback": {}
+    },
+    "ppv_logo": {
+      "original": {
+        "path": "src/assets/ppv_logo.jpg",
+        "size": 11946,
+        "dimensions": {
+          "width": 400,
+          "height": 80
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ppv_logo.webp",
+          "size": 5370
+        },
+        "@mobile": {
+          "path": "src/assets/ppv_logo@mobile.webp",
+          "size": 5370
+        }
+      },
+      "fallback": {}
+    },
+    "ppv_logo@mobile": {
+      "original": {
+        "path": "src/assets/ppv_logo@mobile.jpg",
+        "size": 5370,
+        "dimensions": {
+          "width": 400,
+          "height": 80
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/ppv_logo@mobile.webp",
+          "size": 5370
+        }
+      },
+      "fallback": {}
+    },
+    "qr-code": {
+      "original": {
+        "path": "src/assets/qr-code.png",
+        "size": 74216,
+        "dimensions": {
+          "width": 629,
+          "height": 1137
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/qr-code.webp",
+          "size": 24188
+        },
+        "@1x": {
+          "path": "src/assets/qr-code@1x.webp",
+          "size": 23222
+        },
+        "@mobile": {
+          "path": "src/assets/qr-code@mobile.webp",
+          "size": 15814
+        }
+      },
+      "fallback": {}
+    },
+    "qr-code@1x": {
+      "original": {
+        "path": "src/assets/qr-code@1x.png",
+        "size": 23222,
+        "dimensions": {
+          "width": 600,
+          "height": 1085
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/qr-code@1x.webp",
+          "size": 23222
+        }
+      },
+      "fallback": {}
+    },
+    "qr-code@mobile": {
+      "original": {
+        "path": "src/assets/qr-code@mobile.png",
+        "size": 15814,
+        "dimensions": {
+          "width": 400,
+          "height": 723
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/qr-code@mobile.webp",
+          "size": 15814
+        }
+      },
+      "fallback": {}
+    },
+    "rewrite_engine": {
+      "original": {
+        "path": "src/assets/rewrite_engine.png",
+        "size": 2187143,
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/rewrite_engine.webp",
+          "size": 80780
+        },
+        "@2x": {
+          "path": "src/assets/rewrite_engine@2x.webp",
+          "size": 54252
+        },
+        "@1x": {
+          "path": "src/assets/rewrite_engine@1x.webp",
+          "size": 24130
+        },
+        "@mobile": {
+          "path": "src/assets/rewrite_engine@mobile.webp",
+          "size": 15206
+        }
+      },
+      "fallback": {}
+    },
+    "rewrite_engine@1x": {
+      "original": {
+        "path": "src/assets/rewrite_engine@1x.png",
+        "size": 24130,
+        "dimensions": {
+          "width": 600,
+          "height": 400
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/rewrite_engine@1x.webp",
+          "size": 24130
+        }
+      },
+      "fallback": {}
+    },
+    "rewrite_engine@2x": {
+      "original": {
+        "path": "src/assets/rewrite_engine@2x.png",
+        "size": 54252,
+        "dimensions": {
+          "width": 1200,
+          "height": 800
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/rewrite_engine@2x.webp",
+          "size": 54252
+        }
+      },
+      "fallback": {}
+    },
+    "rewrite_engine@mobile": {
+      "original": {
+        "path": "src/assets/rewrite_engine@mobile.png",
+        "size": 15206,
+        "dimensions": {
+          "width": 400,
+          "height": 267
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/rewrite_engine@mobile.webp",
+          "size": 15206
+        }
+      },
+      "fallback": {}
+    },
+    "socialBot": {
+      "original": {
+        "path": "src/assets/socialBot.png",
+        "size": 1375010,
+        "dimensions": {
+          "width": 1024,
+          "height": 1024
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/socialBot.webp",
+          "size": 41100
+        },
+        "@1x": {
+          "path": "src/assets/socialBot@1x.webp",
+          "size": 20118
+        },
+        "@mobile": {
+          "path": "src/assets/socialBot@mobile.webp",
+          "size": 12040
+        }
+      },
+      "fallback": {}
+    },
+    "socialBot@1x": {
+      "original": {
+        "path": "src/assets/socialBot@1x.png",
+        "size": 20118,
+        "dimensions": {
+          "width": 600,
+          "height": 600
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/socialBot@1x.webp",
+          "size": 20118
+        }
+      },
+      "fallback": {}
+    },
+    "socialBot@mobile": {
+      "original": {
+        "path": "src/assets/socialBot@mobile.png",
+        "size": 12040,
+        "dimensions": {
+          "width": 400,
+          "height": 400
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/socialBot@mobile.webp",
+          "size": 12040
+        }
+      },
+      "fallback": {}
+    },
+    "technimark": {
+      "original": {
+        "path": "src/assets/technimark.png",
+        "size": 187613,
+        "dimensions": {
+          "width": 1098,
+          "height": 890
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/technimark.webp",
+          "size": 32862
+        },
+        "@1x": {
+          "path": "src/assets/technimark@1x.webp",
+          "size": 16742
+        },
+        "@mobile": {
+          "path": "src/assets/technimark@mobile.webp",
+          "size": 10228
+        }
+      },
+      "fallback": {}
+    },
+    "technimark@1x": {
+      "original": {
+        "path": "src/assets/technimark@1x.png",
+        "size": 16742,
+        "dimensions": {
+          "width": 600,
+          "height": 486
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/technimark@1x.webp",
+          "size": 16742
+        }
+      },
+      "fallback": {}
+    },
+    "technimark@mobile": {
+      "original": {
+        "path": "src/assets/technimark@mobile.png",
+        "size": 10228,
+        "dimensions": {
+          "width": 400,
+          "height": 324
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/technimark@mobile.webp",
+          "size": 10228
+        }
+      },
+      "fallback": {}
+    },
+    "triLogo": {
+      "original": {
+        "path": "src/assets/triLogo.png",
+        "size": 18114,
+        "dimensions": {
+          "width": 477,
+          "height": 410
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/triLogo.webp",
+          "size": 30266
+        },
+        "@mobile": {
+          "path": "src/assets/triLogo@mobile.webp",
+          "size": 44318
+        }
+      },
+      "fallback": {}
+    },
+    "triLogo@mobile": {
+      "original": {
+        "path": "src/assets/triLogo@mobile.png",
+        "size": 44318,
+        "dimensions": {
+          "width": 400,
+          "height": 344
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/triLogo@mobile.webp",
+          "size": 44318
+        }
+      },
+      "fallback": {}
+    },
+    "voltech": {
+      "original": {
+        "path": "src/assets/voltech.png",
+        "size": 3781,
+        "dimensions": {
+          "width": 150,
+          "height": 73
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/voltech.webp",
+          "size": 2266
+        }
+      },
+      "fallback": {}
+    },
+    "vsi-swine": {
+      "original": {
+        "path": "src/assets/vsi-swine.png",
+        "size": 506968,
+        "dimensions": {
+          "width": 2816,
+          "height": 1936
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/vsi-swine.webp",
+          "size": 132590
+        },
+        "@2x": {
+          "path": "src/assets/vsi-swine@2x.webp",
+          "size": 48448
+        },
+        "@1x": {
+          "path": "src/assets/vsi-swine@1x.webp",
+          "size": 18212
+        },
+        "@mobile": {
+          "path": "src/assets/vsi-swine@mobile.webp",
+          "size": 9690
+        }
+      },
+      "fallback": {}
+    },
+    "vsi-swine@1x": {
+      "original": {
+        "path": "src/assets/vsi-swine@1x.png",
+        "size": 18212,
+        "dimensions": {
+          "width": 600,
+          "height": 413
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/vsi-swine@1x.webp",
+          "size": 18212
+        }
+      },
+      "fallback": {}
+    },
+    "vsi-swine@2x": {
+      "original": {
+        "path": "src/assets/vsi-swine@2x.png",
+        "size": 48448,
+        "dimensions": {
+          "width": 1200,
+          "height": 825
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/vsi-swine@2x.webp",
+          "size": 48448
+        }
+      },
+      "fallback": {}
+    },
+    "vsi-swine@mobile": {
+      "original": {
+        "path": "src/assets/vsi-swine@mobile.png",
+        "size": 9690,
+        "dimensions": {
+          "width": 400,
+          "height": 275
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/vsi-swine@mobile.webp",
+          "size": 9690
+        }
+      },
+      "fallback": {}
+    },
+    "wnlogo": {
+      "original": {
+        "path": "src/assets/wnlogo.png",
+        "size": 22873,
+        "dimensions": {
+          "width": 469,
+          "height": 118
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/wnlogo.webp",
+          "size": 8518
+        },
+        "@mobile": {
+          "path": "src/assets/wnlogo@mobile.webp",
+          "size": 20840
+        }
+      },
+      "fallback": {}
+    },
+    "wnlogo@mobile": {
+      "original": {
+        "path": "src/assets/wnlogo@mobile.png",
+        "size": 20840,
+        "dimensions": {
+          "width": 400,
+          "height": 101
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/wnlogo@mobile.webp",
+          "size": 20840
+        }
+      },
+      "fallback": {}
+    },
+    "yo": {
+      "original": {
+        "path": "src/assets/yo.png",
+        "size": 138113,
+        "dimensions": {
+          "width": 2536,
+          "height": 580
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/yo.webp",
+          "size": 46672
+        },
+        "@2x": {
+          "path": "src/assets/yo@2x.webp",
+          "size": 19670
+        },
+        "@1x": {
+          "path": "src/assets/yo@1x.webp",
+          "size": 7722
+        },
+        "@mobile": {
+          "path": "src/assets/yo@mobile.webp",
+          "size": 4514
+        }
+      },
+      "fallback": {}
+    },
+    "yo@1x": {
+      "original": {
+        "path": "src/assets/yo@1x.png",
+        "size": 7722,
+        "dimensions": {
+          "width": 600,
+          "height": 137
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/yo@1x.webp",
+          "size": 7722
+        }
+      },
+      "fallback": {}
+    },
+    "yo@2x": {
+      "original": {
+        "path": "src/assets/yo@2x.png",
+        "size": 19670,
+        "dimensions": {
+          "width": 1200,
+          "height": 274
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/yo@2x.webp",
+          "size": 19670
+        }
+      },
+      "fallback": {}
+    },
+    "yo@mobile": {
+      "original": {
+        "path": "src/assets/yo@mobile.png",
+        "size": 4514,
+        "dimensions": {
+          "width": 400,
+          "height": 91
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "src/assets/yo@mobile.webp",
+          "size": 4514
+        }
+      },
+      "fallback": {}
+    },
+    "forgewise_logo_1": {
+      "original": {
+        "path": "public/forgewise_logo_1.png",
+        "size": 60043,
+        "dimensions": {
+          "width": 1024,
+          "height": 337
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "public/forgewise_logo_1.webp",
+          "size": 20682
+        },
+        "@1x": {
+          "path": "public/forgewise_logo_1@1x.webp",
+          "size": 20424
+        },
+        "@mobile": {
+          "path": "public/forgewise_logo_1@mobile.webp",
+          "size": 12236
+        }
+      },
+      "fallback": {}
+    },
+    "forgewise_logo_1@1x": {
+      "original": {
+        "path": "public/forgewise_logo_1@1x.png",
+        "size": 20424,
+        "dimensions": {
+          "width": 600,
+          "height": 197
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "public/forgewise_logo_1@1x.webp",
+          "size": 20424
+        }
+      },
+      "fallback": {}
+    },
+    "forgewise_logo_1@mobile": {
+      "original": {
+        "path": "public/forgewise_logo_1@mobile.png",
+        "size": 12236,
+        "dimensions": {
+          "width": 400,
+          "height": 132
+        }
+      },
+      "webp": {
+        "original": {
+          "path": "public/forgewise_logo_1@mobile.webp",
+          "size": 12236
+        }
+      },
+      "fallback": {}
+    }
+  },
+  "generated": "2025-06-11T14:21:50.236Z"
+}

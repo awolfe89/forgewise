@@ -340,7 +340,7 @@ export default function AttributeFilteringCaseStudy() {
             <div>
               <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
               <p className="text-gray-600">
-              Founder of ForgeWise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
+              Founder of Forgewise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
 
               </p>
             </div>
