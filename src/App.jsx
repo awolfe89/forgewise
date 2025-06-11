@@ -1,6 +1,6 @@
 // App.jsx
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -8,6 +8,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import MetaTags from './components/MetaTags';
 import SchemaMarkup from './components/SchemaMarkup';
 import LoadingSpinner from './components/LoadingSpinner';
+import CookieConsent from './components/CookieConsent';
+import BackToTop from './components/BackToTop';
 
 // Eagerly load critical pages
 import Home from './pages/Home';
@@ -38,7 +40,7 @@ const AccessibilityStatement = lazy(() => import('./pages/AccessibilityStatement
 function App() {
   return (
     <ErrorBoundary>
-      <Router>
+      <BrowserRouter>
         <ScrollToTop />
         <MetaTags />
         <SchemaMarkup pageType="general" />
@@ -68,8 +70,10 @@ function App() {
             </ErrorBoundary>
           </main>
           <Footer />
+          <BackToTop />
+          <CookieConsent />
         </div>
-      </Router>
+      </BrowserRouter>
     </ErrorBoundary>
   );
 }

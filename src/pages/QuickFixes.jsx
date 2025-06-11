@@ -12,12 +12,13 @@ function QuickFixCard({ title, description, timeframe, category, features, prior
   const colors = priorityColors[priority] || priorityColors.medium;
 
   return (
-    <BaseCard className="p-6 relative">
+    <div className="relative">
       {badge && (
-        <div className="absolute -top-3 -right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+        <div className="absolute -top-2 -right-2 bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
           {badge}
         </div>
       )}
+      <BaseCard className="p-6">
       
       <div className={`inline-flex px-3 py-1 rounded-full text-sm font-medium mb-4 ${colors.bg} ${colors.text} ${colors.border} border`}>
         {category}
@@ -41,7 +42,8 @@ function QuickFixCard({ title, description, timeframe, category, features, prior
         iconColor="text-teal-500"
         className="text-sm"
       />
-    </BaseCard>
+      </BaseCard>
+    </div>
   );
 }
 

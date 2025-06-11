@@ -32,7 +32,8 @@ export default function FloatingCTA() {
         >
           <Link
             to="/contact"
-            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            aria-label="Start your transformation - Contact us"
           >
             Start Your Transformation
             <svg 

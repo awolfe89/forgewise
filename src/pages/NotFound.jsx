@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, Search, ArrowLeft, Compass } from 'lucide-react';
-import AnimatedSection from '../components/AnimatedComponents';
+import { FadeIn } from '../components/AnimatedComponents';
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center px-6">
-      <AnimatedSection className="max-w-4xl mx-auto text-center">
+      <FadeIn className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -100,7 +100,7 @@ const NotFound = () => {
             and let me know.
           </p>
         </motion.div>
-      </AnimatedSection>
+      </FadeIn>
     </div>
   );
 };
