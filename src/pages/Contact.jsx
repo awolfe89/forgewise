@@ -2,11 +2,20 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import contactConfig from '../config/contact';
 import { BookingLink } from '../components/ProtectedContact';
+import FormInput from '../components/FormInput';
 
 export default function Contact() {
   const [selectedTier, setSelectedTier] = useState(null);
   const [modalTier, setModalTier] = useState(null);
   const [hoveredTier, setHoveredTier] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [touched, setTouched] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const contactTiers = [
     {
@@ -297,6 +306,145 @@ export default function Contact() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-4">Get in Touch</h2>
+          <p className="text-xl text-gray-600 text-center mb-12">
+            Have a specific question or prefer email? Send us a message and we'll get back to you within 24 hours.
+          </p>
+          
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={async (e) => {
+              e.preventDefault();
+              setIsSubmitting(true);
+              
+              try {
+                const formElement = e.target;
+                const formData = new FormData(formElement);
+                
+                const response = await fetch('/', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                  body: new URLSearchParams(formData).toString()
+                });
+                
+                if (response.ok) {
+                  setSubmitStatus('success');
+                  setFormData({ name: '', email: '', message: '' });
+                  setTouched({});
+                } else {
+                  setSubmitStatus('error');
+                }
+              } catch (error) {
+                setSubmitStatus('error');
+              } finally {
+                setIsSubmitting(false);
+              }
+            }}
+          >
+            {/* Netlify Forms hidden fields */}
+            <input type="hidden" name="form-name" value="contact" />
+            <div hidden>
+              <label>
+                Don't fill this out: <input name="bot-field" />
+              </label>
+            </div>
+            
+            <div className="space-y-6">
+              <FormInput
+                label="Name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onBlur={() => setTouched({ ...touched, name: true })}
+                required
+                touched={touched.name}
+                placeholder="John Doe"
+              />
+              
+              <FormInput
+                label="Email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onBlur={() => setTouched({ ...touched, email: true })}
+                required
+                touched={touched.email}
+                placeholder="john@example.com"
+              />
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Message <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onBlur={() => setTouched({ ...touched, message: true })}
+                  required
+                  className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none ${
+                    touched.message && !formData.message 
+                      ? 'border-red-500' 
+                      : 'border-gray-300'
+                  }`}
+                  placeholder="Tell us about your project or challenge..."
+                />
+                {touched.message && !formData.message && (
+                  <p className="mt-1 text-sm text-red-600">Message is required</p>
+                )}
+              </div>
+              
+              <div className="text-center">
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !formData.name || !formData.email || !formData.message}
+                  className={`px-8 py-3 rounded-lg font-medium transition-all transform ${
+                    isSubmitting || !formData.name || !formData.email || !formData.message
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-indigo-600 text-white hover:bg-indigo-700 hover:scale-105'
+                  }`}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </div>
+              
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-green-100 text-green-700 rounded-lg text-center"
+                >
+                  <p className="font-medium">Thank you for your message!</p>
+                  <p className="text-sm mt-1">We'll get back to you within 24 hours.</p>
+                </motion.div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 p-4 bg-red-100 text-red-700 rounded-lg text-center"
+                >
+                  <p className="font-medium">Oops! Something went wrong.</p>
+                  <p className="text-sm mt-1">Please try again or email us directly at hello@forgewise.com</p>
+                </motion.div>
+              )}
+            </div>
+          </form>
         </div>
       </section>
 
