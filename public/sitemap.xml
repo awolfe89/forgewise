@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://forgewise.io/contact</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://forgewise.io*</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -70,7 +70,7 @@
   <!-- Individual Insight Pages -->
   <url>
     <loc>https://forgewise.io/insights/shopify-speed-fix</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -94,13 +94,13 @@
   </url>
   <url>
     <loc>https://forgewise.io/insights/seo-ux-transformation</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/attribute-filtering</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

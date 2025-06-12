@@ -85,9 +85,6 @@ export default defineConfig({
   css: {
     modules: {
       localsConvention: 'camelCase'
-    },
-    postcss: {
-      plugins: []
     }
   },
   // Production optimizations

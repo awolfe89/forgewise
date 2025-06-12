@@ -4,7 +4,7 @@ import seoConfig from '../config/seo';
 
 const routeMetadata = {
   '/': {
-    title: 'Forgewise - Scale Your Shopify Store to 6-Figures',
+    title: 'Forgewise - Scale Your eCommerce Store Fast',
     description: 'Transform your e-commerce business with strategic technology consulting. We deliver practical solutions that drive measurable results.',
     structuredData: {
       '@type': 'Organization',

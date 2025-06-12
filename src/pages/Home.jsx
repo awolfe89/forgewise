@@ -89,7 +89,7 @@ export default function Home() {
         <StaggerContainer className="max-w-6xl mx-auto px-4">
           <StaggerItem>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
-              Scale Your Shopify Store to <span className="text-teal-300">6-Figures in 90 Days</span>
+              Scale Your eCommerce Store <span className="text-teal-300">Fast</span>
             </h1>
             <p className="text-xl md:text-2xl text-indigo-100 text-center mb-12 max-w-3xl mx-auto">
               We diagnose your bottlenecks and deliver quick-win fixes that boost sales.
