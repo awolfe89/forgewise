@@ -53,8 +53,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- Optimize LCP by preloading critical resources -->
+    <link rel="preload" as="style" href="/src/index.css" />
+    <style>
+      /* Critical inline styles for immediate render */
+      body { margin: 0; font-family: system-ui, sans-serif; }
+      .text-white { color: white; }
+      .text-center { text-align: center; }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="modulepreload" href="/src/main.jsx" />
+    <link rel="preload" href="/src/index.css" as="style" />
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://forgewise.io/" />
+    
+    <!-- Add fetchpriority to LCP element via JavaScript -->
+    <script>
+      // Mark LCP element with high priority when DOM is ready
+      document.addEventListener('DOMContentLoaded', function() {
+        const h1 = document.querySelector('h1');
+        if (h1) h1.setAttribute('fetchpriority', 'high');
+      });
+    </script>
     
     <!-- Robots -->
     <meta name="robots" content="index, follow" />

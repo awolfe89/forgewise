@@ -52,15 +52,25 @@ export default defineConfig({
     // Optimize chunk splitting
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Split vendor chunks for better caching
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'animation-vendor': ['framer-motion'],
-          // Group utilities together
-          'utils': [
-            './src/utils/validation.js',
-            './src/utils/useKeyboardClick.js'
-          ]
+        manualChunks: (id) => {
+          // More aggressive code splitting
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            if (id.includes('framer-motion')) {
+              return 'animation-vendor';
+            }
+            if (id.includes('react-router')) {
+              return 'router-vendor';
+            }
+            // Split other large dependencies
+            return 'vendor';
+          }
+          // Keep utils together
+          if (id.includes('/utils/')) {
+            return 'utils';
+          }
         },
         // Use content hash for cache busting
         chunkFileNames: (chunkInfo) => {

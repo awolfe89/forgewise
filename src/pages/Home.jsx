@@ -1,11 +1,13 @@
 // pages/Home.jsx
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import { BookingLink } from '../components/ProtectedContact';
-import FloatingCTA from '../components/FloatingCTA';
 import SchemaMarkup from '../components/SchemaMarkup';
+
+// Lazy load non-critical components
+const FloatingCTA = lazy(() => import('../components/FloatingCTA'));
 
 export default function Home() {
   const [checkedProblems, setCheckedProblems] = useState({});
@@ -80,22 +82,29 @@ export default function Home() {
   return (
     <div className="pt-20">
       <SchemaMarkup pageType="home" />
-      <FloatingCTA />
+      <Suspense fallback={null}>
+        <FloatingCTA />
+      </Suspense>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-teal-700 py-16 md:py-24">
         <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6))] pointer-events-none"></div>
         
-        <StaggerContainer className="max-w-6xl mx-auto px-4">
-          <StaggerItem>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
-              Scale Your eCommerce Store <span className="text-teal-300">Fast</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-indigo-100 text-center mb-12 max-w-3xl mx-auto">
-              We diagnose your bottlenecks and deliver quick-win fixes that boost sales.
-            </p>
-          </StaggerItem>
-        </StaggerContainer>
+        <div className="max-w-6xl mx-auto px-4">
+          {/* LCP-optimized H1 - no animation for immediate render */}
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
+            Scale Your eCommerce Store <span className="text-teal-300">Fast</span>
+          </h1>
+          
+          {/* Animate only the subtitle */}
+          <StaggerContainer>
+            <StaggerItem>
+              <p className="text-xl md:text-2xl text-indigo-100 text-center mb-12 max-w-3xl mx-auto">
+                We diagnose your bottlenecks and deliver quick-win fixes that boost sales.
+              </p>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
 
         {/* Problem Assessment Tool - Outside ALL animation containers */}
         <div className="max-w-4xl mx-auto px-4 pb-8">
