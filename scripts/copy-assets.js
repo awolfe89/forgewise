@@ -3,11 +3,15 @@
 const fs = require('fs');
 const path = require('path');
 
-// Ensure the export directory exists
-const exportDir = path.join(process.cwd(), '.next', 'export');
+// Check for the export directory (Next.js 14 uses 'out' directory)
+let exportDir = path.join(process.cwd(), 'out');
 if (!fs.existsSync(exportDir)) {
-  console.log('Export directory does not exist. Skipping asset copy.');
-  process.exit(0);
+  // Fallback to .next/export for compatibility
+  exportDir = path.join(process.cwd(), '.next', 'export');
+  if (!fs.existsSync(exportDir)) {
+    console.log('Export directory does not exist. Skipping asset copy.');
+    process.exit(0);
+  }
 }
 
 // Copy all files from public to export
@@ -30,4 +34,4 @@ files.forEach(file => {
   }
 });
 
-console.log(`✓ Copied ${copiedCount} assets to .next/export/`);
+console.log(`✓ Copied ${copiedCount} assets to ${exportDir}/`);

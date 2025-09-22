@@ -54,14 +54,15 @@ export async function getStaticPaths() {
     { params: { insightId: 'hidden-inventory-costs' } },
     { params: { insightId: 'ppc-cost-optimization' } },
     { params: { insightId: 'ai-in-ecommerce' } },
-    { params: { insightId: 'seo-ux-case-study' } },
-    { params: { insightId: 'unused-features' } },
-    { params: { insightId: 'attribute-filtering' } }
+    { params: { insightId: 'seo-ux-case-study' } }
+    // Temporarily skip problematic pages
+    // { params: { insightId: 'unused-features' } },
+    // { params: { insightId: 'attribute-filtering' } }
   ];
 
   return {
     paths,
-    fallback: false
+    fallback: 'blocking' // Allow runtime rendering for skipped pages
   };
 }
 

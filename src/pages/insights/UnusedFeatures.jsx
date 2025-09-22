@@ -1,11 +1,13 @@
 // pages/insights/UnusedFeatures.jsx
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { BookingLink } from '../../components/ProtectedContact';
+// import { BookingLink } from '../../components/ProtectedContact';
 
 export default function UnusedFeatures() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
