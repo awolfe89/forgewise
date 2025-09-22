@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Forgewise',
-  title: 'Forgewise - Quick Wins & Systems for $1M-$50M E-commerce Brands',
-  description: 'We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
+  title: 'Forgewise - Quick Wins & Systems for $100K-$5M E-commerce Brands',
+  description: 'We help $100K-$5M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
   url: 'https://forgewise.io',
   author: 'Forgewise Team',
   image: '/forgewisе-icon.png',
@@ -12,29 +12,29 @@ export const siteConfig = {
 // Page-specific SEO configurations
 export const pageSEO = {
   home: {
-    title: 'Forgewise - Quick Wins & Systems for $1M-$50M E-commerce Brands',
-    description: 'We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
-    keywords: 'ecommerce optimization, revenue growth, cart abandonment, conversion rate, shopify optimization, $1M-$50M ecommerce'
+    title: 'Forgewise - Quick Wins & Systems for $100K-$5M E-commerce Brands',
+    description: 'We help $100K-$5M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
+    keywords: 'ecommerce optimization, revenue growth, cart abandonment, conversion rate, shopify optimization, $100K-$5M ecommerce'
   },
   quickFixes: {
     title: 'Quick E-commerce Fixes That Pay for Themselves | Forgewise',
-    description: 'Fix your biggest revenue leaks in 2-4 weeks. Cart abandonment, slow sites, wasted ad spend - we fix what\'s broken fast. For $1M-$50M stores.',
+    description: 'Fix your biggest revenue leaks in 2-4 weeks. Cart abandonment, slow sites, wasted ad spend - we fix what\'s broken fast. For $100K-$5M stores.',
     keywords: 'ecommerce quick wins, cart abandonment fix, site speed optimization, conversion optimization, shopify fixes'
   },
   solutions: {
     title: 'E-commerce Solutions That Actually Work | Forgewise',
-    description: 'Real solutions for $1M-$50M e-commerce brands. From 283% revenue growth to 67% cost reduction. No theory, just proven fixes.',
+    description: 'Real solutions for $100K-$5M e-commerce brands. From 283% revenue growth to 67% cost reduction. No theory, just proven fixes.',
     keywords: 'ecommerce solutions, shopify solutions, revenue growth, conversion optimization, inventory management'
   },
   results: {
-    title: '$1M-$50M E-commerce Success Stories | Forgewise',
+    title: '$100K-$5M E-commerce Success Stories | Forgewise',
     description: 'How we helped 45+ e-commerce brands stop bleeding money and start growing. Real numbers, real results, no BS.',
-    keywords: 'ecommerce case studies, shopify success stories, revenue growth examples, ROI case studies, $1M-$50M brands'
+    keywords: 'ecommerce case studies, shopify success stories, revenue growth examples, ROI case studies, $100K-$5M brands'
   },
   about: {
-    title: 'About Forgewise - E-commerce Growth Experts for $1M-$50M Brands',
+    title: 'About Forgewise - E-commerce Growth Experts for $100K-$5M Brands',
     description: 'We fix what\'s broken in your e-commerce business. Fast. No 6-month roadmaps, no bloated retainers. Just fixes that work for growing brands.',
-    keywords: 'Forgewise, ecommerce experts, shopify experts, growth consultants, $1M-$50M ecommerce'
+    keywords: 'Forgewise, ecommerce experts, shopify experts, growth consultants, $100K-$5M ecommerce'
   },
   insights: {
     title: 'Business Insights & Strategic Guidance | Forgewise',
@@ -43,7 +43,7 @@ export const pageSEO = {
   },
   contact: {
     title: 'Free 30-Min Call - No Pitch Decks | Forgewise',
-    description: 'Get actionable advice for your $1M-$50M e-commerce brand. Free 30-minute call. No pitch decks, just honest advice on your next best move.',
+    description: 'Get actionable advice for your $100K-$5M e-commerce brand. Free 30-minute call. No pitch decks, just honest advice on your next best move.',
     keywords: 'ecommerce consultation, free consultation, shopify help, growth strategy, no pitch decks'
   },
   'privacy-policy': {

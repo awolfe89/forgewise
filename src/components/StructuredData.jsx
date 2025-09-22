@@ -24,7 +24,7 @@ export function OrganizationSchema() {
       "@type": "PostalAddress",
       "addressCountry": "US"
     },
-    "description": "We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems.",
+    "description": "We help $100K-$5M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems.",
     "founder": {
       "@type": "Person",
       "name": "Allan Wolfe"
@@ -50,7 +50,7 @@ export function WebsiteSchema() {
     "name": "Forgewise",
     "alternateName": "Forgewise.io",
     "url": "https://forgewise.io",
-    "description": "Quick wins and systems for $1M-$50M e-commerce brands",
+    "description": "Quick wins and systems for $100K-$5M e-commerce brands",
     "publisher": {
       "@type": "Organization",
       "name": "Forgewise"

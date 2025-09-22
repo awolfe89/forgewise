@@ -76,7 +76,7 @@ export default function About() {
               className="text-lg text-gray-700 leading-relaxed"
             >
               <p>
-                We work with $1M-$50M businesses because you move fast and make decisions. No committees. No corporate BS. We find what's broken, fix it, and measure everything in dollars. Faster sites, better checkouts, smarter ads - whatever stops the bleeding and starts the growth. We're not consultants. We're builders who happen to give good advice.
+                We work with $100K-$5M businesses because you move fast and make decisions. No committees. No corporate BS. We find what's broken, fix it, and measure everything in dollars. Faster sites, better checkouts, smarter ads - whatever stops the bleeding and starts the growth. We're not consultants. We're builders who happen to give good advice.
               </p>
             </motion.div>
           </div>
