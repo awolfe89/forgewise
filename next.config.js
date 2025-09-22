@@ -18,6 +18,9 @@ const nextConfig = {
   poweredByHeader: false,
   // Enable SWC minification
   swcMinify: true,
+  // Set base path for static assets
+  assetPrefix: '',
+  basePath: '',
 }
 
 module.exports = nextConfig

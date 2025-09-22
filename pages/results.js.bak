@@ -45,7 +45,7 @@ export default function Results() {
       company: 'Technimark-Inc',
       logo: '/technimark.png',
       industry: 'B2B Manufacturing',
-      category: 'marketing',
+      category: 'efficiency',
       context: 'B2B manufacturer spending $30K/mo on Google Ads with declining lead quality',
       diagnosis: 'No conversion tracking, broad match keywords eating budget, landing pages had 14% bounce rate',
       interventions: 'GA4 + server-side tracking, negative keyword audit, dedicated landing pages per campaign',
@@ -85,7 +85,7 @@ export default function Results() {
       company: 'VSI Swine',
       logo: '/vsi-swine.png',
       industry: 'AgTech B2B',
-      category: 'efficiency',
+      category: 'conversion',
       context: 'B2B AgTech company with 0.8% conversion rate on $50K/mo ad spend',
       diagnosis: 'Complex 5-step checkout, no social proof, technical jargon, hidden pricing',
       interventions: 'One-page checkout, trust signals, plain language copy, transparent pricing',
@@ -140,21 +140,21 @@ export default function Results() {
           <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
           <div className="relative max-w-7xl mx-auto px-6 text-center">
             <motion.h1
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
             >
               Real Results, Real Revenue
             </motion.h1>
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-xl max-w-3xl mx-auto text-gray-600">
               See how we've helped businesses like yours achieve measurable growth and overcome their biggest challenges.
             </motion.p>
             <motion.div
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="mt-8"

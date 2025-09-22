@@ -527,7 +527,7 @@ export default function Home() {
               {/* Results */}
               {showResults && calculatorResult && (
                 <motion.div
-                  initial={{ opacity: 1, height: 0 }}
+                  initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   className="mt-8 p-6 bg-emerald-50 border-2 border-emerald-200 rounded-xl"
                 >

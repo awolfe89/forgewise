@@ -2,61 +2,61 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://forgewise.io/</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://forgewise.io/quick-fixes</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/solutions</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/results</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/about</loc>
-    <lastmod>2025-09-16</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/contact</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://forgewise.io/privacy-policy</loc>
-    <lastmod>2025-09-16</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://forgewise.io/terms-of-service</loc>
-    <lastmod>2025-09-16</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://forgewise.io/accessibility</loc>
-    <lastmod>2025-09-16</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -64,43 +64,43 @@
   <!-- Individual Insight Pages -->
   <url>
     <loc>https://forgewise.io/insights/shopify-speed</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/hidden-inventory-costs</loc>
-    <lastmod>2025-06-10</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/ppc-cost-optimization</loc>
-    <lastmod>2025-06-10</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/ai-in-ecommerce</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/seo-ux-case-study</loc>
-    <lastmod>2025-06-11</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/unused-features</loc>
-    <lastmod>2025-06-10</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://forgewise.io/insights/attribute-filtering</loc>
-    <lastmod>2025-09-17</lastmod>
+    <lastmod>2025-09-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

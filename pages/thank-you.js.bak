@@ -14,7 +14,7 @@ export default function ThankYou() {
       <div className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
         <div className="text-center px-6 max-w-2xl">
           <motion.div
-            initial={{ opacity: 1, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >

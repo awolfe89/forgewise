@@ -79,12 +79,9 @@ export default function NextFooter() {
                 </Link>
               </li>
               <li>
-                <a href="https://calendly.com/forgewise/discovery" 
-                   className="hover:text-emerald-400 transition"
-                   target="_blank"
-                   rel="noopener noreferrer">
+                <Link href="/contact/" className="hover:text-emerald-400 transition">
                   Book Consultation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

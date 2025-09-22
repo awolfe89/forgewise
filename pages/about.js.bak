@@ -49,14 +49,14 @@ export default function About() {
         <section className="bg-gradient-to-br from-blue-800 to-emerald-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-6">
             <motion.h1
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-6 text-center"
             >
               We Fix What's Broken. Fast.
             </motion.h1>
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-xl max-w-3xl mx-auto text-center text-blue-100"
@@ -70,7 +70,7 @@ export default function About() {
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6">
             <motion.div
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-lg text-gray-700 leading-relaxed"
@@ -110,7 +110,7 @@ export default function About() {
               {expertise.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 1, x: -20 }}
+                  initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}

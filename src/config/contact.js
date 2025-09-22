@@ -8,13 +8,13 @@ const contactConfig = {
   phoneDisplay: '(555) 123-4567',
   phoneLink: '5551234567',
   
-  // Consultation links
+  // Consultation links - pointing to contact page for now
   calendly: {
-    discovery: 'https://calendly.com/forgewise/discovery',
-    consultation: 'https://calendly.com/forgewise/consultation',
-    implementation: 'https://calendly.com/forgewise/implementation',
-    audit15min: 'https://calendly.com/forgewise/15min-audit',
-    consult30min: 'https://calendly.com/forgewise/30min-consult'
+    discovery: '/contact/?type=discovery',
+    consultation: '/contact/?type=consultation',
+    implementation: '/contact/?type=implementation',
+    audit15min: '/contact/?type=audit',
+    consult30min: '/contact/?type=consultation'
   },
   
   // Location

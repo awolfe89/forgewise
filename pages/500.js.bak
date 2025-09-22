@@ -15,7 +15,7 @@ export default function Custom500() {
       <div className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-red-50 to-orange-50">
         <div className="text-center px-6 max-w-2xl">
           <motion.div
-            initial={{ opacity: 1, y: 20 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
