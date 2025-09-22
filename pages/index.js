@@ -178,7 +178,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
-                  <p className="text-2xl font-bold text-blue-700">$1M-$50M</p>
+                  <p className="text-2xl font-bold text-blue-700">$100K-$5M</p>
                   <p className="text-gray-600 text-sm mt-1">Companies We Usually Work With</p>
               </div>
               <div>

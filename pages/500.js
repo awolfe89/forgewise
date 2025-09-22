@@ -73,7 +73,7 @@ export default function Custom500() {
             </div>
 
             <p className="text-gray-600 mb-6">
-              Or while you wait, learn how we help $1M-$50M brands stop bleeding money:
+              Or while you wait, learn how we help $100K-$5M brands stop bleeding money:
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

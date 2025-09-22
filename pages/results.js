@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../src/components/AnimatedComponents';
 import { BookingLink } from '../src/components/ProtectedContact';
-import { ResponsiveImage } from '../src/components/LazyImage';
 import NextSEO from '../src/components/NextSEO';
 import { getPageSEO } from '../src/config/seo';
 
@@ -231,13 +230,13 @@ export default function Results() {
                         <div>
                           <div className="flex items-center mb-6">
                             <div className="w-16 h-16 bg-white rounded-lg shadow-md p-2 mr-4">
-                              <ResponsiveImage
+                              <img
                                 src={study.logo}
                                 alt={`${study.company} logo`}
                                 width={64}
                                 height={64}
                                 className="w-full h-full object-contain"
-                                sizes="64px"
+                                loading="lazy"
                               />
                             </div>
                             <div>
