@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && cp -r public/* .next/export/"
+  command = "npm run build"
   publish = ".next/export"
 
 [[headers]]
