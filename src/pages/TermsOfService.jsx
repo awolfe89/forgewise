@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { FadeIn } from '../components/AnimatedComponents';
 
 export default function TermsOfService() {
@@ -163,8 +163,8 @@ export default function TermsOfService() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-gray-700">
-                    Email: legal@forgewise.io<br />
-                    Or use our <Link to="/contact" className="text-indigo-600 hover:text-indigo-800">contact form</Link>
+                    Email: admin@forgewise.io<br />
+                    Or use our <Link href="/contact" className="text-indigo-600 hover:text-indigo-800">contact form</Link>
                   </p>
                 </div>
               </section>
@@ -173,13 +173,13 @@ export default function TermsOfService() {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <Link 
-                  to="/privacy-policy" 
+                  href="/privacy-policy" 
                   className="text-indigo-600 hover:text-indigo-800 font-medium"
                 >
                   View Privacy Policy →
                 </Link>
                 <Link 
-                  to="/" 
+                  href="/" 
                   className="text-gray-600 hover:text-gray-800"
                 >
                   Back to Home

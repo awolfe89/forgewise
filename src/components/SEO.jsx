@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { siteConfig, getPageSEO } from '../config/seo';
 
 export default function SEO() {
-  const location = useLocation();
+  const router = useRouter();
   
   useEffect(() => {
     // Get page-specific SEO config
-    const pageSEO = getPageSEO(location.pathname);
+    const pageSEO = getPageSEO(router.pathname);
     
     // Update document title
     document.title = pageSEO.title;
@@ -19,7 +19,7 @@ export default function SEO() {
     // Update Open Graph tags
     updateMetaTag('og:title', pageSEO.title, 'property');
     updateMetaTag('og:description', pageSEO.description, 'property');
-    updateMetaTag('og:url', `${siteConfig.url}${location.pathname}`, 'property');
+    updateMetaTag('og:url', `${siteConfig.url}${router.pathname}`, 'property');
     updateMetaTag('og:type', pageSEO.type || 'website', 'property');
     
     // Set og:image - use page-specific image or default

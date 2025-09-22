@@ -87,7 +87,7 @@ async function generatePWAIcons() {
 }
 
 async function updateManifest() {
-  const manifestPath = path.join(__dirname, '..', 'site.webmanifest');
+  const manifestPath = path.join(__dirname, '..', 'public', 'site.webmanifest');
   
   try {
     // Read current manifest

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { Home, Search, ArrowLeft, Compass } from 'lucide-react';
 import { FadeIn } from '../components/AnimatedComponents';
 
 const NotFound = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const popularPages = [
     { title: 'Home', path: '/', icon: Home },
@@ -52,7 +53,7 @@ const NotFound = () => {
             return (
               <Link
                 key={index}
-                to={page.path}
+                href={page.path}
                 className="group flex items-center justify-center gap-3 p-4 bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 hover:border-blue-500 hover:bg-gray-700/50 transition-all duration-300"
               >
                 <Icon className="w-5 h-5 text-blue-400 group-hover:text-blue-300" />
@@ -71,14 +72,14 @@ const NotFound = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <button
-            onClick={() => navigate(-1)}
+            onClick={() => router.back()}
             className="inline-flex items-center gap-2 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-300"
           >
             <ArrowLeft className="w-5 h-5" />
             Go Back
           </button>
           <Link
-            to="/"
+            href="/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-300"
           >
             <Home className="w-5 h-5" />
@@ -94,10 +95,10 @@ const NotFound = () => {
         >
           <p className="text-gray-400 text-sm">
             If you believe this page should exist, please{' '}
-            <Link to="/contact" className="text-blue-400 hover:text-blue-300 underline">
-              contact me
+            <Link href="/contact" className="text-blue-400 hover:text-blue-300 underline">
+              contact us
             </Link>{' '}
-            and let me know.
+            and let us know.
           </p>
         </motion.div>
       </FadeIn>

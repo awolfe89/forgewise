@@ -1,168 +1,188 @@
 import { useState, useEffect, useRef } from 'react';
 
-// Helper to generate srcset for responsive images
-function generateSrcSet(baseSrc, sizes = ['@mobile', '@1x', '@2x']) {
-  const ext = baseSrc.substring(baseSrc.lastIndexOf('.'));
-  const base = baseSrc.substring(0, baseSrc.lastIndexOf('.'));
-  
-  return sizes
-    .map((size, index) => {
-      const width = size === '@mobile' ? '400w' : size === '@1x' ? '600w' : '1200w';
-      return `${base}${size}${ext} ${width}`;
-    })
-    .join(', ');
-}
-
-// Helper to get WebP version of image path
-function getWebPSrc(src) {
-  return src.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-}
-
-export default function LazyImage({ 
-  src, 
-  alt, 
-  className, 
-  fallbackSrc,
-  placeholder = 'blur',
-  sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw',
-  disableWebP = false,
-  ...props 
+/**
+ * LazyImage component with WebP support and responsive images
+ * Uses picture element with srcset for optimal Core Web Vitals performance
+ */
+export default function LazyImage({
+  src,
+  alt,
+  width,
+  height,
+  sizes = '100vw',
+  className = '',
+  priority = false,
+  onLoad,
 }) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
-  const [hasError, setHasError] = useState(false);
-  const [supportsWebP, setSupportsWebP] = useState(true);
+  const [isIntersecting, setIsIntersecting] = useState(false);
   const imgRef = useRef(null);
-  const pictureRef = useRef(null);
 
-  // Check WebP support
-  useEffect(() => {
-    if (!disableWebP) {
-      const webP = new Image();
-      webP.onload = webP.onerror = function () {
-        setSupportsWebP(webP.height === 2);
-      };
-      webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
-    }
-  }, [disableWebP]);
+  // Generate responsive image sources
+  const getImageSet = (imageSrc) => {
+    // Handle both absolute and relative paths
+    const publicPath = imageSrc.startsWith('/') ? imageSrc : `/${imageSrc}`;
+    const ext = publicPath.match(/\.(jpg|jpeg|png)$/i)?.[1] || 'jpg';
+    const base = publicPath.replace(/\.(jpg|jpeg|png|webp)$/i, '');
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
+    return {
+      // WebP sources with responsive variants
+      webp: {
+        srcset: `
+          ${base}@mobile.webp 640w,
+          ${base}@1x.webp 1024w,
+          ${base}@2x.webp 1536w,
+          ${base}.webp 2048w
+        `.trim().replace(/\s+/g, ' '),
       },
-      {
-        threshold: 0.1,
-        rootMargin: '50px'
-      }
-    );
-
-    const target = pictureRef.current || imgRef.current;
-    if (target) {
-      observer.observe(target);
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect();
+      // Fallback JPEG/PNG sources
+      fallback: {
+        srcset: `
+          ${base}@mobile.${ext} 640w,
+          ${base}@1x.${ext} 1024w,
+          ${base}@2x.${ext} 1536w,
+          ${base}.${ext} 2048w
+        `.trim().replace(/\s+/g, ' '),
       }
     };
-  }, []);
-
-  const handleLoad = () => {
-    setIsLoaded(true);
   };
 
-  const handleError = () => {
-    setHasError(true);
-    if (fallbackSrc && imgRef.current) {
-      imgRef.current.src = fallbackSrc;
+  useEffect(() => {
+    if (priority) {
+      setIsIntersecting(true);
+      return;
     }
-  };
 
-  const shouldShowPlaceholder = !isLoaded && placeholder === 'blur';
-  const imageSrc = isInView ? src : undefined;
-
-  if (hasError && !fallbackSrc) {
-    return (
-      <div className={`${className} bg-gray-200 flex items-center justify-center`}>
-        <div className="text-center p-4">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-gray-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <p className="text-sm text-gray-500">Image not available</p>
-        </div>
-      </div>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsIntersecting(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        // Start loading 50px before the image enters viewport
+        rootMargin: '50px',
+        threshold: 0.01,
+      }
     );
-  }
 
-  // Use picture element for WebP with fallback
-  if (isInView && supportsWebP && !disableWebP) {
-    const webpSrc = getWebPSrc(src);
-    const webpSrcSet = generateSrcSet(webpSrc);
-    const fallbackSrcSet = generateSrcSet(src);
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
 
-    return (
-      <div className={`relative ${className}`} ref={pictureRef}>
-        {/* Blur placeholder */}
-        {shouldShowPlaceholder && (
-          <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-        )}
-        
-        {/* Picture element with WebP and fallback */}
-        <picture>
+    return () => observer.disconnect();
+  }, [priority]);
+
+  const imageSet = getImageSet(src);
+  const shouldLoad = priority || isIntersecting;
+
+  return (
+    <picture ref={imgRef}>
+      {shouldLoad && (
+        <>
+          {/* WebP source for modern browsers */}
           <source
             type="image/webp"
-            srcSet={webpSrcSet}
+            srcSet={imageSet.webp.srcset}
             sizes={sizes}
           />
+          {/* Fallback source for older browsers */}
           <source
-            type={src.endsWith('.png') ? 'image/png' : 'image/jpeg'}
-            srcSet={fallbackSrcSet}
+            type={src.includes('.png') ? 'image/png' : 'image/jpeg'}
+            srcSet={imageSet.fallback.srcset}
             sizes={sizes}
           />
-          <img
-            ref={imgRef}
-            src={imageSrc}
-            alt={alt}
-            className={`${className} ${shouldShowPlaceholder ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-            onLoad={handleLoad}
-            onError={handleError}
-            loading="lazy"
-            decoding="async"
-            {...props}
-          />
-        </picture>
-      </div>
-    );
-  }
+        </>
+      )}
+      {/* Base img tag with proper dimensions for CLS prevention */}
+      <img
+        src={shouldLoad ? src : undefined}
+        alt={alt}
+        width={width}
+        height={height}
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+        className={className}
+        onLoad={onLoad}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+          aspectRatio: width && height ? `${width}/${height}` : undefined,
+        }}
+      />
+    </picture>
+  );
+}
 
-  // Fallback to regular img tag
+/**
+ * Simple responsive image for logos/icons that don't need lazy loading
+ */
+export function ResponsiveImage({
+  src,
+  alt,
+  width,
+  height,
+  className = '',
+  sizes = '100vw'
+}) {
+  const ext = src.match(/\.(jpg|jpeg|png)$/i)?.[1] || 'jpg';
+  const base = src.replace(/\.(jpg|jpeg|png|webp)$/i, '');
+
+  // For simple images, just provide WebP alternative
+  const webpSrc = `${base}.webp`;
+
   return (
-    <div className={`relative ${className}`} ref={imgRef}>
-      {/* Blur placeholder */}
-      {shouldShowPlaceholder && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-      )}
-      
-      {/* Lazy loaded image */}
-      {isInView && (
-        <img
-          src={imageSrc}
-          alt={alt}
-          className={`${className} ${shouldShowPlaceholder ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-          onLoad={handleLoad}
-          onError={handleError}
-          loading="lazy"
-          decoding="async"
-          srcSet={generateSrcSet(src)}
-          sizes={sizes}
-          {...props}
-        />
-      )}
-    </div>
+    <picture>
+      <source
+        type="image/webp"
+        srcSet={webpSrc}
+        sizes={sizes}
+      />
+      <source
+        type={ext === 'png' ? 'image/png' : 'image/jpeg'}
+        srcSet={src}
+        sizes={sizes}
+      />
+      <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+        className={className}
+        style={{
+          maxWidth: '100%',
+          height: 'auto',
+          aspectRatio: width && height ? `${width}/${height}` : undefined,
+        }}
+      />
+    </picture>
+  );
+}
+
+/**
+ * Hero image component - always loads immediately with priority
+ */
+export function HeroImage({
+  src,
+  alt,
+  width,
+  height,
+  className = '',
+  sizes = '100vw'
+}) {
+  return (
+    <LazyImage
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      sizes={sizes}
+      className={className}
+      priority={true}
+    />
   );
 }

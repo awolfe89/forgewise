@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { FadeIn } from '../components/AnimatedComponents';
 
 export default function PrivacyPolicy() {
@@ -120,8 +120,8 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-gray-700">
-                    Email: privacy@forgewise.io<br />
-                    Or use our <Link to="/contact" className="text-indigo-600 hover:text-indigo-800">contact form</Link>
+                    Email: admin@forgewise.io<br />
+                    Or use our <Link href="/contact" className="text-indigo-600 hover:text-indigo-800">contact form</Link>
                   </p>
                 </div>
               </section>
@@ -130,13 +130,13 @@ export default function PrivacyPolicy() {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <Link 
-                  to="/terms-of-service" 
+                  href="/terms-of-service" 
                   className="text-indigo-600 hover:text-indigo-800 font-medium"
                 >
                   View Terms of Service →
                 </Link>
                 <Link 
-                  to="/" 
+                  href="/" 
                   className="text-gray-600 hover:text-gray-800"
                 >
                   Back to Home

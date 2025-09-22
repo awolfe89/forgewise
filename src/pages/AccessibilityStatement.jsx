@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { FadeIn } from '../components/AnimatedComponents';
 
 export default function AccessibilityStatement() {
@@ -128,8 +128,8 @@ export default function AccessibilityStatement() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg mb-4">
                   <p className="text-gray-700">
-                    <strong>Email:</strong> accessibility@forgewise.io<br />
-                    <strong>Contact Form:</strong> <Link to="/contact" className="text-indigo-600 hover:text-indigo-800">Available here</Link><br />
+                    <strong>Email:</strong> admin@forgewise.io<br />
+                    <strong>Contact Form:</strong> <Link href="/contact" className="text-indigo-600 hover:text-indigo-800">Available here</Link><br />
                     <strong>Response Time:</strong> We aim to respond within 2 business days
                   </p>
                 </div>
@@ -158,20 +158,20 @@ export default function AccessibilityStatement() {
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div className="flex gap-4">
                   <Link 
-                    to="/privacy-policy" 
+                    href="/privacy-policy" 
                     className="text-indigo-600 hover:text-indigo-800 font-medium"
                   >
                     Privacy Policy
                   </Link>
                   <Link 
-                    to="/terms-of-service" 
+                    href="/terms-of-service" 
                     className="text-indigo-600 hover:text-indigo-800 font-medium"
                   >
                     Terms of Service
                   </Link>
                 </div>
                 <Link 
-                  to="/" 
+                  href="/" 
                   className="text-gray-600 hover:text-gray-800"
                 >
                   Back to Home

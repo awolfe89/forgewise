@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function FloatingCTA() {
@@ -31,8 +31,8 @@ export default function FloatingCTA() {
           className="fixed bottom-8 right-8 z-50"
         >
           <Link
-            to="/contact"
-            className="inline-flex items-center px-6 py-3 bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            href="/contact/"
+            className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white font-bold rounded-full hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
             aria-label="Start your transformation - Contact us"
           >
             Start Your Transformation

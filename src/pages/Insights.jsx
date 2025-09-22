@@ -1,6 +1,7 @@
 // pages/Insights.jsx
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { BookingLink } from '../components/ProtectedContact';
 import AttributeFilteringCaseStudy from './insights/AttributeFilteringCaseStudy';
 import SeoUxCaseStudy from './insights/SeoUxCaseStudy';
@@ -13,7 +14,7 @@ import UnusedFeatures from './insights/UnusedFeatures';
 // Updated insights data focused on solutions rather than costs
 const INSIGHTS_DATA = [
   {
-    id: 'shopify-speed-fix',
+    id: 'shopify-speed',
     title: 'Speed Optimization for E-commerce Success',
     excerpt: 'Learn how to dramatically improve your site\'s loading speed and conversion rates with proven optimization techniques.',
     category: 'Performance',
@@ -108,9 +109,9 @@ function InsightCard({ insight }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+    <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col h-full min-h-[420px]">
       {/* Priority Banner */}
-      <div className={`px-4 py-2 ${priorityColors[insight.priority]} border-b flex items-center justify-between`}>
+      <div className={`px-4 py-2 ${priorityColors[insight.priority]} border-b flex items-center justify-between flex-shrink-0`}>
         <span className="font-semibold text-sm">
           {priorityLabels[insight.priority]}
         </span>
@@ -119,8 +120,8 @@ function InsightCard({ insight }) {
         </span>
       </div>
       
-      <div className="p-6">
-        <div className="flex items-center gap-2 mb-3">
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex items-center gap-2 mb-3 flex-shrink-0">
           <span className="text-2xl">{categoryIcons[insight.category] || '📄'}</span>
           <span className="text-sm font-medium text-gray-600">
             {insight.category}
@@ -129,15 +130,15 @@ function InsightCard({ insight }) {
           <span className="text-sm text-gray-500">{insight.readTime}</span>
         </div>
         
-        <h3 className="text-xl font-bold mb-2 text-gray-900 hover:text-indigo-700 transition-colors">
+        <h3 className="text-xl font-bold mb-3 text-gray-900 hover:text-indigo-700 transition-colors line-clamp-2 min-h-[3.5rem]">
           {insight.title}
         </h3>
         
-        <p className="text-gray-700 mb-4">{insight.excerpt}</p>
+        <p className="text-gray-700 mb-4 line-clamp-3 flex-grow">{insight.excerpt}</p>
         
         <Link 
-          to={`/insights/${insight.id}`} 
-          className="inline-flex items-center text-indigo-700 font-bold hover:text-indigo-800 transition"
+          href={`/insights/${insight.id}`} 
+          className="inline-flex items-center text-indigo-700 font-bold hover:text-indigo-800 transition mt-auto"
         >
           Read More
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -151,7 +152,8 @@ function InsightCard({ insight }) {
 
 // Component for individual insight pages
 export function InsightDetail() {
-  const { insightId } = useParams();
+  const router = useRouter();
+  const { insightId } = router.query;
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -159,7 +161,7 @@ export function InsightDetail() {
 
   // Map insightId to the appropriate component
   switch(insightId) {
-    case 'shopify-speed-fix':
+    case 'shopify-speed':
       return <ShopifySpeed />;
     case 'hidden-inventory-costs':
       return <HiddenInventoryCosts />;
@@ -183,7 +185,7 @@ export function InsightDetail() {
               <h1 className="text-4xl font-bold mb-4">Insight Not Found</h1>
               <p>The requested insight doesn't exist.</p>
               <Link 
-                to="/insights" 
+                href="/insights" 
                 className="mt-4 inline-block text-indigo-700 font-medium hover:text-indigo-800 transition"
               >
                 Back to All Insights
@@ -262,7 +264,7 @@ export default function Insights() {
           </div>
 
           {/* Filters and Sorting */}
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-4">
             <div className="flex items-center gap-4">
               <span className="font-medium text-gray-700">Sort by:</span>
               <select
@@ -293,7 +295,7 @@ export default function Insights() {
           </div>
           
           {/* Insights Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
             {filteredInsights.map(insight => (
               <InsightCard key={insight.id} insight={insight} />
             ))}

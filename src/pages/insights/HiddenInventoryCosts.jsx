@@ -1,6 +1,6 @@
 // pages/insights/HiddenInventoryCosts.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { BookingLink } from '../../components/ProtectedContact';
 
 export default function HiddenInventoryCosts() {
@@ -195,10 +195,10 @@ export default function HiddenInventoryCosts() {
             {/* Call to Action */}
             <div className="bg-blue-700 text-white p-8 rounded-lg mt-12">
               <h3 className="text-2xl font-bold mb-4 text-white">
-                Want Me to Set This Up For You?
+                Want Us to Set This Up For You?
               </h3>
               <p className="mb-6 text-blue-100">
-                I'll analyze your inventory, pick the right software, migrate your data, 
+                We'll analyze your inventory, pick the right software, migrate your data,
                 and train your team. Takes 1 week. Saves you $34K/year.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -209,7 +209,7 @@ export default function HiddenInventoryCosts() {
                   Book Inventory Audit
                 </BookingLink>
                 <Link
-                  to="/insights"
+                  href="/insights"
                   className="inline-block px-6 py-3 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white hover:text-blue-700 text-center"
                 >
                   See More Money Leaks
@@ -222,17 +222,17 @@ export default function HiddenInventoryCosts() {
               <h3 className="text-xl font-bold mb-4">Other Hidden Costs You Have:</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/insights/unused-features" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/unused-features" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Software features you pay for but don't use ($847/month)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insights/shopify-speed-fix" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/shopify-speed" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Slow website killing conversions ($10K/month)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insights/ppc-cost-optimization" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/ppc-cost-optimization" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Google Ads waste ($2K/month minimum)
                   </Link>
                 </li>

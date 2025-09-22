@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 /**
@@ -32,7 +32,7 @@ export default function RelatedContent({
           viewport={{ once: true }}
         >
           <Link
-            to={item.link}
+            href={item.link}
             className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 h-full"
           >
             {item.badge && (
@@ -67,7 +67,7 @@ export default function RelatedContent({
           viewport={{ once: true }}
         >
           <Link
-            to={item.link}
+            href={item.link}
             className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
           >
             {item.icon && (
@@ -106,7 +106,7 @@ export default function RelatedContent({
           viewport={{ once: true }}
           className="group"
         >
-          <Link to={item.link} className="block h-full">
+          <Link href={item.link} className="block h-full">
             <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all h-full p-6 border border-gray-100 group-hover:border-indigo-200">
               {item.category && (
                 <div className="flex items-center justify-between mb-3">
@@ -188,7 +188,7 @@ export function getRelatedItems(currentPath, currentItem) {
         id: 'insight-3',
         title: 'Why Your Shopify Store Is Slow',
         description: 'The exact 30-minute fix to improve speed and conversions.',
-        link: '/insights/shopify-speed-fix',
+        link: '/insights/shopify-speed',
         category: 'Performance',
         readTime: '3 min',
         cta: 'Fix it now'

@@ -1,6 +1,6 @@
 // pages/Leadership.jsx (now About)
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import { BookingLink } from '../components/ProtectedContact';
@@ -361,7 +361,7 @@ export default function About() {
             </BookingLink>
             
             <Link 
-              to="/results"
+              href="/results"
               className="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 transition-all"
             >
               See Our Track Record

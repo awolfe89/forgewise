@@ -1,12 +1,15 @@
 import { motion } from 'framer-motion';
+import { useReducedMotion } from '../hooks/useReducedMotion';
 
 // Fade in animation
 export const FadeIn = ({ children, delay = 0, duration = 0.5 }) => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration, delay }}
+      transition={prefersReducedMotion ? { duration: 0 } : { duration, delay }}
     >
       {children}
     </motion.div>
@@ -15,11 +18,13 @@ export const FadeIn = ({ children, delay = 0, duration = 0.5 }) => {
 
 // Scale in animation
 export const ScaleIn = ({ children, delay = 0 }) => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
+      initial={prefersReducedMotion ? { opacity: 1 } : { scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.4, delay }}
+      transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4, delay }}
     >
       {children}
     </motion.div>
@@ -28,11 +33,13 @@ export const ScaleIn = ({ children, delay = 0 }) => {
 
 // Slide in from left
 export const SlideInLeft = ({ children, delay = 0 }) => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ x: -50, opacity: 0 }}
+      initial={prefersReducedMotion ? { opacity: 1 } : { x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay }}
+      transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.5, delay }}
     >
       {children}
     </motion.div>
@@ -41,11 +48,13 @@ export const SlideInLeft = ({ children, delay = 0 }) => {
 
 // Slide in from right
 export const SlideInRight = ({ children, delay = 0 }) => {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <motion.div
-      initial={{ x: 50, opacity: 0 }}
+      initial={prefersReducedMotion ? { opacity: 1 } : { x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay }}
+      transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.5, delay }}
     >
       {children}
     </motion.div>
@@ -53,9 +62,16 @@ export const SlideInRight = ({ children, delay = 0 }) => {
 };
 
 // Stagger children animations
-export const StaggerContainer = ({ children, staggerDelay = 0.1 }) => {
+export const StaggerContainer = ({ children, staggerDelay = 0.1, className = '' }) => {
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
+      className={className}
       initial="hidden"
       animate="visible"
       variants={{
@@ -71,7 +87,13 @@ export const StaggerContainer = ({ children, staggerDelay = 0.1 }) => {
   );
 };
 
-export const StaggerItem = ({ children }) => {
+export const StaggerItem = ({ children, index = 0 }) => {
+  const prefersReducedMotion = useReducedMotion();
+
+  if (prefersReducedMotion) {
+    return <div>{children}</div>;
+  }
+
   return (
     <motion.div
       variants={{

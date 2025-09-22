@@ -1,10 +1,11 @@
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Breadcrumbs() {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const router = useRouter();
+  const pathnames = router.pathname.split('/').filter((x) => x);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function Breadcrumbs() {
         <ol className="flex items-center space-x-2 text-sm">
           <li>
             <Link 
-              to="/" 
+              href="/" 
               className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
               aria-label="Home"
             >
@@ -82,7 +83,7 @@ export default function Breadcrumbs() {
                   </span>
                 ) : (
                   <Link
-                    to={routeTo}
+                    href={routeTo}
                     className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                   >
                     {displayName}

@@ -1,136 +1,190 @@
-import { useLocation } from 'react-router-dom';
-import { siteConfig } from '../config/seo';
+import Head from 'next/head';
 
-export default function StructuredData() {
-  const location = useLocation();
-  
-  // Person schema for Allan Wolfe
-  const personSchema = {
+export function OrganizationSchema() {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Forgewise.io",
-    "jobTitle": "eCommerce Experts",
-    "description": "Scale Your eCommerce to 6-Figures with Targeted Quick Wins",
-    "url": siteConfig.url,
-    "sameAs": [],
+    "@type": "Organization",
+    "name": "Forgewise",
+    "alternateName": "Forgewise.io",
+    "url": "https://forgewise.io",
+    "logo": "https://forgewise.io/forgewise_logo_1.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-800-FORGEWISE",
+      "contactType": "Customer Service",
+      "email": "admin@forgewise.io",
+      "areaServed": "US",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/forgewise",
+      "https://twitter.com/forgewise"
+    ],
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Chicago",
-      "addressRegion": "IL",
       "addressCountry": "US"
+    },
+    "description": "We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems.",
+    "founder": {
+      "@type": "Person",
+      "name": "Allan Wolfe"
+    },
+    "foundingDate": "2020",
+    "slogan": "No pitch decks, just results"
+  };
+
+  return (
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
+  );
+}
+
+export function WebsiteSchema() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Forgewise",
+    "alternateName": "Forgewise.io",
+    "url": "https://forgewise.io",
+    "description": "Quick wins and systems for $1M-$50M e-commerce brands",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Forgewise"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://forgewise.io/insights?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
     }
   };
 
- // Forgewise Service schema
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "provider": {
-    "@type": "Organization",
-    "name": "Forgewise Consulting",
-    "url": "https://forgewise.io",
-    "logo": "https://forgewise.io/assets/logo.png"
-  },
-  "serviceType": "eCommerce & Digital Transformation Consulting",
-  "areaServed": {
-    "@type": "Country",
-    "name": "United States"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Forgewise Quick-Win Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Shopify Performance Audit",
-          "description": "Deep-dive audit and rapid optimizations to boost site speed, mobile UX, and Core Web Vitals."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Checkout & Cart Conversion",
-          "description": "Proven UX tweaks and payment flow enhancements to slash abandonment and lift average order value."
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Paid Ads ROI Booster",
-          "description": "Strategic Google & Meta Ads optimizations to cut ad spend, improve ROAS, and scale profitable campaigns."
-        }
-      }
-    ]
-  }
-};
+  return (
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
+  );
+}
 
-
-  // Website schema
-  const websiteSchema = {
+export function FAQSchema({ faqs }) {
+  const schema = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": siteConfig.name,
-    "description": siteConfig.description,
-    "url": siteConfig.url,
-    "author": personSchema
-  };
-
-  // Breadcrumb schema
-  const getBreadcrumbSchema = () => {
-    const pathSegments = location.pathname.split('/').filter(Boolean);
-    
-    if (pathSegments.length === 0) return null;
-
-    const items = [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteConfig.url
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
       }
-    ];
-
-    pathSegments.forEach((segment, index) => {
-      const url = `${siteConfig.url}/${pathSegments.slice(0, index + 1).join('/')}`;
-      const name = segment.charAt(0).toUpperCase() + segment.slice(1).replace('-', ' ');
-      
-      items.push({
-        "@type": "ListItem",
-        "position": index + 2,
-        "name": name,
-        "item": url
-      });
-    });
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": items
-    };
+    }))
   };
-
-  const breadcrumbSchema = getBreadcrumbSchema();
-
-  const schemas = [
-    websiteSchema,
-    personSchema,
-    serviceSchema,
-    ...(breadcrumbSchema ? [breadcrumbSchema] : [])
-  ];
 
   return (
-    <>
-      {schemas.map((schema, index) => (
-        <script
-          key={index}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </>
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
+  );
+}
+
+export function ServiceSchema({ service }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": service.name,
+    "provider": {
+      "@type": "Organization",
+      "name": "Forgewise"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
+    "description": service.description,
+    "offers": {
+      "@type": "Offer",
+      "priceRange": service.priceRange || "$$",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
+  return (
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
+  );
+}
+
+export function ArticleSchema({ article }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.description,
+    "image": article.image || "https://forgewise.io/forgewise-og-image.jpg",
+    "datePublished": article.publishedTime,
+    "dateModified": article.modifiedTime || article.publishedTime,
+    "author": {
+      "@type": "Organization",
+      "name": "Forgewise"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Forgewise",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://forgewise.io/forgewise_logo_1.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": article.url
+    }
+  };
+
+  return (
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
+  );
+}
+
+export function BreadcrumbSchema({ items }) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url
+    }))
+  };
+
+  return (
+    <Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </Head>
   );
 }

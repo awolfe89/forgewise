@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -55,7 +55,7 @@ export default function CookieConsent() {
                   We use cookies to enhance your experience and analyze our traffic. 
                   By clicking "Accept", you consent to our use of cookies. 
                   {' '}
-                  <Link to="/privacy-policy" className="text-indigo-600 hover:text-indigo-800 underline">
+                  <Link href="/privacy-policy/" className="text-indigo-600 hover:text-indigo-800 underline">
                     Learn more
                   </Link>
                 </p>

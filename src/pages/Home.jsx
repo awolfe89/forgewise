@@ -1,10 +1,11 @@
 // pages/Home.jsx
 import { useState, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../components/AnimatedComponents';
 import { BookingLink } from '../components/ProtectedContact';
 import SchemaMarkup from '../components/SchemaMarkup';
+import { ForgeDivider, ForgeBackground, SparkEffect, HammerIcon, AnvilIcon } from '../components/ForgeDivider';
 
 // Lazy load non-critical components
 const FloatingCTA = lazy(() => import('../components/FloatingCTA'));
@@ -87,12 +88,14 @@ export default function Home() {
       </Suspense>
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-teal-700 py-16 md:py-24">
+      <section className="bg-gradient-to-br from-indigo-700 via-indigo-800 to-teal-700 py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.6))] pointer-events-none"></div>
+        <SparkEffect count={8} className="inset-0 z-10" />
         
         <div className="max-w-6xl mx-auto px-4">
           {/* LCP-optimized H1 - no animation for immediate render */}
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 mx-4 text-center relative">
+            <HammerIcon size={48} className="inline-block text-yellow-400 mr-3 -mt-2" />
             Scale Your eCommerce Store <span className="text-teal-300">Fast</span>
           </h1>
           
@@ -221,9 +224,17 @@ export default function Home() {
                   <p className="text-gray-700 mb-4">
                     That's <span className="font-bold">${calculatorResult.yearlyLoss.toLocaleString()}/year</span> in potential revenue improvement.
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 mb-4">
                     * Based on industry benchmarks and the {calculatorResult.checkedCount} challenges you've identified
                   </p>
+                  <div className="mt-6">
+                    <BookingLink
+                      type="discovery"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-all"
+                    >
+                      Fix This Now →
+                    </BookingLink>
+                  </div>
                 </motion.div>
               )}
             </div>
@@ -231,6 +242,8 @@ export default function Home() {
         </div>
 
       </section>
+
+      <ForgeDivider variant="hammered" className="-mt-1" />
 
       {/* Success Metrics Section - Moved up after calculator */}
       <section className="py-16 bg-white">
@@ -240,33 +253,50 @@ export default function Home() {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-4xl font-bold text-indigo-600 mb-2">287%</div>
-              <p className="text-gray-700 font-medium">Average ROI Improvement</p>
-              <p className="text-sm text-gray-600 mt-2">Through strategic optimization</p>
-            </div>
-            
-            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-4xl font-bold text-teal-600 mb-2">62%</div>
-              <p className="text-gray-700 font-medium">Cost Reduction</p>
-              <p className="text-sm text-gray-600 mt-2">In operational expenses</p>
-            </div>
-            
-            <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <div className="text-4xl font-bold text-orange-500 mb-2">4-8 weeks</div>
-              <p className="text-gray-700 font-medium">Typical Timeline</p>
-              <p className="text-sm text-gray-600 mt-2">From assessment to implementation</p>
-            </div>
+            <ForgeBackground variant="subtle">
+              <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
+                <div className="absolute top-2 right-2">
+                  <SparkEffect count={2} className="w-8 h-8" />
+                </div>
+                <div className="text-4xl font-bold text-indigo-600 mb-2">287%</div>
+                <p className="text-gray-700 font-medium">Average ROI Improvement</p>
+                <p className="text-sm text-gray-600 mt-2">Through strategic optimization</p>
+              </div>
+            </ForgeBackground>
+
+            <ForgeBackground variant="subtle">
+              <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
+                <div className="absolute top-2 right-2">
+                  <SparkEffect count={2} className="w-8 h-8" />
+                </div>
+                <div className="text-4xl font-bold text-teal-600 mb-2">62%</div>
+                <p className="text-gray-700 font-medium">Cost Reduction</p>
+                <p className="text-sm text-gray-600 mt-2">In operational expenses</p>
+              </div>
+            </ForgeBackground>
+
+            <ForgeBackground variant="subtle">
+              <div className="bg-gray-50 rounded-xl p-6 text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg relative overflow-hidden">
+                <div className="absolute top-2 right-2">
+                  <SparkEffect count={2} className="w-8 h-8" />
+                </div>
+                <div className="text-4xl font-bold text-orange-500 mb-2">4-8 weeks</div>
+                <p className="text-gray-700 font-medium">Typical Timeline</p>
+                <p className="text-sm text-gray-600 mt-2">From assessment to implementation</p>
+              </div>
+            </ForgeBackground>
           </div>
         </div>
       </section>
+
+      <ForgeDivider variant="sparks" />
 
       {/* Primary CTA */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center px-8 py-4 bg-orange-500 text-white text-lg font-bold rounded-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-xl"
             >
               Start Your Transformation
@@ -281,6 +311,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ForgeDivider variant="anvil" className="bg-white" />
+
       {/* How We Work Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -292,40 +324,46 @@ export default function Home() {
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
-                🔍
-              </div>
-              <h3 className="text-xl font-bold mb-3">1. Strategic Assessment</h3>
-              <p className="text-gray-600">
-                We analyze your current operations, identify inefficiencies, and prioritize opportunities by ROI impact.
-              </p>
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative">
+              <ForgeBackground variant="mesh">
+                <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4 text-2xl relative">
+                  🔍
+                </div>
+                <h3 className="text-xl font-bold mb-3">1. Strategic Assessment</h3>
+                <p className="text-gray-600">
+                  We analyze your current operations, identify inefficiencies, and prioritize opportunities by ROI impact.
+                </p>
+              </ForgeBackground>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
-                🛠️
-              </div>
-              <h3 className="text-xl font-bold mb-3">2. Solution Design</h3>
-              <p className="text-gray-600">
-                We develop tailored solutions that fit your team, technology stack, and business objectives.
-              </p>
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative">
+              <ForgeBackground variant="mesh">
+                <div className="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                  <HammerIcon size={28} className="text-teal-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">2. Solution Design</h3>
+                <p className="text-gray-600">
+                  We develop tailored solutions that fit your team, technology stack, and business objectives.
+                </p>
+              </ForgeBackground>
             </div>
 
-            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
-                📈
-              </div>
-              <h3 className="text-xl font-bold mb-3">3. Implementation & Results</h3>
-              <p className="text-gray-600">
-                We execute the strategy, measure outcomes, and ensure sustainable improvements that drive growth.
-              </p>
+            <div className="bg-white rounded-xl p-6 shadow-md transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative">
+              <ForgeBackground variant="mesh">
+                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                  <AnvilIcon size={28} className="text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">3. Implementation & Results</h3>
+                <p className="text-gray-600">
+                  We execute the strategy, measure outcomes, and ensure sustainable improvements that drive growth.
+                </p>
+              </ForgeBackground>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Link
-              to="/solutions"
+              href="/solutions"
               className="inline-block px-8 py-3 bg-white text-indigo-600 font-bold rounded-lg border-2 border-indigo-600 hover:bg-indigo-50 transition-all"
             >
               Explore Our Solutions
@@ -334,7 +372,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Forgewise Section */}
+      <ForgeDivider variant="hammered" className="bg-gray-50" />
+
+      {/* Why Forgewise Section */>
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4">
           <div className="bg-indigo-50 rounded-2xl p-8 md:p-12">
@@ -387,8 +427,11 @@ export default function Home() {
         </div>
       </section>
 
+      <ForgeDivider variant="sparks" />
+
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-r from-indigo-700 to-teal-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-indigo-700 to-teal-700 text-white relative overflow-hidden">
+        <SparkEffect count={10} className="inset-0 z-10" />
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Transform Your Business?
@@ -411,7 +454,7 @@ export default function Home() {
             <span className="text-white/80">or</span>
             
             <Link
-              to="/quick-fixes"
+              href="/quick-fixes"
               className="inline-block px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 transition-all"
             >
               Explore Quick Wins

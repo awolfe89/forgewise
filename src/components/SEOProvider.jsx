@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import seoConfig from '../config/seo';
 
 const routeMetadata = {
@@ -108,8 +108,8 @@ const insightMetadata = {
 };
 
 export default function SEOProvider({ children }) {
-  const location = useLocation();
-  const path = location.pathname;
+  const router = useRouter();
+  const path = router.pathname;
   
   // Handle insight detail pages
   let metadata = routeMetadata[path] || {};

@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 // LocalBusiness Schema for the organization
 const localBusinessSchema = {
@@ -10,7 +10,7 @@ const localBusinessSchema = {
   "description": "Strategic technology consulting for e-commerce growth. We deliver practical solutions that drive measurable results.",
   "url": "https://forgewise.io",
   "telephone": "",
-  "email": "hello@forgewise.io",
+  "email": "adminforgewise.io",
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "US"
@@ -198,15 +198,15 @@ const getBreadcrumbSchema = (pathname) => {
 };
 
 export default function SchemaMarkup({ pageType, data = {} }) {
-  const location = useLocation();
+  const router = useRouter();
   const schemas = [];
 
   // Always include LocalBusiness schema
   schemas.push(localBusinessSchema);
 
   // Add breadcrumb schema for all pages except home
-  if (location.pathname !== '/') {
-    schemas.push(getBreadcrumbSchema(location.pathname));
+  if (router.pathname !== '/') {
+    schemas.push(getBreadcrumbSchema(router.pathname));
   }
 
   // Add page-specific schemas

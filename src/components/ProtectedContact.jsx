@@ -31,23 +31,25 @@ export function EmergencyContact() {
   return (
     <div className="flex items-center gap-2">
       <span className="animate-pulse">🚨</span>
-      <span>Site emergency? Text me RIGHT NOW: </span>
+      <span>Site emergency? Text us RIGHT NOW: </span>
       <ProtectedPhone type="link" />
     </div>
   );
 }
 
 // Component for Calendly links
-export function BookingLink({ type = 'audit15min', className = '', children }) {
+export function BookingLink({ type = 'discovery', className = '', children }) {
   const links = {
-    emergency: contactConfig.calendly.emergency,
+    discovery: contactConfig.calendly.discovery,
+    consultation: contactConfig.calendly.consultation,
+    implementation: contactConfig.calendly.implementation,
     audit15min: contactConfig.calendly.audit15min,
     consult30min: contactConfig.calendly.consult30min
   };
-  
+
   return (
     <a
-      href={links[type]}
+      href={links[type] || contactConfig.calendly.discovery}
       className={className}
       target="_blank"
       rel="noopener noreferrer"

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import seoConfig from '../config/seo';
 
 const routeMetadata = {
@@ -34,8 +34,8 @@ const routeMetadata = {
 };
 
 export default function MetaTags() {
-  const location = useLocation();
-  const path = location.pathname;
+  const router = useRouter();
+  const path = router.pathname;
   
   useEffect(() => {
     const metadata = routeMetadata[path] || {};

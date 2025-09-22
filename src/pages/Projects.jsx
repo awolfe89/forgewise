@@ -94,7 +94,8 @@ function SolutionCard({ title, summary, problem, solution, results, metrics, ima
         </div>
 
         <div className="mt-6 pt-4 border-t border-gray-100">
-          <div className="grid grid-cols-2 gap-4 text-center">
+          <div className="grid grid-cols-2 gap-4 text-center relative">
+            <SparkEffect count={1} className="absolute -top-2 left-1/2 transform -translate-x-1/2" />
             {metrics.timeSaved && (
               <div>
                 <div className="text-2xl font-bold text-indigo-700">{metrics.timeSaved}</div>
@@ -294,6 +295,8 @@ export default function Solutions() {
         </div>
       </section>
 
+      <ForgeDivider variant="hammered" className="-mt-1" />
+
       {/* Stats Bar */}
       <section className="bg-white py-8 shadow-md">
         <div className="max-w-7xl mx-auto px-6">
@@ -317,6 +320,8 @@ export default function Solutions() {
           </div>
         </div>
       </section>
+
+      <ForgeDivider variant="sparks" />
 
       {/* Solutions Grid */}
       <section className="py-16 bg-gray-50">
@@ -347,7 +352,9 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* How We Work Section */}
+      <ForgeDivider variant="anvil" className="bg-gray-50" />
+
+      {/* How We Work Section */>
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-12">
@@ -359,8 +366,9 @@ export default function Solutions() {
               whileHover={{ y: -5 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 relative">
                 <span className="text-2xl">🔍</span>
+                <SparkEffect count={1} className="absolute -top-1 -right-1 w-4 h-4" />
               </div>
               <h3 className="font-bold mb-2">1. Diagnose</h3>
               <p className="text-sm text-gray-600">
@@ -373,7 +381,7 @@ export default function Solutions() {
               className="text-center"
             >
               <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">💡</span>
+                <HammerIcon size={32} className="text-indigo-600" />
               </div>
               <h3 className="font-bold mb-2">2. Design</h3>
               <p className="text-sm text-gray-600">
@@ -386,7 +394,7 @@ export default function Solutions() {
               className="text-center"
             >
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚀</span>
+                <AnvilIcon size={32} className="text-green-600" />
               </div>
               <h3 className="font-bold mb-2">3. Deploy</h3>
               <p className="text-sm text-gray-600">

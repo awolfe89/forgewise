@@ -1,6 +1,6 @@
 // pages/insights/SeoUxCaseStudy.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function SeoUxCaseStudy() {
   // Scroll to top on page load
@@ -49,7 +49,7 @@ export default function SeoUxCaseStudy() {
             <h2 className="text-2xl font-bold text-gray-800 mb-6">The Initial Situation</h2>
 
             <p>
-              When I first engaged with this medium-sized product distributor, their Magento Enterprise platform
+              When we first engaged with this medium-sized product distributor, their Magento Enterprise platform
               was generating decent sales, but they recognized they were falling behind competitors. With 7,000-8,000 products
               and only basic SEO implementation, they were missing significant opportunities.
             </p>
@@ -63,21 +63,21 @@ export default function SeoUxCaseStudy() {
             <div className="bg-slate-50 rounded-xl p-8 my-10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 -mt-10 -mr-10 bg-blue-100 rounded-full opacity-50"></div>
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">My Philosophy</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-4">Our Philosophy</h3>
                 <p className="text-gray-700 italic mb-0">
-                  "I always begin with a sturdy foundation before building the SEO house. Managing the entire website 
-                  from top to bottom allows me to create a cohesive strategy that addresses both technical SEO and user experience simultaneously."
+                  "We always begin with a sturdy foundation before building the SEO house. Managing the entire website
+                  from top to bottom allows us to create a cohesive strategy that addresses both technical SEO and user experience simultaneously."
                 </p>
               </div>
             </div>
 
             <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6 flex items-center">
               <span className="flex items-center justify-center bg-blue-100 text-blue-700 rounded-full w-8 h-8 text-sm font-bold mr-3">1</span>
-              My Fix-Everything Approach
+              Our Fix-Everything Approach
             </h2>
 
             <p>
-              Instead of addressing issues in isolation, I implemented a holistic approach that tackled multiple aspects
+              Instead of addressing issues in isolation, we implemented a holistic approach that tackled multiple aspects
               of the site simultaneously. The team divided responsibilities to ensure comprehensive coverage:
             </p>
 
@@ -125,35 +125,35 @@ export default function SeoUxCaseStudy() {
             </h2>
 
             <p>
-             My methodology follows(ed) a systematic approach designed to create a solid foundation for sustainable growth:
+             Our methodology followed a systematic approach designed to create a solid foundation for sustainable growth:
             </p>
 
             <div className="space-y-4 my-8">
               <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-700">
                 <h3 className="font-bold text-gray-800 mb-2">Optimizing UI/UX</h3>
                 <p className="text-gray-600 mb-0">
-                  I collaborated with staff to redesign the navigation menu, creating an intuitive structure that aligned with user expectations and buying patterns.
+                  We collaborated with staff to redesign the navigation menu, creating an intuitive structure that aligned with user expectations and buying patterns.
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-700">
                 <h3 className="font-bold text-gray-800 mb-2">Implementing SEO Style Guide</h3>
                 <p className="text-gray-600 mb-0">
-                  I developed and applied a comprehensive SEO style guide across all product pages, ensuring consistency and optimization.
+                  We developed and applied a comprehensive SEO style guide across all product pages, ensuring consistency and optimization.
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-700">
                 <h3 className="font-bold text-gray-800 mb-2">Scaling Content Creation</h3>
                 <p className="text-gray-600 mb-0">
-                  I deployed a team of data entry specialists to create high-quality, unique content that adhered to the SEO guidelines.
+                  We deployed a team of data entry specialists to create high-quality, unique content that adhered to the SEO guidelines.
                 </p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-blue-700">
                 <h3 className="font-bold text-gray-800 mb-2">Innovative Value Addition</h3>
                 <p className="text-gray-600 mb-0">
-                  I employed creative techniques to generate additional value beyond standard optimizations.
+                  We employed creative techniques to generate additional value beyond standard optimizations.
                 </p>
               </div>
             </div>
@@ -164,8 +164,8 @@ export default function SeoUxCaseStudy() {
             </h2>
 
             <p>
-              One of the most critical issues I identified was the site's navigation menu. Working closely with the client's team,
-              I redesigned the category structure and menu system from the ground up. This process included:
+              One of the most critical issues we identified was the site's navigation menu. Working closely with the client's team,
+              we redesigned the category structure and menu system from the ground up. This process included:
             </p>
 
             <ul className="mb-8">
@@ -178,7 +178,7 @@ export default function SeoUxCaseStudy() {
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8 rounded-r-lg">
               <h3 className="text-gray-800 text-lg font-semibold mt-0 mb-2">The Impact of Improved Navigation</h3>
               <p className="mb-0 text-gray-700">
-                When users can easily find what they're looking for, I observed several immediate benefits:
+                When users can easily find what they're looking for, we observed several immediate benefits:
               </p>
               <ul className="mt-4 mb-0">
                 <li className="mb-1">Extended time on site</li>
@@ -194,13 +194,13 @@ export default function SeoUxCaseStudy() {
             </h2>
 
             <p>
-              With large eCommerce platforms, I typically prepare clients for gradual improvement. I often use the
+              With large eCommerce platforms, we typically prepare clients for gradual improvement. We often use the
               analogy that enhancing SEO for a large website is like turning a cruise ship—you set your destination,
               maintain your course, and gradually make the turn.
             </p>
 
             <p>
-              However, this project yielded surprising results much faster than anticipated. I discovered that an
+              However, this project yielded surprising results much faster than anticipated. We discovered that an
               existing customer base had been struggling with the previous site design. The improvements essentially
               "turned on the faucet," allowing users to navigate more efficiently and complete purchases with greater ease.
             </p>
@@ -261,7 +261,7 @@ export default function SeoUxCaseStudy() {
             <p className="text-lg">
               This case study demonstrates that even with large product catalogs, strategic improvements to SEO and user experience 
               can yield dramatic results. By addressing fundamental issues and creating systems for consistent optimization, 
-              I transformed an underperforming eCommerce site into a growth engine.
+              we transformed an underperforming eCommerce site into a growth engine.
             </p>
           </div>
         </div>
@@ -275,7 +275,7 @@ export default function SeoUxCaseStudy() {
               A
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
+              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
               <p className="text-gray-600">
               Founder of Forgewise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
               </p>
@@ -305,7 +305,7 @@ export default function SeoUxCaseStudy() {
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Navigating the 10,000+ SKU Challenge</h3>
                 <p className="text-gray-600 mb-4">How attribute-based filtering transformed product discovery for an electronics distributor.</p>
                 <Link 
-                  to="/insights/attribute-filtering" 
+                  href="/insights/attribute-filtering" 
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More
@@ -331,7 +331,7 @@ export default function SeoUxCaseStudy() {
                 <h3 className="text-xl font-bold mb-2 text-gray-800">The Future of Search in eCommerce</h3>
                 <p className="text-gray-600 mb-4">How AI-powered semantic search is changing the way customers find products online.</p>
                 <Link 
-                  to="/insights/ai-in-ecommerce" 
+                  href="/insights/ai-in-ecommerce" 
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More
@@ -352,7 +352,7 @@ export default function SeoUxCaseStudy() {
           <p className="text-lg mb-8 text-blue-100">
             I just might be available for hire. Let's discuss how strategic SEO and UX improvements can transform your online store and drive substantial growth.
           </p>
-          <Link to="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
             Get in Touch
           </Link>
         </div>

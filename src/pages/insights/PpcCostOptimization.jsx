@@ -1,6 +1,6 @@
 // pages/insights/PpcCostOptimization.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function PpcCostOptimization() {
   // Scroll to top on page load
@@ -327,7 +327,7 @@ export default function PpcCostOptimization() {
               A
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
+              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
               <p className="text-gray-600">
                 eCommerce Director with expertise in PPC strategy and digital marketing. Open to discussing management opportunities with forward-thinking companies.
               </p>
@@ -343,7 +343,7 @@ export default function PpcCostOptimization() {
           <p className="text-lg mb-8 text-blue-100">
             Whether you're looking to optimize your existing campaigns or explore new opportunities for collaboration, I'd love to connect.
           </p>
-          <Link to="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
             Get in Touch
           </Link>
         </div>

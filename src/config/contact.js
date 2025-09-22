@@ -10,11 +10,11 @@ const contactConfig = {
   
   // Consultation links
   calendly: {
-    discovery: 'https://calendly.com/forgewisе/discovery',
-    consultation: 'https://calendly.com/forgewisе/consultation',
-    implementation: 'https://calendly.com/forgewisе/implementation',
-    audit15min: 'https://calendly.com/your-link/15min-audit',  // Your 15-min consultation link
-    consult30min: 'https://calendly.com/your-link/30min-consult'
+    discovery: 'https://calendly.com/forgewise/discovery',
+    consultation: 'https://calendly.com/forgewise/consultation',
+    implementation: 'https://calendly.com/forgewise/implementation',
+    audit15min: 'https://calendly.com/forgewise/15min-audit',
+    consult30min: 'https://calendly.com/forgewise/30min-consult'
   },
   
   // Location

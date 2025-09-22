@@ -1,6 +1,6 @@
 // pages/insights/AiInEcommerce.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function AiInEcommerce() {
   // Scroll to top on page load
@@ -303,7 +303,7 @@ export default function AiInEcommerce() {
               A
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
+              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
               <p className="text-gray-600">
                 Senior-Level eCommerce Director & Founder of Forgewise.io
               </p>
@@ -342,7 +342,7 @@ export default function AiInEcommerce() {
                 </div>
                 <p className="text-gray-600 mb-4">How strategic improvements led to a 163% increase in users and 70% growth in sales.</p>
                 <Link 
-                  to="/insights/seo-ux-transformation" 
+                  href="/insights/seo-ux-transformation" 
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More
@@ -377,7 +377,7 @@ export default function AiInEcommerce() {
                 </div>
                 <p className="text-gray-600 mb-4">How attribute-based filtering transformed product discovery for an electronics distributor.</p>
                 <Link 
-                  to="/insights/attribute-filtering" 
+                  href="/insights/attribute-filtering" 
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More
@@ -398,7 +398,7 @@ export default function AiInEcommerce() {
           <p className="text-lg mb-8 text-indigo-100">
             Let's discuss how strategic AI integration can help you improve customer experience and drive growth.
           </p>
-          <Link to="/contact" className="inline-block px-8 py-3 bg-white text-indigo-700 font-medium rounded-lg hover:bg-indigo-50 transition shadow-lg">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-indigo-700 font-medium rounded-lg hover:bg-indigo-50 transition shadow-lg">
             Start a Conversation
           </Link>
         </div>

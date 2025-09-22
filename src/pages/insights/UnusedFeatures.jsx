@@ -1,6 +1,6 @@
 // pages/insights/UnusedFeatures.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { BookingLink } from '../../components/ProtectedContact';
 
 export default function UnusedFeatures() {

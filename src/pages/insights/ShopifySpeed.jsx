@@ -1,6 +1,6 @@
 // pages/insights/ShopifySpeed.jsx
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { BookingLink } from '../../components/ProtectedContact';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import RelatedContent from '../../components/RelatedContent';
@@ -130,7 +130,7 @@ export default function ShopifySpeed() {
             </div>
 
             <h2>The $50 Nuclear Option</h2>
-            <p>Still slow? Here's what I do for clients:</p>
+            <p>Still slow? Here's what we do for clients:</p>
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8 rounded-r-lg">
               <ol className="mb-0">
                 <li><strong>Buy Shopify's "Minifier" app</strong> ($9/month)</li>
@@ -165,10 +165,10 @@ export default function ShopifySpeed() {
             {/* Call to Action */}
             <div className="bg-gray-900 text-white p-8 rounded-lg mt-12">
               <h3 className="text-2xl font-bold mb-4 text-white">
-                Need Me to Fix This For You?
+                Need Us to Fix This For You?
               </h3>
               <p className="mb-6 text-gray-300">
-                I'll audit your site, implement all fixes, and guarantee under 3-second load time. 
+                We'll audit your site, implement all fixes, and guarantee under 3-second load time. 
                 Usually takes 2-3 hours. Flat rate: $497.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -179,7 +179,7 @@ export default function ShopifySpeed() {
                   Book Speed Fix Service
                 </BookingLink>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="inline-block px-6 py-3 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white hover:text-gray-900 text-center"
                 >
                   Ask a Question First
@@ -192,17 +192,17 @@ export default function ShopifySpeed() {
               <h3 className="text-xl font-bold mb-4">Related Problems You Might Have:</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/insights/unused-features" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/unused-features" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Paying for apps you don't use (costs $847/month)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insights/ppc-cost-optimization" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/ppc-cost-optimization" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Google Ads eating budget with no sales
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insights/seo-ux-transformation" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/seo-ux-transformation" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Customers can't find products (even when site loads)
                   </Link>
                 </li>

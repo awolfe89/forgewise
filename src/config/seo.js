@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Forgewise',
-  title: 'Forgewise.io - Strategic Technology Consulting',
-  description: 'Transform your business operations with strategic technology consulting. We solve complex problems with practical solutions that deliver measurable results.',
+  title: 'Forgewise - Quick Wins & Systems for $1M-$50M E-commerce Brands',
+  description: 'We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
   url: 'https://forgewise.io',
   author: 'Forgewise Team',
   image: '/forgewisе-icon.png',
@@ -12,29 +12,29 @@ export const siteConfig = {
 // Page-specific SEO configurations
 export const pageSEO = {
   home: {
-    title: 'Forgewise.io - Strategic Technology Consulting',
-    description: 'Transform your business operations with strategic technology consulting. We solve complex problems with practical solutions that deliver measurable results.',
-    keywords: 'technology consulting, business transformation, process optimization, digital strategy, operational efficiency'
+    title: 'Forgewise - Quick Wins & Systems for $1M-$50M E-commerce Brands',
+    description: 'We help $1M-$50M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
+    keywords: 'ecommerce optimization, revenue growth, cart abandonment, conversion rate, shopify optimization, $1M-$50M ecommerce'
   },
   quickFixes: {
-    title: 'Quick Solutions for Common Business Problems | Forgewise',
-    description: 'Rapid implementation of proven solutions for your most pressing business challenges. Clear scope, transparent pricing, fast results.',
-    keywords: 'business solutions, quick fixes, process improvement, technology implementation, rapid deployment'
+    title: 'Quick E-commerce Fixes That Pay for Themselves | Forgewise',
+    description: 'Fix your biggest revenue leaks in 2-4 weeks. Cart abandonment, slow sites, wasted ad spend - we fix what\'s broken fast. For $1M-$50M stores.',
+    keywords: 'ecommerce quick wins, cart abandonment fix, site speed optimization, conversion optimization, shopify fixes'
   },
   solutions: {
-    title: 'Proven Solutions That Drive Results | Forgewise',
-    description: 'Explore our portfolio of successful implementations. Real problems, innovative solutions, measurable outcomes.',
-    keywords: 'business solutions, case studies, technology implementation, ROI, process automation'
+    title: 'E-commerce Solutions That Actually Work | Forgewise',
+    description: 'Real solutions for $1M-$50M e-commerce brands. From 283% revenue growth to 67% cost reduction. No theory, just proven fixes.',
+    keywords: 'ecommerce solutions, shopify solutions, revenue growth, conversion optimization, inventory management'
   },
   results: {
-    title: 'Client Success Stories | Forgewise',
-    description: 'See how we\'ve helped businesses transform their operations and achieve remarkable results through strategic technology implementation.',
-    keywords: 'client success, case studies, business transformation, technology results, ROI examples'
+    title: '$1M-$50M E-commerce Success Stories | Forgewise',
+    description: 'How we helped 45+ e-commerce brands stop bleeding money and start growing. Real numbers, real results, no BS.',
+    keywords: 'ecommerce case studies, shopify success stories, revenue growth examples, ROI case studies, $1M-$50M brands'
   },
   about: {
-    title: 'About Forgewise - Strategic Technology Partners',
-    description: 'We\'re strategic technology consultants who deliver practical solutions. No fluff, just results-driven implementations that transform your business.',
-    keywords: 'Forgewise, technology consulting, strategic partners, business transformation'
+    title: 'About Forgewise - E-commerce Growth Experts for $1M-$50M Brands',
+    description: 'We fix what\'s broken in your e-commerce business. Fast. No 6-month roadmaps, no bloated retainers. Just fixes that work for growing brands.',
+    keywords: 'Forgewise, ecommerce experts, shopify experts, growth consultants, $1M-$50M ecommerce'
   },
   insights: {
     title: 'Business Insights & Strategic Guidance | Forgewise',
@@ -42,9 +42,9 @@ export const pageSEO = {
     keywords: 'business insights, technology strategy, operational efficiency, cost optimization'
   },
   contact: {
-    title: 'Contact Forgewise - Start Your Transformation',
-    description: 'Ready to transform your business? Let\'s discuss your challenges and explore strategic solutions.',
-    keywords: 'contact Forgewise, technology consulting, business consultation, strategic planning'
+    title: 'Free 30-Min Call - No Pitch Decks | Forgewise',
+    description: 'Get actionable advice for your $1M-$50M e-commerce brand. Free 30-minute call. No pitch decks, just honest advice on your next best move.',
+    keywords: 'ecommerce consultation, free consultation, shopify help, growth strategy, no pitch decks'
   },
   'privacy-policy': {
     title: 'Privacy Policy | Forgewise',
@@ -140,17 +140,26 @@ export const pageSEO = {
 // Helper function to get page SEO
 export function getPageSEO(pathname) {
   const key = pathname === '/' ? 'home' : pathname.slice(1);
-  
+
   const urlMap = {
     'projects': 'solutions',
     'work': 'results',
     'leadership': 'about',
     'quick-fixes': 'quickFixes'
   };
-  
+
   const mappedKey = urlMap[key] || key;
-  
-  return pageSEO[mappedKey] || pageSEO.home;
+  const seoData = pageSEO[mappedKey] || pageSEO.home;
+
+  // Add canonical URL
+  const canonical = pathname === '/'
+    ? siteConfig.url
+    : `${siteConfig.url}${pathname.endsWith('/') ? pathname.slice(0, -1) : pathname}`;
+
+  return {
+    ...seoData,
+    canonical
+  };
 }
 
 // Default export for seo config

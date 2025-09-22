@@ -1,7 +1,7 @@
 // pages/InsightDetail.jsx - Example implementation for your attribute filtering case study
 
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function AttributeFilteringCaseStudy() {
   // Scroll to top on page load
@@ -42,7 +42,7 @@ export default function AttributeFilteringCaseStudy() {
             <div className="bg-blue-50 border-l-4 border-blue-700 p-6 mb-8 rounded-r-lg">
               <h2 className="text-gray-800 text-xl font-semibold mt-0">"You have 10,000+ SKUs, how do you help customers sift through them?"</h2>
               <p className="mb-0 text-gray-600">
-                This was the question an electronics supply distributor asked me. Having too many categories can 
+                This was the question an electronics supply distributor asked us. Having too many categories can 
                 annoy customers, but leaving them to search through 500 screwdrivers was equally untenable.
               </p>
             </div>
@@ -53,11 +53,11 @@ export default function AttributeFilteringCaseStudy() {
             </h2>
 
             <p>
-              I'll use hand tools as my example throughout this case study to illustrate the principles that I applied.
+              We'll use hand tools as our example throughout this case study to illustrate the principles that we applied.
             </p>
 
             <p>
-              Like most eCommerce stores, I begin with categories. You obviously want to separate the wrenches from 
+              Like most eCommerce stores, we begin with categories. You obviously want to separate the wrenches from 
               the screwdrivers. A generic menu structure typically looks like this (usually alphabetized):
             </p>
 
@@ -81,7 +81,7 @@ export default function AttributeFilteringCaseStudy() {
             </div>
 
             <p>
-              What I sometimes see is that companies (or product managers) take the screwdrivers subcategory and further 
+              What we sometimes see is that companies (or product managers) take the screwdrivers subcategory and further 
               expand it by adding additional subcategories:
             </p>
 
@@ -104,7 +104,7 @@ export default function AttributeFilteringCaseStudy() {
 
             <p>
               You can see how the goal of giving customers options is well-founded, but the structure becomes 
-              a bit "spider-webby." I've seen cases where each subcategory has its own landing page, which then requires 
+              a bit "spider-webby." We've seen cases where each subcategory has its own landing page, which then requires 
               more pages to load, more content to manage, and leaves customers feeling like they're going down a rabbit hole.
             </p>
 
@@ -146,7 +146,7 @@ export default function AttributeFilteringCaseStudy() {
             </div>
 
             <p>
-              In this case study,I focused on addressing the last two scenarios. This approach is especially relevant for:
+              In this case study, we focused on addressing the last two scenarios. This approach is especially relevant for:
             </p>
             
             <ul className="mb-8">
@@ -167,8 +167,8 @@ export default function AttributeFilteringCaseStudy() {
             </h2>
 
             <p>
-              This is where I introduced <span className="font-semibold text-blue-700">attribute-based filtering</span>. 
-              I'll describe how I implemented this specifically on the Magento eCommerce platform.
+              This is where we introduced <span className="font-semibold text-blue-700">attribute-based filtering</span>.
+              We'll describe how we implemented this specifically on the Magento eCommerce platform.
             </p>
 
             <p>
@@ -203,9 +203,9 @@ export default function AttributeFilteringCaseStudy() {
             </div>
 
             <p>
-              Returning to my tools example, imagine a customer navigates to the screwdrivers category. 
+              Returning to our tools example, imagine a customer navigates to the screwdrivers category. 
               Instead of facing hundreds of different screwdrivers with no way to narrow their selection, 
-              I developed and deployed these filtering attributes:
+              we developed and deployed these filtering attributes:
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
@@ -242,12 +242,12 @@ export default function AttributeFilteringCaseStudy() {
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 my-8 rounded-r-lg">
               <h3 className="text-gray-800 text-lg font-semibold mt-0 mb-2">But where do the specific choices come from?</h3>
               <p className="mb-0 text-gray-700">
-                If a customer decides to filter by color, where do the color options come from? I create them—all manually.
+                If a customer decides to filter by color, where do the color options come from? We create them—all manually.
               </p>
             </div>
 
             <p>
-              Instead of manually typing the color for every product added to the website, I pre-define them in the attribute fields. 
+              Instead of manually typing the color for every product added to the website, we pre-define them in the attribute fields. 
               This creates a standardized set of data to work with, ensuring consistency and enabling effective filtering.
             </p>
             
@@ -257,11 +257,11 @@ export default function AttributeFilteringCaseStudy() {
             </h2>
 
             <p>
-              The next level of organization involves <span className="font-semibold text-blue-700">attribute sets</span>. This is where it gets more sophisticated—but that complexity is my problem to solve, not yours.
+              The next level of organization involves <span className="font-semibold text-blue-700">attribute sets</span>. This is where it gets more sophisticated—but that complexity is our problem to solve, not yours.
             </p>
 
             <p>
-              For example, if you sell clothing, you don't want to have to scroll past dropdown options for collar type or sleeve length while trying to input data for sneakers. So I group attributes into logical sets.
+              For example, if you sell clothing, you don't want to have to scroll past dropdown options for collar type or sleeve length while trying to input data for sneakers. So we group attributes into logical sets.
             </p>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-100 my-8">
@@ -278,7 +278,7 @@ export default function AttributeFilteringCaseStudy() {
             </div>
 
             <p>
-              By assigning all screwdrivers with the "screwdriver" attribute set, I ensure that when adding hammers to the catalog, the system doesn't ask irrelevant questions about driver types.
+              By assigning all screwdrivers with the "screwdriver" attribute set, we ensure that when adding hammers to the catalog, the system doesn't ask irrelevant questions about driver types.
             </p>
 
             <h2 className="text-2xl font-bold text-gray-800 mt-12 mb-6">Results</h2>
@@ -338,7 +338,7 @@ export default function AttributeFilteringCaseStudy() {
               A
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by Allan</h3>
+              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
               <p className="text-gray-600">
               Founder of Forgewise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
 
@@ -367,7 +367,7 @@ export default function AttributeFilteringCaseStudy() {
                   </span>
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Improving Cart Conversion Rates for B2B Buyers</h3>
-                <p className="text-gray-600 mb-4">How I streamlined the checkout process for bulk orders and increased conversion by 45%.</p>
+                <p className="text-gray-600 mb-4">How we streamlined the checkout process for bulk orders and increased conversion by 45%.</p>
                 <Link 
                   to="#" 
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
@@ -414,9 +414,9 @@ export default function AttributeFilteringCaseStudy() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold mb-4">Need help optimizing your eCommerce experience?</h2>
           <p className="text-lg mb-8 text-blue-100">
-            I just might be available for hire. Let's discuss how my expertise in eCommerce strategy and implementation can help your business grow.
+            We're available for hire. Let's discuss how our expertise in eCommerce strategy and implementation can help your business grow.
           </p>
-          <Link to="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
+          <Link href="/contact" className="inline-block px-8 py-3 bg-white text-blue-700 font-medium rounded-lg hover:bg-blue-50 transition shadow-lg">
             Get in Touch
           </Link>
         </div>

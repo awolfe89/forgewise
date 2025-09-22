@@ -1,11 +1,12 @@
 // components/Navbar.jsx
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,14 +16,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => router.pathname === path;
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <img 
             src="/forgewise_logo_1.png" 
             alt="Forgewise" 
@@ -33,7 +34,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <Link 
-            to="/" 
+            href="/" 
             className={`${
               isActive('/') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -41,7 +42,7 @@ export default function Navbar() {
             Home
           </Link>
           <Link 
-            to="/quick-fixes" 
+            href="/quick-fixes/" 
             className={`${
               isActive('/quick-fixes') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -49,7 +50,7 @@ export default function Navbar() {
             Quick Wins
           </Link>
           <Link 
-            to="/solutions" 
+            href="/solutions/" 
             className={`${
               isActive('/solutions') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -57,7 +58,7 @@ export default function Navbar() {
             Solutions
           </Link>
           <Link 
-            to="/results" 
+            href="/results/" 
             className={`${
               isActive('/results') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -65,7 +66,7 @@ export default function Navbar() {
             Results
           </Link>
           <Link 
-            to="/about" 
+            href="/about/" 
             className={`${
               isActive('/about') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -73,7 +74,7 @@ export default function Navbar() {
             About
           </Link>
           <Link 
-            to="/insights" 
+            href="/insights/" 
             className={`${
               isActive('/insights') ? 'text-indigo-600 font-medium' : 'text-gray-700'
             } hover:text-indigo-600 transition-colors`}
@@ -81,7 +82,7 @@ export default function Navbar() {
             Insights
           </Link>
           <Link 
-            to="/contact" 
+            href="/contact/" 
             className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
           >
             Get Started
@@ -113,7 +114,7 @@ export default function Navbar() {
         <div id="mobile-menu" className="md:hidden bg-white shadow-lg py-4">
           <div className="flex flex-col space-y-4 px-6">
             <Link 
-              to="/" 
+              href="/" 
               className={`${
                 isActive('/') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -122,7 +123,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link 
-              to="/quick-fixes" 
+              href="/quick-fixes/" 
               className={`${
                 isActive('/quick-fixes') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -131,7 +132,7 @@ export default function Navbar() {
               Quick Wins
             </Link>
             <Link 
-              to="/solutions" 
+              href="/solutions/" 
               className={`${
                 isActive('/solutions') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -140,7 +141,7 @@ export default function Navbar() {
               Solutions
             </Link>
             <Link 
-              to="/results" 
+              href="/results/" 
               className={`${
                 isActive('/results') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -149,7 +150,7 @@ export default function Navbar() {
               Results
             </Link>
             <Link 
-              to="/about" 
+              href="/about/" 
               className={`${
                 isActive('/about') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -158,7 +159,7 @@ export default function Navbar() {
               About
             </Link>
             <Link 
-              to="/insights" 
+              href="/insights/" 
               className={`${
                 isActive('/insights') ? 'text-indigo-600 font-medium' : 'text-gray-700'
               } hover:text-indigo-600 transition-colors`}
@@ -167,7 +168,7 @@ export default function Navbar() {
               Insights
             </Link>
             <Link 
-              to="/contact" 
+              href="/contact/" 
               className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
