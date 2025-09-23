@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../src/components/AnimatedComponents';
 import { BookingLink } from '../src/components/ProtectedContact';
@@ -229,14 +230,15 @@ export default function Results() {
                         {/* Left Column - Context, Diagnosis, Interventions */}
                         <div>
                           <div className="flex items-center mb-6">
-                            <div className="w-16 h-16 bg-white rounded-lg shadow-md p-2 mr-4">
-                              <img
+                            <div className="w-16 h-16 bg-white rounded-lg shadow-md p-2 mr-4 relative">
+                              <Image
                                 src={study.logo}
                                 alt={`${study.company} logo`}
                                 width={64}
                                 height={64}
-                                className="w-full h-full object-contain"
-                                loading="lazy"
+                                className="object-contain"
+                                sizes="64px"
+                                priority={false}
                               />
                             </div>
                             <div>

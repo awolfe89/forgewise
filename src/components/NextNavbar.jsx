@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 export default function NextNavbar() {
@@ -25,13 +26,18 @@ export default function NextNavbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <img 
-            src="/forgewise_logo_1.png" 
-            alt="Forgewise" 
-            className={`h-14 md:h-16 w-auto transition-all ${
-              shouldUseLightText ? 'brightness-0 invert' : ''
-            }`}
-          />
+          <div className="relative h-14 md:h-16 w-32 md:w-40">
+            <Image
+              src="/forgewise_logo_1.png"
+              alt="Forgewise"
+              fill
+              className={`object-contain transition-all ${
+                shouldUseLightText ? 'brightness-0 invert' : ''
+              }`}
+              sizes="(max-width: 768px) 128px, 160px"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

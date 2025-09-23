@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BookingLink, Location } from './ProtectedContact';
 
 export default function NextFooter() {
@@ -8,12 +9,14 @@ export default function NextFooter() {
         <div className="grid md:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="md:col-span-1 text-center md:text-left">
-            <div className="mb-4">
-              <img
+            <div className="mb-4 relative h-12 w-32 mx-auto md:mx-0">
+              <Image
                 src="/forgewise_logo_1.png"
                 alt="Forgewise"
-                className="h-12 w-auto brightness-0 invert mx-auto md:mx-0"
+                fill
+                className="object-contain brightness-0 invert"
                 style={{ filter: 'brightness(0) invert(1)' }}
+                sizes="128px"
               />
             </div>
             <p className="text-gray-400 mb-4">

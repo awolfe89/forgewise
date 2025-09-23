@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../src/components/AnimatedComponents';
 import NextSEO from '../src/components/NextSEO';
@@ -207,12 +208,14 @@ export default function Insights() {
                       className="block bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-1 border-2 border-blue-100"
                     >
                       <div className="relative h-48 bg-gradient-to-br from-blue-50 to-emerald-50 overflow-hidden">
-                        <img
+                        <Image
                           src={post.image}
                           alt={post.title}
-                          className="absolute inset-0 w-full h-full object-contain"
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                           Pillar Post
                         </div>
                       </div>
@@ -250,10 +253,12 @@ export default function Insights() {
                       className="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1 h-full flex flex-col"
                     >
                       <div className="relative h-48 bg-white overflow-hidden flex-shrink-0">
-                        <img 
-                          src={insight.image} 
+                        <Image
+                          src={insight.image}
                           alt={insight.title}
-                          className="absolute inset-0 w-full h-full object-contain"
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                       
