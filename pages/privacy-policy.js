@@ -132,8 +132,3 @@ export default function PrivacyPolicy() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

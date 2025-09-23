@@ -137,8 +137,3 @@ export default function AccessibilityStatement() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

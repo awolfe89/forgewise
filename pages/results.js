@@ -374,9 +374,3 @@ export default function Results() {
     </>
   );
 }
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

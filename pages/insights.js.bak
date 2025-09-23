@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../src/components/AnimatedComponents';
 import NextSEO from '../src/components/NextSEO';
@@ -135,14 +136,14 @@ export default function Insights() {
         <section className="bg-gradient-to-br from-purple-700 to-pink-700 text-white py-20">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-4"
             >
               Insights That Drive Action
             </motion.h1>
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-xl max-w-3xl mx-auto text-purple-100"
@@ -198,7 +199,7 @@ export default function Insights() {
                 {pillarPosts.map((post, index) => (
                   <motion.div
                     key={post.id}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
@@ -207,12 +208,14 @@ export default function Insights() {
                       className="block bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-1 border-2 border-blue-100"
                     >
                       <div className="relative h-48 bg-gradient-to-br from-blue-50 to-emerald-50 overflow-hidden">
-                        <img
+                        <Image
                           src={post.image}
                           alt={post.title}
-                          className="absolute inset-0 w-full h-full object-contain"
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
-                        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
                           Pillar Post
                         </div>
                       </div>
@@ -250,10 +253,12 @@ export default function Insights() {
                       className="block bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:-translate-y-1 h-full flex flex-col"
                     >
                       <div className="relative h-48 bg-white overflow-hidden flex-shrink-0">
-                        <img 
-                          src={insight.image} 
+                        <Image
+                          src={insight.image}
                           alt={insight.title}
-                          className="absolute inset-0 w-full h-full object-contain"
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
                       

@@ -393,8 +393,3 @@ export default function Insights() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

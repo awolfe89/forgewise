@@ -546,9 +546,3 @@ export default function Solutions() {
     </>
   );
 }
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

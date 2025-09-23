@@ -515,8 +515,3 @@ export default function QuickFixes() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}

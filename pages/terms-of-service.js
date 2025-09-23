@@ -147,8 +147,3 @@ export default function TermsOfService() {
   );
 }
 
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
-}
