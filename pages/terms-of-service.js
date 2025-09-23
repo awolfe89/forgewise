@@ -130,8 +130,7 @@ export default function TermsOfService() {
               </p>
               <p className="text-gray-700">
                 Email: admin@forgewise.io<br />
-                Phone: 1-800-FORGEWISE<br />
-                Address: 123 Innovation Drive, Suite 100, Tech City, TC 12345
+                Chicago, IL
               </p>
             </section>
           </div>

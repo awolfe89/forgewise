@@ -96,8 +96,7 @@ export default function AccessibilityStatement() {
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
                 <li>Email: admin@forgewise.io</li>
-                <li>Phone: 1-800-FORGEWISE</li>
-                <li>Postal address: 123 Innovation Drive, Suite 100, Tech City, TC 12345</li>
+                <li>Location: Chicago, IL</li>
               </ul>
               <p className="text-gray-700 mb-4">
                 We try to respond to accessibility feedback within 2 business days.
