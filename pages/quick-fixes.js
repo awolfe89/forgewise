@@ -27,8 +27,7 @@ export default function QuickFixes() {
       solution: 'Complete performance overhaul with measurable results',
       impact: '+15-25% conversion rate',
       timeline: '14 days',
-      roi: '3-5x in 60 days',
-      price: 'From $2,997',
+      benefit: 'Immediate performance gains',
       icon: '⚡'
     },
     {
@@ -48,8 +47,7 @@ export default function QuickFixes() {
       solution: 'Data-driven conversion optimization with quick wins',
       impact: '+20-35% conversion rate',
       timeline: '14 days',
-      roi: '4-6x in 30 days',
-      price: 'From $3,497',
+      benefit: 'Data-driven improvements',
       icon: '📈'
     },
     {
@@ -69,8 +67,7 @@ export default function QuickFixes() {
       solution: 'Complete analytics setup so you can make data-driven decisions',
       impact: 'Finally see what drives revenue',
       timeline: '10 days',
-      roi: '20-40% ROAS improvement',
-      price: 'From $2,497',
+      benefit: 'Clear visibility into performance',
       icon: '📊'
     },
     {
@@ -90,8 +87,7 @@ export default function QuickFixes() {
       solution: 'Automated retention system that brings customers back',
       impact: '+25-40% repeat purchase rate',
       timeline: '14 days',
-      roi: '5-8x in 90 days',
-      price: 'From $2,997',
+      benefit: 'Automated customer retention',
       icon: '💌'
     },
   ];
@@ -138,7 +134,7 @@ export default function QuickFixes() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-xl max-w-2xl mx-auto text-gray-600">
-              Perfect for $1M-$20M shops that need results fast.
+              Perfect for $100K-$5M shops that need results fast.
               No 6-month roadmaps. No bloated retainers. Just fixes that work.
             </motion.p>
             <motion.div
@@ -246,13 +242,13 @@ export default function QuickFixes() {
                           <p className="font-bold text-emerald-600">{sprint.impact}</p>
                         </div>
                         <div>
-                          <p className="text-sm text-gray-600">Investment</p>
-                          <p className="font-bold text-gray-900">{sprint.price || 'Custom quote'}</p>
+                          <p className="text-sm text-gray-600">Timeline</p>
+                          <p className="font-bold text-gray-900">{sprint.timeline}</p>
                         </div>
                       </div>
-                      {sprint.roi && (
+                      {sprint.benefit && (
                         <p className="text-center text-sm text-gray-600 mb-4">
-                          <span className="font-medium">ROI: </span>{sprint.roi}
+                          <span className="font-medium">✓ </span>{sprint.benefit}
                         </p>
                       )}
                       <BookingLink
@@ -284,7 +280,7 @@ export default function QuickFixes() {
                 <div className="ml-4">
                   <h3 className="text-xl font-bold mb-2">Choose Your Sprint</h3>
                   <p className="text-gray-600">
-                    Pick the sprint that addresses your biggest pain point. Fixed scope, fixed timeline, fixed price.
+                    Pick the sprint that addresses your biggest pain point. Fixed scope, fixed timeline, clear deliverables.
                   </p>
                 </div>
               </div>
@@ -308,7 +304,7 @@ export default function QuickFixes() {
                 <div className="ml-4">
                   <h3 className="text-xl font-bold mb-2">Measure & Scale</h3>
                   <p className="text-gray-600">
-                    See the results, measure the ROI. If it works, we can run another sprint to compound your gains.
+                    See the results, measure the impact. If it works, we can run another sprint to compound your gains.
                   </p>
                 </div>
               </div>
