@@ -129,7 +129,7 @@ export default function TermsOfService() {
                 For questions about these Terms of Service, please contact us at:
               </p>
               <p className="text-gray-700">
-                Email: admin@forgewise.io<br />
+                Email: hello@forgewise.io<br />
                 Chicago, IL
               </p>
             </section>

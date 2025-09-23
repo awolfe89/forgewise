@@ -273,7 +273,7 @@ export default function Contact() {
                   className="mt-4 p-4 bg-red-100 text-red-700 rounded-lg text-center"
                 >
                   <p className="font-medium">Oops! Something went wrong.</p>
-                  <p className="text-sm mt-1">Please try again or email us directly at admin@forgewise.io</p>
+                  <p className="text-sm mt-1">Please try again or email us directly at hello@forgewise.io</p>
                 </motion.div>
               )}
             </div>

@@ -114,7 +114,7 @@ export default function PrivacyPolicy() {
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
               <p className="text-gray-700">
-                Email: admin@forgewise.io<br />
+                Email: hello@forgewise.io<br />
                 Chicago, IL
               </p>
             </section>

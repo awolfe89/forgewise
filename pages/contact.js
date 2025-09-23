@@ -189,10 +189,10 @@ export default function Contact() {
                 Prefer email? Reach out directly:
               </p>
               <a
-                href="mailto:admin@forgewise.io"
+                href="mailto:hello@forgewise.io"
                 className="text-2xl font-medium text-blue-600 hover:text-blue-700 transition-colors"
               >
-                admin@forgewise.io
+                hello@forgewise.io
               </a>
               <p className="text-sm text-gray-500 mt-2">
                 We typically reply within 4 hours during business days

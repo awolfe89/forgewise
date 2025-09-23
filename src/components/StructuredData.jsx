@@ -12,7 +12,7 @@ export function OrganizationSchema() {
       "@type": "ContactPoint",
       "telephone": "+1-800-FORGEWISE",
       "contactType": "Customer Service",
-      "email": "admin@forgewise.io",
+      "email": "hello@forgewise.io",
       "areaServed": "US",
       "availableLanguage": "English"
     },

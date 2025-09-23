@@ -813,7 +813,7 @@ export default function Home() {
                     Get a personalized email with our approach and case studies relevant to your business
                   </p>
                   <a
-                    href="mailto:admin@forgewise.io?subject=Request%20for%20Introduction&body=Hi%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20how%20Forgewise%20can%20help%20my%20business.%0A%0AMy%20company%3A%20%0AMonthly%20revenue%3A%20%0ABiggest%20challenge%3A%20%0A%0AThanks!"
+                    href="mailto:hello@forgewise.io?subject=Request%20for%20Introduction&body=Hi%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20how%20Forgewise%20can%20help%20my%20business.%0A%0AMy%20company%3A%20%0AMonthly%20revenue%3A%20%0ABiggest%20challenge%3A%20%0A%0AThanks!"
                     className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all font-medium w-full"
                   >
                     Request Email Intro →
