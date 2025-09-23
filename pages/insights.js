@@ -10,11 +10,11 @@ import { getPageSEO } from '../src/config/seo';
 const pillarPosts = [
   {
     id: 'smb-playbook',
-    title: 'The SMB Playbook: Speed & CRO that actually move revenue',
+    title: 'The Small Business Playbook: Speed & CRO that actually move revenue',
     category: 'Guide',
     readTime: '15 min',
     date: '2024-01-20',
-    excerpt: 'The complete guide to conversion optimization for $500K-$20M brands. Skip the theory, get the tactics that work.',
+    excerpt: 'The complete guide to conversion optimization for $100K-$5M brands. Skip the theory, get the tactics that work.',
     image: '/comparison-chart.png',
     tags: ['CRO', 'Speed', 'Revenue'],
     isPillar: true
@@ -32,7 +32,7 @@ const pillarPosts = [
   },
   {
     id: 'shopify-vs-magento',
-    title: 'Shopify vs. Magento for $500k–$20M brands: a practical guide',
+    title: 'Shopify vs. Magento for $100K–$5M brands: a practical guide',
     category: 'Guide',
     readTime: '18 min',
     date: '2024-01-15',
@@ -194,7 +194,7 @@ export default function Insights() {
         {selectedCategory === 'all' && searchTerm === '' && (
           <section className="py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
-              <h2 className="text-2xl font-bold mb-8 text-center">📌 Essential Guides for SMB E-Commerce</h2>
+              <h2 className="text-2xl font-bold mb-8 text-center">📌 Essential Guides for Growing E-Commerce</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 {pillarPosts.map((post, index) => (
                   <motion.div
