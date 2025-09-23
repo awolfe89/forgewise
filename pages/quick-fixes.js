@@ -14,7 +14,7 @@ export default function QuickFixes() {
       id: 'speed-sprint',
       category: 'performance',
       title: 'Speed Sprint',
-      goal: 'LCP under 2.5s in 14 days',
+      goal: 'LCP under 2.5s in 2 weeks',
       problem: 'Every second of load time costs you 7% in conversions',
       deliverables: [
         'Core Web Vitals audit & fixes',
@@ -26,7 +26,7 @@ export default function QuickFixes() {
       ],
       solution: 'Complete performance overhaul with measurable results',
       impact: '+15-25% conversion rate',
-      timeline: '14 days',
+      timeline: '2 weeks',
       benefit: 'Immediate performance gains',
       icon: '⚡'
     },
@@ -46,7 +46,7 @@ export default function QuickFixes() {
       ],
       solution: 'Data-driven conversion optimization with quick wins',
       impact: '+20-35% conversion rate',
-      timeline: '14 days',
+      timeline: '2 weeks',
       benefit: 'Data-driven improvements',
       icon: '📈'
     },
@@ -54,7 +54,7 @@ export default function QuickFixes() {
       id: 'tracking-sprint',
       category: 'analytics',
       title: 'Tracking Sprint',
-      goal: 'GA4 + server-side tagging + clean events in 10 days',
+      goal: 'GA4 + server-side tagging + clean events in 1.5 weeks',
       problem: 'You\'re flying blind - no idea what\'s actually working',
       deliverables: [
         'GA4 migration & setup',
@@ -66,7 +66,7 @@ export default function QuickFixes() {
       ],
       solution: 'Complete analytics setup so you can make data-driven decisions',
       impact: 'Finally see what drives revenue',
-      timeline: '10 days',
+      timeline: '1.5 weeks',
       benefit: 'Clear visibility into performance',
       icon: '📊'
     },
@@ -86,7 +86,7 @@ export default function QuickFixes() {
       ],
       solution: 'Automated retention system that brings customers back',
       impact: '+25-40% repeat purchase rate',
-      timeline: '14 days',
+      timeline: '2 weeks',
       benefit: 'Automated customer retention',
       icon: '💌'
     },
@@ -187,12 +187,8 @@ export default function QuickFixes() {
                   >
                     {/* Sprint Header */}
                     <div className="p-6 border-b border-gray-200">
-                      <div className="flex items-center justify-between mb-4">
+                      <div className="mb-4">
                         <div className="text-4xl">{sprint.icon}</div>
-                        <div className="text-right">
-                          <p className="text-sm text-gray-600">Timeline</p>
-                          <p className="font-bold text-blue-600">{sprint.timeline}</p>
-                        </div>
                       </div>
                       <h3 className="text-2xl font-bold mb-2">{sprint.title}</h3>
                       {sprint.goal && (
