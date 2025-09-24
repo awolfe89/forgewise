@@ -6,6 +6,7 @@ import { BookingLink } from '../src/components/ProtectedContact';
 import NextSEO from '../src/components/NextSEO';
 import { getPageSEO } from '../src/config/seo';
 import { FAQSchema } from '../src/components/StructuredData';
+import { trackButtonClick, trackEvent, trackEngagement } from '../src/utils/tracking';
 
 // Lazy load non-critical components
 const FloatingCTA = lazy(() => import('../src/components/FloatingCTA'));
@@ -517,7 +518,11 @@ export default function Home() {
               </div>
 
                 <button
-                  onClick={calculateLoss}
+                  onClick={() => {
+                    calculateLoss();
+                    trackButtonClick('calculate_revenue_potential', 'revenue_calculator');
+                    trackEvent('calculator_used', { calculator_type: 'revenue_potential' });
+                  }}
                   className="w-full py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
                 >
                   Calculate My Revenue Potential
@@ -556,7 +561,10 @@ export default function Home() {
                           Claim This Revenue →
                         </BookingLink>
                         <button
-                          onClick={() => setShowEmailCapture(true)}
+                          onClick={() => {
+                            setShowEmailCapture(true);
+                            trackButtonClick('email_report_request', 'revenue_calculator');
+                          }}
                           className="inline-flex items-center justify-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-all"
                         >
                           Email Me This Report
@@ -577,6 +585,8 @@ export default function Home() {
                             onClick={() => {
                               if (email) {
                                 alert('Report will be sent to ' + email);
+                                trackButtonClick('email_report_submit', 'revenue_calculator');
+                                trackEngagement('lead_capture', 'revenue_calculator_report', 1);
                                 setShowEmailCapture(false);
                                 setEmail('');
                               }
@@ -813,7 +823,7 @@ export default function Home() {
                     Get a personalized email with our approach and case studies relevant to your business
                   </p>
                   <a
-                    href="mailto:hello@forgewise.io?subject=Request%20for%20Introduction&body=Hi%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20how%20Forgewise%20can%20help%20my%20business.%0A%0AMy%20company%3A%20%0AMonthly%20revenue%3A%20%0ABiggest%20challenge%3A%20%0A%0AThanks!"
+                    href="mailto:admin@forgewise.io?subject=Request%20for%20Introduction&body=Hi%2C%0A%0AI'd%20like%20to%20learn%20more%20about%20how%20Forgewise%20can%20help%20my%20business.%0A%0AMy%20company%3A%20%0AMonthly%20revenue%3A%20%0ABiggest%20challenge%3A%20%0A%0AThanks!"
                     className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all font-medium w-full"
                   >
                     Request Email Intro →

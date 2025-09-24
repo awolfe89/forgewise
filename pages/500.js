@@ -64,8 +64,8 @@ export default function Custom500() {
                   <span className="text-green-500 mr-2">✓</span>
                   <span>
                     <strong>Still broken?</strong> Email us at{' '}
-                    <a href="mailto:hello@forgewise.io" className="text-blue-600 hover:underline">
-                      hello@forgewise.io
+                    <a href="mailto:admin@forgewise.io" className="text-blue-600 hover:underline">
+                      admin@forgewise.io
                     </a>
                   </span>
                 </li>

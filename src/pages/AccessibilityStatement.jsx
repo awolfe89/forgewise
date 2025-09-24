@@ -128,7 +128,7 @@ export default function AccessibilityStatement() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg mb-4">
                   <p className="text-gray-700">
-                    <strong>Email:</strong> hello@forgewise.io<br />
+                    <strong>Email:</strong> admin@forgewise.io<br />
                     <strong>Contact Form:</strong> <Link href="/contact" className="text-indigo-600 hover:text-indigo-800">Available here</Link><br />
                     <strong>Response Time:</strong> We aim to respond within 2 business days
                   </p>

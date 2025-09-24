@@ -8,6 +8,7 @@ import BackToTop from '../src/components/BackToTop'
 import NextCookieConsent from '../src/components/NextCookieConsent'
 import Head from 'next/head'
 import { OrganizationSchema, WebsiteSchema } from '../src/components/StructuredData'
+import { GoogleTagManager } from '../src/components/GoogleTagManager'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ErrorBoundary>
+      <GoogleTagManager />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/portfolio-favicon-128.png" />

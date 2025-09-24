@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <p className="text-gray-700">
-                    Email: hello@forgewise.io<br />
+                    Email: admin@forgewise.io<br />
                     Or use our <Link href="/contact" className="text-indigo-600 hover:text-indigo-800">contact form</Link>
                   </p>
                 </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import NextSEO from '../src/components/NextSEO';
 import { getPageSEO } from '../src/config/seo';
+import { trackFormSubmission, trackButtonClick, trackContactConversion } from '../src/utils/tracking';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,6 +25,15 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Track form submission
+    trackFormSubmission('contact_form', {
+      form_type: formData.type,
+      has_message: formData.message ? 'yes' : 'no'
+    });
+
+    // Track conversion
+    trackContactConversion();
 
     // For now, just show a message since we don't have a backend
     setTimeout(() => {
@@ -189,10 +199,11 @@ export default function Contact() {
                 Prefer email? Reach out directly:
               </p>
               <a
-                href="mailto:hello@forgewise.io"
+                href="mailto:admin@forgewise.io"
                 className="text-2xl font-medium text-blue-600 hover:text-blue-700 transition-colors"
+                onClick={() => trackButtonClick('email_link', 'contact_page')}
               >
-                hello@forgewise.io
+                admin@forgewise.io
               </a>
               <p className="text-sm text-gray-500 mt-2">
                 We typically reply within 4 hours during business days

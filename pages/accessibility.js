@@ -95,7 +95,7 @@ export default function AccessibilityStatement() {
                 We welcome your feedback on the accessibility of Forgewise. Please let us know if you encounter accessibility barriers:
               </p>
               <ul className="list-disc pl-6 mb-4 text-gray-700">
-                <li>Email: hello@forgewise.io</li>
+                <li>Email: admin@forgewise.io</li>
                 <li>Location: Chicago, IL</li>
               </ul>
               <p className="text-gray-700 mb-4">

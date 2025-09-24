@@ -85,8 +85,8 @@ export default function ThankYou() {
             <div className="space-y-4">
               <p className="text-gray-600">
                 Need immediate assistance? Email us directly at{' '}
-                <a href="mailto:hello@forgewise.io" className="text-blue-600 hover:underline">
-                  hello@forgewise.io
+                <a href="mailto:admin@forgewise.io" className="text-blue-600 hover:underline">
+                  admin@forgewise.io
                 </a>
               </p>
 

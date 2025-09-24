@@ -126,8 +126,8 @@ export default function NextFooter() {
             <h4 className="font-semibold text-lg mb-4 text-emerald-400">Get Started</h4>
 
             <div className="space-y-3 mb-4">
-              <a href="mailto:hello@forgewise.io" className="block text-gray-300 hover:text-emerald-400 transition font-medium">
-                hello@forgewise.io
+              <a href="mailto:admin@forgewise.io" className="block text-gray-300 hover:text-emerald-400 transition font-medium">
+                admin@forgewise.io
               </a>
               <p className="text-sm text-gray-500">
                 Typically replies same day
