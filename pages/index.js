@@ -80,8 +80,8 @@ export default function Home() {
     setShowResults(true);
   };
 
-  const heroTitle = "We Help E-Commerce Brands Turn Traffic Into Revenue";
-  const heroSubtitle = "We fix what's broken. Fast. No BS. Just results.";
+  const heroTitle = "From $2.2M to $6M in 3 Years. We Transform B2B & Legacy Businesses Into Digital Leaders.";
+  const heroSubtitle = "The eCommerce consultant who speaks both business and tech – protecting you from overpriced agencies while delivering real growth";
   
   const seoData = getPageSEO('/');
 
@@ -135,32 +135,43 @@ export default function Home() {
               >
                 {heroSubtitle}
               </motion.p>
-              <motion.p
-                initial={{ opacity: 1, y: 0 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-lg text-blue-200 mb-12 max-w-2xl mx-auto"
-              >
-                From quick tactical wins to long-term systems, helping growing e-commerce companies punch above their weight.
-              </motion.p>
               <motion.div
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
               >
                 <BookingLink
                   type="discovery"
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-white text-blue-800 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
                 >
-                  Fix Your #1 Revenue Leak
+                  Get Your Growth Assessment
                 </BookingLink>
-                <Link 
-                  href="/quick-fixes/"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all"
+                <Link
+                  href="/results"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-800 transition-all"
                 >
-                  Get Your Free Growth Plan →
+                  See How We Helped a B2B Distributor Triple Revenue
                 </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-wrap justify-center gap-8 text-sm"
+              >
+                <div className="flex items-center">
+                  <span className="text-emerald-400 mr-2">✓</span>
+                  <span>11+ Years Magento & Shopify Experience</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-emerald-400 mr-2">✓</span>
+                  <span>50+ B2B Digital Transformations</span>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-emerald-400 mr-2">✓</span>
+                  <span>ERP Integrations</span>
+                </div>
               </motion.div>
             </div>
           </div>
