@@ -317,6 +317,176 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Industries Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              Transforming Traditional Industries for Digital Success
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+              Specialized expertise in B2B and traditional business sectors, with 11+ years helping complex industries go digital
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* B2B Distribution & Wholesale */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-4xl mb-4">📦</div>
+                <h3 className="text-xl font-bold mb-3">B2B Distribution & Wholesale</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Customer-specific pricing & bulk order management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>ERP integration with real-time inventory sync</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Quote-to-order workflows for 10,000+ SKUs</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-4 font-medium">15+ wholesale businesses transformed</p>
+              </motion.div>
+
+              {/* Manufacturing & Industrial Supply */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-4xl mb-4">🏭</div>
+                <h3 className="text-xl font-bold mb-3">Manufacturing & Industrial Supply</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Complex product configurators for custom orders</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>CAD file management & technical spec display</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Dealer portals with territory management</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-4 font-medium">$180M+ in industrial sales enabled</p>
+              </motion.div>
+
+              {/* Legacy Retail → eCommerce */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-4xl mb-4">🏪</div>
+                <h3 className="text-xl font-bold mb-3">Legacy Retail → eCommerce</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>POS integration for unified inventory</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Click-and-collect & local delivery setup</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Staff training for digital transition</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-4 font-medium">27 brick-and-mortar stores digitized</p>
+              </motion.div>
+
+              {/* Professional Services & B2B Software */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-4xl mb-4">💼</div>
+                <h3 className="text-xl font-bold mb-3">Professional Services & B2B Software</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Subscription billing & license management</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Client portal development with secure access</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Automated renewal & upsell workflows</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-4 font-medium">$8M+ ARR managed through platforms</p>
+              </motion.div>
+
+              {/* Building Materials & Construction Supply */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="text-4xl mb-4">🔨</div>
+                <h3 className="text-xl font-bold mb-3">Building Materials & Construction Supply</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Contractor accounts with NET terms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Job site delivery scheduling integration</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">•</span>
+                    <span>Quantity calculators & project estimators</span>
+                  </li>
+                </ul>
+                <p className="text-xs text-gray-500 mt-4 font-medium">12 suppliers serving 5,000+ contractors</p>
+              </motion.div>
+
+              {/* Your Industry CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border-2 border-blue-200 flex flex-col justify-center"
+              >
+                <div className="text-4xl mb-4 text-center">🤔</div>
+                <h3 className="text-xl font-bold mb-3 text-center">Your Industry Not Listed?</h3>
+                <p className="text-sm text-gray-700 mb-4 text-center">
+                  We've helped 50+ B2B and traditional businesses across various sectors. If you have complex requirements, we can handle them.
+                </p>
+                <BookingLink
+                  type="discovery"
+                  className="block w-full py-3 bg-blue-600 text-white text-center font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                  onClick={() => trackButtonClick('industry_cta', 'industries_section')}
+                >
+                  Discuss Your Industry Needs →
+                </BookingLink>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* The Forgewise Difference */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
           <div className="max-w-6xl mx-auto px-6">
