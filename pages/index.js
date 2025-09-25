@@ -317,8 +317,92 @@ export default function Home() {
           </div>
         </section>
 
+        {/* The Forgewise Difference */}
+        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              The Forgewise Difference
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+              Why B2B Companies and Traditional Businesses Choose Us
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {/* What Others Do */}
+              <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-red-100">
+                <div className="flex items-center mb-6">
+                  <span className="text-3xl mr-3">❌</span>
+                  <h3 className="text-2xl font-bold text-gray-800">What Others Do</h3>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Chase trendy DTC brands</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Speak in tech jargon</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Oversell unnecessary features</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">One-size-fits-all solutions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-red-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Remote-only relationships</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* What We Do */}
+              <div className="bg-white rounded-xl shadow-lg p-8 border-2 border-green-100">
+                <div className="flex items-center mb-6">
+                  <span className="text-3xl mr-3">✅</span>
+                  <h3 className="text-2xl font-bold text-gray-800">What We Do</h3>
+                </div>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Specialize in B2B complexity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Explain everything clearly</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Recommend only what you need</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Custom solutions for your industry</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">•</span>
+                    <span className="text-gray-700">Locally Minded</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <BookingLink
+                type="discovery"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-all transform hover:scale-105 shadow-xl"
+                onClick={() => trackButtonClick('difference_cta', 'forgewise_difference')}
+              >
+                Ready for Honest, Effective eCommerce Consulting? →
+              </BookingLink>
+            </div>
+          </div>
+        </section>
+
         {/* SMB Trust Signals */}
-        <section className="py-12 bg-gray-50 border-y border-gray-100">
+        <section className="py-12 bg-white border-y border-gray-100">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
