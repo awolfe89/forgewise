@@ -139,17 +139,17 @@ export default function Home() {
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-12 px-4 sm:px-0"
               >
                 <BookingLink
                   type="discovery"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-white text-blue-800 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-base sm:text-lg font-medium bg-white text-blue-800 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl w-full sm:w-auto"
                 >
                   Get Your Growth Assessment
                 </BookingLink>
                 <Link
                   href="/results"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-800 transition-all"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-4 text-base sm:text-lg font-medium border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-800 transition-all w-full sm:w-auto"
                 >
                   See How We Helped a B2B Distributor Triple Revenue
                 </Link>
