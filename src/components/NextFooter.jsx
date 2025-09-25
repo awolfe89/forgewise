@@ -157,24 +157,32 @@ export default function NextFooter() {
         <div className="border-t border-blue-800/30 pt-8 mb-8">
           <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                <p className="text-sm font-medium text-gray-300">Google Partner</p>
-              </div>
+              <img
+                src="/google_cloud_partner.jpeg"
+                alt="Google Cloud Partner"
+                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+              />
             </div>
             <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                <p className="text-sm font-medium text-gray-300">Shopify Partner</p>
-              </div>
+              <img
+                src="/shopify-partner-badge.png"
+                alt="Shopify Partner"
+                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+              />
             </div>
             <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                <p className="text-sm font-medium text-gray-300">Magento Certified</p>
-              </div>
+              <img
+                src="/magento_partner_badges.png"
+                alt="Magento Partner"
+                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+              />
             </div>
             <div className="text-center">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                <p className="text-sm font-medium text-gray-300">ERP Integration Expert</p>
-              </div>
+              <img
+                src="/usa_badge.webp"
+                alt="Made in USA"
+                className="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+              />
             </div>
           </div>
         </div>
