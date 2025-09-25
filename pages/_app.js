@@ -9,6 +9,7 @@ import NextCookieConsent from '../src/components/NextCookieConsent'
 import Head from 'next/head'
 import { OrganizationSchema, WebsiteSchema } from '../src/components/StructuredData'
 import { GoogleTagManager } from '../src/components/GoogleTagManager'
+import LocalBusinessSchema from '../src/components/LocalBusinessSchema'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <OrganizationSchema />
       <WebsiteSchema />
+      <LocalBusinessSchema />
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>

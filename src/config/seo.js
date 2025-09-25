@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Forgewise',
-  title: 'Forgewise - Quick Wins & Systems for $100K-$5M E-commerce Brands',
-  description: 'We help $100K-$5M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
+  title: 'B2B eCommerce Consultant | Forgewise | Illinois',
+  description: 'Transform your B2B or traditional business with honest eCommerce consulting. 11+ years experience. ERP integration specialist. $2.2M to $6M growth proven.',
   url: 'https://forgewise.io',
   author: 'Forgewise Team',
   image: '/forgewisе-icon.png',
@@ -12,9 +12,9 @@ export const siteConfig = {
 // Page-specific SEO configurations
 export const pageSEO = {
   home: {
-    title: 'Forgewise - Quick Wins & Systems for $100K-$5M E-commerce Brands',
-    description: 'We help $100K-$5M e-commerce teams turn traffic into revenue with fast, no-bloat fixes and scalable growth systems. No pitch decks, just results.',
-    keywords: 'ecommerce optimization, revenue growth, cart abandonment, conversion rate, shopify optimization, $100K-$5M ecommerce'
+    title: 'B2B eCommerce Consultant | Forgewise | Illinois',
+    description: 'Transform your B2B or traditional business with honest eCommerce consulting. 11+ years experience. ERP integration specialist. $2.2M to $6M growth proven.',
+    keywords: 'B2B ecommerce consultant, traditional business digital transformation, ERP integration, Illinois ecommerce, Magento expert, Shopify B2B'
   },
   quickFixes: {
     title: 'Quick E-commerce Fixes That Pay for Themselves | Forgewise',
@@ -32,9 +32,9 @@ export const pageSEO = {
     keywords: 'ecommerce case studies, shopify success stories, revenue growth examples, ROI case studies, $100K-$5M brands'
   },
   about: {
-    title: 'About Forgewise - E-commerce Growth Experts for $100K-$5M Brands',
-    description: 'We fix what\'s broken in your e-commerce business. Fast. No 6-month roadmaps, no bloated retainers. Just fixes that work for growing brands.',
-    keywords: 'Forgewise, ecommerce experts, shopify experts, growth consultants, $100K-$5M ecommerce'
+    title: 'B2B eCommerce Advocate | 11+ Years Experience | Forgewise Illinois',
+    description: 'After 11+ years helping B2B and traditional businesses compete digitally. ERP specialist. Google certified. Protected 50+ businesses from overpriced agencies.',
+    keywords: 'B2B ecommerce consultant, traditional business expert, ERP integration specialist, Illinois consultant, Magento certified'
   },
   insights: {
     title: 'Business Insights & Strategic Guidance | Forgewise',
@@ -42,9 +42,9 @@ export const pageSEO = {
     keywords: 'business insights, technology strategy, operational efficiency, cost optimization'
   },
   contact: {
-    title: 'Free 30-Min Call - No Pitch Decks | Forgewise',
-    description: 'Get actionable advice for your $100K-$5M e-commerce brand. Free 30-minute call. No pitch decks, just honest advice on your next best move.',
-    keywords: 'ecommerce consultation, free consultation, shopify help, growth strategy, no pitch decks'
+    title: 'Free B2B eCommerce Strategy Call | Forgewise Illinois',
+    description: 'Get honest advice for your B2B or traditional business. 30-minute call. 11+ years experience. ERP integration expert. Serving Illinois and Tri-State area.',
+    keywords: 'B2B ecommerce consultation, traditional business consulting, Illinois consultant, ERP integration, free strategy call'
   },
   'privacy-policy': {
     title: 'Privacy Policy | Forgewise',

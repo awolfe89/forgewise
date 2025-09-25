@@ -29,7 +29,7 @@ export default function Contact() {
       color: 'indigo',
       bookingType: 'consultation',
       details: {
-        overview: 'Our Strategic Assessment provides a comprehensive analysis of your current operations, technology stack, and market opportunities.',
+        overview: 'Our Strategic Assessment analyzes 47 specific B2B growth factors in your operations, technology stack, and market position.',
         includes: [
           'Complete operational audit',
           'Technology stack evaluation',

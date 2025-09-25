@@ -214,8 +214,8 @@ export default function EcommerceAudit() {
                 E-Commerce Growth Audit Services
               </h1>
               <p className="text-xl mb-4 text-purple-100 max-w-3xl mx-auto">
-                Uncover $100K+ in hidden revenue with our comprehensive e-commerce audit.
-                We analyze 100+ growth factors to find your biggest opportunities.
+                Uncover $100K+ in hidden revenue with our B2B-focused e-commerce audit.
+                We analyze 100+ growth factors specific to B2B and traditional businesses.
               </p>
               <p className="text-lg mb-8 text-purple-200">
                 Most stores are losing 20-40% of potential revenue. Find out how much you're leaving on the table.
@@ -293,7 +293,7 @@ export default function EcommerceAudit() {
               Choose Your E-Commerce Audit Type
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12">
-              Targeted audits for specific needs or comprehensive analysis for maximum growth
+              Targeted audits for B2B companies and traditional businesses going digital
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               {auditTypes.map((audit) => (
@@ -534,8 +534,8 @@ export default function EcommerceAudit() {
               Stop Losing Money to Hidden Revenue Leaks
             </h2>
             <p className="text-xl mb-8 text-purple-100">
-              Our comprehensive audit identifies exactly where you're losing money and how to fix it.
-              Average client finds $100K+ in recoverable revenue.
+              Our B2B-specialized audit identifies exactly where traditional businesses lose money online.
+              Average B2B client recovers $100K+ in the first 90 days.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink
