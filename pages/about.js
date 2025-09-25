@@ -31,10 +31,10 @@ export default function About() {
   ];
 
   const expertise = [
-    { area: 'E-commerce Optimization', years: '12+' },
-    { area: 'Conversion Rate Optimization', years: '10+' },
-    { area: 'Marketing Automation', years: '8+' },
-    { area: 'Data Analytics & AI', years: '6+' }
+    { area: 'B2B eCommerce Implementation', years: '11+' },
+    { area: 'ERP Integration & Migration', years: '8+' },
+    { area: 'Magento Development & Optimization', years: '11+' },
+    { area: 'Google Ads & SEO Management', years: '10+' }
   ];
 
 
@@ -53,7 +53,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl font-bold mb-6 text-center"
             >
-              We Fix What's Broken. Fast.
+              Your B2B eCommerce Advocate
             </motion.h1>
             <motion.p
               initial={{ opacity: 1, y: 20 }}
@@ -61,29 +61,83 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-xl max-w-3xl mx-auto text-center text-blue-100"
             >
-              No 6-month roadmaps. No bloated retainers. Just fixes that work.
+              Protecting B2B and traditional businesses from overpriced agencies and tech gibberish since 2013
             </motion.p>
           </div>
         </section>
 
-        {/* Our Approach Section */}
+        {/* Our Story Section */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 1, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-lg text-gray-700 leading-relaxed"
+              className="space-y-6"
             >
-              <p>
-                We work with $100K-$5M businesses because you move fast and make decisions. No committees. No corporate BS. We find what's broken, fix it, and measure everything in dollars. Faster sites, better checkouts, smarter ads - whatever stops the bleeding and starts the growth. We're not consultants. We're builders who happen to give good advice.
+              <p className="text-lg text-gray-700 leading-relaxed">
+                After 11+ years in eCommerce and seeing countless businesses get burned by overpriced agencies speaking tech gibberish, I founded Forgewise with a simple mission:
+              </p>
+              <p className="text-2xl font-bold text-blue-800 text-center py-4">
+                Help B2B and traditional businesses compete digitally without the fluff.
+              </p>
+
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 my-8">
+                <h3 className="text-xl font-bold mb-4">We specialize in:</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Making complex B2B requirements work online</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Integrating decades-old ERPs with modern platforms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Protecting businesses from unnecessary tech spending</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-3 mt-1">✓</span>
+                    <span className="text-gray-700">Translating between IT departments and executives</span>
+                  </li>
+                </ul>
+              </div>
+
+              <p className="text-xl font-semibold text-center text-gray-800 py-6 border-y-2 border-gray-200">
+                Our approach is simple: If we can't explain it clearly and show you the ROI, we don't do it.
               </p>
             </motion.div>
           </div>
         </section>
 
+        {/* Credentials Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-2xl font-bold text-center mb-8">Credentials That Matter</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3 text-blue-700">Platform Expertise</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• 11+ years Magento experience (v1 & v2)</li>
+                  <li>• Shopify Partner</li>
+                  <li>• Adobe Commerce certified</li>
+                </ul>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <h3 className="font-bold text-lg mb-3 text-blue-700">Technical Certifications</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Google Ads & Analytics certified</li>
+                  <li>• ERP Integration specialist</li>
+                  <li>• B2B Commerce specialist</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Values Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-16">Our Values</h2>
             
@@ -102,9 +156,9 @@ export default function About() {
         </section>
 
         {/* Expertise Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-16">Areas of Expertise</h2>
+            <h2 className="text-3xl font-bold text-center mb-16">Years of Real Experience</h2>
             
             <div className="space-y-6">
               {expertise.map((item, index) => (
