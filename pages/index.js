@@ -185,8 +185,140 @@ export default function Home() {
         </section>
 
 
+        {/* Services Section - B2B Focus */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+              How We Help B2B & Traditional Businesses Win Online
+            </h2>
+            <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+              Specialized expertise for complex catalogs, legacy systems, and B2B requirements
+            </p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Legacy Business Transformation */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">🏭→💻</div>
+                <h3 className="text-xl font-bold mb-3">Legacy Business Transformation</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Turn your traditional business into a digital powerhouse
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">ERP integration (Sage, ABAS, Prelude)</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Gradual digital adoption</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Staff training included</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">"No disruption" approach</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* B2B eCommerce Excellence */}
+              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">🔗</div>
+                <h3 className="text-xl font-bold mb-3">B2B eCommerce Excellence</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Master complex catalogs and B2B requirements
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">1,000+ product attributes? No problem</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Customer-specific pricing</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Quote systems & approvals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Bulk ordering workflows</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Revenue Acceleration */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">📈</div>
+                <h3 className="text-xl font-bold mb-3">Revenue Acceleration</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Proven strategies that tripled client revenue
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">SEO that actually works</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Google Ads optimization</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Email segmentation mastery</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Monthly growth tracking</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Tech Translation & Protection */}
+              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="text-xl font-bold mb-3">Tech Translation & Protection</h3>
+                <p className="text-gray-600 mb-4 text-sm">
+                  Your advocate against agency BS
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Vendor vetting & negotiation</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Plain-English explanations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Cost-saving recommendations</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2 mt-0.5">✓</span>
+                    <span className="text-gray-700">Honest project assessments</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="text-center mt-12">
+              <BookingLink
+                type="discovery"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-all"
+                onClick={() => trackButtonClick('services_cta', 'services_section')}
+              >
+                Let's Discuss Your Specific Needs →
+              </BookingLink>
+            </div>
+          </div>
+        </section>
+
         {/* SMB Trust Signals */}
-        <section className="py-12 bg-white border-y border-gray-100">
+        <section className="py-12 bg-gray-50 border-y border-gray-100">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div>
@@ -198,12 +330,12 @@ export default function Home() {
                   <p className="text-gray-600 text-sm mt-1">Project Timeline</p>
               </div>
               <div>
-                  <p className="text-2xl font-bold text-amber-600">No Bloat</p>
-                  <p className="text-gray-600 text-sm mt-1">Just What Works</p>
+                  <p className="text-2xl font-bold text-amber-600">No Disruption</p>
+                  <p className="text-gray-600 text-sm mt-1">To Your Operations</p>
               </div>
               <div>
                   <p className="text-2xl font-bold text-gray-700">3.8x</p>
-                  <p className="text-gray-600 text-sm mt-1">Past Client Average</p>
+                  <p className="text-gray-600 text-sm mt-1">Average ROI</p>
               </div>
             </div>
           </div>
