@@ -53,6 +53,9 @@ export function BookingLink({ type = 'discovery', className = '', children }) {
       className={className}
       target="_blank"
       rel="noopener noreferrer"
+      data-calendly-link={type}
+      data-gtm-trigger="calendly-booking"
+      id={`calendly-${type}-link`}
     >
       {children}
     </a>
