@@ -233,13 +233,13 @@ export default function About() {
                   type="consultation"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-800 rounded-lg hover:bg-gray-100 transition-all font-medium"
                 >
-                  Start With a Quick Win →
+                  Get My Honest Opinion →
                 </BookingLink>
                 <Link
                   href="/results/"
                   className="inline-flex items-center justify-center px-8 py-4 bg-emerald-700 text-white rounded-lg hover:bg-emerald-600 transition-all font-medium"
                 >
-                  View Our Results
+                  See How We Triple Revenue
                 </Link>
               </div>
             </div>

@@ -126,7 +126,7 @@ export default function NextFooter() {
           
           {/* Contact Column */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold text-lg mb-4 text-emerald-400">Get Started</h4>
+            <h4 className="font-semibold text-lg mb-4 text-emerald-400">Get My Honest Opinion</h4>
 
             <div className="space-y-3 mb-4">
               <a href="mailto:admin@forgewise.io" className="block text-gray-300 hover:text-emerald-400 transition font-medium">
@@ -141,7 +141,7 @@ export default function NextFooter() {
               type="discovery"
               className="inline-block bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition mb-4"
             >
-              Book a Discovery Call
+              Schedule a Strategy Call
             </BookingLink>
 
             <p className="text-gray-400 flex items-center gap-2 justify-center md:justify-start">

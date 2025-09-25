@@ -251,7 +251,7 @@ export default function QuickFixes() {
                         type="discovery"
                         className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all w-full"
                       >
-                        Book a Call →
+                        Get Your Growth Assessment →
                       </BookingLink>
                     </div>
                   </motion.div>
