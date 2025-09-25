@@ -19,14 +19,17 @@ export default function NextFooter() {
                 sizes="128px"
               />
             </div>
-            <p className="text-gray-400 mb-4">
-              Strategic technology consulting that transforms businesses.
+            <p className="text-gray-300 mb-3 font-medium">
+              Specializing in B2B eCommerce Since 2013
             </p>
-            <p className="text-emerald-400 font-medium">
-              ✓ Proven solutions
+            <p className="text-gray-400 mb-2 text-sm">
+              Serving Illinois and the Tri-State Area
             </p>
-            <p className="text-emerald-400 font-medium">
-              ✓ Measurable results
+            <p className="text-emerald-400 font-medium text-sm">
+              ✓ Proven B2B solutions
+            </p>
+            <p className="text-emerald-400 font-medium text-sm">
+              ✓ Measurable ROI
             </p>
           </div>
           
@@ -150,11 +153,40 @@ export default function NextFooter() {
           </div>
         </div>
         
+        {/* Partner Badges */}
+        <div className="border-t border-blue-800/30 pt-8 mb-8">
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                <p className="text-sm font-medium text-gray-300">Google Partner</p>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                <p className="text-sm font-medium text-gray-300">Shopify Partner</p>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                <p className="text-sm font-medium text-gray-300">Magento Certified</p>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+                <p className="text-sm font-medium text-gray-300">ERP Integration Expert</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-blue-800/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400">
             <p className="text-center">
               © {new Date().getFullYear()} Forgewise. All rights reserved.
+            </p>
+            <p className="text-center text-sm">
+              B2B eCommerce Solutions | ERP Integration | Digital Transformation
             </p>
           </div>
         </div>
