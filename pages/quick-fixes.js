@@ -25,6 +25,7 @@ export default function QuickFixes() {
         'Before/after performance report'
       ],
       solution: 'Complete performance overhaul with measurable results',
+      relatedInsight: '/insights/shopify-speed',
       impact: '+15-25% conversion rate',
       timeline: '2 weeks',
       benefit: 'Immediate performance gains',
@@ -45,6 +46,7 @@ export default function QuickFixes() {
         'A/B test recommendations'
       ],
       solution: 'Data-driven conversion optimization with quick wins',
+      relatedInsight: '/insights/seo-ux-case-study',
       impact: '+20-35% conversion rate',
       timeline: '2 weeks',
       benefit: 'Data-driven improvements',
@@ -65,6 +67,7 @@ export default function QuickFixes() {
         'Dashboard & reporting templates'
       ],
       solution: 'Complete analytics setup so you can make data-driven decisions',
+      relatedInsight: '/insights/hidden-inventory-costs',
       impact: 'Finally see what drives revenue',
       timeline: '1.5 weeks',
       benefit: 'Clear visibility into performance',
@@ -85,6 +88,7 @@ export default function QuickFixes() {
         'Segmentation strategy'
       ],
       solution: 'Automated retention system that brings customers back',
+      relatedInsight: '/insights/ppc-cost-optimization',
       impact: '+25-40% repeat purchase rate',
       timeline: '2 weeks',
       benefit: 'Automated customer retention',
@@ -246,6 +250,13 @@ export default function QuickFixes() {
                         <p className="text-center text-sm text-gray-600 mb-4">
                           <span className="font-medium">✓ </span>{sprint.benefit}
                         </p>
+                      )}
+                      {sprint.relatedInsight && (
+                        <div className="mb-4 text-center">
+                          <Link href={sprint.relatedInsight} className="text-sm text-blue-600 hover:text-blue-700 underline">
+                            Read related case study →
+                          </Link>
+                        </div>
                       )}
                       <BookingLink
                         type="discovery"

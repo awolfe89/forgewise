@@ -241,7 +241,11 @@ export default function Home() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                    <span className="text-gray-700">1,000+ product attributes? No problem</span>
+                    <span className="text-gray-700">
+                      <Link href="/insights/attribute-filtering" className="hover:text-blue-600 underline">
+                        1,000+ product attributes? No problem
+                      </Link>
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
@@ -268,11 +272,19 @@ export default function Home() {
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                    <span className="text-gray-700">SEO that actually works</span>
+                    <span className="text-gray-700">
+                      <Link href="/insights/seo-ux-case-study" className="hover:text-blue-600 underline">
+                        SEO that actually works
+                      </Link>
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                    <span className="text-gray-700">Google Ads optimization</span>
+                    <span className="text-gray-700">
+                      <Link href="/insights/ppc-cost-optimization" className="hover:text-blue-600 underline">
+                        Google Ads optimization
+                      </Link>
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
@@ -303,7 +315,11 @@ export default function Home() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
-                    <span className="text-gray-700">Cost-saving recommendations</span>
+                    <span className="text-gray-700">
+                      <Link href="/insights/unused-features" className="hover:text-blue-600 underline">
+                        Cost-saving recommendations
+                      </Link>
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2 mt-0.5">✓</span>
@@ -645,7 +661,7 @@ export default function Home() {
                     <p className="text-gray-700 mb-3">Thousands spent monthly with minimal conversions.</p>
                     <div className="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-600">
                       <h4 className="font-semibold text-emerald-800 mb-1">Our Solution:</h4>
-                      <p className="text-gray-700">Restructured campaigns, negative keywords, landing page optimization, conversion tracking. Average result: -67% CAC.</p>
+                      <p className="text-gray-700">Restructured campaigns, negative keywords, landing page optimization, conversion tracking. Average result: -67% CAC. <Link href="/insights/ppc-cost-optimization" className="text-blue-600 hover:text-blue-700 underline">Read our PPC optimization guide →</Link></p>
                   </div>
                 </div>
               </div>
@@ -663,7 +679,7 @@ export default function Home() {
                     <p className="text-gray-700 mb-3">Every second costs you 7% in conversions.</p>
                     <div className="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-600">
                       <h4 className="font-semibold text-emerald-800 mb-1">Our Solution:</h4>
-                      <p className="text-gray-700">Image optimization, code minification, CDN implementation, lazy loading. Average result: 3-second load times.</p>
+                      <p className="text-gray-700">Image optimization, code minification, CDN implementation, lazy loading. Average result: 3-second load times. <Link href="/insights/shopify-speed" className="text-blue-600 hover:text-blue-700 underline">See how we fixed Shopify speed →</Link></p>
                   </div>
                 </div>
               </div>
@@ -681,7 +697,7 @@ export default function Home() {
                     <p className="text-gray-700 mb-3">Competitors outrank you for your own brand terms.</p>
                     <div className="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-600">
                       <h4 className="font-semibold text-emerald-800 mb-1">Our Solution:</h4>
-                      <p className="text-gray-700">Technical SEO fixes, content optimization, backlink strategy, local SEO. Average result: +156% organic traffic.</p>
+                      <p className="text-gray-700">Technical SEO fixes, content optimization, backlink strategy, local SEO. Average result: +156% organic traffic. <Link href="/insights/seo-ux-case-study" className="text-blue-600 hover:text-blue-700 underline">Read the SEO case study →</Link></p>
                   </div>
                 </div>
               </div>
@@ -813,7 +829,7 @@ export default function Home() {
                     Result: $180K additional monthly revenue.
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link href="/results#armoranimalhealth" className="text-blue-600 hover:text-blue-700 font-medium">
+                    <Link href="/results/armor-animal-health" className="text-blue-600 hover:text-blue-700 font-medium">
                       Read full case →
                     </Link>
                     <BookingLink
@@ -836,8 +852,8 @@ export default function Home() {
                     Result: Same leads, 67% less spend.
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link href="/results#technimark" className="text-blue-600 hover:text-blue-700 font-medium">
-                      Read full case →
+                    <Link href="/results" className="text-blue-600 hover:text-blue-700 font-medium">
+                      See all results →
                     </Link>
                     <BookingLink
                       type="discovery"

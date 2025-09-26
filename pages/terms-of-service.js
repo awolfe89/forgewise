@@ -112,7 +112,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold mb-4">10. Governing Law</h2>
               <p className="text-gray-700 mb-4">
-                These terms are governed by the laws of [Your State/Country], without regard to conflict of law principles. Any disputes shall be resolved through binding arbitration.
+                These terms are governed by the laws of the State of Illinois, United States, without regard to conflict of law principles. Any disputes shall be resolved through binding arbitration in Cook County, Illinois.
               </p>
             </section>
 
