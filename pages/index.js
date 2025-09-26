@@ -119,10 +119,18 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="relative max-w-7xl mx-auto px-6 py-32 md:py-48 lg:py-56 text-center">
             <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-base md:text-lg text-emerald-300 font-semibold uppercase tracking-wider mb-4"
+              >
+                B2B eCommerce Consultant • Western Illinois • Serving Chicago & Tri-State Area
+              </motion.div>
               <motion.h1
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
               >
                 {heroTitle}
@@ -130,7 +138,7 @@ export default function Home() {
               <motion.p
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-xl md:text-2xl mb-4 text-blue-100 max-w-3xl mx-auto"
               >
                 {heroSubtitle}
