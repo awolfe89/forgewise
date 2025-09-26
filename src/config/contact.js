@@ -4,9 +4,10 @@ const contactConfig = {
   businessName: 'Forgewise',
   fullBusinessName: 'Forgewise.io',
   
-  // Contact methods - to be configured
-  phoneDisplay: '(555) 123-4567',
-  phoneLink: '5551234567',
+  // Contact methods
+  phoneDisplay: '(312) 555-0190',
+  phoneLink: '+13125550190',
+  email: 'admin@forgewise.io',
   
   // Consultation links - using real Calendly URL
   calendly: {

@@ -297,13 +297,22 @@ export default function Results() {
                             </div>
                           </div>
 
-                          {/* CTA Link */}
-                          <div className="mt-8 pt-6 border-t border-gray-200">
+                          {/* CTA Links */}
+                          <div className="mt-8 pt-6 border-t border-gray-200 flex justify-between">
                             <Link
-                              href="/contact/"
+                              href={`/results/${study.id === 'armor' ? 'armor-animal-health' : study.id}`}
                               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                             >
-                              Get similar results →
+                              Read full case study →
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </Link>
+                            <Link
+                              href="/contact/"
+                              className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium"
+                            >
+                              Get similar results
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                               </svg>

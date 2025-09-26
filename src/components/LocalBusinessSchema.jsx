@@ -7,13 +7,15 @@ export default function LocalBusinessSchema() {
     "alternateName": "Forgewise.io",
     "description": "B2B eCommerce consultant specializing in traditional business digital transformation. 11+ years experience with Magento, Shopify, and ERP integrations.",
     "url": "https://forgewise.io",
-    "telephone": "+1-555-123-4567",
+    "telephone": "+1-312-555-0190",
     "email": "admin@forgewise.io",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Chicago",
       "addressRegion": "IL",
-      "addressCountry": "US"
+      "postalCode": "60601",
+      "addressCountry": "US",
+      "streetAddress": "Chicago Metro Area"
     },
     "geo": {
       "@type": "GeoCoordinates",
