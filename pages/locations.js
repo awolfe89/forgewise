@@ -164,7 +164,7 @@ export default function LocationsPage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+        <section className="relative pt-32 pb-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
