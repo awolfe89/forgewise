@@ -605,7 +605,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold mb-2">Our Guarantee</h3>
             <p className="text-lg text-gray-700">
-              If you don't see meaningful lift from your first sprint, you don't pay for the next one.
+              Honest assessment, fair pricing & hard work.
             </p>
             <p className="text-sm text-gray-600 mt-2">
               We're that confident in our ability to deliver results.

@@ -1036,7 +1036,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold mb-2">Our Guarantee</h3>
             <p className="text-lg text-gray-700">
-              If you don't see meaningful lift from your first sprint, you don't pay for the next one.
+              Honest assessment, fair pricing & hard work.
             </p>
             <p className="text-sm text-gray-600 mt-2">
               We're that confident in our ability to deliver results.
@@ -1059,41 +1059,41 @@ export default function Home() {
               <div className="flex items-center">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mr-6">
                   1
-              </div>
+                </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold mb-2">Audit & Discover</h3>
                   <p className="text-gray-600">We analyze your entire operation, identifying quick wins and long-term opportunities. No stone left unturned.</p>
-              </div>
+                </div>
               </div>
 
               <div className="flex items-center">
                 <div className="flex-shrink-0 w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl mr-6">
                   2
-              </div>
+                </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold mb-2">Strategize & Prioritize</h3>
                   <p className="text-gray-600">We create a roadmap prioritized by impact and effort. You'll know exactly what to fix first for maximum ROI.</p>
-              </div>
+                </div>
               </div>
 
               <div className="flex items-center">
                 <div className="flex-shrink-0 w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-xl mr-6">
                   3
-              </div>
+                </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold mb-2">Execute & Implement</h3>
                   <p className="text-gray-600">We build it. You own it. No handoffs, no delays.</p>
-              </div>
+                </div>
               </div>
 
               <div className="flex items-center">
                 <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mr-6">
                   4
-              </div>
+                </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold mb-2">Measure & Optimize</h3>
                   <p className="text-gray-600">If it's not working, we fix it. Simple as that.</p>
-              </div>
+                </div>
               </div>
             </div>
           </div>
