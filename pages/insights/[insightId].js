@@ -13,6 +13,7 @@ const insightComponents = {
   'seo-ux-case-study': dynamic(() => import('../../src/pages/insights/SeoUxCaseStudy')),
   'unused-features': dynamic(() => import('../../src/pages/insights/UnusedFeatures')),
   'attribute-filtering': dynamic(() => import('../../src/pages/insights/AttributeFilteringCaseStudy'))
+  // Note: Pillar posts (smb-playbook, ga4-for-owners, shopify-vs-magento) need to be implemented
 };
 
 export default function InsightDetail({ insightId }) {
@@ -54,15 +55,14 @@ export async function getStaticPaths() {
     { params: { insightId: 'hidden-inventory-costs' } },
     { params: { insightId: 'ppc-cost-optimization' } },
     { params: { insightId: 'ai-in-ecommerce' } },
-    { params: { insightId: 'seo-ux-case-study' } }
-    // Temporarily skip problematic pages
-    // { params: { insightId: 'unused-features' } },
-    // { params: { insightId: 'attribute-filtering' } }
+    { params: { insightId: 'seo-ux-case-study' } },
+    { params: { insightId: 'unused-features' } },
+    { params: { insightId: 'attribute-filtering' } }
   ];
 
   return {
     paths,
-    fallback: 'blocking' // Allow runtime rendering for skipped pages
+    fallback: false // Return 404 for non-existent paths
   };
 }
 

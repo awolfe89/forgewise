@@ -29,7 +29,9 @@ export default function QuickFixes() {
       impact: '+15-25% conversion rate',
       timeline: '2 weeks',
       benefit: 'Immediate performance gains',
-      icon: '⚡'
+      icon: '⚡',
+      ctaText: 'Fix My Site Speed',
+      relatedCaseStudy: '/results/voltech'
     },
     {
       id: 'cro-sprint',
@@ -50,7 +52,9 @@ export default function QuickFixes() {
       impact: '+20-35% conversion rate',
       timeline: '2 weeks',
       benefit: 'Data-driven improvements',
-      icon: '📈'
+      icon: '📈',
+      ctaText: 'Boost My Conversions',
+      relatedCaseStudy: '/results/vsiswine'
     },
     {
       id: 'tracking-sprint',
@@ -71,7 +75,9 @@ export default function QuickFixes() {
       impact: 'Finally see what drives revenue',
       timeline: '1.5 weeks',
       benefit: 'Clear visibility into performance',
-      icon: '📊'
+      icon: '📊',
+      ctaText: 'Set Up My Tracking',
+      relatedCaseStudy: '/results/technimark'
     },
     {
       id: 'retention-sprint',
@@ -92,7 +98,9 @@ export default function QuickFixes() {
       impact: '+25-40% repeat purchase rate',
       timeline: '2 weeks',
       benefit: 'Automated customer retention',
-      icon: '💌'
+      icon: '💌',
+      ctaText: 'Increase Repeat Buyers',
+      relatedCaseStudy: '/results/grubs'
     },
   ];
 
@@ -238,9 +246,9 @@ export default function QuickFixes() {
                           <span className="font-medium">✓ </span>{sprint.benefit}
                         </p>
                       )}
-                      {sprint.relatedInsight && (
+                      {sprint.relatedCaseStudy && (
                         <div className="mb-4 text-center">
-                          <Link href={sprint.relatedInsight} className="text-sm text-blue-600 hover:text-blue-700 underline">
+                          <Link href={sprint.relatedCaseStudy} className="text-sm text-blue-600 hover:text-blue-700 underline">
                             Read related case study →
                           </Link>
                         </div>
@@ -249,7 +257,7 @@ export default function QuickFixes() {
                         type="discovery"
                         className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-all w-full"
                       >
-                        Get Your Growth Assessment →
+                        {sprint.ctaText || 'Get Your Growth Assessment'} →
                       </BookingLink>
                     </div>
                   </motion.div>
@@ -343,7 +351,7 @@ export default function QuickFixes() {
                   type="discovery"
                   className="block w-full py-2 bg-blue-700 text-white text-center rounded-lg hover:bg-blue-800 transition-colors text-sm font-medium"
                 >
-                  Get This Fix
+                  Start Quick Sprint →
                 </BookingLink>
               </div>
 
@@ -371,9 +379,9 @@ export default function QuickFixes() {
                 </ul>
                 <BookingLink
                   type="discovery"
-                  className="block w-full py-2 bg-blue-700 text-white text-center rounded-lg hover:bg-blue-800 transition-colors text-sm font-medium"
+                  className="block w-full py-2 bg-emerald-600 text-white text-center rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium"
                 >
-                  Get This Fix
+                  Build Growth Package →
                 </BookingLink>
               </div>
 
@@ -403,7 +411,7 @@ export default function QuickFixes() {
                   type="consultation"
                   className="block w-full py-2 bg-gray-800 text-white text-center rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
                 >
-                  Get This Fix
+                  Explore Fractional CMO →
                 </BookingLink>
               </div>
 
@@ -433,7 +441,7 @@ export default function QuickFixes() {
                   type="consultation"
                   className="block w-full py-2 bg-gray-800 text-white text-center rounded-lg hover:bg-gray-700 transition-colors text-sm font-medium"
                 >
-                  Get This Fix
+                  Discuss Director Role →
                 </BookingLink>
               </div>
             </div>

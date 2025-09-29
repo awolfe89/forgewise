@@ -291,7 +291,7 @@ export default function Results() {
                           {/* CTA Links */}
                           <div className="mt-8 pt-6 border-t border-gray-200 flex justify-between">
                             <Link
-                              href={`/results/${study.id === 'armor' ? 'armor-animal-health' : study.id}`}
+                              href={`/results/${study.id === 'armoranimalhealth' ? 'armor-animal-health' : study.id}`}
                               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                             >
                               Read full case study →

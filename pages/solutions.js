@@ -39,7 +39,7 @@ export default function Solutions() {
         'A/B testing framework'
       ],
       techStack: ['React', 'Node.js', 'TensorFlow', 'Segment'],
-      caseStudyUrl: '/results#cart-recovery',
+      caseStudyUrl: '/results/armoranimalhealth',
       buttonText: 'See Cart Recovery Results'
     },
     {
@@ -62,7 +62,7 @@ export default function Solutions() {
         'Real-time alerts'
       ],
       techStack: ['Python', 'PostgreSQL', 'Redis', 'AWS'],
-      caseStudyUrl: '/results#inventory-optimizer',
+      caseStudyUrl: '/results/vsiswine',
       buttonText: 'View Inventory Case Study'
     },
     {
@@ -89,7 +89,7 @@ export default function Solutions() {
         'Custom alerts'
       ],
       techStack: ['Vue.js', 'Python', 'BigQuery', 'Tableau'],
-      caseStudyUrl: '/insights/hidden-inventory-costs',
+      caseStudyUrl: '/results/voltech',
       buttonText: 'Check Speed Improvements'
     },
     {
@@ -116,7 +116,7 @@ export default function Solutions() {
         'Rule engine'
       ],
       techStack: ['Python', 'Redis', 'PostgreSQL', 'Kubernetes'],
-      caseStudyUrl: '/results#dynamic-pricing',
+      caseStudyUrl: '/results/technimark',
       buttonText: 'Explore Analytics Setup'
     },
     {
@@ -143,7 +143,7 @@ export default function Solutions() {
         'Behavioral triggers'
       ],
       techStack: ['Node.js', 'React', 'GPT-4', 'SendGrid'],
-      caseStudyUrl: '/results#email-personalization',
+      caseStudyUrl: '/results/grubs',
       buttonText: 'See Email Results'
     },
     {
@@ -170,7 +170,7 @@ export default function Solutions() {
         'Statistical significance'
       ],
       techStack: ['JavaScript', 'Python', 'Google Optimize', 'Hotjar'],
-      caseStudyUrl: '/results#conversion-optimizer',
+      caseStudyUrl: '/results/technimark',
       buttonText: 'View CDP Implementation'
     }
   ];
@@ -360,7 +360,7 @@ export default function Solutions() {
                       )}
 
                       {/* Button */}
-                      <Link href="/results" className="block w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mt-6 text-center">
+                      <Link href={solution.caseStudyUrl || "/results"} className="block w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mt-6 text-center">
                         {solution.buttonText}
                       </Link>
                     </div>

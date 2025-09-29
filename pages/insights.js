@@ -7,40 +7,41 @@ import NextSEO from '../src/components/NextSEO';
 import { getPageSEO } from '../src/config/seo';
 
 // Pillar posts that rank and convert
+// TODO: Create components for these pillar posts
 const pillarPosts = [
-  {
-    id: 'smb-playbook',
-    title: 'The Small Business Playbook: Speed & CRO that actually move revenue',
-    category: 'Guide',
-    readTime: '15 min',
-    date: '2024-01-20',
-    excerpt: 'The complete guide to conversion optimization for $100K-$5M brands. Skip the theory, get the tactics that work.',
-    image: '/comparison-chart.png',
-    tags: ['CRO', 'Speed', 'Revenue'],
-    isPillar: true
-  },
-  {
-    id: 'ga4-for-owners',
-    title: 'GA4 for Owners: Clean events & sane reports in 1 day',
-    category: 'Guide',
-    readTime: '12 min',
-    date: '2024-01-18',
-    excerpt: 'Stop flying blind. Set up GA4 properly, track what matters, and actually understand your data.',
-    image: '/ad-intelligence.png',
-    tags: ['GA4', 'Analytics', 'Tracking'],
-    isPillar: true
-  },
-  {
-    id: 'shopify-vs-magento',
-    title: 'Shopify vs. Magento for $100K–$5M brands: a practical guide',
-    category: 'Guide',
-    readTime: '18 min',
-    date: '2024-01-15',
-    excerpt: 'The real costs, limitations, and growth potential of each platform. Based on 50+ migrations.',
-    image: '/neptune.png',
-    tags: ['Shopify', 'Magento', 'Platform'],
-    isPillar: true
-  }
+  // {
+  //   id: 'smb-playbook',
+  //   title: 'The Small Business Playbook: Speed & CRO that actually move revenue',
+  //   category: 'Guide',
+  //   readTime: '15 min',
+  //   date: '2024-01-20',
+  //   excerpt: 'The complete guide to conversion optimization for $100K-$5M brands. Skip the theory, get the tactics that work.',
+  //   image: '/comparison-chart.png',
+  //   tags: ['CRO', 'Speed', 'Revenue'],
+  //   isPillar: true
+  // },
+  // {
+  //   id: 'ga4-for-owners',
+  //   title: 'GA4 for Owners: Clean events & sane reports in 1 day',
+  //   category: 'Guide',
+  //   readTime: '12 min',
+  //   date: '2024-01-18',
+  //   excerpt: 'Stop flying blind. Set up GA4 properly, track what matters, and actually understand your data.',
+  //   image: '/ad-intelligence.png',
+  //   tags: ['GA4', 'Analytics', 'Tracking'],
+  //   isPillar: true
+  // },
+  // {
+  //   id: 'shopify-vs-magento',
+  //   title: 'Shopify vs. Magento for $100K–$5M brands: a practical guide',
+  //   category: 'Guide',
+  //   readTime: '18 min',
+  //   date: '2024-01-15',
+  //   excerpt: 'The real costs, limitations, and growth potential of each platform. Based on 50+ migrations.',
+  //   image: '/neptune.png',
+  //   tags: ['Shopify', 'Magento', 'Platform'],
+  //   isPillar: true
+  // }
 ];
 
 const regularInsights = [
@@ -52,7 +53,8 @@ const regularInsights = [
     date: '2024-01-10',
     excerpt: 'Every second of load time costs you 7% in conversions. Fix it without rebuilding.',
     image: '/technimark.png',
-    tags: ['Shopify', 'Performance', 'Conversion']
+    tags: ['Shopify', 'Performance', 'Conversion'],
+    isPillar: true
   },
   {
     id: 'ppc-cost-optimization',
@@ -62,7 +64,8 @@ const regularInsights = [
     date: '2024-01-05',
     excerpt: 'Stop burning cash on Google Ads. These 5 optimization strategies actually work.',
     image: '/ad-intelligence.png',
-    tags: ['PPC', 'Google Ads', 'ROI']
+    tags: ['PPC', 'Google Ads', 'ROI'],
+    isPillar: true
   },
   {
     id: 'ai-in-ecommerce',
@@ -72,7 +75,8 @@ const regularInsights = [
     date: '2023-12-28',
     excerpt: 'We tested 20 AI tools for e-commerce. Only 5 actually delivered ROI. Here\'s what worked.',
     image: '/aah_ai_email_screen.png',
-    tags: ['AI', 'E-commerce', 'Technology']
+    tags: ['AI', 'E-commerce', 'Technology'],
+    isPillar: true
   },
   {
     id: 'seo-ux-case-study',
@@ -103,6 +107,16 @@ const regularInsights = [
     excerpt: 'One simple navigation change led to 2.3x revenue. Here\'s exactly how to implement it.',
     image: '/content-cannon.png',
     tags: ['UX', 'Navigation', 'Revenue']
+  },
+  {
+    id: 'hidden-inventory-costs',
+    title: 'The Hidden Costs of Poor Inventory Management',
+    category: 'Analytics',
+    readTime: '10 min',
+    date: '2023-12-08',
+    excerpt: 'How tracking the right metrics can save you thousands in inventory costs and prevent stockouts.',
+    image: '/ad-intelligence.png',
+    tags: ['Analytics', 'Inventory', 'Cost Optimization']
   }
 ];
 
@@ -198,12 +212,12 @@ export default function Insights() {
         </section>
 
         {/* Pinned Pillar Posts */}
-        {selectedCategory === 'all' && searchTerm === '' && (
+        {selectedCategory === 'all' && searchTerm === '' && insights.filter(i => i.isPillar).length > 0 && (
           <section className="py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto px-6">
               <h2 className="text-2xl font-bold mb-8 text-center">📌 Essential Guides for Growing E-Commerce</h2>
               <div className="grid md:grid-cols-3 gap-8">
-                {pillarPosts.map((post, index) => (
+                {insights.filter(i => i.isPillar).map((post, index) => (
                   <motion.div
                     key={post.id}
                     initial={{ opacity: 1, y: 20 }}

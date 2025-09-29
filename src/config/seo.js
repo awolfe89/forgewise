@@ -65,7 +65,7 @@ export const pageSEO = {
     type: 'website'
   },
   // Individual insight pages
-  'insights/shopify-speed-fix': {
+  'insights/shopify-speed': {
     title: 'Why Your Shopify Store Is Slow (And The $50 Fix) | Forgewise',
     description: 'Your store takes 8+ seconds to load. You\'re losing $10K/month. Here\'s the exact 30-minute fix to improve speed and conversions.',
     keywords: 'shopify speed optimization, site speed, page load time, conversion optimization, ecommerce performance',
@@ -105,7 +105,7 @@ export const pageSEO = {
     section: 'Digital Marketing',
     tags: ['PPC', 'Google Ads', 'Marketing ROI', 'Cost Optimization']
   },
-  'insights/seo-ux-transformation': {
+  'insights/seo-ux-case-study': {
     title: 'How SEO + UX Drove 312% Growth (Case Study) | Forgewise',
     description: 'See how strategic SEO and UX improvements transformed a struggling store into a market leader with 312% revenue growth.',
     keywords: 'SEO strategy, UX optimization, case study, ecommerce growth, conversion optimization',
@@ -115,7 +115,7 @@ export const pageSEO = {
     section: 'Case Studies',
     tags: ['SEO', 'UX Design', 'Case Study', 'Growth Strategy']
   },
-  'insights/attribute-filtering-case-study': {
+  'insights/attribute-filtering': {
     title: 'From 12,000 Products to Happy Customers | Forgewise',
     description: 'Learn how smart filtering reduced bounce rate by 68% and increased conversions by 127% for a large catalog retailer.',
     keywords: 'product filtering, faceted search, catalog management, UX optimization, conversion optimization',

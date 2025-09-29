@@ -16,7 +16,7 @@ export default function ShopifySpeed() {
       title: "Speed Optimization for E-commerce Success",
       excerpt: "Learn how to dramatically improve your site's loading speed and conversion rates with proven optimization techniques.",
       date: "2025-01-06",
-      url: "https://forgewise.io/insights/shopify-speed-fix"
+      url: "https://forgewise.io/insights/shopify-speed"
     },
     faqs: [
       {
