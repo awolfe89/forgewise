@@ -158,21 +158,21 @@ export default function NextFooter() {
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             <div className="text-center">
               <img
-                src="/google_cloud_partner.jpeg"
+                src="/google_cloud_badge_2.png"
                 alt="Google Cloud Partner"
                 className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
               />
             </div>
             <div className="text-center">
               <img
-                src="/shopify-partner-badge.png"
+                src="/shopify_partner_2.png"
                 alt="Shopify Partner"
                 className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
               />
             </div>
             <div className="text-center">
               <img
-                src="/magento_partner_badges.png"
+                src="/magento_badge.png"
                 alt="Magento Partner"
                 className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
               />
