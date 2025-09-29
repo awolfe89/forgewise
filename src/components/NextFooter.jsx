@@ -89,6 +89,11 @@ export default function NextFooter() {
                   Book Consultation
                 </Link>
               </li>
+              <li>
+                <Link href="/locations/" className="hover:text-emerald-400 transition">
+                  Service Locations
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -119,6 +124,11 @@ export default function NextFooter() {
               <li>
                 <Link href="/accessibility/" className="hover:text-emerald-400 transition">
                   Accessibility
+                </Link>
+              </li>
+              <li>
+                <Link href="/sitemap/" className="hover:text-emerald-400 transition">
+                  Sitemap
                 </Link>
               </li>
             </ul>
