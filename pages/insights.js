@@ -133,22 +133,29 @@ export default function Insights() {
       
       <div className="min-h-screen pt-20">
         {/* Header */}
-        <section className="bg-gradient-to-br from-purple-700 to-pink-700 text-white py-20">
-          <div className="max-w-7xl mx-auto px-6 text-center">
+        <section className="relative py-24 bg-gray-50">
+          {/* Grid pattern background */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px, #000 41px),
+                               repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px, #000 41px)`
+            }}></div>
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6">
             <motion.h1
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-4"
+              className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900"
             >
               Insights That Drive Action
             </motion.h1>
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl max-w-3xl mx-auto text-purple-100"
+              className="text-xl max-w-3xl mx-auto text-center text-gray-600"
             >
-              Real-world lessons from helping 35+ businesses grow their revenue. 
+              Real-world lessons from helping 35+ businesses grow their revenue.
               No fluff, just actionable insights you can implement today.
             </motion.p>
           </div>
@@ -163,9 +170,9 @@ export default function Insights() {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    className={`px-6 py-3 rounded-full font-medium transition-all ${
                       selectedCategory === cat
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-blue-600 text-white'
                         : 'bg-white text-gray-700 hover:bg-gray-100'
                     }`}
                   >
@@ -180,7 +187,7 @@ export default function Insights() {
                   placeholder="Search insights..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                  className="w-full px-4 py-2 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
                 <svg className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -216,7 +223,7 @@ export default function Insights() {
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                         <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium z-10">
-                          Pillar Post
+                          Featured
                         </div>
                       </div>
 
@@ -264,7 +271,7 @@ export default function Insights() {
                       
                       <div className="p-6 flex flex-col flex-grow">
                         <div className="flex items-center justify-between mb-3">
-                          <span className="text-sm font-medium text-purple-600">{insight.category}</span>
+                          <span className="text-sm font-medium text-blue-600">{insight.category}</span>
                           <span className="text-sm text-gray-500">{insight.readTime} read</span>
                         </div>
                         
@@ -353,11 +360,11 @@ export default function Insights() {
                     name="email"
                     placeholder="Enter your email"
                     required
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                   />
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                    className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     Subscribe
                   </button>
@@ -372,17 +379,17 @@ export default function Insights() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-br from-purple-900 to-pink-900 text-white">
+        <section className="py-20 bg-gradient-to-br from-blue-900 to-emerald-900 text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Apply These Insights?
             </h2>
-            <p className="text-xl mb-8 text-purple-100">
+            <p className="text-xl mb-8 text-blue-100">
               Let's discuss how these strategies can work for your business.
             </p>
             <Link 
               href="/contact/"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-900 rounded-lg hover:bg-gray-100 transition-all font-medium"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-all font-medium"
             >
               Get Expert Help →
             </Link>

@@ -1,11 +1,16 @@
 # Robots.txt for Forgewise.io
-# Allow all crawlers
+# Last updated: 2024
 
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /thank-you
+# Block Google Ads landing pages from organic search
+Disallow: /fractional-cmo-ecommerce
+Disallow: /b2b-ecommerce-consulting
+Disallow: /magento-seo-services
+Disallow: /shopify-plus-seo
 
 # Sitemap location
 Sitemap: https://forgewise.io/sitemap.xml

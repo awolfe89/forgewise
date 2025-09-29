@@ -1047,7 +1047,7 @@ export default function Home() {
 
         {/* Process/Methodology */}
         <section className="py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               Our Proven Process
             </h2>
@@ -1055,45 +1055,37 @@ export default function Home() {
               A systematic approach that delivers predictable results
             </p>
 
-            <div className="space-y-8">
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mr-6">
+            <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mx-auto mb-4">
                   1
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2">Audit & Discover</h3>
-                  <p className="text-gray-600">We analyze your entire operation, identifying quick wins and long-term opportunities. No stone left unturned.</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">Audit & Discover</h3>
+                <p className="text-gray-600">We analyze your entire operation, identifying quick wins and long-term opportunities. No stone left unturned.</p>
               </div>
 
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl mr-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-700 font-bold text-xl mx-auto mb-4">
                   2
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2">Strategize & Prioritize</h3>
-                  <p className="text-gray-600">We create a roadmap prioritized by impact and effort. You'll know exactly what to fix first for maximum ROI.</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">Strategize & Prioritize</h3>
+                <p className="text-gray-600">We create a roadmap prioritized by impact and effort. You'll know exactly what to fix first for maximum ROI.</p>
               </div>
 
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-xl mr-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center text-amber-700 font-bold text-xl mx-auto mb-4">
                   3
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2">Execute & Implement</h3>
-                  <p className="text-gray-600">We build it. You own it. No handoffs, no delays.</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">Execute & Implement</h3>
+                <p className="text-gray-600">We build it. You own it. No handoffs, no delays.</p>
               </div>
 
-              <div className="flex items-center">
-                <div className="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mr-6">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold text-xl mx-auto mb-4">
                   4
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2">Measure & Optimize</h3>
-                  <p className="text-gray-600">If it's not working, we fix it. Simple as that.</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">Measure & Optimize</h3>
+                <p className="text-gray-600">If it's not working, we fix it. Simple as that.</p>
               </div>
             </div>
           </div>
@@ -1115,7 +1107,7 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                 </div>
-                  <span className="text-sm text-gray-500">This Week</span>
+                  <span className="text-sm text-gray-500">E-Commerce</span>
               </div>
                 <h3 className="font-bold text-lg mb-2">E-commerce Store</h3>
                 <p className="text-gray-700 mb-3">Reduced cart abandonment by 43% with checkout optimization</p>
@@ -1129,7 +1121,7 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                 </div>
-                  <span className="text-sm text-gray-500">Last Week</span>
+                  <span className="text-sm text-gray-500">B2B</span>
               </div>
                 <h3 className="font-bold text-lg mb-2">B2B SaaS</h3>
                 <p className="text-gray-700 mb-3">Cut PPC costs by 62% while doubling qualified leads</p>
@@ -1143,7 +1135,7 @@ export default function Home() {
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                 </div>
-                  <span className="text-sm text-gray-500">2 Weeks Ago</span>
+                  <span className="text-sm text-gray-500">Local Service</span>
               </div>
                 <h3 className="font-bold text-lg mb-2">Local Service Business</h3>
                 <p className="text-gray-700 mb-3">3x'd website conversions with speed optimization</p>
@@ -1211,7 +1203,7 @@ export default function Home() {
 
         {/* Final CTA - Two Ways to Start */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6">
+          <div className="max-w-6xl mx-auto px-6">
             <div className="bg-gradient-to-br from-blue-800 to-emerald-800 text-white rounded-2xl p-12 text-center shadow-xl">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Two Ways to Start

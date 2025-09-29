@@ -106,43 +106,39 @@ export default function B2BEcommerceConsulting() {
   const faqData = [
     {
       question: "How quickly will I see results from B2B ecommerce consulting?",
-      answer: "Most clients see initial improvements within 30-45 days, with significant revenue increases (200-400%) typically occurring within 3-6 months. The timeline depends on your current setup and implementation speed."
+      answer: "Most clients see initial improvements within 30-45 days, with significant revenue increases typically occurring within 3-6 months. The timeline depends on your current setup and implementation speed."
     },
     {
       question: "What makes your B2B approach different from other consultants?",
-      answer: "I specialize exclusively in B2B ecommerce with 12+ years of experience. My data-driven approach focuses on the entire customer lifecycle, not just lead generation. I've helped 200+ B2B companies scale to 7-8 figures."
+      answer: "We specialize exclusively in B2B ecommerce with 12+ years of experience. My data-driven approach focuses on the entire customer lifecycle, not just lead generation. We've helped tons of businesses save money & scale."
     },
     {
       question: "Do you work with companies in my industry?",
-      answer: "I work across all B2B industries including manufacturing, technology, healthcare, industrial supplies, professional services, and more. The strategies adapt to your specific industry dynamics and buyer behavior."
+      answer: "We work across all B2B industries including manufacturing, technology, healthcare, industrial supplies, professional services, and more. The strategies adapt to your specific industry dynamics and buyer behavior."
     },
     {
       question: "What's included in the consulting engagement?",
       answer: "Comprehensive audit, strategic roadmap, implementation support, team training, monthly optimization reviews, and direct access to me for questions. You get a complete B2B growth system, not just recommendations."
-    },
-    {
-      question: "How do you guarantee results?",
-      answer: "I offer a 90-day performance guarantee. If you don't see measurable improvements in key metrics (leads, conversions, or revenue) within 90 days of implementation, you get a full refund."
     }
   ];
 
   return (
     <>
       <Head>
-        <title>B2B Ecommerce Consulting Services | Scale to 7-8 Figures Fast</title>
+        <title>B2B Ecommerce Consulting Services | Scale to 7-8 Figures</title>
         <meta name="description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
         <meta name="robots" content="noindex,nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
-        <meta property="og:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures Fast" />
+        <meta property="og:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures" />
         <meta property="og:description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://forgewise.io/b2b-ecommerce-consulting" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures Fast" />
+        <meta name="twitter:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures" />
         <meta name="twitter:description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
 
         {/* Schema Markup */}

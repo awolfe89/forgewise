@@ -116,44 +116,31 @@ export default function QuickFixes() {
       
       <div className="min-h-screen pt-20">
         {/* Header */}
-        <section className="relative bg-white overflow-hidden py-24">
-          {/* Unique diagonal split background */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-blue-50"></div>
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-50/30 transform skew-x-12"></div>
+        <section className="relative py-24 bg-gray-50">
+          {/* Grid pattern background */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px, #000 41px),
+                               repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px, #000 41px)`
+            }}></div>
           </div>
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
-            <span className="inline-block px-4 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium mb-4">
-              ⚡ Fast Implementation
-            </span>
+          <div className="relative max-w-7xl mx-auto px-6">
             <motion.h1
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
+              className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900"
             >
               Quick Wins for Growing E-Commerce
             </motion.h1>
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl max-w-2xl mx-auto text-gray-600">
+              className="text-xl max-w-3xl mx-auto text-center text-gray-600"
+            >
               Perfect for $100K-$5M shops that need results fast.
               No 6-month roadmaps. No bloated retainers. Just fixes that work.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 1, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-8"
-            >
-              <Link
-                href="/contact/"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white text-lg font-medium rounded-lg hover:bg-blue-800 transition-all transform hover:scale-105 shadow-xl"
-              >
-                Book Your First Sprint →
-              </Link>
-            </motion.div>
           </div>
         </section>
 

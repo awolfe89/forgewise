@@ -38,27 +38,27 @@ export default function NextFooter() {
             <h4 className="font-semibold text-lg mb-4 text-emerald-400">Solutions</h4>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link href="/insights/shopify-speed" className="hover:text-emerald-400 transition">
+                <Link href="/solutions/" className="hover:text-emerald-400 transition">
                   Performance Optimization
                 </Link>
               </li>
               <li>
-                <Link href="/insights/ppc-cost-optimization" className="hover:text-emerald-400 transition">
+                <Link href="/solutions/" className="hover:text-emerald-400 transition">
                   Marketing Efficiency
                 </Link>
               </li>
               <li>
-                <Link href="/insights/seo-ux-case-study" className="hover:text-emerald-400 transition">
+                <Link href="/solutions/" className="hover:text-emerald-400 transition">
                   Conversion Optimization
                 </Link>
               </li>
               <li>
-                <Link href="/insights/hidden-inventory-costs" className="hover:text-emerald-400 transition">
+                <Link href="/solutions/" className="hover:text-emerald-400 transition">
                   Process Automation
                 </Link>
               </li>
               <li>
-                <Link href="/insights/ai-in-ecommerce" className="hover:text-emerald-400 transition">
+                <Link href="/solutions/" className="hover:text-emerald-400 transition">
                   AI Implementation
                 </Link>
               </li>
@@ -136,7 +136,7 @@ export default function NextFooter() {
           
           {/* Contact Column */}
           <div className="text-center md:text-left">
-            <h4 className="font-semibold text-lg mb-4 text-emerald-400">Get My Honest Opinion</h4>
+            <h4 className="font-semibold text-lg mb-4 text-emerald-400">Get An Honest Opinion</h4>
 
             <div className="space-y-3 mb-4">
               <a href="mailto:admin@forgewise.io" className="block text-gray-300 hover:text-emerald-400 transition font-medium">
@@ -149,9 +149,9 @@ export default function NextFooter() {
 
             <BookingLink
               type="discovery"
-              className="inline-block bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition mb-4"
+              className="inline-block bg-emerald-600 text-white px-4 py-2 rounded hover:bg-emerald-700 transition mb-4 text-sm"
             >
-              Schedule a Strategy Call
+              Schedule a Call
             </BookingLink>
 
             <p className="text-gray-400 flex items-center gap-2 justify-center md:justify-start">

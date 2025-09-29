@@ -247,19 +247,19 @@ export default function Contact() {
           <div className="max-w-3xl mx-auto px-6">
             <h2 className="text-2xl font-bold text-center mb-8">Common Questions</h2>
             <div className="space-y-6">
-              <div>
+              <div className="text-center">
                 <h3 className="font-bold mb-2">Is the discovery call really free?</h3>
                 <p className="text-gray-600">
                   Yes, 100%. No strings attached. If we can't help, we'll tell you upfront.
                 </p>
               </div>
-              <div>
+              <div className="text-center">
                 <h3 className="font-bold mb-2">How long does implementation take?</h3>
                 <p className="text-gray-600">
                   Quick wins: 1-2 weeks. Full solutions: 4-12 weeks. We start with what pays you back fastest.
                 </p>
               </div>
-              <div>
+              <div className="text-center">
                 <h3 className="font-bold mb-2">What if I'm not ready to commit?</h3>
                 <p className="text-gray-600">
                   No problem. The discovery call gives you actionable insights regardless. Many clients implement our free advice and see results.

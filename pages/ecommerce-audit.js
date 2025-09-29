@@ -479,7 +479,7 @@ export default function EcommerceAudit() {
                   type="submit"
                   className="w-full py-4 bg-purple-600 text-white font-bold rounded-lg hover:bg-purple-700 transition-colors"
                 >
-                  Get My Free Assessment →
+                  Get A Free Assessment →
                 </button>
                 <p className="text-xs text-gray-500 text-center">
                   Free assessment delivered within 24 hours. No spam, ever.

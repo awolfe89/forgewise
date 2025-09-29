@@ -39,7 +39,8 @@ export default function Solutions() {
         'A/B testing framework'
       ],
       techStack: ['React', 'Node.js', 'TensorFlow', 'Segment'],
-      caseStudyUrl: '/results#cart-recovery'
+      caseStudyUrl: '/results#cart-recovery',
+      buttonText: 'See Cart Recovery Results'
     },
     {
       id: 'product-page-optimization',
@@ -50,9 +51,9 @@ export default function Solutions() {
       solution: 'Machine learning system that analyzes sales patterns and automatically adjusts inventory',
       image: '/invDash.png',
       metrics: [
-        { label: 'Dead Stock', value: '-78%', trend: 'down' },
-        { label: 'Stockouts', value: '-92%', trend: 'down' },
-        { label: 'Cash Flow', value: '+$125K' }
+        { label: 'Dead Stock', value: '-35%', trend: 'down' },
+        { label: 'Stockouts', value: '-45%', trend: 'down' },
+        { label: 'Cash Flow', value: '+$48K' }
       ],
       features: [
         'Demand forecasting',
@@ -61,7 +62,8 @@ export default function Solutions() {
         'Real-time alerts'
       ],
       techStack: ['Python', 'PostgreSQL', 'Redis', 'AWS'],
-      caseStudyUrl: '/results#inventory-optimizer'
+      caseStudyUrl: '/results#inventory-optimizer',
+      buttonText: 'View Inventory Case Study'
     },
     {
       id: 'speed-optimization',
@@ -78,7 +80,7 @@ export default function Solutions() {
       metrics: [
         { label: 'Data Sources', value: '12', trend: 'up' },
         { label: 'Time Saved', value: '15hrs/week' },
-        { label: 'ROI', value: '380%' }
+        { label: 'ROI', value: '180%' }
       ],
       features: [
         'Unified customer view',
@@ -87,7 +89,8 @@ export default function Solutions() {
         'Custom alerts'
       ],
       techStack: ['Vue.js', 'Python', 'BigQuery', 'Tableau'],
-      caseStudyUrl: '/insights/hidden-inventory-costs'
+      caseStudyUrl: '/insights/hidden-inventory-costs',
+      buttonText: 'Check Speed Improvements'
     },
     {
       id: 'analytics-tracking',
@@ -113,7 +116,8 @@ export default function Solutions() {
         'Rule engine'
       ],
       techStack: ['Python', 'Redis', 'PostgreSQL', 'Kubernetes'],
-      caseStudyUrl: '/results#dynamic-pricing'
+      caseStudyUrl: '/results#dynamic-pricing',
+      buttonText: 'Explore Analytics Setup'
     },
     {
       id: 'email-retention',
@@ -130,7 +134,7 @@ export default function Solutions() {
       metrics: [
         { label: 'Open Rate', value: '47%', trend: 'up' },
         { label: 'Click Rate', value: '18%', trend: 'up' },
-        { label: 'Revenue/Email', value: '+340%' }
+        { label: 'Revenue/Email', value: '+85%' }
       ],
       features: [
         'Content personalization',
@@ -139,7 +143,8 @@ export default function Solutions() {
         'Behavioral triggers'
       ],
       techStack: ['Node.js', 'React', 'GPT-4', 'SendGrid'],
-      caseStudyUrl: '/results#email-personalization'
+      caseStudyUrl: '/results#email-personalization',
+      buttonText: 'See Email Results'
     },
     {
       id: 'customer-data-platform',
@@ -156,7 +161,7 @@ export default function Solutions() {
       metrics: [
         { label: 'Conversion Rate', value: '3.2%', trend: 'up' },
         { label: 'Tests/Month', value: '24' },
-        { label: 'Revenue Lift', value: '+$85K/mo' }
+        { label: 'Revenue Lift', value: '+$32K/mo' }
       ],
       features: [
         'Multivariate testing',
@@ -165,7 +170,8 @@ export default function Solutions() {
         'Statistical significance'
       ],
       techStack: ['JavaScript', 'Python', 'Google Optimize', 'Hotjar'],
-      caseStudyUrl: '/results#conversion-optimizer'
+      caseStudyUrl: '/results#conversion-optimizer',
+      buttonText: 'View CDP Implementation'
     }
   ];
 
@@ -355,7 +361,7 @@ export default function Solutions() {
 
                       {/* Button */}
                       <Link href="/results" className="block w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mt-6 text-center">
-                        See How We Triple Revenue →
+                        {solution.buttonText}
                       </Link>
                     </div>
                   </StaggerItem>

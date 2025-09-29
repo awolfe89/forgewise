@@ -133,44 +133,35 @@ export default function Results() {
       
       <div className="min-h-screen pt-20">
         {/* Header */}
-        <section className="relative py-20 bg-white overflow-hidden">
-          {/* Animated gradient orbs */}
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-emerald-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-0 right-1/4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-0 left-1/2 w-64 h-64 bg-amber-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-          <div className="relative max-w-7xl mx-auto px-6 text-center">
+        <section className="relative py-24 bg-gray-50">
+          {/* Grid pattern background */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px, #000 41px),
+                               repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px, #000 41px)`
+            }}></div>
+          </div>
+          <div className="relative max-w-7xl mx-auto px-6">
             <motion.h1
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-4 text-gray-900"
+              className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900"
             >
               Real Results, Real Revenue
             </motion.h1>
             <motion.p
-              initial={{ opacity: 1, y: 20 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-xl max-w-3xl mx-auto text-gray-600">
+              className="text-xl max-w-3xl mx-auto text-center text-gray-600"
+            >
               See how we've helped businesses like yours achieve measurable growth and overcome their biggest challenges.
             </motion.p>
-            <motion.div
-              initial={{ opacity: 1, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-8"
-            >
-              <Link
-                href="/contact/"
-                className="inline-flex items-center justify-center px-8 py-4 bg-blue-700 text-white text-lg font-medium rounded-lg hover:bg-blue-800 transition-all transform hover:scale-105 shadow-xl"
-              >
-                See What We'd Do For Your Store →
-              </Link>
-            </motion.div>
           </div>
         </section>
 
         {/* Stats Bar */}
-        <section className="py-12 bg-gray-900 text-white">
+        <section className="py-12 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>

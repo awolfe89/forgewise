@@ -233,7 +233,7 @@ export default function About() {
                   type="consultation"
                   className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-800 rounded-lg hover:bg-gray-100 transition-all font-medium"
                 >
-                  Get My Honest Opinion →
+                  Get An Honest Opinion →
                 </BookingLink>
                 <Link
                   href="/results/"

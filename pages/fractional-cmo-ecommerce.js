@@ -468,7 +468,7 @@ export default function FractionalCMOPage() {
                   How quickly will I see results?
                 </h3>
                 <p className="text-gray-700">
-                  Most clients see initial improvements within 30 days (conversion optimization, ad efficiency). Significant revenue impact typically occurs by month 3, with our average client achieving 35% growth by month 6. We provide weekly reports so you can track progress.
+                  Most clients see initial improvements within 30 days (conversion optimization, ad efficiency). Significant revenue impact typically occurs by month 3. We provide reports so you can track progress.
                 </p>
               </div>
 
@@ -477,7 +477,7 @@ export default function FractionalCMOPage() {
                   What if I already have a marketing team?
                 </h3>
                 <p className="text-gray-700">
-                  Perfect! A fractional CMO excels at leading and optimizing existing teams. We'll assess your team's strengths, provide strategic direction, implement processes, and mentor them to higher performance. Most teams see 2x productivity within 60 days.
+                  Perfect! A fractional CMO excels at leading and optimizing existing teams. We'll assess your team's strengths, provide strategic direction, implement processes, and mentor them to higher performance.
                 </p>
               </div>
 
@@ -486,7 +486,7 @@ export default function FractionalCMOPage() {
                   What's included in the free growth audit?
                 </h3>
                 <p className="text-gray-700">
-                  Our 30-minute growth audit includes: competitive analysis, conversion rate assessment, quick win identification, marketing channel evaluation, and a custom 90-day growth roadmap. You'll leave with actionable insights whether you hire us or not. Value: $2,500.
+                  Our 30-minute growth audit includes: competitive analysis, conversion rate assessment, quick win identification, marketing channel evaluation, and a custom 90-day growth roadmap. You'll leave with actionable insights whether you hire us or not.
                 </p>
               </div>
             </div>
@@ -500,7 +500,7 @@ export default function FractionalCMOPage() {
               Ready to Add $2-5M in Annual Revenue?
             </h2>
             <p className="text-xl mb-8">
-              Join 50+ B2B eCommerce companies that have scaled with our fractional CMO services.
+              Join Other B2B eCommerce companies that have scaled with our fractional CMO services.
             </p>
             <BookingLink
               type="discovery"

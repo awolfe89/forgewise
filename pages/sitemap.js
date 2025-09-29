@@ -21,7 +21,7 @@ export default function SitemapPage() {
 
       <main className="min-h-screen bg-gray-50">
         {/* Header */}
-        <section className="py-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+        <section className="pt-32 pb-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
