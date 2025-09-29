@@ -165,7 +165,7 @@ export default function NextFooter() {
             </div>
             <div className="text-center">
               <img
-                src="/shopify_partner_2.png"
+                src="/shopify-partner-1.png"
                 alt="Shopify Partner"
                 className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
               />
