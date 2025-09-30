@@ -21,7 +21,7 @@ export default function Results() {
   const caseStudies = [
     {
       id: 'armoranimalhealth',
-      title: '+$2M/yr Revenue in 90 Days',
+      title: '+$2M/yr Revenue ',
       company: 'Armor Animal Health',
       logo: '/armor-logo.jpg',
       industry: 'E-commerce',
@@ -30,7 +30,7 @@ export default function Results() {
       diagnosis: 'Cart abandonment at 78%, no email recovery, PPC burning $20K/mo with 0.8 ROAS',
       interventions: 'Smart cart recovery system, PPC restructure, checkout optimization, email automation',
       outcomes: {
-        timeframe: '90 days',
+        timeframe: 'B2B E-Commerce',
         results: [
           { metric: 'Revenue', value: '+$2M/yr', description: 'Additional annual revenue' },
           { metric: 'Cart Recovery', value: '+42%', description: 'Recovery rate improvement' },
@@ -41,7 +41,7 @@ export default function Results() {
     },
     {
       id: 'technimark',
-      title: '-67% CAC in 30 Days',
+      title: '-67% CAC',
       company: 'Technimark-Inc',
       logo: '/technimark.png',
       industry: 'B2B Manufacturing',
@@ -50,7 +50,7 @@ export default function Results() {
       diagnosis: 'No conversion tracking, broad match keywords eating budget, landing pages had 14% bounce rate',
       interventions: 'GA4 + server-side tracking, negative keyword audit, dedicated landing pages per campaign',
       outcomes: {
-        timeframe: '30 days',
+        timeframe: 'B2B E-Commerce',
         results: [
           { metric: 'CAC', value: '-67%', description: 'Customer acquisition cost reduction' },
           { metric: 'Lead Quality', value: '+215%', description: 'More qualified leads' },
@@ -61,18 +61,18 @@ export default function Results() {
     },
     {
       id: 'voltech',
-      title: '+45% Conversion in 14 Days',
+      title: '+45% Call Increase',
       company: 'Voltech Electric',
       logo: '/voltech.png',
       industry: 'Local Services',
       category: 'conversion',
-      context: 'Local electrician getting traffic but only 0.8% conversion rate',
+      context: 'Local electrician not happy with the amount of new customer calls/emails',
       diagnosis: 'No trust signals, buried contact info, 8-second load time, no mobile optimization',
       interventions: 'Speed optimization, trust badges, click-to-call buttons, local SEO schema',
       outcomes: {
-        timeframe: '14 days',
+        timeframe: 'Local Service',
         results: [
-          { metric: 'Conversion', value: '+45%', description: 'From 0.8% to 1.16%' },
+          { metric: 'Calls', value: '+45%', description: 'From 5/wk to 9/wk' },
           { metric: 'Page Speed', value: '2.1s', description: 'From 8s to 2.1s' },
           { metric: 'Mobile Leads', value: '+180%', description: 'Mobile conversion improvement' }
         ]
@@ -90,7 +90,7 @@ export default function Results() {
       diagnosis: 'Complex 5-step checkout, no social proof, technical jargon, hidden pricing',
       interventions: 'One-page checkout, trust signals, plain language copy, transparent pricing',
       outcomes: {
-        timeframe: '21 days',
+        timeframe: 'National Business Page',
         results: [
           { metric: 'Conversion Rate', value: '3.2%', description: 'From 0.8% to 3.2%' },
           { metric: 'Cost Per Lead', value: '-75%', description: 'Dramatic reduction' },
@@ -110,7 +110,7 @@ export default function Results() {
       diagnosis: 'No post-purchase flow, generic email blasts, no segmentation, no loyalty program',
       interventions: 'Klaviyo flows, RFM segmentation, VIP program, win-back campaigns',
       outcomes: {
-        timeframe: '60 days',
+        timeframe: 'B2C E-Commerce',
         results: [
           { metric: 'Repeat Rate', value: '+156%', description: 'From 12% to 31%' },
           { metric: 'Email Revenue', value: '+340%', description: 'From 8% to 35% of revenue' },
@@ -188,20 +188,26 @@ export default function Results() {
         <section className="py-8 bg-gray-50 sticky top-20 z-10 shadow-sm">
           <div className="max-w-7xl mx-auto px-6">
             <p className="text-center text-gray-600 mb-4 font-medium">What matters most to you?</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map(cat => (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    selectedCategory === cat.id
-                      ? 'bg-emerald-600 text-white shadow-lg'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  {cat.label}
-                </button>
-              ))}
+            <div className="relative">
+              {/* Gradient fade indicators for mobile scroll */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+
+              <div className="flex md:flex-wrap md:justify-center gap-4 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 scrollbar-hide">
+                {categories.map(cat => (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`px-6 py-3 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 ${
+                      selectedCategory === cat.id
+                        ? 'bg-emerald-600 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -259,9 +265,9 @@ export default function Results() {
                         {/* Right Column - Outcomes & Stack */}
                         <div>
                           <div className="bg-emerald-50 rounded-lg p-4 mb-6">
-                            <h5 className="font-bold text-emerald-800 mb-2">
-                              Outcomes ({study.outcomes.timeframe})
-                            </h5>
+                           <h5 className="font-bold text-emerald-800 mb-2">
+                              Business ({study.outcomes.timeframe})
+                            </h5>  
                           </div>
 
                           <div className="space-y-4 mb-8">

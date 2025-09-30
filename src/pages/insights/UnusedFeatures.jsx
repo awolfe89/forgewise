@@ -1,7 +1,7 @@
 // pages/insights/UnusedFeatures.jsx
 import { useEffect } from 'react';
 import Link from 'next/link';
-// import { BookingLink } from '../../components/ProtectedContact';
+import { BookingLink } from '../../components/ProtectedContact';
 
 export default function UnusedFeatures() {
   useEffect(() => {
@@ -215,7 +215,7 @@ export default function UnusedFeatures() {
                   Book Software Audit ($297)
                 </BookingLink>
                 <Link
-                  to="/quick-fixes"
+                  href="/quick-fixes"
                   className="inline-block px-6 py-3 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white hover:text-blue-700 text-center"
                 >
                   See All Quick Fixes

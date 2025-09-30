@@ -529,7 +529,7 @@ export default function MagentoConsultant() {
                 <div className="ml-4">
                   <h3 className="font-bold mb-2">Deep Magento Expertise</h3>
                   <p className="text-gray-600">
-                    10+ years exclusively with Magento/Adobe Commerce. We know every optimization trick.
+                    11+ years exclusively with Magento/Adobe Commerce. We know every optimization trick.
                   </p>
                 </div>
               </div>

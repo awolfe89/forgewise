@@ -202,32 +202,28 @@ export default function LocationsPage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {locations.Illinois.map((location) => (
-                <motion.div
-                  key={location.city}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition"
-                >
-                  <Link href={location.url}>
+                <Link key={location.city} href={location.url}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition cursor-pointer h-full"
+                  >
                     <h3 className="text-xl font-semibold text-emerald-600 hover:text-emerald-700 mb-2">
                       {location.city}, IL
                     </h3>
-                  </Link>
-                  <p className="text-gray-700 mb-3">{location.description}</p>
-                  <div className="space-y-1 text-sm">
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Population:</span> {location.population}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Industries:</span> {location.industries}
-                    </p>
-                  </div>
-                  <Link
-                    href={location.url}
-                    className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm"
-                  >
-                    Learn More →
-                  </Link>
-                </motion.div>
+                    <p className="text-gray-700 mb-3">{location.description}</p>
+                    <div className="space-y-1 text-sm">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Population:</span> {location.population}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Industries:</span> {location.industries}
+                      </p>
+                    </div>
+                    <span className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                      Learn More →
+                    </span>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
@@ -245,32 +241,28 @@ export default function LocationsPage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {locations.Wisconsin.map((location) => (
-                <motion.div
-                  key={location.city}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-white rounded-lg p-6 hover:shadow-lg transition"
-                >
-                  <Link href={location.url}>
+                <Link key={location.city} href={location.url}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-white rounded-lg p-6 hover:shadow-lg transition cursor-pointer h-full"
+                  >
                     <h3 className="text-xl font-semibold text-emerald-600 hover:text-emerald-700 mb-2">
                       {location.city}, WI
                     </h3>
-                  </Link>
-                  <p className="text-gray-700 mb-3">{location.description}</p>
-                  <div className="space-y-1 text-sm">
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Population:</span> {location.population}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Industries:</span> {location.industries}
-                    </p>
-                  </div>
-                  <Link
-                    href={location.url}
-                    className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm"
-                  >
-                    Learn More →
-                  </Link>
-                </motion.div>
+                    <p className="text-gray-700 mb-3">{location.description}</p>
+                    <div className="space-y-1 text-sm">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Population:</span> {location.population}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Industries:</span> {location.industries}
+                      </p>
+                    </div>
+                    <span className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                      Learn More →
+                    </span>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
@@ -288,32 +280,28 @@ export default function LocationsPage() {
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {locations.Iowa.map((location) => (
-                <motion.div
-                  key={location.city}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition"
-                >
-                  <Link href={location.url}>
+                <Link key={location.city} href={location.url}>
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition cursor-pointer h-full"
+                  >
                     <h3 className="text-xl font-semibold text-emerald-600 hover:text-emerald-700 mb-2">
                       {location.city}, IA
                     </h3>
-                  </Link>
-                  <p className="text-gray-700 mb-3">{location.description}</p>
-                  <div className="space-y-1 text-sm">
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Population:</span> {location.population}
-                    </p>
-                    <p className="text-gray-600">
-                      <span className="font-semibold">Industries:</span> {location.industries}
-                    </p>
-                  </div>
-                  <Link
-                    href={location.url}
-                    className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm"
-                  >
-                    Learn More →
-                  </Link>
-                </motion.div>
+                    <p className="text-gray-700 mb-3">{location.description}</p>
+                    <div className="space-y-1 text-sm">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Population:</span> {location.population}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Industries:</span> {location.industries}
+                      </p>
+                    </div>
+                    <span className="inline-block mt-4 text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                      Learn More →
+                    </span>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>

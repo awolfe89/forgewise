@@ -61,7 +61,7 @@ export default function About() {
               transition={{ delay: 0.1 }}
               className="text-xl max-w-3xl mx-auto text-center text-blue-100"
             >
-              Protecting B2B and traditional businesses from overpriced agencies and tech gibberish since 2013
+              Protecting B2B and traditional businesses from dishonest, overpriced agencies 
             </motion.p>
           </div>
         </section>
@@ -75,7 +75,7 @@ export default function About() {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed text-center">
                 After 11+ years in eCommerce and seeing countless businesses get burned by overpriced agencies speaking tech gibberish, I founded Forgewise with a simple mission:
               </p>
               <p className="text-2xl font-bold text-blue-800 text-center py-4">
@@ -83,30 +83,28 @@ export default function About() {
               </p>
 
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 my-8">
-                <h3 className="text-xl font-bold mb-4">We specialize in:</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
+                <h3 className="text-xl font-bold mb-4 text-center">We specialize in:</h3>
+                <ul className="space-y-3 max-w-2xl mx-auto">
+                  <li className="flex items-start justify-center">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
                     <span className="text-gray-700">Making complex B2B requirements work online</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start justify-center">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
                     <span className="text-gray-700">Integrating decades-old ERPs with modern platforms</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start justify-center">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
                     <span className="text-gray-700">Protecting businesses from unnecessary tech spending</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start justify-center">
                     <span className="text-green-500 mr-3 mt-1">✓</span>
                     <span className="text-gray-700">Translating between IT departments and executives</span>
                   </li>
                 </ul>
               </div>
 
-              <p className="text-xl font-semibold text-center text-gray-800 py-6 border-y-2 border-gray-200">
-                Our approach is simple: If we can't explain it clearly and show you the ROI, we don't do it.
-              </p>
+          
             </motion.div>
           </div>
         </section>
@@ -191,7 +189,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Proven Track Record</h3>
                 <p className="text-gray-600">
-                  30+ successful projects with measurable ROI. We don't just promise results – we deliver them.
+                  45+ successful projects with measurable ROI. We don't just promise results – we deliver them.
                 </p>
               </div>
               
@@ -250,7 +248,7 @@ export default function About() {
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-gray-600">
-              Trusted by 45+ growing e-commerce brands since 2012
+              Trusted by 45+ growing e-commerce brands since 2013
             </p>
           </div>
         </section>

@@ -332,24 +332,6 @@ export default function AttributeFilteringCaseStudy() {
         </div>
       </section>
 
-      {/* Author Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="flex items-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-xl font-bold mr-4">
-              A
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
-              <p className="text-gray-600">
-              Founder of Forgewise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
-
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Related Articles Section */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6">
@@ -370,8 +352,8 @@ export default function AttributeFilteringCaseStudy() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Improving Cart Conversion Rates for B2B Buyers</h3>
                 <p className="text-gray-600 mb-4">How we streamlined the checkout process for bulk orders and increased conversion by 45%.</p>
-                <Link 
-                  to="#" 
+                <Link
+                  href="#"
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More
@@ -396,8 +378,8 @@ export default function AttributeFilteringCaseStudy() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">The Future of Search in eCommerce</h3>
                 <p className="text-gray-600 mb-4">How AI-powered semantic search is changing the way customers find products online.</p>
-                <Link 
-                  to="#" 
+                <Link
+                  href="#"
                   className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
                 >
                   Read More

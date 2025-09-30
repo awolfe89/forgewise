@@ -267,30 +267,13 @@ export default function SeoUxCaseStudy() {
         </div>
       </section>
 
-      {/* Author Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="flex items-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-xl font-bold mr-4">
-              A
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
-              <p className="text-gray-600">
-              Founder of Forgewise.io, where he helps established businesses modernize their online presence, systems, and storefronts. With over 15 years in eCommerce operations, he’s worked behind the scenes of 8-figure brands — and now works directly with owners who want lean, scalable digital growth.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Related Articles Section */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-8 text-center">Related Insights</h2>
           
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-slate-100">
+            <Link href="/insights/attribute-filtering" className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-slate-100 block">
               <div className="h-48 bg-slate-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-slate-400">
                   <span className="text-3xl">🔍</span>
@@ -304,19 +287,16 @@ export default function SeoUxCaseStudy() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">Navigating the 10,000+ SKU Challenge</h3>
                 <p className="text-gray-600 mb-4">How attribute-based filtering transformed product discovery for an electronics distributor.</p>
-                <Link 
-                  href="/insights/attribute-filtering" 
-                  className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
-                >
+                <span className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition">
                   Read More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </span>
               </div>
-            </div>
-            
-            <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-slate-100">
+            </Link>
+
+            <Link href="/insights/ai-in-ecommerce" className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-slate-100 block">
               <div className="h-48 bg-slate-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-slate-400">
                   <span className="text-3xl">📊</span>
@@ -330,17 +310,14 @@ export default function SeoUxCaseStudy() {
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-gray-800">The Future of Search in eCommerce</h3>
                 <p className="text-gray-600 mb-4">How AI-powered semantic search is changing the way customers find products online.</p>
-                <Link 
-                  href="/insights/ai-in-ecommerce" 
-                  className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition"
-                >
+                <span className="text-blue-700 font-medium flex items-center hover:text-blue-800 transition">
                   Read More
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

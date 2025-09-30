@@ -110,7 +110,7 @@ export default function B2BEcommerceConsulting() {
     },
     {
       question: "What makes your B2B approach different from other consultants?",
-      answer: "We specialize exclusively in B2B ecommerce with 12+ years of experience. My data-driven approach focuses on the entire customer lifecycle, not just lead generation. We've helped tons of businesses save money & scale."
+      answer: "We specialize exclusively in B2B ecommerce with 11+ years of experience. My data-driven approach focuses on the entire customer lifecycle, not just lead generation. We've helped tons of businesses save money & scale."
     },
     {
       question: "Do you work with companies in my industry?",

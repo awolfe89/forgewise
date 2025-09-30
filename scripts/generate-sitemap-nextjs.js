@@ -17,6 +17,40 @@ const PAGE_CONFIG = {
   '/about': { priority: 0.8, changefreq: 'monthly' },
   '/insights': { priority: 0.8, changefreq: 'weekly' },
   '/contact': { priority: 0.8, changefreq: 'yearly' },
+  '/thank-you': { priority: 0.3, changefreq: 'yearly' },
+
+  // Service pages
+  '/shopify-consultant': { priority: 0.9, changefreq: 'monthly' },
+  '/magento-consultant': { priority: 0.9, changefreq: 'monthly' },
+  '/b2b-ecommerce-consulting': { priority: 0.9, changefreq: 'monthly' },
+  '/chicago-b2b-ecommerce-consultant': { priority: 0.9, changefreq: 'monthly' },
+  '/magento-seo-services': { priority: 0.9, changefreq: 'monthly' },
+  '/shopify-plus-seo': { priority: 0.9, changefreq: 'monthly' },
+  '/fractional-cmo-ecommerce': { priority: 0.9, changefreq: 'monthly' },
+  '/ecommerce-audit': { priority: 0.9, changefreq: 'monthly' },
+
+  // Location pages
+  '/locations': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-chicago-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-milwaukee-wi': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-des-moines-ia': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-rockford-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-peoria-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-springfield-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-naperville-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-aurora-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-joliet-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-elgin-il': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-madison-wi': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-green-bay-wi': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-kenosha-wi': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-racine-wi': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-cedar-rapids-ia': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-davenport-ia': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-sioux-city-ia': { priority: 0.7, changefreq: 'monthly' },
+  '/ecommerce-consulting-waterloo-ia': { priority: 0.7, changefreq: 'monthly' },
+
+  // Legal pages
   '/privacy-policy': { priority: 0.3, changefreq: 'yearly' },
   '/terms-of-service': { priority: 0.3, changefreq: 'yearly' },
   '/accessibility': { priority: 0.3, changefreq: 'yearly' }

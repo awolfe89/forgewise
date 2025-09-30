@@ -202,7 +202,7 @@ export default function ShopifySpeed() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/insights/seo-ux-transformation" className="text-blue-700 hover:text-blue-800 font-medium">
+                  <Link href="/insights/seo-ux-case-study" className="text-blue-700 hover:text-blue-800 font-medium">
                     → Customers can't find products (even when site loads)
                   </Link>
                 </li>
@@ -228,7 +228,7 @@ export default function ShopifySpeed() {
             id: 'conversion-opt',
             title: 'Conversion Rate Optimization',
             description: 'Turn more visitors into customers with proven UX improvements.',
-            link: '/insights/seo-ux-transformation',
+            link: '/insights/seo-ux-case-study',
             category: 'Case Study',
             cta: 'See 312% growth'
           },

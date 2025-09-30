@@ -137,7 +137,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Proven Track Record</h3>
                 <p className="text-gray-600">
-                  30+ successful projects with measurable ROI. We don't just promise results – we deliver them.
+                  45+ successful projects with measurable ROI. We don't just promise results – we deliver them.
                 </p>
               </div>
               
@@ -196,7 +196,7 @@ export default function About() {
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-gray-600">
-              Trusted by 45+ growing e-commerce brands since 2012
+              Trusted by 45+ growing e-commerce brands since 2013
             </p>
           </div>
         </section>

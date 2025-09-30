@@ -155,21 +155,27 @@ export default function QuickFixes() {
         {/* Category Filter */}
         <section className="py-8 bg-gray-50 sticky top-20 z-10 shadow-sm">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map(category => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all ${
-                    activeCategory === category.id
-                      ? 'bg-blue-700 text-white shadow-lg transform scale-105'
-                      : 'bg-white text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  <span className="mr-2">{category.icon}</span>
-                  {category.label}
-                </button>
-              ))}
+            <div className="relative">
+              {/* Gradient fade indicators for mobile scroll */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+
+              <div className="flex md:flex-wrap md:justify-center gap-4 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 scrollbar-hide">
+                {categories.map(category => (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveCategory(category.id)}
+                    className={`px-6 py-3 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 ${
+                      activeCategory === category.id
+                        ? 'bg-blue-700 text-white shadow-lg transform scale-105'
+                        : 'bg-white text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    <span className="mr-2">{category.icon}</span>
+                    {category.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </section>

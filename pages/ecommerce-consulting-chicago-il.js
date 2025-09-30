@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Navbar from '../src/components/Navbar'
-import NextFooter from '../src/components/NextFooter'
 import { BookingLink } from '../src/components/ProtectedContact'
 import { motion } from 'framer-motion'
 
@@ -67,9 +65,7 @@ export default function ChicagoEcommercePage() {
         />
       </Head>
 
-      <Navbar />
-
-      <main className="min-h-screen bg-gray-50">
+      <main className="min-h-screen bg-gray-50 pt-20">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
           <div className="max-w-7xl mx-auto px-6">
@@ -309,8 +305,6 @@ export default function ChicagoEcommercePage() {
           </div>
         </section>
       </main>
-
-      <NextFooter />
     </>
   )
 }

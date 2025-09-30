@@ -295,23 +295,6 @@ export default function AiInEcommerce() {
         </div>
       </section>
 
-      {/* Author Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="flex items-center">
-            <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-700 text-xl font-bold mr-4">
-              A
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
-              <p className="text-gray-600">
-                Senior-Level eCommerce Director & Founder of Forgewise.io
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Related Articles Section */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-6">

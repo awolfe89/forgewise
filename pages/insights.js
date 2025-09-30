@@ -179,23 +179,29 @@ export default function Insights() {
         <section className="py-8 bg-gray-50 sticky top-20 z-10 shadow-sm mb-8">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-              <div className="flex flex-wrap gap-2">
-                {categories.map(cat => (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-6 py-3 rounded-full font-medium transition-all ${
-                      selectedCategory === cat
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-white text-gray-700 hover:bg-gray-100'
-                    }`}
-                  >
-                    {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                  </button>
-                ))}
+              <div className="relative w-full md:w-auto md:flex-1">
+                {/* Gradient fade indicators for mobile scroll */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none md:hidden z-10"></div>
+
+                <div className="flex md:flex-wrap gap-2 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0 scrollbar-hide">
+                  {categories.map(cat => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-6 py-3 rounded-full font-medium transition-all whitespace-nowrap flex-shrink-0 ${
+                        selectedCategory === cat
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                    </button>
+                  ))}
+                </div>
               </div>
-              
-              <div className="relative w-full md:w-64">
+
+              <div className="relative w-full md:w-64 flex-shrink-0">
                 <input
                   type="text"
                   placeholder="Search insights..."

@@ -319,23 +319,6 @@ export default function PpcCostOptimization() {
         </div>
       </section>
 
-      {/* Author Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="flex items-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 text-xl font-bold mr-4">
-              A
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-800">Written by ForgeWise</h3>
-              <p className="text-gray-600">
-                eCommerce Director with expertise in PPC strategy and digital marketing. Open to discussing management opportunities with forward-thinking companies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 bg-blue-700 text-white">
         <div className="max-w-3xl mx-auto px-6 text-center">
