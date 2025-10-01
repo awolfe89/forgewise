@@ -307,7 +307,7 @@ export default function Results() {
                             </Link>
                             <Link
                               href="/contact/"
-                              className="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-medium"
+                              className="inline-flex items-center text-emerald-700 hover:text-emerald-800 font-semibold"
                             >
                               Get similar results
                               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

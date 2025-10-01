@@ -776,7 +776,7 @@ export default function Home() {
                 {/* Custom Solutions */}
                 <div className="relative">
                   <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-emerald-100 hover:border-emerald-300 transition-all">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-600 text-white text-sm px-3 py-1 rounded-full font-bold">
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-700 text-white text-sm px-3 py-1 rounded-full font-bold">
                       4-12 WEEKS
                   </div>
                     <Link href="/solutions/" className="block">
@@ -785,7 +785,7 @@ export default function Home() {
                       <p className="text-gray-600 text-sm text-center">
                         Tailored systems that scale with you
                       </p>
-                      <p className="text-emerald-600 font-medium text-center mt-3 text-sm">Level up →</p>
+                      <p className="text-emerald-700 font-semibold text-center mt-3 text-sm">Level up →</p>
                     </Link>
                 </div>
               </div>
@@ -793,7 +793,7 @@ export default function Home() {
                 {/* Fractional Leadership */}
                 <div className="relative">
                   <div className="bg-white rounded-xl shadow-lg p-6 border-2 border-amber-100 hover:border-amber-300 transition-all">
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-600 text-white text-sm px-3 py-1 rounded-full font-bold">
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-amber-700 text-white text-sm px-3 py-1 rounded-full font-bold">
                       ONGOING
                   </div>
                     <Link href="/leadership/" className="block">
@@ -802,7 +802,7 @@ export default function Home() {
                       <p className="text-gray-600 text-sm text-center">
                         Expert guidance without the full-time cost
                       </p>
-                      <p className="text-amber-600 font-medium text-center mt-3 text-sm">Scale smart →</p>
+                      <p className="text-amber-700 font-semibold text-center mt-3 text-sm">Scale smart →</p>
                     </Link>
                 </div>
               </div>

@@ -119,6 +119,8 @@ export default function NextNavbar() {
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={`md:hidden p-2 ${shouldUseLightText ? 'text-white' : 'text-gray-700'}`}
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
         >
           <svg
             className="w-6 h-6"
@@ -128,6 +130,7 @@ export default function NextNavbar() {
             strokeWidth="2"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             {isMobileMenuOpen ? (
               <path d="M6 18L18 6M6 6l12 12" />
