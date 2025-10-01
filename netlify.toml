@@ -16,8 +16,10 @@
     X-Permitted-Cross-Domain-Policies = "none"
     # Relaxed COEP for GTM compatibility
     Cross-Origin-Embedder-Policy = "unsafe-none"
-    # CSP for GTM and Google Analytics
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.googletagmanager.com https://googleads.g.doubleclick.net https://*.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com https://vitals.vercel-insights.com https://www.google.com https://*.google.com https://*.doubleclick.net; img-src 'self' data: https: http:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self';"
+    # Strict CSP - Using host allowlist as compromise for GTM compatibility
+    # Note: GTM requires some inline script execution. For maximum security with GTM,
+    # consider implementing Google Tag Manager server-side tagging.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.googletagmanager.com https://googleads.g.doubleclick.net https://*.doubleclick.net 'unsafe-inline'; script-src-elem 'self' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://www.gstatic.com https://*.google-analytics.com https://*.googletagmanager.com https://googleads.g.doubleclick.net https://*.doubleclick.net; script-src-attr 'none'; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.googletagmanager.com https://vitals.vercel-insights.com https://www.google.com https://*.google.com https://*.doubleclick.net https://calendly.com https://*.calendly.com; img-src 'self' data: https: http:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; frame-src 'self' https://www.googletagmanager.com https://td.doubleclick.net https://calendly.com; object-src 'none'; base-uri 'self'; form-action 'self' https://calendly.com; frame-ancestors 'self'; upgrade-insecure-requests;"
 
 [[headers]]
   for = "/assets/*"
