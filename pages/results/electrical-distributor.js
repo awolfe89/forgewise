@@ -7,7 +7,7 @@ export default function ElectricalDistributorCaseStudy() {
   const seoData = {
     title: 'Electrical Supply Distributor Case Study | -67% CAC | Forgewise',
     description: 'How we helped an electrical supply distributor reduce customer acquisition cost by 67% and improve lead quality by 215% through strategic Google Ads optimization.',
-    canonical: 'https://forgewise.io/results/technimark'
+    canonical: 'https://forgewise.io/results/electrical-distributor'
   };
 
   return (

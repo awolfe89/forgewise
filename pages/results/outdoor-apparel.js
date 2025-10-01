@@ -7,7 +7,7 @@ export default function OutdoorApparelCaseStudy() {
   const seoData = {
     title: 'Outdoor Apparel Retailer Case Study | +156% Repeat Orders | Forgewise',
     description: 'How we helped an outdoor apparel retailer increase repeat orders by 156% in 60 days through email automation and customer retention strategies.',
-    canonical: 'https://forgewise.io/results/grubs'
+    canonical: 'https://forgewise.io/results/outdoor-apparel'
   };
 
   return (

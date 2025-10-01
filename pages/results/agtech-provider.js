@@ -7,7 +7,7 @@ export default function AgTechCaseStudy() {
   const seoData = {
     title: 'Agricultural Technology Provider Case Study | 340% More Leads | Forgewise',
     description: 'How we helped an agricultural technology provider achieve 340% more qualified leads and reduce cost per lead by 75% through SEO optimization, UX improvements, and Next.js best practices.',
-    canonical: 'https://forgewise.io/results/vsiswine'
+    canonical: 'https://forgewise.io/results/agtech-provider'
   };
 
   return (

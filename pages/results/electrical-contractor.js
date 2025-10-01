@@ -7,7 +7,7 @@ export default function VoltechCaseStudy() {
   const seoData = {
     title: 'Local Electrical Contractor Case Study | +45% Conversion in 14 Days | Forgewise',
     description: 'How we helped Local Electrical Contractor increase conversion rates by 45% through speed optimization, trust signals, and mobile-first design.',
-    canonical: 'https://forgewise.io/results/voltech'
+    canonical: 'https://forgewise.io/results/electrical-contractor'
   };
 
   return (

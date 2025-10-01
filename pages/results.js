@@ -20,7 +20,7 @@ export default function Results() {
 
   const caseStudies = [
     {
-      id: 'armoranimalhealth',
+      id: 'animal-health-pharmacy',
       title: '+$4M/yr Revenue ',
       company: 'Animal Health Pharmacy',
       icon: '💊',
@@ -40,7 +40,7 @@ export default function Results() {
       stack: ['Magento 2', 'Klaviyo', 'Google Ads', 'GTM Server-side']
     },
     {
-      id: 'technimark',
+      id: 'electrical-distributor',
       title: '-67% CAC',
       company: 'Electrical Supply Distributor',
       icon: '⚡',
@@ -60,7 +60,7 @@ export default function Results() {
       stack: ['Google Ads', 'GA4', 'GTM Server-side', 'Unbounce']
     },
     {
-      id: 'voltech',
+      id: 'electrical-contractor',
       title: '+45% Call Increase',
       company: 'Local Electrical Contractor',
       icon: '🔌',
@@ -80,7 +80,7 @@ export default function Results() {
       stack: ['WordPress', 'Cloudflare', 'Local SEO Tools']
     },
     {
-      id: 'vsiswine',
+      id: 'agtech-provider',
       title: '3.2% CR in 21 Days',
       company: 'Agricultural Technology Provider',
       icon: '🌾',
@@ -100,7 +100,7 @@ export default function Results() {
       stack: ['Next.js', 'Vercel', 'Segment', 'HubSpot']
     },
     {
-      id: 'grubs',
+      id: 'outdoor-apparel',
       title: '+156% Repeat Orders in 60 Days',
       company: 'Outdoor Apparel Retailer',
       icon: '👢',
@@ -289,7 +289,7 @@ export default function Results() {
                           {/* CTA Links */}
                           <div className="mt-8 pt-6 border-t border-gray-200 flex justify-between">
                             <Link
-                              href={`/results/${study.id === 'armoranimalhealth' ? 'armor-animal-health' : study.id}`}
+                              href={`/results/${study.id}`}
                               className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                             >
                               Read full case study →

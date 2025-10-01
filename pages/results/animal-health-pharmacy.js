@@ -7,7 +7,7 @@ export default function AnimalHealthCaseStudy() {
   const seoData = {
     title: 'Animal Health Pharmacy Case Study | $2.2M to $6M Growth | Forgewise',
     description: 'How we helped an animal health pharmacy grow from $2.2M to $6M in 2.5 years through catalog optimization, SEO, and comprehensive eCommerce improvements—increasing site traffic by 471%.',
-    canonical: 'https://forgewise.io/results/armor-animal-health'
+    canonical: 'https://forgewise.io/results/animal-health-pharmacy'
   };
 
   return (
