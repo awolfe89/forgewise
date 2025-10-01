@@ -19,7 +19,7 @@ export default function ChicagoB2BConsultant() {
     "alternateName": "Chicago B2B Digital Transformation Expert",
     "description": "B2B eCommerce consulting services for Chicago and Illinois businesses. Specializing in Magento, Shopify Plus, and ERP integration.",
     "url": "https://forgewise.io/chicago-b2b-ecommerce-consultant",
-    "telephone": "+1-312-555-0190",
+    "telephone": "+1-872-248-9710",
     "email": "admin@forgewise.io",
     "address": {
       "@type": "PostalAddress",

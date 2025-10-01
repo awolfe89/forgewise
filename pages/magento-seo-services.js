@@ -42,7 +42,7 @@ export default function MagentoSEOServices() {
       page: 'magento-seo-services',
       cta_location: location
     });
-    setShowModal(true);
+    window.open('https://calendly.com/admin-forgewise/strategy-session', '_blank');
   };
 
   const results = {
@@ -75,29 +75,6 @@ export default function MagentoSEOServices() {
     }
   };
 
-  const testimonials = [
-    {
-      quote: "Allan's Magento SEO expertise transformed our online presence. We went from 2,000 monthly visitors to over 45,000 in just 8 months. Revenue increased 425%.",
-      author: "David Thompson",
-      company: "Industrial Equipment Co",
-      revenue: "From $85K to $360K monthly",
-      image: "🏭"
-    },
-    {
-      quote: "The technical SEO improvements alone saved us $15K monthly in server costs while increasing our search rankings by 300%. Incredible ROI.",
-      author: "Maria Rodriguez",
-      company: "Fashion Wholesale Ltd",
-      revenue: "283% organic growth",
-      image: "👗"
-    },
-    {
-      quote: "Finally found someone who understands Magento SEO. Our B2B keywords now dominate page 1, and we're getting 10x more qualified leads.",
-      author: "Robert Kim",
-      company: "Medical Supplies Direct",
-      revenue: "950% lead increase",
-      image: "🏥"
-    }
-  ];
 
   const services = [
     {
@@ -176,8 +153,6 @@ export default function MagentoSEOServices() {
   const packages = [
     {
       name: "Magento SEO Starter",
-      price: "$2,997",
-      originalPrice: "$5,997",
       popular: false,
       features: [
         "Complete technical SEO audit",
@@ -191,8 +166,6 @@ export default function MagentoSEOServices() {
     },
     {
       name: "Magento SEO Pro",
-      price: "$5,997",
-      originalPrice: "$11,997",
       popular: true,
       features: [
         "Everything in Starter PLUS:",
@@ -201,15 +174,12 @@ export default function MagentoSEOServices() {
         "Content strategy & creation",
         "Link building campaign",
         "6 months hands-on support",
-        "Bi-weekly strategy calls",
-        "Performance guarantee"
+        "Bi-weekly strategy calls"
       ],
       cta: "Scale My Rankings"
     },
     {
       name: "Enterprise Magento SEO",
-      price: "$12,997",
-      originalPrice: "$24,997",
       popular: false,
       features: [
         "Everything in Pro PLUS:",
@@ -345,10 +315,6 @@ export default function MagentoSEOServices() {
                 <span className="text-2xl mr-2">⚡</span>
                 <span className="font-semibold">400% Avg Growth</span>
               </div>
-              <div className="flex items-center">
-                <span className="text-2xl mr-2">🎯</span>
-                <span className="font-semibold">90-Day Guarantee</span>
-              </div>
             </motion.div>
 
             {/* Countdown Timer */}
@@ -390,7 +356,7 @@ export default function MagentoSEOServices() {
                 onClick={() => handleCTAClick('hero-primary')}
                 className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold text-xl px-12 py-4 rounded-full hover:from-yellow-300 hover:to-orange-400 transform hover:scale-105 transition-all duration-200 shadow-2xl"
               >
-                🚀 Get Your Free Magento SEO Audit ($1,500 Value)
+                🚀 Get Your Free Magento SEO Audit
               </button>
               <p className="text-sm text-purple-200">Complete technical analysis in 48 hours. No strings attached.</p>
 
@@ -400,7 +366,7 @@ export default function MagentoSEOServices() {
                   onClick={() => handleCTAClick('hero-secondary')}
                   className="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-purple-900 transition-all duration-200"
                 >
-                  📞 Call Now: (555) 123-4567
+                  📞 Call Now: 872-248-9710
                 </button>
               </div>
             </motion.div>
@@ -467,57 +433,6 @@ export default function MagentoSEOServices() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Success Stories from Magento Store Owners
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real results from real Magento stores across different industries
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-xl p-8 border-l-4 border-purple-600"
-              >
-                <div className="text-6xl mb-4 text-center">{testimonial.image}</div>
-                <div className="mb-6">
-                  <div className="flex text-yellow-400 mb-4 justify-center">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-2xl">⭐</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="text-center">
-                    <div className="font-bold text-gray-900">{testimonial.author}</div>
-                    <div className="text-gray-600">{testimonial.company}</div>
-                    <div className="text-purple-600 font-bold text-lg mt-2">{testimonial.revenue}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={() => handleCTAClick('testimonials')}
-              className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-xl px-10 py-4 rounded-full hover:from-green-400 hover:to-green-500 transition-all duration-200 shadow-xl"
-            >
-              📈 Start Your Success Story
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-20 bg-gray-900 text-white">
@@ -601,13 +516,6 @@ export default function MagentoSEOServices() {
                   <h3 className={`text-2xl font-bold mb-4 ${pkg.popular ? 'text-white' : 'text-gray-900'}`}>
                     {pkg.name}
                   </h3>
-                  <div className={`text-5xl font-bold mb-2 ${pkg.popular ? 'text-yellow-400' : 'text-purple-600'}`}>
-                    {pkg.price}
-                  </div>
-                  <div className={`line-through text-lg ${pkg.popular ? 'text-purple-200' : 'text-gray-500'}`}>
-                    {pkg.originalPrice}
-                  </div>
-                  <div className="text-red-500 font-semibold">50% OFF Limited Time</div>
                 </div>
 
                 <ul className={`space-y-4 mb-8 ${pkg.popular ? 'text-white' : 'text-gray-700'}`}>
@@ -637,7 +545,7 @@ export default function MagentoSEOServices() {
 
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-4">
-              💰 <strong>Average ROI:</strong> 1,247% within 12 months | 🎯 <strong>Success Rate:</strong> 96% of clients exceed expectations
+              🎯 <strong>Success Rate:</strong> 96% of clients exceed expectations
             </p>
             <button
               onClick={() => handleCTAClick('pricing-consultation')}
@@ -716,10 +624,6 @@ export default function MagentoSEOServices() {
                   <span className="text-green-400 mr-2">✓</span>
                   <span>Magento Specialists</span>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span>90-Day Guarantee</span>
-                </div>
               </div>
 
               <p className="text-purple-200">
@@ -750,7 +654,7 @@ export default function MagentoSEOServices() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">📞</span>
-                  <span className="text-lg font-semibold">(555) 123-4567</span>
+                  <span className="text-lg font-semibold">872-248-9710</span>
                 </div>
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">✉️</span>

@@ -42,24 +42,24 @@ export default function MagentoConsultant() {
       ]
     },
     conversion: {
-      title: 'Conversion Optimization',
+      title: 'SEO & Marketing',
       icon: '📈',
-      description: 'Turn more visitors into customers',
+      description: 'Drive traffic and increase visibility',
       services: [
-        'Checkout optimization',
-        'Cart abandonment solutions',
-        'Product page enhancement',
+        'SEO optimization & audits',
+        'Keyword research & strategy',
+        'Google Ads campaign management',
+        'Product page SEO',
         'Search & navigation UX',
         'Mobile experience optimization',
-        'A/B testing implementation',
-        'Personalization strategies',
-        'Trust signal optimization'
+        'Schema markup implementation',
+        'Content optimization'
       ],
       results: [
-        '30% conversion increase',
-        '25% cart recovery rate',
-        '35% mobile conversion boost',
-        '20% AOV improvement'
+        'Increased organic traffic',
+        'Improved search rankings',
+        'Better ad performance',
+        'Higher conversion rates'
       ]
     },
     technical: {
@@ -67,20 +67,20 @@ export default function MagentoConsultant() {
       icon: '🔧',
       description: 'Solve complex Magento challenges',
       services: [
-        'Custom module development',
-        'API integrations',
+        'Layout & design optimization',
+        'Search functionality fixes',
+        'Product maintenance & updates',
+        'Product filtering & attributes',
+        'Configurable products setup',
         'Multi-store configuration',
         'B2B functionality setup',
-        'Migration to Magento 2',
-        'Security hardening',
-        'Extension conflicts resolution',
-        'Scalability planning'
+        'Extension conflicts resolution'
       ],
       results: [
         '99.9% uptime achieved',
         'Zero security breaches',
-        '50% reduced technical debt',
-        'Seamless integrations'
+        'Improved product management',
+        'Enhanced search experience'
       ]
     },
     maintenance: {
@@ -241,7 +241,7 @@ export default function MagentoConsultant() {
                   </div>
                   <div className="flex items-center">
                     <span className="text-2xl mr-3">✓</span>
-                    <span>500+ Magento stores optimized</span>
+                    <span>15+ Magento stores optimized</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-2xl mr-3">✓</span>
@@ -596,7 +596,7 @@ export default function MagentoConsultant() {
               </Link>
             </div>
             <p className="mt-8 text-sm text-orange-100">
-              Trusted by 500+ Magento stores worldwide
+              Trusted by 15+ Magento stores
             </p>
           </div>
         </section>

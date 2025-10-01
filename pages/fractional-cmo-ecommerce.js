@@ -65,7 +65,7 @@ export default function FractionalCMOPage() {
       <main className="min-h-screen bg-white">
         {/* Urgency Bar */}
         <div className="bg-red-600 text-white py-2 text-center text-sm font-semibold">
-          ⏰ Limited Time: Free Growth Audit (Worth $2,500) - Expires in {minutes}:{seconds.toString().padStart(2, '0')}
+          ⏰ Limited Time: Free Growth Audit - Expires in {minutes}:{seconds.toString().padStart(2, '0')}
         </div>
 
         {/* Hero Section */}
@@ -102,7 +102,7 @@ export default function FractionalCMOPage() {
                     C-Level Marketing Leadership at 40% of the Cost
                   </p>
                   <p className="text-lg">
-                    Our fractional CMOs have generated <span className="text-emerald-300 font-bold">$127M+ in eCommerce revenue</span> for B2B companies like yours.
+                    Our fractional CMOs have generated <span className="text-emerald-300 font-bold">significant eCommerce revenue</span> for B2B companies like yours.
                   </p>
                 </div>
 
@@ -117,7 +117,7 @@ export default function FractionalCMOPage() {
                     <svg className="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>$5-15K/month (vs $25-40K for full-time)</span>
+                    <span>Flexible monthly investment options</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
@@ -181,7 +181,7 @@ export default function FractionalCMOPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="flex flex-wrap justify-center items-center gap-8 text-center">
               <div>
-                <div className="text-3xl font-bold text-emerald-600">$127M+</div>
+                <div className="text-3xl font-bold text-emerald-600">$25M+</div>
                 <div className="text-sm text-gray-600">Revenue Generated</div>
               </div>
               <div>
@@ -341,9 +341,6 @@ export default function FractionalCMOPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white border rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-bold mb-2">Growth</h3>
-                <div className="text-3xl font-bold text-emerald-600 mb-4">
-                  $5,000<span className="text-lg text-gray-600">/month</span>
-                </div>
                 <ul className="space-y-3 mb-6 text-gray-700">
                   <li className="flex gap-2">
                     <span className="text-emerald-500">✓</span>
@@ -375,9 +372,6 @@ export default function FractionalCMOPage() {
                   MOST POPULAR
                 </div>
                 <h3 className="text-xl font-bold mb-2">Scale</h3>
-                <div className="text-3xl font-bold text-emerald-600 mb-4">
-                  $10,000<span className="text-lg text-gray-600">/month</span>
-                </div>
                 <ul className="space-y-3 mb-6 text-gray-700">
                   <li className="flex gap-2">
                     <span className="text-emerald-500">✓</span>
@@ -410,9 +404,6 @@ export default function FractionalCMOPage() {
 
               <div className="bg-white border rounded-lg p-6 shadow-md">
                 <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                <div className="text-3xl font-bold text-emerald-600 mb-4">
-                  $15,000<span className="text-lg text-gray-600">/month</span>
-                </div>
                 <ul className="space-y-3 mb-6 text-gray-700">
                   <li className="flex gap-2">
                     <span className="text-emerald-500">✓</span>

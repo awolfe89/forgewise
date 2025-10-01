@@ -41,54 +41,34 @@ export default function B2BEcommerceConsulting() {
       page: 'b2b-ecommerce-consulting',
       cta_location: location
     });
-    setShowModal(true);
+    window.open('https://calendly.com/admin-forgewise/strategy-session', '_blank');
   };
 
-  const testimonials = [
-    {
-      quote: "Allan transformed our B2B ecommerce strategy and increased our quarterly revenue by 340%. His insights on customer acquisition and retention were game-changing.",
-      author: "Sarah Chen",
-      company: "TechFlow Solutions",
-      revenue: "$2.4M ARR"
-    },
-    {
-      quote: "Within 90 days of implementing Allan's B2B recommendations, we saw a 285% increase in qualified leads and 60% improvement in close rates.",
-      author: "Michael Rodriguez",
-      company: "Industrial Supply Co",
-      revenue: "$8.7M ARR"
-    },
-    {
-      quote: "Best investment we've made. Allan's B2B ecommerce expertise helped us scale from $500K to $3.2M in annual revenue in just 18 months.",
-      author: "Jennifer Park",
-      company: "Manufacturing Plus",
-      revenue: "$3.2M ARR"
-    }
-  ];
 
   const benefits = [
     {
       icon: "💰",
       title: "Revenue Growth",
-      description: "Average 320% revenue increase within 12 months",
-      metric: "320% avg growth"
+      description: "Increase revenue within 12 months through proven B2B strategies",
+      metric: ""
     },
     {
       icon: "🎯",
       title: "Lead Quality",
-      description: "Higher quality B2B leads with 60% better close rates",
-      metric: "60% better close rate"
+      description: "Higher quality B2B leads with better close rates",
+      metric: ""
     },
     {
       icon: "⚡",
       title: "Sales Cycle",
-      description: "Reduce B2B sales cycle by 45% with optimized processes",
-      metric: "45% faster sales"
+      description: "Reduce B2B sales cycle with optimized processes",
+      metric: ""
     },
     {
       icon: "📈",
       title: "Customer LTV",
-      description: "Increase customer lifetime value by 280%",
-      metric: "280% LTV increase"
+      description: "Increase customer lifetime value significantly",
+      metric: ""
     }
   ];
 
@@ -227,8 +207,8 @@ export default function B2BEcommerceConsulting() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed"
             >
-              Proven B2B ecommerce strategies that have generated <strong>$50M+</strong> in revenue for 200+ companies.
-              Get the exact playbook that increases revenue by 300%+ within 12 months.
+              Proven B2B ecommerce strategies that have generated <strong>$25M+</strong> in revenue for 45+ companies.
+              Get the exact playbook that increases revenue within 12 months.
             </motion.p>
 
             {/* Trust Indicators */}
@@ -244,15 +224,11 @@ export default function B2BEcommerceConsulting() {
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">🏆</span>
-                <span className="font-semibold">200+ Success Stories</span>
+                <span className="font-semibold">45+ Success Stories</span>
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">💰</span>
-                <span className="font-semibold">$50M+ Generated</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-2xl mr-2">🎯</span>
-                <span className="font-semibold">90-Day Guarantee</span>
+                <span className="font-semibold">$25M+ Generated</span>
               </div>
             </motion.div>
 
@@ -295,7 +271,7 @@ export default function B2BEcommerceConsulting() {
                 onClick={() => handleCTAClick('hero-primary')}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold text-xl px-12 py-4 rounded-full hover:from-yellow-300 hover:to-yellow-400 transform hover:scale-105 transition-all duration-200 shadow-2xl"
               >
-                🚀 Book Your Free Strategy Session ($2,500 Value)
+                🚀 Book Your Free Strategy Session
               </button>
               <p className="text-sm text-blue-200">No pitch, just pure value. Get your custom B2B growth plan in 60 minutes.</p>
 
@@ -305,7 +281,7 @@ export default function B2BEcommerceConsulting() {
                   onClick={() => handleCTAClick('hero-secondary')}
                   className="bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition-all duration-200"
                 >
-                  📱 Text Me Now: (555) 123-4567
+                  📱 Text Me Now: 872-248-9710
                 </button>
               </div>
             </motion.div>
@@ -313,64 +289,13 @@ export default function B2BEcommerceConsulting() {
         </div>
       </section>
 
-      {/* Social Proof Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Real Results from Real B2B Companies
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't take our word for it. See how other B2B companies achieved explosive growth with our proven strategies.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-xl p-8 border-t-4 border-blue-600"
-              >
-                <div className="mb-6">
-                  <div className="flex text-yellow-400 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-2xl">⭐</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-lg leading-relaxed italic">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-                <div className="border-t pt-4">
-                  <div className="font-bold text-gray-900">{testimonial.author}</div>
-                  <div className="text-gray-600">{testimonial.company}</div>
-                  <div className="text-blue-600 font-bold text-lg mt-1">{testimonial.revenue}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* CTA in Social Proof */}
-          <div className="text-center">
-            <button
-              onClick={() => handleCTAClick('social-proof')}
-              className="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold text-xl px-10 py-4 rounded-full hover:from-blue-500 hover:to-blue-600 transform hover:scale-105 transition-all duration-200 shadow-xl"
-            >
-              💼 Get Your Success Story Started
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Benefits Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              What You'll Achieve with Expert B2B Consulting
+              What You'll Achieve with Forgewise B2B Consulting
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Transform your B2B ecommerce business with proven strategies that deliver measurable results
@@ -389,7 +314,6 @@ export default function B2BEcommerceConsulting() {
                 <div className="text-5xl mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="text-gray-600 mb-4">{benefit.description}</p>
-                <div className="text-2xl font-bold text-blue-600">{benefit.metric}</div>
               </motion.div>
             ))}
           </div>
@@ -459,9 +383,6 @@ export default function B2BEcommerceConsulting() {
             >
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">B2B Growth Accelerator</h3>
-                <div className="text-5xl font-bold text-blue-600 mb-2">$4,997</div>
-                <div className="text-gray-600 line-through text-lg">Regular: $9,997</div>
-                <div className="text-green-600 font-semibold">50% OFF Limited Time</div>
               </div>
 
               <ul className="space-y-4 mb-8">
@@ -480,10 +401,6 @@ export default function B2BEcommerceConsulting() {
                 <li className="flex items-start">
                   <span className="text-green-500 mr-3 text-xl">✓</span>
                   <span>3 months of implementation support</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-500 mr-3 text-xl">✓</span>
-                  <span>90-day performance guarantee</span>
                 </li>
               </ul>
 
@@ -510,9 +427,6 @@ export default function B2BEcommerceConsulting() {
 
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-black mb-4">B2B Revenue Maximizer</h3>
-                <div className="text-5xl font-bold text-black mb-2">$9,997</div>
-                <div className="text-gray-700 line-through text-lg">Regular: $19,997</div>
-                <div className="text-red-600 font-semibold">50% OFF Limited Time</div>
               </div>
 
               <ul className="space-y-4 mb-8 text-black">
@@ -553,7 +467,7 @@ export default function B2BEcommerceConsulting() {
 
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-4">
-              💰 <strong>Average ROI:</strong> 847% within 12 months | 🎯 <strong>Success Rate:</strong> 94% of clients exceed goals
+              🎯 <strong>Success Rate:</strong> 94% of clients exceed goals
             </p>
             <button
               onClick={() => handleCTAClick('pricing-consultation')}
@@ -611,7 +525,7 @@ export default function B2BEcommerceConsulting() {
               Ready to Scale Your B2B Ecommerce to 7-8 Figures?
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Join 200+ B2B companies that have transformed their revenue with our proven strategies.
+              Join 45+ B2B companies that have transformed their revenue with our proven strategies.
               Limited spots available - don't let your competition get ahead.
             </p>
 
@@ -624,10 +538,6 @@ export default function B2BEcommerceConsulting() {
               </button>
 
               <div className="flex flex-wrap justify-center items-center gap-8 text-blue-200 text-lg">
-                <div className="flex items-center">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span>90-Day Guarantee</span>
-                </div>
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">✓</span>
                   <span>No Long-Term Contracts</span>
@@ -666,7 +576,7 @@ export default function B2BEcommerceConsulting() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">📞</span>
-                  <span className="text-lg font-semibold">(555) 123-4567</span>
+                  <span className="text-lg font-semibold">872-248-9710</span>
                 </div>
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">✉️</span>

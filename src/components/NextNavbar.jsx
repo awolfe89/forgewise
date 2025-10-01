@@ -18,7 +18,16 @@ export default function NextNavbar() {
 
   const isActive = (path) => router.pathname === path;
   const isHomePage = router.pathname === '/';
-  const shouldUseLightText = isHomePage && !isScrolled;
+
+  // Pages with dark hero backgrounds that need white navbar
+  const darkBackgroundPages = [
+    '/',
+    '/b2b-ecommerce-consulting',
+    '/fractional-cmo-ecommerce'
+  ];
+
+  const hasDarkBackground = darkBackgroundPages.includes(router.pathname);
+  const shouldUseLightText = hasDarkBackground && !isScrolled;
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
