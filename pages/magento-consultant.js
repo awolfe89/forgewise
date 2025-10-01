@@ -146,12 +146,12 @@ export default function MagentoConsultant() {
   ];
 
   const expertise = [
-    { skill: 'Magento 2.4.x', level: 100 },
-    { skill: 'Performance Tuning', level: 95 },
-    { skill: 'Custom Development', level: 90 },
-    { skill: 'Adobe Commerce', level: 85 },
+    { skill: 'SEO & Optimization', level: 100 },
+    { skill: 'Product Management', level: 95 },
+    { skill: 'Google Ads & Marketing', level: 92 },
+    { skill: 'Catalog Operations', level: 98 },
     { skill: 'B2B Commerce', level: 88 },
-    { skill: 'PWA Studio', level: 82 }
+    { skill: 'Site Performance', level: 85 }
   ];
 
   const caseStudies = [
