@@ -31,7 +31,7 @@ export default function QuickFixes() {
       benefit: 'Rapid performance gains',
       icon: '⚡',
       ctaText: 'Fix My Site Speed',
-      relatedCaseStudy: '/results/voltech'
+      relatedCaseStudy: '/results/electrical-contractor'
     },
     {
       id: 'cro-sprint',
@@ -54,7 +54,7 @@ export default function QuickFixes() {
       benefit: 'Data-driven improvements',
       icon: '📈',
       ctaText: 'Boost My Conversions',
-      relatedCaseStudy: '/results/vsiswine'
+      relatedCaseStudy: '/results/agtech-provider'
     },
     {
       id: 'tracking-sprint',
@@ -77,7 +77,7 @@ export default function QuickFixes() {
       benefit: 'Clear visibility into performance',
       icon: '📊',
       ctaText: 'Set Up My Tracking',
-      relatedCaseStudy: '/results/technimark'
+      relatedCaseStudy: '/results/electrical-distributor'
     },
     {
       id: 'retention-sprint',
@@ -100,7 +100,7 @@ export default function QuickFixes() {
       benefit: 'Automated customer retention',
       icon: '💌',
       ctaText: 'Increase Repeat Buyers',
-      relatedCaseStudy: '/results/grubs'
+      relatedCaseStudy: '/results/outdoor-apparel'
     },
   ];
 

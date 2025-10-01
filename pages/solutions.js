@@ -62,7 +62,7 @@ export default function Solutions() {
         'Real-time alerts'
       ],
       techStack: ['Python', 'PostgreSQL', 'Redis', 'AWS'],
-      caseStudyUrl: '/results/vsiswine',
+      caseStudyUrl: '/results/agtech-provider',
       buttonText: 'View Inventory Case Study'
     },
     {
@@ -89,7 +89,7 @@ export default function Solutions() {
         'Custom alerts'
       ],
       techStack: ['Vue.js', 'Python', 'BigQuery', 'Tableau'],
-      caseStudyUrl: '/results/voltech',
+      caseStudyUrl: '/results/electrical-contractor',
       buttonText: 'Check Speed Improvements'
     },
     {
@@ -116,7 +116,7 @@ export default function Solutions() {
         'Rule engine'
       ],
       techStack: ['Python', 'Redis', 'PostgreSQL', 'Kubernetes'],
-      caseStudyUrl: '/results/technimark',
+      caseStudyUrl: '/results/electrical-distributor',
       buttonText: 'Explore Analytics Setup'
     },
     {
@@ -143,7 +143,7 @@ export default function Solutions() {
         'Behavioral triggers'
       ],
       techStack: ['Node.js', 'React', 'GPT-4', 'SendGrid'],
-      caseStudyUrl: '/results/grubs',
+      caseStudyUrl: '/results/outdoor-apparel',
       buttonText: 'See Email Results'
     },
     {
@@ -170,7 +170,7 @@ export default function Solutions() {
         'Statistical significance'
       ],
       techStack: ['JavaScript', 'Python', 'Google Optimize', 'Hotjar'],
-      caseStudyUrl: '/results/technimark',
+      caseStudyUrl: '/results/electrical-distributor',
       buttonText: 'View CDP Implementation'
     }
   ];
