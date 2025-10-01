@@ -21,6 +21,30 @@ function MyApp({ Component, pageProps }) {
     }
 
     router.events.on('routeChangeComplete', handleRouteChange)
+
+    // Suppress GTM-related console errors in production
+    if (process.env.NODE_ENV === 'production') {
+      const originalError = console.error
+      console.error = (...args) => {
+        const errorMessage = args[0]?.toString() || ''
+
+        // Suppress known GTM/analytics errors
+        const suppressedErrors = [
+          'postMessage',
+          'googletagmanager',
+          'google-analytics',
+          'doubleclick',
+          'Content Security Policy',
+          'COEP',
+          'CORP'
+        ]
+
+        if (!suppressedErrors.some(pattern => errorMessage.includes(pattern))) {
+          originalError.apply(console, args)
+        }
+      }
+    }
+
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }

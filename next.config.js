@@ -12,8 +12,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Enable React strict mode
-  reactStrictMode: true,
+  // Enable React strict mode in development only
+  reactStrictMode: process.env.NODE_ENV === 'development',
   // Disable x-powered-by header
   poweredByHeader: false,
   // Enable SWC minification
@@ -21,6 +21,13 @@ const nextConfig = {
   // Set base path for static assets
   assetPrefix: '',
   basePath: '',
+  // Compiler options
+  compiler: {
+    // Remove console logs in production
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error'],
+    } : false,
+  },
 }
 
 module.exports = nextConfig
