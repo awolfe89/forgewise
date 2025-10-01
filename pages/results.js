@@ -21,7 +21,7 @@ export default function Results() {
   const caseStudies = [
     {
       id: 'armoranimalhealth',
-      title: '+$2M/yr Revenue ',
+      title: '+$4M/yr Revenue ',
       company: 'Animal Health Pharmacy',
       icon: '💊',
       industry: 'E-commerce',
@@ -30,7 +30,7 @@ export default function Results() {
       diagnosis: 'Cart abandonment at 78%, no email recovery, PPC burning $20K/mo with 0.8 ROAS',
       interventions: 'Smart cart recovery system, PPC restructure, checkout optimization, email automation',
       outcomes: {
-        timeframe: 'B2B E-Commerce',
+        timeframe: '$60M/yr',
         results: [
           { metric: 'Revenue', value: '+$2M/yr', description: 'Additional annual revenue' },
           { metric: 'Cart Recovery', value: '+42%', description: 'Recovery rate improvement' },
@@ -50,7 +50,7 @@ export default function Results() {
       diagnosis: 'No conversion tracking, broad match keywords eating budget, landing pages had 14% bounce rate',
       interventions: 'GA4 + server-side tracking, negative keyword audit, dedicated landing pages per campaign',
       outcomes: {
-        timeframe: 'B2B E-Commerce',
+        timeframe: '$12M/yr',
         results: [
           { metric: 'CAC', value: '-67%', description: 'Customer acquisition cost reduction' },
           { metric: 'Lead Quality', value: '+215%', description: 'More qualified leads' },
@@ -70,7 +70,7 @@ export default function Results() {
       diagnosis: 'No trust signals, buried contact info, 8-second load time, no mobile optimization',
       interventions: 'Speed optimization, trust badges, click-to-call buttons, local SEO schema',
       outcomes: {
-        timeframe: 'Local Service',
+        timeframe: '$600k/yr',
         results: [
           { metric: 'Calls', value: '+45%', description: 'From 5/wk to 9/wk' },
           { metric: 'Page Speed', value: '2.1s', description: 'From 8s to 2.1s' },
@@ -90,7 +90,7 @@ export default function Results() {
       diagnosis: 'Complex 5-step checkout, no social proof, technical jargon, hidden pricing',
       interventions: 'One-page checkout, trust signals, plain language copy, transparent pricing',
       outcomes: {
-        timeframe: 'National Business Page',
+        timeframe: '$1M/yr',
         results: [
           { metric: 'Conversion Rate', value: '3.2%', description: 'From 0.8% to 3.2%' },
           { metric: 'Cost Per Lead', value: '-75%', description: 'Dramatic reduction' },
@@ -110,7 +110,7 @@ export default function Results() {
       diagnosis: 'No post-purchase flow, generic email blasts, no segmentation, no loyalty program',
       interventions: 'Klaviyo flows, RFM segmentation, VIP program, win-back campaigns',
       outcomes: {
-        timeframe: 'B2C E-Commerce',
+        timeframe: '+2.5M/yr',
         results: [
           { metric: 'Repeat Rate', value: '+156%', description: 'From 12% to 31%' },
           { metric: 'Email Revenue', value: '+340%', description: 'From 8% to 35% of revenue' },
@@ -258,7 +258,7 @@ export default function Results() {
                         <div>
                           <div className="bg-emerald-50 rounded-lg p-4 mb-6">
                            <h5 className="font-bold text-emerald-800 mb-2">
-                              Business ({study.outcomes.timeframe})
+                              Business Size Range ({study.outcomes.timeframe})
                             </h5>  
                           </div>
 
