@@ -6,7 +6,7 @@ import { BookingLink } from '../src/components/ProtectedContact';
 import { trackButtonClick, trackEvent } from '../src/utils/tracking';
 
 export default function MagentoConsultant() {
-  const [activeTab, setActiveTab] = useState('performance');
+  const [activeTab, setActiveTab] = useState('seo');
 
   const seoData = {
     title: 'Magento Optimization Consultant | Performance & Conversion Expert',
@@ -20,88 +20,88 @@ export default function MagentoConsultant() {
   };
 
   const services = {
-    performance: {
-      title: 'Performance Optimization',
-      icon: '⚡',
-      description: 'Make your Magento store lightning fast',
-      services: [
-        'Database optimization & query tuning',
-        'Varnish cache configuration',
-        'Redis/Elasticsearch optimization',
-        'CDN implementation & tuning',
-        'Image optimization pipeline',
-        'JavaScript/CSS optimization',
-        'Third-party extension audit',
-        'Server infrastructure optimization'
-      ],
-      results: [
-        '60% average speed improvement',
-        'Sub-2 second page loads',
-        '90+ PageSpeed scores',
-        '40% server cost reduction'
-      ]
-    },
-    conversion: {
-      title: 'SEO & Marketing',
+    seo: {
+      title: 'SEO & Visibility',
       icon: '📈',
-      description: 'Drive traffic and increase visibility',
+      description: 'Drive organic traffic and improve rankings',
       services: [
-        'SEO optimization & audits',
+        'Technical SEO audits',
         'Keyword research & strategy',
-        'Google Ads campaign management',
-        'Product page SEO',
-        'Search & navigation UX',
-        'Mobile experience optimization',
-        'Schema markup implementation',
-        'Content optimization'
+        'Product page optimization',
+        'Category page SEO',
+        'Schema markup & rich snippets',
+        'Google Search Console setup',
+        'URL structure optimization',
+        'Meta data optimization'
       ],
       results: [
         'Increased organic traffic',
         'Improved search rankings',
+        'Better visibility',
+        'Higher quality leads'
+      ]
+    },
+    operations: {
+      title: 'Daily Operations',
+      icon: '🔧',
+      description: 'Efficient day-to-day store management',
+      services: [
+        'Product catalog management',
+        'Inventory updates & maintenance',
+        'Attribute creation & management',
+        'Configurable products setup',
+        'Product filtering optimization',
+        'Category organization',
+        'Pricing & promotions setup',
+        'Order processing support'
+      ],
+      results: [
+        'Streamlined workflows',
+        'Improved efficiency',
+        'Better organization',
+        'Time savings'
+      ]
+    },
+    marketing: {
+      title: 'Marketing Management',
+      icon: '🎯',
+      description: 'Google Ads and marketing optimization',
+      services: [
+        'Google Ads campaign management',
+        'Shopping feed optimization',
+        'Product feed management',
+        'Ad performance tracking',
+        'Landing page optimization',
+        'Conversion tracking setup',
+        'Remarketing campaigns',
+        'Budget optimization'
+      ],
+      results: [
         'Better ad performance',
+        'Lower cost per acquisition',
+        'Improved ROAS',
         'Higher conversion rates'
       ]
     },
-    technical: {
-      title: 'Technical Solutions',
-      icon: '🔧',
-      description: 'Solve complex Magento challenges',
+    optimization: {
+      title: 'Store Optimization',
+      icon: '⚡',
+      description: 'Performance and user experience improvements',
       services: [
-        'Layout & design optimization',
+        'Site speed improvements',
         'Search functionality fixes',
-        'Product maintenance & updates',
-        'Product filtering & attributes',
-        'Configurable products setup',
-        'Multi-store configuration',
-        'B2B functionality setup',
-        'Extension conflicts resolution'
+        'Navigation optimization',
+        'Mobile experience tuning',
+        'Layout & design tweaks',
+        'Image optimization',
+        'Checkout flow improvements',
+        'Extension management'
       ],
       results: [
-        '99.9% uptime achieved',
-        'Zero security breaches',
-        'Improved product management',
-        'Enhanced search experience'
-      ]
-    },
-    maintenance: {
-      title: 'Ongoing Support',
-      icon: '🛡️',
-      description: 'Keep your store running smoothly',
-      services: [
-        'Monthly performance audits',
-        'Security patch management',
-        'Extension updates & testing',
-        'Backup & disaster recovery',
-        '24/7 monitoring setup',
-        'Emergency support',
-        'Growth consulting',
-        'Team training'
-      ],
-      results: [
-        '24/7 peace of mind',
-        'Proactive issue prevention',
-        'Continuous improvement',
-        'Expert on-demand support'
+        'Faster load times',
+        'Better user experience',
+        'Improved conversions',
+        'Enhanced search'
       ]
     }
   };
@@ -538,9 +538,9 @@ export default function MagentoConsultant() {
                   2
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-bold mb-2">Performance Guarantee</h3>
+                  <h3 className="font-bold mb-2">Performance Focus</h3>
                   <p className="text-gray-600">
-                    We guarantee specific performance improvements or you don't pay.
+                    Committed to delivering specific performance improvements and measurable results.
                   </p>
                 </div>
               </div>
@@ -549,9 +549,9 @@ export default function MagentoConsultant() {
                   3
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-bold mb-2">Emergency Support</h3>
+                  <h3 className="font-bold mb-2">Ongoing Management</h3>
                   <p className="text-gray-600">
-                    24/7 emergency support for critical issues. Your store never sleeps, neither do we.
+                    Regular maintenance and updates to keep your store running smoothly and efficiently.
                   </p>
                 </div>
               </div>
@@ -560,9 +560,9 @@ export default function MagentoConsultant() {
                   4
                 </div>
                 <div className="ml-4">
-                  <h3 className="font-bold mb-2">ROI Focus</h3>
+                  <h3 className="font-bold mb-2">Results-Driven</h3>
                   <p className="text-gray-600">
-                    Every optimization is tied to revenue impact. Average 3-5x ROI within 90 days.
+                    Focus on measurable improvements in traffic, conversions, and operational efficiency.
                   </p>
                 </div>
               </div>
