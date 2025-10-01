@@ -22,8 +22,8 @@ export default function Results() {
     {
       id: 'armoranimalhealth',
       title: '+$2M/yr Revenue ',
-      company: 'Armor Animal Health',
-      logo: '/armor-logo.jpg',
+      company: 'Animal Health Pharmacy',
+      icon: '💊',
       industry: 'E-commerce',
       category: 'revenue',
       context: '$5M e-commerce brand struggling with stalled growth and poor PPC performance',
@@ -42,8 +42,8 @@ export default function Results() {
     {
       id: 'technimark',
       title: '-67% CAC',
-      company: 'Technimark-Inc',
-      logo: '/technimark.png',
+      company: 'Electrical Supply Distributor',
+      icon: '⚡',
       industry: 'B2B Manufacturing',
       category: 'marketing',
       context: 'B2B manufacturer spending $30K/mo on Google Ads with declining lead quality',
@@ -62,8 +62,8 @@ export default function Results() {
     {
       id: 'voltech',
       title: '+45% Call Increase',
-      company: 'Voltech Electric',
-      logo: '/voltech.png',
+      company: 'Local Electrical Contractor',
+      icon: '🔌',
       industry: 'Local Services',
       category: 'conversion',
       context: 'Local electrician not happy with the amount of new customer calls/emails',
@@ -82,8 +82,8 @@ export default function Results() {
     {
       id: 'vsiswine',
       title: '3.2% CR in 21 Days',
-      company: 'VSI Swine',
-      logo: '/vsi-swine.png',
+      company: 'Agricultural Technology Provider',
+      icon: '🌾',
       industry: 'AgTech B2B',
       category: 'efficiency',
       context: 'B2B AgTech company with 0.8% conversion rate on $50K/mo ad spend',
@@ -102,8 +102,8 @@ export default function Results() {
     {
       id: 'grubs',
       title: '+156% Repeat Orders in 60 Days',
-      company: 'Grubs Boots',
-      logo: '/grubs.png',
+      company: 'Outdoor Apparel Retailer',
+      icon: '👢',
       industry: 'E-Commerce Fashion',
       category: 'revenue',
       context: '$8M fashion brand with 12% repeat purchase rate and declining LTV',
@@ -227,16 +227,8 @@ export default function Results() {
                         {/* Left Column - Context, Diagnosis, Interventions */}
                         <div>
                           <div className="flex items-center mb-6">
-                            <div className="w-16 h-16 bg-white rounded-lg shadow-md p-2 mr-4 relative">
-                              <Image
-                                src={study.logo}
-                                alt={`${study.company} logo`}
-                                width={64}
-                                height={64}
-                                className="object-contain"
-                                sizes="64px"
-                                priority={false}
-                              />
+                            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg shadow-md flex items-center justify-center mr-4">
+                              <span className="text-3xl">{study.icon}</span>
                             </div>
                             <div>
                               <h4 className="text-xl font-bold">{study.company}</h4>

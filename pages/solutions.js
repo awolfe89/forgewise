@@ -39,7 +39,7 @@ export default function Solutions() {
         'A/B testing framework'
       ],
       techStack: ['React', 'Node.js', 'TensorFlow', 'Segment'],
-      caseStudyUrl: '/results/armoranimalhealth',
+      caseStudyUrl: '/results#armoranimalhealth',
       buttonText: 'See Cart Recovery Results'
     },
     {

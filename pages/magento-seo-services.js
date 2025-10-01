@@ -49,7 +49,7 @@ export default function MagentoSEOServices() {
     traffic: {
       title: "Traffic Growth",
       data: [
-        { metric: "Organic Traffic Increase", value: "385%", timeframe: "6 months" },
+        { metric: "Organic Traffic Increase", value: "385%", timeframe: "achieved" },
         { metric: "Keyword Rankings", value: "420+", timeframe: "top 10 positions" },
         { metric: "Monthly Visitors", value: "75K+", timeframe: "average increase" },
         { metric: "Search Visibility", value: "290%", timeframe: "improvement" }
@@ -58,10 +58,10 @@ export default function MagentoSEOServices() {
     revenue: {
       title: "Revenue Impact",
       data: [
-        { metric: "Revenue Growth", value: "340%", timeframe: "12 months" },
+        { metric: "Revenue Growth", value: "340%", timeframe: "for clients" },
         { metric: "Conversion Rate", value: "165%", timeframe: "improvement" },
         { metric: "Average Order Value", value: "$2,450", timeframe: "increase" },
-        { metric: "ROI on SEO", value: "1,247%", timeframe: "first year" }
+        { metric: "ROI on SEO", value: "1,247%", timeframe: "client average" }
       ]
     },
     technical: {
@@ -130,7 +130,7 @@ export default function MagentoSEOServices() {
     },
     {
       question: "How quickly will I see results from Magento SEO services?",
-      answer: "Technical improvements show results within 2-4 weeks. Ranking improvements typically begin within 6-8 weeks, with significant traffic growth occurring within 3-6 months. Full transformation usually takes 6-12 months."
+      answer: "SEO is a journey, not a sprint. That said, our systematic approach focuses on making meaningful improvements from day one—fixing technical issues, optimizing high-impact pages, and implementing strategies that compound over time. The beauty of SEO is that once momentum builds, the results can be transformative and long-lasting. We'll work closely with you to track progress and ensure you're seeing continuous improvement in the metrics that matter most to your business."
     },
     {
       question: "Do you work with both Magento 1 and Magento 2?",
@@ -138,7 +138,7 @@ export default function MagentoSEOServices() {
     },
     {
       question: "What makes your Magento SEO different from other agencies?",
-      answer: "We're Magento-specialized with deep technical expertise. Our team includes Magento certified developers who understand the platform's SEO challenges. We've optimized 150+ Magento stores with proven results."
+      answer: "We're Magento-specialized with deep technical expertise. Our team includes Magento certified developers who understand the platform's SEO challenges. We've optimized 15+ Magento stores with proven results."
     },
     {
       question: "Can you help with enterprise/Magento Commerce SEO?",
@@ -292,7 +292,7 @@ export default function MagentoSEOServices() {
               transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl mb-8 text-purple-100 leading-relaxed"
             >
-              Specialized Magento SEO services that have generated <strong>$25M+</strong> in revenue for 150+ stores.
+              Specialized Magento SEO services that have generated <strong>$25M+</strong> in revenue for 15+ stores.
               Get the exact optimization strategies that dominate Google rankings.
             </motion.p>
 
@@ -309,7 +309,7 @@ export default function MagentoSEOServices() {
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">📈</span>
-                <span className="font-semibold">150+ Stores Optimized</span>
+                <span className="font-semibold">15+ Stores Optimized</span>
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">⚡</span>
@@ -317,33 +317,6 @@ export default function MagentoSEOServices() {
               </div>
             </motion.div>
 
-            {/* Countdown Timer */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className="bg-black bg-opacity-30 backdrop-blur-sm rounded-2xl p-6 mb-8 mx-auto max-w-lg"
-            >
-              <h3 className="text-lg font-semibold mb-4 text-yellow-400">⏰ Early Bird Pricing Expires In:</h3>
-              <div className="flex justify-center space-x-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{timeLeft.days}</div>
-                  <div className="text-sm text-purple-200">Days</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{timeLeft.hours}</div>
-                  <div className="text-sm text-purple-200">Hours</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{timeLeft.minutes}</div>
-                  <div className="text-sm text-purple-200">Minutes</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-yellow-400">{timeLeft.seconds}</div>
-                  <div className="text-sm text-purple-200">Seconds</div>
-                </div>
-              </div>
-            </motion.div>
 
             {/* Primary CTA */}
             <motion.div
@@ -603,7 +576,7 @@ export default function MagentoSEOServices() {
               Ready to Dominate Magento SEO Rankings?
             </h2>
             <p className="text-xl text-purple-100 mb-8 leading-relaxed">
-              Join 150+ successful Magento stores that have transformed their organic traffic and revenue.
+              Join 15+ successful Magento stores that have transformed their organic traffic and revenue.
               Don't let your competitors get ahead with better SEO.
             </p>
 
@@ -618,7 +591,7 @@ export default function MagentoSEOServices() {
               <div className="flex flex-wrap justify-center items-center gap-8 text-purple-200 text-lg">
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">✓</span>
-                  <span>48-Hour Delivery</span>
+                  <span>As Quick as 48-Hour Delivery</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">✓</span>

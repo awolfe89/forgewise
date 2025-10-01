@@ -7,7 +7,7 @@ export default function LocalBusinessSchema() {
     "alternateName": "Forgewise.io",
     "description": "B2B eCommerce consultant specializing in traditional business digital transformation. 11+ years experience with Magento, Shopify, and ERP integrations.",
     "url": "https://forgewise.io",
-    "telephone": "+1-312-555-0190",
+    "telephone": "+1-872-248-9710",
     "email": "admin@forgewise.io",
     "address": {
       "@type": "PostalAddress",

@@ -23,7 +23,8 @@ export default function NextNavbar() {
   const darkBackgroundPages = [
     '/',
     '/b2b-ecommerce-consulting',
-    '/fractional-cmo-ecommerce'
+    '/fractional-cmo-ecommerce',
+    '/magento-seo-services'
   ];
 
   const hasDarkBackground = darkBackgroundPages.includes(router.pathname);

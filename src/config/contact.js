@@ -5,8 +5,8 @@ const contactConfig = {
   fullBusinessName: 'Forgewise.io',
   
   // Contact methods
-  phoneDisplay: '(312) 555-0190',
-  phoneLink: '+13125550190',
+  phoneDisplay: '872-248-9710',
+  phoneLink: '+18722489710',
   email: 'admin@forgewise.io',
   
   // Consultation links - using real Calendly URL

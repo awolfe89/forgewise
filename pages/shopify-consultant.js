@@ -61,14 +61,14 @@ export default function ShopifyConsultant() {
       ]
     },
     {
-      title: 'Revenue Recovery',
-      icon: '💰',
+      title: 'AI Integration',
+      icon: '🤖',
       points: [
-        'Abandoned cart sequences',
-        'Upsell & cross-sell funnels',
-        'Email capture optimization',
-        'Retention strategies',
-        'AOV increase tactics'
+        'AI-powered product recommendations',
+        'Smart inventory management',
+        'Automated customer support chatbots',
+        'Personalized shopping experiences',
+        'Predictive analytics & insights'
       ]
     }
   ];
@@ -111,7 +111,7 @@ export default function ShopifyConsultant() {
     },
     {
       question: 'What\'s included in the free Shopify audit?',
-      answer: 'Our 15-minute audit covers: current speed metrics, top 5 performance bottlenecks, conversion leak analysis, competitive benchmarking, and a prioritized action plan with ROI projections.'
+      answer: 'We run your store through SEMrush for comprehensive analysis including: site health score and critical errors, organic keyword rankings and opportunities, backlink profile analysis, on-page SEO issues, technical SEO problems, mobile usability, site speed metrics, Core Web Vitals assessment, top performance bottlenecks, and a prioritized action plan with specific recommendations.'
     },
     {
       question: 'Do you work with Shopify Plus stores?',
@@ -242,7 +242,7 @@ export default function ShopifyConsultant() {
               </div>
             </div>
             <p className="text-center mt-8 text-lg text-gray-700">
-              <strong>Good news:</strong> Most Shopify stores can be optimized for 40-60% faster load times in just 2 weeks.
+              <strong>Good news:</strong> Most Shopify stores can be optimized for 40-60% faster load times.
             </p>
           </div>
         </section>
@@ -254,7 +254,7 @@ export default function ShopifyConsultant() {
               Complete Shopify Optimization Services
             </h2>
             <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-              From speed optimization to conversion improvements, we handle every aspect of Shopify performance
+              From speed optimization to AI integration, we handle every aspect of modern Shopify performance
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               {optimizations.map((service, index) => (
@@ -408,7 +408,7 @@ export default function ShopifyConsultant() {
               </Link>
             </div>
             <p className="mt-8 text-sm text-green-100">
-              Join 100+ Shopify stores that have optimized their speed and conversions with Forgewise
+              Join 30+ Shopify stores that have optimized their speed and conversions with Forgewise
             </p>
           </div>
         </section>

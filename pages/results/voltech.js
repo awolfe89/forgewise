@@ -5,8 +5,8 @@ import { BookingLink } from '../../src/components/ProtectedContact';
 
 export default function VoltechCaseStudy() {
   const seoData = {
-    title: 'Voltech Electric Case Study | +45% Conversion in 14 Days | Forgewise',
-    description: 'How we helped Voltech Electric increase conversion rates by 45% through speed optimization, trust signals, and mobile-first design.',
+    title: 'Local Electrical Contractor Case Study | +45% Conversion in 14 Days | Forgewise',
+    description: 'How we helped Local Electrical Contractor increase conversion rates by 45% through speed optimization, trust signals, and mobile-first design.',
     canonical: 'https://forgewise.io/results/voltech'
   };
 
@@ -35,7 +35,7 @@ export default function VoltechCaseStudy() {
                 +45% Conversion in 14 Days
               </h1>
               <p className="text-xl text-blue-100">
-                How Voltech Electric turned their slow, outdated website into a lead generation powerhouse
+                How Local Electrical Contractor turned their slow, outdated website into a lead generation powerhouse
               </p>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function VoltechCaseStudy() {
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                Voltech Electric, a family-owned electrical contractor serving the greater metro area, was getting decent traffic
+                Local Electrical Contractor, a family-owned electrical contractor serving the greater metro area, was getting decent traffic
                 from their local SEO efforts. But their website was killing conversions. Visitors would land, wait for the slow
                 page to load, struggle to find contact information, and leave for a competitor.
               </p>
@@ -290,7 +290,7 @@ export default function VoltechCaseStudy() {
                     My phone literally doesn't stop ringing. The emergency service calls alone paid for the entire project 
                     in the first week. Should have done this years ago!"
                   </blockquote>
-                  <p className="text-sm text-gray-600 mt-2">— Owner, Voltech Electric</p>
+                  <p className="text-sm text-gray-600 mt-2">— Owner, Local Electrical Contractor</p>
                 </div>
               </div>
             </div>

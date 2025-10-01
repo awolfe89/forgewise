@@ -145,10 +145,10 @@ export default function EcommerceAudit() {
   ];
 
   const metrics = [
-    { value: '250+', label: 'E-commerce audits completed' },
-    { value: '$47M', label: 'Revenue recovered for clients' },
+    { value: '114+', label: 'E-commerce audits completed' },
+    { value: '$25M+', label: 'Revenue recovered for clients' },
     { value: '3.2x', label: 'Average ROI from recommendations' },
-    { value: '89%', label: 'Issues fixed within 90 days' }
+    { value: '89%', label: 'Client satisfaction rate' }
   ];
 
   const commonIssues = [
@@ -160,15 +160,39 @@ export default function EcommerceAudit() {
     { issue: 'No upsell strategy', impact: '10-30% AOV increase', frequency: '74%' }
   ];
 
-  const handleQuickAssessment = (e) => {
+  const handleQuickAssessment = async (e) => {
     e.preventDefault();
+
     trackEvent('quick_assessment_submitted', {
       website: formData.website,
       revenue_range: formData.revenue
     });
     trackButtonClick('quick_assessment', 'ecommerce_audit');
-    alert('Thank you! We\'ll send your quick assessment within 24 hours.');
-    setFormData({ website: '', revenue: '', email: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: 'Quick Assessment Request',
+          email: formData.email,
+          message: `Quick Revenue Assessment Request\n\nWebsite: ${formData.website}\nMonthly Revenue: ${formData.revenue}`,
+          type: 'quick_assessment'
+        }),
+      });
+
+      if (response.ok) {
+        alert('Thank you! We\'ll send your quick assessment within 24 hours.');
+        setFormData({ website: '', revenue: '', email: '' });
+      } else {
+        alert('There was an issue submitting your request. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an issue submitting your request. Please try again or contact us directly.');
+    }
   };
 
   return (
@@ -221,13 +245,13 @@ export default function EcommerceAudit() {
                 Most stores are losing 20-40% of potential revenue. Find out how much you're leaving on the table.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <BookingLink
-                  type="audit15min"
+                <Link
+                  href="/contact"
                   className="inline-block px-8 py-4 bg-white text-purple-700 font-bold rounded-lg hover:bg-gray-100 transition-all"
                   onClick={() => trackButtonClick('free_audit_hero', 'ecommerce_audit')}
                 >
-                  Get Free 15-Min Assessment →
-                </BookingLink>
+                  Get Free Assessment →
+                </Link>
                 <a
                   href="#quick-assessment"
                   className="inline-block px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-purple-700 transition-all"
@@ -341,13 +365,13 @@ export default function EcommerceAudit() {
                     <p className="text-sm font-semibold text-purple-600 mb-3">
                       Typical findings: {audit.typical_findings}
                     </p>
-                    <BookingLink
-                      type="consultation"
+                    <Link
+                      href={`/contact?service=${encodeURIComponent(audit.title)}&message=${encodeURIComponent(`I'm interested in the ${audit.title}. ${audit.description}`)}`}
                       className="block w-full py-3 bg-purple-600 text-white text-center font-semibold rounded-lg hover:bg-purple-700 transition-colors"
                       onClick={() => trackButtonClick(`audit_${audit.id}`, 'audit_selection')}
                     >
                       Start This Audit →
-                    </BookingLink>
+                    </Link>
                   </div>
 
                   {selectedAudit === audit.id && (
@@ -535,7 +559,7 @@ export default function EcommerceAudit() {
             </h2>
             <p className="text-xl mb-8 text-purple-100">
               Our B2B-specialized audit identifies exactly where traditional businesses lose money online.
-              Average B2B client recovers $100K+ in the first 90 days.
+              Clients have recovered significant revenue from our recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink

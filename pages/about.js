@@ -199,7 +199,7 @@ export default function About() {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Rapid Implementation</h3>
                 <p className="text-gray-600">
-                  See results in weeks, not months. Our agile approach ensures quick wins and continuous improvement.
+                  Move fast with an agile approach that prioritizes quick wins and continuous improvement.
                 </p>
               </div>
               

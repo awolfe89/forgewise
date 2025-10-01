@@ -49,7 +49,7 @@ export default function B2BEcommerceConsulting() {
     {
       icon: "💰",
       title: "Revenue Growth",
-      description: "Increase revenue within 12 months through proven B2B strategies",
+      description: "Increase revenue through proven B2B strategies",
       metric: ""
     },
     {
@@ -86,7 +86,7 @@ export default function B2BEcommerceConsulting() {
   const faqData = [
     {
       question: "How quickly will I see results from B2B ecommerce consulting?",
-      answer: "Most clients see initial improvements within 30-45 days, with significant revenue increases typically occurring within 3-6 months. The timeline depends on your current setup and implementation speed."
+      answer: "Every B2B business is unique, with different starting points and implementation capabilities. That said, we prioritize quick wins and momentum-building strategies from day one. You'll have a clear roadmap and measurable progress tracking so you can see the needle moving. The key is having a partner who understands B2B buying cycles and can optimize every touchpoint in your customer journey."
     },
     {
       question: "What makes your B2B approach different from other consultants?",
@@ -106,20 +106,20 @@ export default function B2BEcommerceConsulting() {
     <>
       <Head>
         <title>B2B Ecommerce Consulting Services | Scale to 7-8 Figures</title>
-        <meta name="description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
+        <meta name="description" content="Expert B2B ecommerce consultant helping companies scale revenue. Proven strategies for lead generation, conversion optimization & growth." />
         <meta name="robots" content="noindex,nofollow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* Open Graph */}
         <meta property="og:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures" />
-        <meta property="og:description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
+        <meta property="og:description" content="Expert B2B ecommerce consultant helping companies scale revenue. Proven strategies for lead generation, conversion optimization & growth." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://forgewise.io/b2b-ecommerce-consulting" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="B2B Ecommerce Consulting Services | Scale to 7-8 Figures" />
-        <meta name="twitter:description" content="Expert B2B ecommerce consultant helping companies scale revenue 300%+ in 12 months. Proven strategies for lead generation, conversion optimization & growth." />
+        <meta name="twitter:description" content="Expert B2B ecommerce consultant helping companies scale revenue. Proven strategies for lead generation, conversion optimization & growth." />
 
         {/* Schema Markup */}
         <script
@@ -208,7 +208,7 @@ export default function B2BEcommerceConsulting() {
               className="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed"
             >
               Proven B2B ecommerce strategies that have generated <strong>$25M+</strong> in revenue for 45+ companies.
-              Get the exact playbook that increases revenue within 12 months.
+              Get the exact playbook that drives revenue growth.
             </motion.p>
 
             {/* Trust Indicators */}
@@ -544,7 +544,7 @@ export default function B2BEcommerceConsulting() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-green-400 mr-2">✓</span>
-                  <span>Immediate Results</span>
+                  <span>Fast Implementation</span>
                 </div>
               </div>
 

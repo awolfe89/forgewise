@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookingLink } from '../../src/components/ProtectedContact';
 
-export default function TechnimarkCaseStudy() {
+export default function ElectricalDistributorCaseStudy() {
   const seoData = {
-    title: 'Technimark Case Study | -67% CAC in 30 Days | Forgewise',
-    description: 'How we helped Technimark-Inc reduce customer acquisition cost by 67% and improve lead quality by 215% through strategic Google Ads optimization.',
+    title: 'Electrical Supply Distributor Case Study | -67% CAC | Forgewise',
+    description: 'How we helped an electrical supply distributor reduce customer acquisition cost by 67% and improve lead quality by 215% through strategic Google Ads optimization.',
     canonical: 'https://forgewise.io/results/technimark'
   };
 
@@ -35,7 +35,7 @@ export default function TechnimarkCaseStudy() {
                 -67% CAC in Just 30 Days
               </h1>
               <p className="text-xl text-blue-100">
-                How Technimark-Inc transformed their Google Ads from a money pit into a lead generation machine
+                How an electrical supply distributor transformed their Google Ads from a money pit into a lead generation machine
               </p>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function TechnimarkCaseStudy() {
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                Technimark-Inc, a precision plastic injection molding manufacturer, had been running Google Ads for years.
+                This electrical supply distributor, a B2B manufacturer, had been running Google Ads for years.
                 But as competition increased and costs rose, their once-profitable campaigns turned into a black hole for their marketing budget.
               </p>
               <p className="text-lg mt-4">
@@ -274,7 +274,7 @@ export default function TechnimarkCaseStudy() {
                     complaining about lead quality to asking for more leads. The tracking dashboard alone was worth the investment - 
                     we finally know exactly what's working and what isn't."
                   </blockquote>
-                  <p className="text-sm text-gray-600 mt-2">— VP of Marketing, Technimark-Inc</p>
+                  <p className="text-sm text-gray-600 mt-2">— VP of Marketing, Electrical Supply Distributor</p>
                 </div>
               </div>
             </div>
@@ -359,7 +359,7 @@ export default function TechnimarkCaseStudy() {
               Stop Burning Money on Google Ads
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              Get a free audit of your current campaigns and see how much you could save in 30 days.
+              Get a free audit of your current campaigns and see how much you could save.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink

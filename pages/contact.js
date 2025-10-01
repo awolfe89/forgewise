@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import NextSEO from '../src/components/NextSEO';
 import { getPageSEO } from '../src/config/seo';
 import { trackFormSubmission, trackButtonClick, trackContactConversion } from '../src/utils/tracking';
 
 export default function Contact() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,20 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+
+  // Pre-fill form from query parameters
+  useEffect(() => {
+    if (router.isReady) {
+      const { service, message } = router.query;
+      if (service || message) {
+        setFormData(prev => ({
+          ...prev,
+          type: service || prev.type,
+          message: message || prev.message
+        }));
+      }
+    }
+  }, [router.isReady, router.query]);
 
   const handleChange = (e) => {
     setFormData({

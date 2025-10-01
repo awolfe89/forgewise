@@ -227,7 +227,7 @@ export default function MilwaukeeEcommercePage() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Proven Results with Wisconsin Manufacturers</h3>
                   <p className="text-gray-700">
-                    Our Milwaukee clients typically see 20-40% revenue growth within 12 months. We've helped companies from Germantown to Greenfield transform their B2B sales through strategic eCommerce implementation.
+                    Our Milwaukee clients see strong revenue growth with our proven approach. We've helped companies from Germantown to Greenfield transform their B2B sales through strategic eCommerce implementation.
                   </p>
                 </div>
               </div>

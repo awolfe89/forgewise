@@ -88,7 +88,7 @@ export default function Home() {
   const faqData = [
     {
       question: "How quickly can I see results?",
-      answer: "7-14 days for quick wins. 30 days for bigger fixes. We start with what pays you back fastest."
+      answer: "We start with what pays you back fastest. Quick wins come first, then we build momentum with bigger fixes. Every business is different, but we prioritize speed and impact."
     },
     {
       question: "What if I don't have a big budget?",
@@ -822,14 +822,14 @@ export default function Home() {
               {/* Case 1 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-8">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">+22% CR in 45 days</div>
+                  <div className="text-3xl font-bold text-emerald-600 mb-2">+22% Conversion Rate</div>
                   <h3 className="text-xl font-bold mb-2">E-commerce Fashion Brand</h3>
                   <p className="text-gray-600 mb-4">
                     Optimized checkout flow, reduced form fields, and added trust signals.
                     Result: $180K additional monthly revenue.
                   </p>
                   <div className="flex items-center justify-between">
-                    <Link href="/results/armor-animal-health" className="text-blue-600 hover:text-blue-700 font-medium">
+                    <Link href="/results#armoranimalhealth" className="text-blue-600 hover:text-blue-700 font-medium">
                       Read full case →
                     </Link>
                     <BookingLink
@@ -845,7 +845,7 @@ export default function Home() {
               {/* Case 2 */}
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-8">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">-67% CAC in 30 days</div>
+                  <div className="text-3xl font-bold text-emerald-600 mb-2">-67% Customer Acquisition Cost</div>
                   <h3 className="text-xl font-bold mb-2">B2B SaaS Platform</h3>
                   <p className="text-gray-600 mb-4">
                     Restructured Google Ads, fixed tracking, optimized landing pages.

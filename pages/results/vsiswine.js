@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookingLink } from '../../src/components/ProtectedContact';
 
-export default function VSISwineCaseStudy() {
+export default function AgTechCaseStudy() {
   const seoData = {
-    title: 'VSI Swine Case Study | 340% More Leads in 21 Days | Forgewise',
-    description: 'How we helped VSI Swine achieve 340% more qualified leads and reduce cost per lead by 75% through SEO optimization, UX improvements, and Next.js best practices.',
+    title: 'Agricultural Technology Provider Case Study | 340% More Leads | Forgewise',
+    description: 'How we helped an agricultural technology provider achieve 340% more qualified leads and reduce cost per lead by 75% through SEO optimization, UX improvements, and Next.js best practices.',
     canonical: 'https://forgewise.io/results/vsiswine'
   };
 
@@ -35,7 +35,7 @@ export default function VSISwineCaseStudy() {
                 340% More Qualified Leads in 21 Days
               </h1>
               <p className="text-xl text-blue-100">
-                How VSI Swine transformed their Next.js landing page with SEO optimization, security fixes, and conversion-focused UX
+                How an agricultural technology provider transformed their Next.js landing page with SEO optimization, security fixes, and conversion-focused UX
               </p>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function VSISwineCaseStudy() {
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                VSI Swine had developed revolutionary AgTech solutions for modern pig farming - IoT sensors, AI-powered
+                This agricultural technology provider had developed revolutionary AgTech solutions for modern farming - IoT sensors, AI-powered
                 health monitoring, and automated feeding systems. Their technology was cutting-edge, but their Next.js
                 landing page was plagued with common setup mistakes that killed lead generation.
               </p>
@@ -305,7 +305,7 @@ export default function VSISwineCaseStudy() {
                     our contact form submissions went through the roof, and we started ranking for keywords we never thought
                     possible. Best part? Our hosting costs dropped 70% by moving to Vercel. The ROI was immediate."
                   </blockquote>
-                  <p className="text-sm text-gray-600 mt-2">— CEO, VSI Swine</p>
+                  <p className="text-sm text-gray-600 mt-2">— CEO, Agricultural Technology Provider</p>
                 </div>
               </div>
             </div>
@@ -386,7 +386,7 @@ export default function VSISwineCaseStudy() {
               Is Your Next.js Site Generating Zero Leads?
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              Most Next.js landing pages make the same mistakes. Let's fix yours in 21 days.
+              Most Next.js landing pages make the same mistakes. Let's fix yours fast.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink

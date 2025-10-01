@@ -14,7 +14,7 @@ export default function QuickFixes() {
       id: 'speed-sprint',
       category: 'performance',
       title: 'Speed Sprint',
-      goal: 'LCP under 2.5s in 2 weeks',
+      goal: 'Get LCP under 2.5s fast',
       problem: 'Every second of load time costs you 7% in conversions',
       deliverables: [
         'Core Web Vitals audit & fixes',
@@ -27,8 +27,8 @@ export default function QuickFixes() {
       solution: 'Complete performance overhaul with measurable results',
       relatedInsight: '/insights/shopify-speed',
       impact: '+15-25% conversion rate',
-      timeline: '2 weeks',
-      benefit: 'Immediate performance gains',
+      timeline: 'Quick turnaround',
+      benefit: 'Rapid performance gains',
       icon: '⚡',
       ctaText: 'Fix My Site Speed',
       relatedCaseStudy: '/results/voltech'
@@ -37,7 +37,7 @@ export default function QuickFixes() {
       id: 'cro-sprint',
       category: 'conversion',
       title: 'CRO Sprint',
-      goal: 'Find & fix top 5 conversion leaks in 2 weeks',
+      goal: 'Find & fix your top conversion leaks',
       problem: 'Traffic isn\'t converting and you don\'t know why',
       deliverables: [
         'Heatmap & session recording analysis',
@@ -50,7 +50,7 @@ export default function QuickFixes() {
       solution: 'Data-driven conversion optimization with quick wins',
       relatedInsight: '/insights/seo-ux-case-study',
       impact: '+20-35% conversion rate',
-      timeline: '2 weeks',
+      timeline: 'Quick turnaround',
       benefit: 'Data-driven improvements',
       icon: '📈',
       ctaText: 'Boost My Conversions',
@@ -60,7 +60,7 @@ export default function QuickFixes() {
       id: 'tracking-sprint',
       category: 'analytics',
       title: 'Tracking Sprint',
-      goal: 'GA4 + server-side tagging + clean events in 1.5 weeks',
+      goal: 'Get GA4 + server-side tagging + clean events setup',
       problem: 'You\'re flying blind - no idea what\'s actually working',
       deliverables: [
         'GA4 migration & setup',
@@ -73,7 +73,7 @@ export default function QuickFixes() {
       solution: 'Complete analytics setup so you can make data-driven decisions',
       relatedInsight: '/insights/hidden-inventory-costs',
       impact: 'Finally see what drives revenue',
-      timeline: '1.5 weeks',
+      timeline: 'Quick turnaround',
       benefit: 'Clear visibility into performance',
       icon: '📊',
       ctaText: 'Set Up My Tracking',
@@ -83,7 +83,7 @@ export default function QuickFixes() {
       id: 'retention-sprint',
       category: 'retention',
       title: 'Retention Sprint',
-      goal: 'Email/SMS baseline flows in 2 weeks',
+      goal: 'Get Email/SMS baseline flows setup',
       problem: 'One-time buyers never come back',
       deliverables: [
         'Welcome series (5 emails)',
@@ -96,7 +96,7 @@ export default function QuickFixes() {
       solution: 'Automated retention system that brings customers back',
       relatedInsight: '/insights/ppc-cost-optimization',
       impact: '+25-40% repeat purchase rate',
-      timeline: '2 weeks',
+      timeline: 'Quick turnaround',
       benefit: 'Automated customer retention',
       icon: '💌',
       ctaText: 'Increase Repeat Buyers',
@@ -471,7 +471,7 @@ export default function QuickFixes() {
                 Ready for Quick Wins?
               </h2>
               <p className="text-xl mb-8 text-blue-100">
-                Pick your fixes and start seeing results this week.
+                Pick your fixes and start seeing results fast.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

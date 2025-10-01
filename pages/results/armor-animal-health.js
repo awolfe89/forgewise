@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookingLink } from '../../src/components/ProtectedContact';
 
-export default function ArmorAnimalHealthCaseStudy() {
+export default function AnimalHealthCaseStudy() {
   const seoData = {
-    title: 'Armor Animal Health Case Study | $2.2M to $6M Growth | Forgewise',
-    description: 'How we helped Armor Animal Health grow from $2.2M to $6M in 3 years through B2B eCommerce transformation and ERP integration.',
+    title: 'Animal Health Pharmacy Case Study | $2.2M to $6M Growth | Forgewise',
+    description: 'How we helped an animal health pharmacy grow from $2.2M to $6M in 3 years through B2B eCommerce transformation and ERP integration.',
     canonical: 'https://forgewise.io/results/armor-animal-health'
   };
 
@@ -35,7 +35,7 @@ export default function ArmorAnimalHealthCaseStudy() {
                 From $2.2M to $6M in 3 Years
               </h1>
               <p className="text-xl text-blue-100">
-                How Armor Animal Health transformed their legacy wholesale business into a digital powerhouse
+                How an animal health pharmacy transformed their legacy wholesale business into a digital powerhouse
               </p>
             </motion.div>
 
@@ -89,7 +89,7 @@ export default function ArmorAnimalHealthCaseStudy() {
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                Armor Animal Health had been in business for over 20 years, serving veterinary clinics and animal hospitals
+                This animal health pharmacy had been in business for over 20 years, serving veterinary clinics and animal hospitals
                 across the Midwest. But their traditional phone-and-fax ordering system was becoming a liability.
                 Younger buyers expected online ordering, real-time inventory, and self-service account management.
               </p>
@@ -253,7 +253,7 @@ export default function ArmorAnimalHealthCaseStudy() {
                     ordering, and our sales team now focuses on growing accounts instead of taking orders. The ROI was evident
                     within 6 months."
                   </blockquote>
-                  <p className="text-sm text-gray-600 mt-2">— Owner, Armor Animal Health</p>
+                  <p className="text-sm text-gray-600 mt-2">— Owner, Animal Health Pharmacy</p>
                 </div>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function ArmorAnimalHealthCaseStudy() {
               Ready to Transform Your B2B Business?
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              If Armor Animal Health can grow 173% in 3 years, imagine what's possible for your business.
+              If this animal health pharmacy can grow 173% in 3 years, imagine what's possible for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink

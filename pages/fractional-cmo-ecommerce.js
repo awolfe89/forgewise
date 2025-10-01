@@ -21,7 +21,7 @@ export default function FractionalCMOPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Fractional CMO for eCommerce",
-    "description": "Expert fractional CMO services for B2B eCommerce companies. Get C-level marketing leadership at 40% of the cost. Average client sees 35% revenue growth in 6 months.",
+    "description": "Expert fractional CMO services for B2B eCommerce companies. Get C-level marketing leadership at 40% of the cost. Drive real revenue growth with executive-level expertise.",
     "provider": {
       "@type": "Organization",
       "name": "Forgewise",
@@ -111,7 +111,7 @@ export default function FractionalCMOPage() {
                     <svg className="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Average 35% revenue growth in 6 months</span>
+                    <span>See real revenue growth in 6 months</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
@@ -123,7 +123,7 @@ export default function FractionalCMOPage() {
                     <svg className="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
-                    <span>Start seeing results in 30 days</span>
+                    <span>Free up room in your budget</span>
                   </div>
                 </div>
 
@@ -459,7 +459,7 @@ export default function FractionalCMOPage() {
                   How quickly will I see results?
                 </h3>
                 <p className="text-gray-700">
-                  Most clients see initial improvements within 30 days (conversion optimization, ad efficiency). Significant revenue impact typically occurs by month 3. We provide reports so you can track progress.
+                  Every business is different, but we've found that executive-level marketing leadership creates momentum faster than you'd expect. When you have a seasoned CMO prioritizing the right opportunities and eliminating wasteful spending from day one, the path forward becomes crystal clear. Most importantly, you'll finally have someone accountable for your marketing ROI—someone who lives and breathes eCommerce growth. The real question is: how much longer can you afford to operate without that expertise?
                 </p>
               </div>
 
@@ -477,7 +477,7 @@ export default function FractionalCMOPage() {
                   What's included in the free growth audit?
                 </h3>
                 <p className="text-gray-700">
-                  Our 30-minute growth audit includes: competitive analysis, conversion rate assessment, quick win identification, marketing channel evaluation, and a custom 90-day growth roadmap. You'll leave with actionable insights whether you hire us or not.
+                  We run your website through SEMrush to uncover critical insights including: organic keyword rankings and opportunities, backlink profile analysis, technical SEO issues impacting visibility, competitive positioning in your market, traffic trends and projections, and top-performing content assets. You'll receive a detailed report with actionable recommendations to improve your search presence and drive qualified traffic.
                 </p>
               </div>
             </div>
@@ -488,7 +488,7 @@ export default function FractionalCMOPage() {
         <section className="py-16 bg-gradient-to-br from-emerald-600 to-emerald-700 text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold mb-4">
-              Ready to Add $2-5M in Annual Revenue?
+              Ready to Put an Executive in the Driver's Seat?
             </h2>
             <p className="text-xl mb-8">
               Join Other B2B eCommerce companies that have scaled with our fractional CMO services.

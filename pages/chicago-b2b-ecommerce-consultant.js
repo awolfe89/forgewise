@@ -402,7 +402,10 @@ export default function ChicagoB2BConsultant() {
                   <h3 className="font-bold mb-3 text-emerald-300">Contact Information</h3>
                   <div className="space-y-2">
                     <div>📍 Chicago, IL Metro Area</div>
-                    <div>📞 <ProtectedPhone type="link" /></div>
+                    <div className="flex items-center gap-2">
+                      <span>📞</span>
+                      <ProtectedPhone type="link" className="text-white underline hover:text-emerald-300 transition-colors" />
+                    </div>
                     <div>✉️ admin@forgewise.io</div>
                   </div>
                 </div>
@@ -424,12 +427,6 @@ export default function ChicagoB2BConsultant() {
               >
                 Schedule Free Chicago Consultation
               </BookingLink>
-              <a
-                href={`tel:${contactConfig.phoneLink}`}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-800 transition-all"
-              >
-                Call Now: {contactConfig.phoneDisplay}
-              </a>
             </div>
           </div>
         </section>

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BookingLink } from '../../src/components/ProtectedContact';
 
-export default function GrubsCaseStudy() {
+export default function OutdoorApparelCaseStudy() {
   const seoData = {
-    title: 'Grubs Boots Case Study | +156% Repeat Orders | Forgewise',
-    description: 'How we helped Grubs Boots increase repeat orders by 156% in 60 days through email automation and customer retention strategies.',
+    title: 'Outdoor Apparel Retailer Case Study | +156% Repeat Orders | Forgewise',
+    description: 'How we helped an outdoor apparel retailer increase repeat orders by 156% in 60 days through email automation and customer retention strategies.',
     canonical: 'https://forgewise.io/results/grubs'
   };
 
@@ -35,7 +35,7 @@ export default function GrubsCaseStudy() {
                 +156% Repeat Orders in 60 Days
               </h1>
               <p className="text-xl text-emerald-100">
-                How Grubs Boots transformed their customer retention from industry worst to industry best
+                How an outdoor apparel retailer transformed their customer retention from industry worst to industry best
               </p>
             </motion.div>
 
@@ -89,8 +89,8 @@ export default function GrubsCaseStudy() {
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                Grubs Boots had built a successful $8M business on the strength of their product—premium waterproof
-                boots loved by farmers, equestrians, and outdoor workers. But they had a massive problem: customers
+                This outdoor apparel retailer had built a successful $8M business on the strength of their product—premium waterproof
+                footwear loved by farmers, equestrians, and outdoor workers. But they had a massive problem: customers
                 would buy once and never return.
               </p>
               <p className="text-lg mt-4">
@@ -288,7 +288,7 @@ export default function GrubsCaseStudy() {
                     set up some flows—they transformed how we think about customer relationships. That 156% increase in
                     repeat orders? That's real money that goes straight to our bottom line."
                   </blockquote>
-                  <p className="text-sm text-gray-600 mt-2">— Marketing Director, Grubs Boots</p>
+                  <p className="text-sm text-gray-600 mt-2">— Marketing Director, Outdoor Apparel Retailer</p>
                 </div>
               </div>
             </div>
@@ -323,7 +323,7 @@ export default function GrubsCaseStudy() {
                 <div className="text-2xl mb-3">⚡</div>
                 <h3 className="font-bold mb-2">Speed Matters</h3>
                 <p className="text-gray-600 text-sm">
-                  60 days to transform retention. No 6-month roadmaps, no endless strategy sessions. Just rapid
+                  Transform retention fast. No 6-month roadmaps, no endless strategy sessions. Just rapid
                   implementation and continuous optimization.
                 </p>
               </div>
@@ -368,7 +368,7 @@ export default function GrubsCaseStudy() {
               Is Your Retention Rate Below 30%?
             </h2>
             <p className="text-xl mb-8 text-emerald-100">
-              You're leaving money on the table. Let's fix your retention in 60 days or less.
+              You're leaving money on the table. Let's fix your retention fast.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink

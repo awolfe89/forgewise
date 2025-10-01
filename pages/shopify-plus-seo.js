@@ -84,56 +84,31 @@ export default function ShopifyPlusSEO() {
     }
   };
 
-  const testimonials = [
-    {
-      quote: "Our Shopify Plus migration with Allan's SEO expertise resulted in 520% organic traffic growth and $4.2M additional revenue in the first year.",
-      author: "Amanda Foster",
-      company: "LuxuryHome Brands",
-      revenue: "$4.2M increase",
-      metrics: "520% traffic growth",
-      industry: "🏠 Home & Garden"
-    },
-    {
-      quote: "The enterprise SEO strategies Allan implemented helped us scale from $2M to $15M annually while maintaining top search rankings across all our markets.",
-      author: "James Patterson",
-      company: "TechGear Enterprise",
-      revenue: "$13M growth",
-      metrics: "650% revenue increase",
-      industry: "💻 Technology"
-    },
-    {
-      quote: "Allan's Shopify Plus SEO expertise is unmatched. We dominate every keyword in our industry and consistently outrank Fortune 500 competitors.",
-      author: "Sarah Kim",
-      company: "Global Fashion Co",
-      revenue: "$8.7M ARR",
-      metrics: "Top 3 rankings",
-      industry: "👗 Fashion"
-    }
-  ];
+  const testimonials = [];
 
   const results = [
     {
       metric: "Average Traffic Increase",
       value: "435%",
-      timeframe: "within 12 months",
+      timeframe: "proven results",
       icon: "📊"
     },
     {
       metric: "Revenue Growth",
       value: "380%",
-      timeframe: "first year",
+      timeframe: "for clients",
       icon: "💰"
     },
     {
       metric: "Enterprise Clients Served",
-      value: "85+",
+      value: "30+",
       timeframe: "Shopify Plus stores",
       icon: "🏢"
     },
     {
       metric: "Average ROI",
       value: "1,340%",
-      timeframe: "12-month period",
+      timeframe: "client average",
       icon: "🎯"
     }
   ];
@@ -192,9 +167,9 @@ export default function ShopifyPlusSEO() {
   const packages = [
     {
       name: "Shopify Plus SEO Essentials",
-      price: "$4,997",
-      originalPrice: "$9,997",
-      period: "/month",
+      price: "",
+      originalPrice: "",
+      period: "",
       popular: false,
       features: [
         "Complete technical SEO audit",
@@ -209,9 +184,9 @@ export default function ShopifyPlusSEO() {
     },
     {
       name: "Enterprise SEO Accelerator",
-      price: "$9,997",
-      originalPrice: "$19,997",
-      period: "/month",
+      price: "",
+      originalPrice: "",
+      period: "",
       popular: true,
       features: [
         "Everything in Essentials PLUS:",
@@ -228,9 +203,9 @@ export default function ShopifyPlusSEO() {
     },
     {
       name: "Global Enterprise SEO",
-      price: "$19,997",
-      originalPrice: "$39,997",
-      period: "/month",
+      price: "",
+      originalPrice: "",
+      period: "",
       popular: false,
       features: [
         "Everything in Accelerator PLUS:",
@@ -240,10 +215,10 @@ export default function ShopifyPlusSEO() {
         "Weekly strategy sessions",
         "White-glove service",
         "24/7 support",
-        "Performance guarantee"
+        "Comprehensive support"
       ],
       cta: "Dominate Globally",
-      guarantee: "Performance guarantee"
+      guarantee: "Comprehensive support"
     }
   ];
 
@@ -266,7 +241,7 @@ export default function ShopifyPlusSEO() {
     },
     {
       question: "How do you measure ROI for enterprise Shopify Plus SEO?",
-      answer: "We track comprehensive metrics including organic traffic growth, revenue attribution, conversion improvements, and market share gains. Our enterprise clients typically see 300-500% ROI within the first year through increased organic visibility and sales."
+      answer: "We track comprehensive metrics including organic traffic growth, revenue attribution, conversion improvements, and market share gains. Our enterprise clients see strong ROI through increased organic visibility and sales, with transparent reporting to track every dollar invested."
     },
     {
       question: "What level of support do enterprise clients receive?",
@@ -376,7 +351,7 @@ export default function ShopifyPlusSEO() {
               className="text-xl md:text-2xl mb-8 text-green-100 leading-relaxed"
             >
               Specialized Shopify Plus SEO that leverages enterprise features for maximum growth.
-              <strong> 85+ Shopify Plus stores</strong> scaled with our proven strategies.
+              <strong> 30+ Shopify Plus stores</strong> scaled with our proven strategies.
             </motion.p>
 
             {/* Trust Indicators */}
@@ -392,15 +367,15 @@ export default function ShopifyPlusSEO() {
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">🏢</span>
-                <span className="font-semibold">85+ Enterprise Stores</span>
+                <span className="font-semibold">30+ Enterprise Stores</span>
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">📈</span>
-                <span className="font-semibold">435% Avg Growth</span>
+                <span className="font-semibold">Proven Growth Strategies</span>
               </div>
               <div className="flex items-center">
                 <span className="text-2xl mr-2">💎</span>
-                <span className="font-semibold">Performance Guarantee</span>
+                <span className="font-semibold">Enterprise Support</span>
               </div>
             </motion.div>
 
@@ -572,62 +547,6 @@ export default function ShopifyPlusSEO() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-green-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              Enterprise Success Stories
-            </h2>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
-              See how other enterprise brands achieved massive growth with Shopify Plus SEO
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-8 border border-green-400"
-              >
-                <div className="text-center mb-6">
-                  <div className="text-4xl mb-2">{testimonial.industry}</div>
-                  <div className="flex text-yellow-400 justify-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-2xl">⭐</span>
-                    ))}
-                  </div>
-                </div>
-
-                <p className="text-green-100 text-lg leading-relaxed italic mb-6">
-                  "{testimonial.quote}"
-                </p>
-
-                <div className="border-t border-green-400 pt-4">
-                  <div className="font-bold text-white">{testimonial.author}</div>
-                  <div className="text-green-200">{testimonial.company}</div>
-                  <div className="mt-2 space-y-1">
-                    <div className="text-yellow-400 font-bold">{testimonial.revenue}</div>
-                    <div className="text-green-300">{testimonial.metrics}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button
-              onClick={() => handleCTAClick('testimonials')}
-              className="bg-gradient-to-r from-yellow-400 to-green-500 text-black font-bold text-xl px-10 py-4 rounded-full hover:from-yellow-300 hover:to-green-400 transform hover:scale-105 transition-all duration-200 shadow-xl"
-            >
-              📈 Join Our Success Stories
-            </button>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-20 bg-gray-50">
@@ -724,7 +643,6 @@ export default function ShopifyPlusSEO() {
                   <div className={`line-through text-lg ${pkg.popular ? 'text-green-200' : 'text-gray-500'}`}>
                     {pkg.originalPrice}
                   </div>
-                  <div className="text-red-500 font-semibold">50% OFF Limited Time</div>
                 </div>
 
                 <ul className={`space-y-4 mb-8 ${pkg.popular ? 'text-white' : 'text-gray-700'}`}>
@@ -760,7 +678,7 @@ export default function ShopifyPlusSEO() {
 
           <div className="text-center mt-12">
             <p className="text-lg text-gray-600 mb-4">
-              💰 <strong>Average ROI:</strong> 1,340% within 12 months | 🏢 <strong>Enterprise Success Rate:</strong> 97% exceed goals
+              💰 <strong>Strong ROI:</strong> Proven results for enterprise clients | 🏢 <strong>Enterprise Focus:</strong> Tailored strategies for Shopify Plus
             </p>
             <button
               onClick={() => handleCTAClick('pricing-consultation')}
@@ -818,7 +736,7 @@ export default function ShopifyPlusSEO() {
               Ready to Scale Your Shopify Plus Store to Enterprise Level?
             </h2>
             <p className="text-xl text-green-100 mb-8 leading-relaxed">
-              Join 85+ successful Shopify Plus stores that have achieved enterprise-level growth.
+              Join 30+ successful Shopify Plus stores that have achieved enterprise-level growth.
               Limited availability for new enterprise clients this quarter.
             </p>
 
@@ -833,7 +751,7 @@ export default function ShopifyPlusSEO() {
               <div className="flex flex-wrap justify-center items-center gap-8 text-green-200 text-lg">
                 <div className="flex items-center">
                   <span className="text-yellow-400 mr-2">✓</span>
-                  <span>24-Hour Delivery</span>
+                  <span>Work Starts Within 48 Hours</span>
                 </div>
                 <div className="flex items-center">
                   <span className="text-yellow-400 mr-2">✓</span>
@@ -841,7 +759,7 @@ export default function ShopifyPlusSEO() {
                 </div>
                 <div className="flex items-center">
                   <span className="text-yellow-400 mr-2">✓</span>
-                  <span>Performance Guarantee</span>
+                  <span>Dedicated Enterprise Support</span>
                 </div>
               </div>
 
@@ -873,7 +791,7 @@ export default function ShopifyPlusSEO() {
               <div className="space-y-4">
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">📞</span>
-                  <span className="text-lg font-semibold">(555) 123-4567</span>
+                  <span className="text-lg font-semibold">872-248-9710</span>
                 </div>
                 <div className="flex items-center justify-center space-x-4">
                   <span className="text-2xl">✉️</span>

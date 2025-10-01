@@ -254,7 +254,7 @@ export default function Results() {
       link: "https://tri-countydoor.com/"
     },
     {
-      title: "GrubsBootsUSA",
+      title: "Outdoor Apparel Retailer",
       businessType: "Outdoor Retail",
       businessSize: "Small Retailer",
       keyTakeaway: "From 4 visitors/day to 160+ by fixing categories, descriptions, and implementing cart recovery.",
@@ -289,10 +289,10 @@ export default function Results() {
         organic: { number: "73%", label: "Organic Traffic" }
       },
       image: Grubs,
-      link: "https://grubsbootsusa.com"
+      link: "#"
     },
     {
-      title: "Technimark Inc",
+      title: "Electrical Supply Distributor",
       businessType: "B2B Industrial",
       businessSize: "Mid-size Distributor",
       keyTakeaway: "Smart product organization + B2B features drove $600K additional annual revenue.",
@@ -331,7 +331,7 @@ export default function Results() {
         author: "Mike, CEO"
       },
       image: Technimark,
-      link: "https://technimark-inc.com/"
+      link: "#"
     },
     {
       title: "HVACNet (Younits)",
