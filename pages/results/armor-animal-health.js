@@ -6,7 +6,7 @@ import { BookingLink } from '../../src/components/ProtectedContact';
 export default function AnimalHealthCaseStudy() {
   const seoData = {
     title: 'Animal Health Pharmacy Case Study | $2.2M to $6M Growth | Forgewise',
-    description: 'How we helped an animal health pharmacy grow from $2.2M to $6M in 3 years through B2B eCommerce transformation and ERP integration.',
+    description: 'How we helped an animal health pharmacy grow from $2.2M to $6M in 2.5 years through catalog optimization, SEO, and comprehensive eCommerce improvements—increasing site traffic by 471%.',
     canonical: 'https://forgewise.io/results/armor-animal-health'
   };
 
@@ -30,12 +30,12 @@ export default function AnimalHealthCaseStudy() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-8"
             >
-              <div className="text-emerald-300 font-semibold mb-2">B2B DISTRIBUTION TRANSFORMATION</div>
+              <div className="text-emerald-300 font-semibold mb-2">ECOMMERCE OPTIMIZATION & GROWTH</div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                From $2.2M to $6M in 3 Years
+                From $2.2M to $6M in 2.5 Years
               </h1>
               <p className="text-xl text-blue-100">
-                How an animal health pharmacy transformed their legacy wholesale business into a digital powerhouse
+                How strategic catalog optimization, SEO, and content development generated $15M in additional revenue
               </p>
             </motion.div>
 
@@ -45,11 +45,11 @@ export default function AnimalHealthCaseStudy() {
                 <div className="text-sm text-blue-200">Revenue Growth</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-300">67%</div>
-                <div className="text-sm text-blue-200">Online Orders</div>
+                <div className="text-3xl font-bold text-emerald-300">471%</div>
+                <div className="text-sm text-blue-200">Traffic Increase</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-emerald-300">3 Years</div>
+                <div className="text-3xl font-bold text-emerald-300">2.5 Years</div>
                 <div className="text-sm text-blue-200">Timeframe</div>
               </div>
             </div>
@@ -62,40 +62,41 @@ export default function AnimalHealthCaseStudy() {
             <h2 className="text-3xl font-bold mb-8 text-gray-900">The Challenge</h2>
 
             <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
-              <h3 className="font-bold text-lg mb-3 text-red-900">Starting Point: A Traditional Distributor Stuck in the Past</h3>
+              <h3 className="font-bold text-lg mb-3 text-red-900">Starting Point: Underutilized eCommerce Potential</h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-red-500 mr-2">•</span>
-                  <span>$2.2M annual revenue with 100% phone/fax orders</span>
+                  <span>$2.2M annual eCommerce revenue with significant growth potential</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-2">•</span>
-                  <span>5,000+ SKUs managed in spreadsheets</span>
+                  <span>9,000 SKU catalog that was scattered with categories lacking nuance</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-2">•</span>
-                  <span>No online presence beyond a basic brochure site</span>
+                  <span>65% of products missing descriptions, images, or both</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-2">•</span>
-                  <span>Legacy ERP system (Sage 100) disconnected from everything</span>
+                  <span>No product attributes for filtering, minimal content, no blog</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-red-500 mr-2">•</span>
-                  <span>Losing customers to digital-first competitors</span>
+                  <span>Limited digital marketing presence and organic visibility</span>
                 </li>
               </ul>
             </div>
 
             <div className="prose max-w-none text-gray-600">
               <p className="text-lg">
-                This animal health pharmacy had been in business for over 20 years, serving veterinary clinics and animal hospitals
-                across the Midwest. But their traditional phone-and-fax ordering system was becoming a liability.
-                Younger buyers expected online ordering, real-time inventory, and self-service account management.
+                This animal health pharmacy had an existing eCommerce platform generating $2.2M annually, but the site was
+                severely underoptimized. With 9,000 SKUs in a disorganized catalog structure and the majority of products
+                lacking basic information, customers struggled to find and purchase products.
               </p>
               <p className="text-lg mt-4">
-                The owner knew they needed to modernize but was overwhelmed by the complexity and afraid of disrupting
-                their existing operations. They needed a partner who understood both B2B commerce and legacy systems.
+                The sparse content, missing product attributes, and poor categorization created a challenging user experience.
+                The company needed comprehensive catalog optimization, content development, and strategic SEO to unlock their
+                platform's true revenue potential.
               </p>
             </div>
           </div>
@@ -108,79 +109,92 @@ export default function AnimalHealthCaseStudy() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-blue-600 font-bold mb-3">Phase 1: Foundation (Months 1-6)</div>
+                <div className="text-blue-600 font-bold mb-3">Phase 1: Catalog Foundation (Months 1-8)</div>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Magento 2 B2B implementation with customer-specific pricing</span>
+                    <span>Created 500 product attributes and assigned across catalog</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Sage 100 ERP integration for real-time inventory</span>
+                    <span>Restructured into 200+ categories and subcategories</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Bulk order upload and quick order forms</span>
+                    <span>Sourced and added missing images for entire catalog</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Customer account hierarchies with approval workflows</span>
+                    <span>Sourced and added all missing product descriptions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Created SEO template for product descriptions</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-blue-600 font-bold mb-3">Phase 2: Growth (Months 7-18)</div>
+                <div className="text-blue-600 font-bold mb-3">Phase 2: Content & Marketing (Months 9-18)</div>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Advanced product filtering for 5,000+ SKUs</span>
+                    <span>Added related products to entire catalog</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Automated reorder reminders based on purchase history</span>
+                    <span>Built comprehensive blog using AI for ideation and creative content</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>SEO optimization targeting veterinary keywords</span>
+                    <span>Increased intra-site linking through products and blog</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Google Ads campaigns for high-margin products</span>
+                    <span>Created and maintained $50,000 ad spend campaigns</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-blue-600 font-bold mb-3">Phase 3: Scale (Months 19-36)</div>
+                <div className="text-blue-600 font-bold mb-3">Phase 3: Technical Excellence (Months 19-30)</div>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Mobile app for field sales reps</span>
+                    <span>Migrated site from one ERP to another without downtime</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Automated email marketing with Klaviyo</span>
+                    <span>Created enticing homepage with optimized banner images</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Expansion to new territories through digital marketing</span>
+                    <span>Converted site to next-gen image formats (WebP/AVIF)</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-green-500 mr-2">✓</span>
-                    <span>Customer portal with order history and reporting</span>
+                    <span>Built private image converter app for marketing team</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Created additional satellite websites for product subsections</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">✓</span>
+                    <span>Developed interactive product guides with next-gen coding</span>
                   </li>
                 </ul>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-lg">
-                <div className="text-blue-600 font-bold mb-3">Technology Stack</div>
+                <div className="text-blue-600 font-bold mb-3">Key Technologies & Tools</div>
                 <div className="flex flex-wrap gap-2">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Magento 2 B2B</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Sage 100 ERP</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Klaviyo</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Magento 2</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">ERP Integration</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">AI Content Tools</span>
                   <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Google Ads</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Cloudflare</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Next-Gen Images</span>
+                  <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">Custom Tools</span>
                 </div>
               </div>
             </div>
@@ -198,42 +212,42 @@ export default function AnimalHealthCaseStudy() {
                   <h3 className="font-bold text-lg mb-4 text-gray-900">Revenue Impact</h3>
                   <ul className="space-y-3">
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Year 1 Revenue:</span>
-                      <span className="font-bold text-emerald-600">$2.8M (+27%)</span>
+                      <span className="text-gray-700">Starting Revenue:</span>
+                      <span className="font-bold text-gray-600">$2.2M/year</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Year 2 Revenue:</span>
-                      <span className="font-bold text-emerald-600">$4.2M (+50%)</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span className="text-gray-700">Year 3 Revenue:</span>
-                      <span className="font-bold text-emerald-600">$6.0M (+43%)</span>
+                      <span className="text-gray-700">Final Revenue:</span>
+                      <span className="font-bold text-emerald-600">$6.0M/year</span>
                     </li>
                     <li className="flex justify-between border-t pt-3">
                       <span className="text-gray-700 font-bold">Total Growth:</span>
                       <span className="font-bold text-emerald-600 text-xl">173%</span>
                     </li>
+                    <li className="flex justify-between border-t pt-3">
+                      <span className="text-gray-700 font-bold">Additional Revenue Generated:</span>
+                      <span className="font-bold text-emerald-600 text-xl">$15M</span>
+                    </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="font-bold text-lg mb-4 text-gray-900">Operational Impact</h3>
+                  <h3 className="font-bold text-lg mb-4 text-gray-900">Digital Impact</h3>
                   <ul className="space-y-3">
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Online Orders:</span>
-                      <span className="font-bold text-blue-600">67% of total</span>
+                      <span className="text-gray-700">Site Traffic Increase:</span>
+                      <span className="font-bold text-blue-600">471%</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Order Processing Time:</span>
-                      <span className="font-bold text-blue-600">-82%</span>
+                      <span className="text-gray-700">Organic Keywords:</span>
+                      <span className="font-bold text-blue-600">2x growth</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Customer Acquisition:</span>
-                      <span className="font-bold text-blue-600">+156 new accounts</span>
+                      <span className="text-gray-700">Catalog Size:</span>
+                      <span className="font-bold text-blue-600">9,000 SKUs</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-gray-700">Repeat Order Rate:</span>
-                      <span className="font-bold text-blue-600">89%</span>
+                      <span className="text-gray-700">Products Optimized:</span>
+                      <span className="font-bold text-blue-600">100%</span>
                     </li>
                   </ul>
                 </div>
@@ -248,10 +262,9 @@ export default function AnimalHealthCaseStudy() {
                 <div>
                   <h3 className="font-bold text-blue-900 mb-2">Client Testimonial</h3>
                   <blockquote className="text-gray-700 italic">
-                    "We were terrified of going digital. We thought we'd lose the personal touch that made our business successful.
-                    Instead, we gained efficiency while keeping our relationships strong. Our customers actually prefer the online
-                    ordering, and our sales team now focuses on growing accounts instead of taking orders. The ROI was evident
-                    within 6 months."
+                    "The comprehensive catalog overhaul and strategic SEO work transformed our online business. By systematically
+                    improving every aspect of our product catalog and building quality content, we saw traffic and revenue grow
+                    month after month. The results speak for themselves—nearly tripling our eCommerce revenue in 2.5 years."
                   </blockquote>
                   <p className="text-sm text-gray-600 mt-2">— Owner, Animal Health Pharmacy</p>
                 </div>
@@ -267,29 +280,29 @@ export default function AnimalHealthCaseStudy() {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-lg shadow">
-                <div className="text-2xl mb-3">🔄</div>
-                <h3 className="font-bold mb-2">Gradual Transformation</h3>
+                <div className="text-2xl mb-3">📦</div>
+                <h3 className="font-bold mb-2">Complete Catalog Optimization</h3>
                 <p className="text-gray-600 text-sm">
-                  We didn't disrupt their business overnight. The phased approach allowed them to maintain operations
-                  while building digital capabilities.
+                  Systematic improvements across 9,000 SKUs—adding attributes, reorganizing categories, sourcing images and
+                  descriptions—created a foundation for growth.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow">
-                <div className="text-2xl mb-3">🔗</div>
-                <h3 className="font-bold mb-2">ERP Integration is Key</h3>
+                <div className="text-2xl mb-3">🔍</div>
+                <h3 className="font-bold mb-2">SEO as a Growth Engine</h3>
                 <p className="text-gray-600 text-sm">
-                  Connecting Sage 100 to Magento eliminated double entry and gave customers real-time inventory visibility,
-                  building trust and reducing calls.
+                  Strategic content development, SEO-optimized product descriptions, and comprehensive internal linking
+                  drove 471% traffic increase and 2x keyword growth.
                 </p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow">
-                <div className="text-2xl mb-3">📊</div>
-                <h3 className="font-bold mb-2">B2B Requires B2B Features</h3>
+                <div className="text-2xl mb-3">⚡</div>
+                <h3 className="font-bold mb-2">Technical Excellence Matters</h3>
                 <p className="text-gray-600 text-sm">
-                  Customer-specific pricing, approval workflows, and bulk ordering weren't nice-to-haves—they were essential
-                  for B2B success.
+                  Next-gen image formats, seamless ERP migration, custom tools, and interactive product guides combined
+                  to create a superior user experience.
                 </p>
               </div>
             </div>
@@ -300,10 +313,10 @@ export default function AnimalHealthCaseStudy() {
         <section className="py-20 bg-gradient-to-r from-blue-800 to-emerald-700 text-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Transform Your B2B Business?
+              Ready to Unlock Your eCommerce Potential?
             </h2>
             <p className="text-xl mb-8 text-blue-100">
-              If this animal health pharmacy can grow 173% in 3 years, imagine what's possible for your business.
+              If this animal health pharmacy can grow 173% in 2.5 years, imagine what's possible for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <BookingLink
