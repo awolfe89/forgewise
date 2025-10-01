@@ -166,32 +166,40 @@ export default function NextFooter() {
         {/* Partner Badges */}
         <div className="border-t border-blue-800/30 pt-8 mb-8">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
-            <div className="text-center">
-              <img
-                src="/google_cloud_badge_2.png"
+            <div className="text-center relative h-12 md:h-16 w-24 md:w-32">
+              <Image
+                src="/google_cloud_badge_2.webp"
                 alt="Google Cloud Partner"
-                className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+                fill
+                className="object-contain opacity-90 hover:opacity-100 transition"
+                sizes="(max-width: 768px) 96px, 128px"
               />
             </div>
-            <div className="text-center">
-              <img
-                src="/shopify-partner-1.png"
+            <div className="text-center relative h-12 md:h-16 w-24 md:w-32">
+              <Image
+                src="/shopify-partner-1.webp"
                 alt="Shopify Partner"
-                className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+                fill
+                className="object-contain opacity-90 hover:opacity-100 transition"
+                sizes="(max-width: 768px) 96px, 128px"
               />
             </div>
-            <div className="text-center">
-              <img
-                src="/magento_badge.png"
+            <div className="text-center relative h-12 md:h-16 w-24 md:w-32">
+              <Image
+                src="/magento_badge.webp"
                 alt="Magento Partner"
-                className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+                fill
+                className="object-contain opacity-90 hover:opacity-100 transition"
+                sizes="(max-width: 768px) 96px, 128px"
               />
             </div>
-            <div className="text-center">
-              <img
+            <div className="text-center relative h-12 md:h-16 w-24 md:w-32">
+              <Image
                 src="/usa_badge.webp"
                 alt="Made in USA"
-                className="h-12 md:h-16 w-auto object-contain opacity-90 hover:opacity-100 transition"
+                fill
+                className="object-contain opacity-90 hover:opacity-100 transition"
+                sizes="(max-width: 768px) 96px, 128px"
               />
             </div>
           </div>

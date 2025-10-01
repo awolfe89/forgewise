@@ -78,14 +78,14 @@ export default function FractionalCMOPage() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <Image
-                    src="/shopify-partner-1.png"
+                    src="/shopify-partner-1.webp"
                     alt="Shopify Partner"
                     width={100}
                     height={40}
                     className="opacity-80"
                   />
                   <Image
-                    src="/magento_badge.png"
+                    src="/magento_badge.webp"
                     alt="Magento Partner"
                     width={100}
                     height={40}
