@@ -51,19 +51,36 @@ export default function Contact() {
     // Track conversion
     trackContactConversion();
 
-    // For now, just show a message since we don't have a backend
-    setTimeout(() => {
-      setSubmitMessage('Thank you for your interest! We\'ll be in touch within 24 hours.');
-      setIsSubmitting(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        type: '',
-        message: ''
+    // Submit to Netlify Forms
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        }).toString()
       });
-    }, 1000);
+
+      if (response.ok) {
+        setSubmitMessage('Thank you for your interest! We\'ll be in touch within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          type: '',
+          message: ''
+        });
+      } else {
+        setSubmitMessage('There was an error submitting your form. Please try again or email us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitMessage('There was an error submitting your form. Please try again or email us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const seoData = getPageSEO('/contact');
@@ -90,7 +107,23 @@ export default function Contact() {
         <section className="py-8 bg-gray-50">
           <div className="max-w-2xl mx-auto px-6">
             <div className="bg-white rounded-xl shadow-lg p-8">
-              <form id="contact-form" name="contactForm" onSubmit={handleSubmit} className="space-y-6">
+              <form
+                id="contact-form"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Netlify form detection */}
+                <input type="hidden" name="form-name" value="contact" />
+                {/* Honeypot field */}
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
