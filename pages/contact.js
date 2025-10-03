@@ -230,6 +230,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
+                  id="contact-form"
                   disabled={isSubmitting}
                   className={`w-full py-4 font-medium rounded-lg transition-all ${
                     isSubmitting
