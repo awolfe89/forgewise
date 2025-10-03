@@ -12,73 +12,6 @@ import { trackButtonClick, trackEvent, trackEngagement } from '../src/utils/trac
 const FloatingCTA = lazy(() => import('../src/components/FloatingCTA'));
 
 export default function Home() {
-  const [checkedProblems, setCheckedProblems] = useState({});
-  const [monthlyRevenue, setMonthlyRevenue] = useState('');
-  const [conversionRate, setConversionRate] = useState('');
-  const [calculatorResult, setCalculatorResult] = useState(null);
-  const [showResults, setShowResults] = useState(false);
-  const [email, setEmail] = useState('');
-  const [showEmailCapture, setShowEmailCapture] = useState(false);
-
-  const problems = [
-    { id: 'traffic', label: 'Traffic isn\'t converting to sales', impact: 15 },
-    { id: 'cart', label: 'Shopping cart abandonment over 70%', impact: 25 },
-    { id: 'ppc', label: 'PPC campaigns burning cash with low ROI', impact: 20 },
-    { id: 'seo', label: 'Invisible on Google (page 2 or worse)', impact: 30 },
-    { id: 'mobile', label: 'Mobile experience is frustrating customers', impact: 18 },
-    { id: 'analytics', label: 'No idea which marketing channels actually work', impact: 22 },
-    { id: 'email', label: 'Email campaigns get ignored or marked as spam', impact: 12 },
-    { id: 'tech', label: 'Website takes forever to load', impact: 28 }
-  ];
-
-  const handleProblemChange = (problemId) => {
-    setCheckedProblems(prev => {
-      const newState = { ...prev };
-      newState[problemId] = !prev[problemId];
-      return newState;
-    });
-  };
-
-  const calculateLoss = () => {
-    if (!monthlyRevenue || !conversionRate) {
-      alert('Please enter both monthly revenue and conversion rate');
-      return;
-    }
-    
-    const revenue = parseFloat(monthlyRevenue.replace(/[,$]/g, ''));
-    const currentRate = parseFloat(conversionRate);
-    
-    if (isNaN(revenue) || isNaN(currentRate) || revenue <= 0 || currentRate <= 0) {
-      alert('Please enter valid positive numbers');
-      return;
-    }
-    
-    // Calculate potential with improvements
-    const checkedProblemsList = Object.entries(checkedProblems)
-      .filter(([_, checked]) => checked)
-      .map(([id]) => problems.find(p => p.id === id));
-    
-    const totalImpact = checkedProblemsList.reduce((sum, problem) => sum + (problem?.impact || 0), 0);
-    const improvementFactor = Math.min(totalImpact / 100, 0.5); // Cap at 50% improvement
-    
-    const improvedRate = currentRate * (1 + improvementFactor);
-    const currentCustomers = 1000 * (currentRate / 100);
-    const improvedCustomers = 1000 * (improvedRate / 100);
-    const additionalCustomers = improvedCustomers - currentCustomers;
-    const revenuePerCustomer = revenue / currentCustomers;
-    const additionalRevenue = additionalCustomers * revenuePerCustomer;
-    
-    setCalculatorResult({
-      currentRate,
-      improvedRate: improvedRate.toFixed(2),
-      additionalRevenue: additionalRevenue.toFixed(0),
-      monthlyLoss: additionalRevenue.toFixed(0),
-      yearlyLoss: (additionalRevenue * 12).toFixed(0),
-      improvementPercent: (improvementFactor * 100).toFixed(0)
-    });
-    
-    setShowResults(true);
-  };
 
   const heroTitle = "From $2.2M to $6M in 3 Years. We Transform B2B & Legacy Businesses Into Digital Leaders.";
   const heroSubtitle = "The eCommerce consultant who speaks both business and tech – protecting you from overpriced agencies while delivering real growth";
@@ -877,151 +810,92 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Revenue Loss Calculator */}
-        <section className="py-20 bg-white" id="calculator">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Quick ROI Calculator
-            </h2>
-            <p className="text-xl text-gray-600 text-center mb-12">
-              See what fixing these issues means for your bottom line
-            </p>
+        {/* Lighthouse Performance Showcase */}
+        <section className="py-20 bg-gradient-to-br from-emerald-50 to-blue-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Perfect Performance Scores Like These
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We don't just talk about results—we deliver them. Here's a real Lighthouse report showing perfect scores across all metrics.
+              </p>
+            </div>
 
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-              <div className="space-y-6">
-                {/* Problems Checklist */}
-                <div>
-                  <h3 className="text-lg font-semibold mb-4">Which problems are hurting your business?</h3>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {problems.map(problem => (
-                      <label key={problem.id} className="flex items-start space-x-3 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={checkedProblems[problem.id] || false}
-                          onChange={() => handleProblemChange(problem.id)}
-                          className="mt-1 w-5 h-5 text-blue-700 rounded focus:ring-blue-500"
-                        />
-                        <span className="text-gray-700">{problem.label}</span>
-                      </label>
-                    ))}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Lighthouse Report Image */}
+              <div className="order-2 md:order-1">
+                <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-200">
+                  <Image
+                    src="/lighthouse-report.png"
+                    alt="Perfect Lighthouse Performance Report - 100 scores"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto rounded-lg"
+                    priority={false}
+                  />
                 </div>
               </div>
 
-                {/* Input Fields */}
-                <div className="grid md:grid-cols-2 gap-6">
+              {/* Benefits List */}
+              <div className="order-1 md:order-2 space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">⚡</span>
+                  </div>
                   <div>
-                    <label htmlFor="revenue" className="block text-sm font-medium text-gray-700 mb-2">
-                      Monthly Revenue
-                    </label>
-                    <input
-                      type="text"
-                      id="revenue"
-                      value={monthlyRevenue}
-                      onChange={(e) => setMonthlyRevenue(e.target.value)}
-                      placeholder="$50,000"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
-                    />
+                    <h3 className="text-xl font-bold mb-2">Lightning-Fast Load Times</h3>
+                    <p className="text-gray-600">
+                      Every second counts. We optimize your site to load in under 2 seconds, keeping visitors engaged and converting.
+                    </p>
+                  </div>
                 </div>
 
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">📱</span>
+                  </div>
                   <div>
-                    <label htmlFor="conversion" className="block text-sm font-medium text-gray-700 mb-2">
-                      Current Conversion Rate (%)
-                    </label>
-                    <input
-                      type="text"
-                      id="conversion"
-                      value={conversionRate}
-                      onChange={(e) => setConversionRate(e.target.value)}
-                      placeholder="2.5"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-blue-600"
-                    />
+                    <h3 className="text-xl font-bold mb-2">Mobile-First Excellence</h3>
+                    <p className="text-gray-600">
+                      With most traffic coming from mobile, we ensure your site performs flawlessly on every device.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">SEO That Ranks</h3>
+                    <p className="text-gray-600">
+                      Perfect technical SEO scores mean Google can easily crawl, index, and rank your pages higher.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">♿</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Accessible to Everyone</h3>
+                    <p className="text-gray-600">
+                      Compliance-ready sites that work for all users, expanding your potential customer base.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-6">
+                  <BookingLink
+                    type="discovery"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700 transition-all"
+                  >
+                    Get Your Free Performance Audit →
+                  </BookingLink>
                 </div>
               </div>
-
-                <button
-                  onClick={() => {
-                    calculateLoss();
-                    trackButtonClick('calculate_revenue_potential', 'revenue_calculator');
-                    trackEvent('calculator_used', { calculator_type: 'revenue_potential' });
-                  }}
-                  className="w-full py-4 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
-                >
-                  Calculate My Revenue Potential
-                </button>
-              </div>
-
-              {/* Results */}
-              {showResults && calculatorResult && (
-                <motion.div
-                  initial={{ opacity: 1, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="mt-8 p-6 bg-emerald-50 border-2 border-emerald-200 rounded-xl"
-                >
-                  <h3 className="text-2xl font-bold text-emerald-800 mb-4">Your Revenue Opportunity</h3>
-                  <div className="space-y-3">
-                    <p className="text-lg">
-                      <span className="font-semibold">Current conversion rate:</span> {calculatorResult.currentRate}%
-                    </p>
-                    <p className="text-lg">
-                      <span className="font-semibold">Achievable rate:</span> {calculatorResult.improvedRate}%
-                    </p>
-                    <p className="text-xl font-bold text-emerald-700">
-                      Additional monthly revenue: ${parseInt(calculatorResult.monthlyLoss).toLocaleString()}
-                    </p>
-                    <p className="text-2xl font-bold text-emerald-800">
-                      Additional yearly revenue: ${parseInt(calculatorResult.yearlyLoss).toLocaleString()}
-                    </p>
-                </div>
-                  <div className="mt-6 space-y-4">
-                    {!showEmailCapture ? (
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <BookingLink
-                          type="discovery"
-                          className="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 text-white font-medium rounded-lg hover:bg-emerald-700 transition-all flex-1"
-                        >
-                          Claim This Revenue →
-                        </BookingLink>
-                        <button
-                          onClick={() => {
-                            setShowEmailCapture(true);
-                            trackButtonClick('email_report_request', 'revenue_calculator');
-                          }}
-                          className="inline-flex items-center justify-center px-6 py-3 bg-gray-600 text-white font-medium rounded-lg hover:bg-gray-700 transition-all"
-                        >
-                          Email Me This Report
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="space-y-3">
-                        <p className="text-gray-700 font-medium">Send me this as a report (PDF):</p>
-                        <div className="flex gap-3">
-                          <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="your@email.com"
-                            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
-                          />
-                          <button
-                            onClick={() => {
-                              if (email) {
-                                alert('Report will be sent to ' + email);
-                                trackButtonClick('email_report_submit', 'revenue_calculator');
-                                trackEngagement('lead_capture', 'revenue_calculator_report', 1);
-                                setShowEmailCapture(false);
-                                setEmail('');
-                              }
-                            }}
-                            className="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700"
-                          >
-                            Send PDF
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                </div>
-                </motion.div>
-              )}
             </div>
           </div>
         </section>
