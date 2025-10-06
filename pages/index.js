@@ -827,13 +827,13 @@ export default function Home() {
               {/* Lighthouse Report Image */}
               <div className="order-2 md:order-1">
                 <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-200">
-                  <Image
+                  <img
                     src="/lighthouse-report.png"
                     alt="Perfect Lighthouse Performance Report - 100 scores"
-                    width={600}
-                    height={400}
+                    width="600"
+                    height="400"
                     className="w-full h-auto rounded-lg"
-                    priority={false}
+                    loading="lazy"
                   />
                 </div>
               </div>
