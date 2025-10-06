@@ -1,5 +1,6 @@
 import { useState, lazy, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '../src/components/AnimatedComponents';
 import { BookingLink } from '../src/components/ProtectedContact';
