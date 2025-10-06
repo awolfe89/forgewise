@@ -103,8 +103,10 @@ function getLastModified(filePath) {
  * Generate a URL entry for the sitemap
  */
 function generateUrlEntry(path, config, lastmod) {
+  // Ensure trailing slash for consistency with Next.js trailingSlash: true
+  const urlPath = path === '/' ? path : (path.endsWith('/') ? path : `${path}/`);
   return `  <url>
-    <loc>${DOMAIN}${path}</loc>
+    <loc>${DOMAIN}${urlPath}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${config.changefreq}</changefreq>
     <priority>${config.priority}</priority>

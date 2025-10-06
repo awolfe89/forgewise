@@ -2,6 +2,15 @@
   command = "npm run build"
   publish = "out"
 
+# Redirect non-trailing-slash URLs to trailing-slash versions (301)
+# This prevents duplicate content issues with Google
+[[redirects]]
+  from = "/*"
+  to = "/:splat/"
+  status = 301
+  force = false
+  conditions = {path = ["!/*/"]}  # Only redirect if path doesn't already end with /
+
 [[headers]]
   for = "/*"
   [headers.values]

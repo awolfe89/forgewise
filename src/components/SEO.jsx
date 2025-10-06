@@ -57,8 +57,11 @@ export default function SEO() {
       }
     }
     
-    // Update canonical URL
-    updateCanonicalURL(`${siteConfig.url}${location.pathname}`);
+    // Update canonical URL - ensure trailing slash for consistency
+    const canonicalPath = location.pathname === '/'
+      ? '/'
+      : (location.pathname.endsWith('/') ? location.pathname : `${location.pathname}/`);
+    updateCanonicalURL(`${siteConfig.url}${canonicalPath}`);
     
   }, [location]);
   

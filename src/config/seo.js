@@ -151,10 +151,11 @@ export function getPageSEO(pathname) {
   const mappedKey = urlMap[key] || key;
   const seoData = pageSEO[mappedKey] || pageSEO.home;
 
-  // Add canonical URL
-  const canonical = pathname === '/'
-    ? siteConfig.url
-    : `${siteConfig.url}${pathname.endsWith('/') ? pathname.slice(0, -1) : pathname}`;
+  // Add canonical URL - ensure trailing slash for consistency
+  const canonicalPath = pathname === '/'
+    ? '/'
+    : (pathname.endsWith('/') ? pathname : `${pathname}/`);
+  const canonical = `${siteConfig.url}${canonicalPath}`;
 
   return {
     ...seoData,
